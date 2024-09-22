@@ -1,0 +1,503 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/images/Fase_1/road.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/Fase_1/brick_wall.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Fase_1/sidewalk_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Fase_1/sidewalk_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Fase_1/city_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Fase_1/city_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Fase_1/city_3.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Fase_1/pole.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Fase_1/hydrant.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Fase_1/light_pole_(off).png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Fase_1/trash_can_(back).png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Fase_1/light_pole_(on).png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Fase_1/sewer_0.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Fase_1/sewer_1.png" type="Texture" id=14]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "off",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "on_off",
+"speed": 3.0
+} ]
+
+[node name="background" type="Node2D"]
+scale = Vector2( 2, 2 )
+z_index = -10
+
+[node name="back" type="Node2D" parent="."]
+position = Vector2( 0, -125 )
+z_index = -10
+
+[node name="brick_wall" type="Node2D" parent="back"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="wall" type="Sprite" parent="back/brick_wall"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="wall2" type="Sprite" parent="back/brick_wall"]
+position = Vector2( 640, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="wall3" type="Sprite" parent="back/brick_wall"]
+position = Vector2( 1280, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="road" type="Node2D" parent="back"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="road" type="Sprite" parent="back/road"]
+position = Vector2( 0, 150 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="road2" type="Sprite" parent="back/road"]
+position = Vector2( 452.5, 453 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 187.5, -303 )
+
+[node name="road3" type="Sprite" parent="back/road"]
+position = Vector2( 1280, 150 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="road4" type="Sprite" parent="back/road"]
+position = Vector2( 0, 175 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="road5" type="Sprite" parent="back/road"]
+position = Vector2( 452.5, 478 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 187.5, -303 )
+
+[node name="road6" type="Sprite" parent="back/road"]
+position = Vector2( 1280, 175 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="road7" type="Sprite" parent="back/road"]
+position = Vector2( 0, 200 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="road8" type="Sprite" parent="back/road"]
+position = Vector2( 452.5, 503 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 187.5, -303 )
+
+[node name="road9" type="Sprite" parent="back/road"]
+position = Vector2( 1280, 200 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="sidewalk" type="Node2D" parent="back"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Layer_8" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 260 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_8"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_8"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_8"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_8"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_7" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 285 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_7"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_7"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_7"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_7"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_6" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 310 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_6"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_6"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_6"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_6"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_5" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 335 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_5"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_5"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_5"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_5"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_4" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 360 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_4"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_4"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_4"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_4"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_3" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 385 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_3"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_3"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_3"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_3"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_2" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 410 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_2"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_2"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_2"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_2"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_1" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 435 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_1"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_1"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_1"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_1"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer_0" type="Area2D" parent="back/sidewalk"]
+position = Vector2( 0, 460 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="back/sidewalk/Layer_0"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="back/sidewalk/Layer_0"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="back/sidewalk/Layer_0"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="back/sidewalk/Layer_0"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="city" type="Node2D" parent="back"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="city_1" type="Sprite" parent="back/city"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="city_2" type="Sprite" parent="back/city"]
+position = Vector2( 640, 0 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="city_3" type="Sprite" parent="back/city"]
+position = Vector2( 1280, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="objects" type="Node2D" parent="."]
+position = Vector2( 0, -125 )
+
+[node name="pole" type="Node2D" parent="objects"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="pole" type="Sprite" parent="objects/pole"]
+position = Vector2( 320, 348 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ligh_pole" type="AnimatedSprite" parent="objects/pole/pole"]
+position = Vector2( -11, 0 )
+frames = SubResource( 11 )
+animation = "on"
+playing = true
+
+[node name="pole2" type="Sprite" parent="objects/pole"]
+position = Vector2( 960, 348 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ligh_pole" type="AnimatedSprite" parent="objects/pole/pole2"]
+position = Vector2( -11, 0 )
+frames = SubResource( 11 )
+animation = "on_off"
+frame = 1
+playing = true
+
+[node name="trash_can" type="Sprite" parent="objects/pole/pole2"]
+show_behind_parent = true
+position = Vector2( 1.5, 55 )
+texture = ExtResource( 11 )
+
+[node name="pole3" type="Sprite" parent="objects/pole"]
+position = Vector2( 1600, 348 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ligh_pole" type="AnimatedSprite" parent="objects/pole/pole3"]
+position = Vector2( -11, 0 )
+frames = SubResource( 11 )
+animation = "off"
+playing = true
+
+[node name="hydrant" type="Sprite" parent="objects"]
+visible = false
+position = Vector2( 744, 406.5 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="sewer" type="Node2D" parent="objects"]
+z_index = -10
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="sewer" type="Sprite" parent="objects/sewer"]
+position = Vector2( 236, 451.5 )
+texture = ExtResource( 13 )
+
+[node name="sewer2" type="Sprite" parent="objects/sewer"]
+position = Vector2( 1452, 401.5 )
+texture = ExtResource( 14 )

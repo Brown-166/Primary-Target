@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/smash_damage_1.MP3-43ac4b86424d4f60ece6f8f76f3d0c54.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/smash_damage_1.MP3"
+dest_files=[ "res://.import/smash_damage_1.MP3-43ac4b86424d4f60ece6f8f76f3d0c54.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

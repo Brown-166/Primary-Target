@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_tail.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_center.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_head.png" type="Texture" id=8]
+[ext_resource path="res://assets/scripts/Fase_2.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 6236, 10 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 6236, 6 )
+
+[node name="Fase_2" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Bullet_Train" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="tail" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 0, 172.5 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="center1" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 640, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center2" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 1280, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center3" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 1920, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center4" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 2560, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center5" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 3200, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center6" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 3840, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center7" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 4480, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="center8" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 5120, 172.5 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="head" type="Sprite" parent="Bullet_Train"]
+position = Vector2( 5760, 172.5 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 6286, 375 )
+shape = SubResource( 18 )
+
+[node name="Area2D_Ground" type="Area2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Ground"]
+position = Vector2( 6286, 359 )
+shape = SubResource( 17 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 170, 283 )
+z_index = 1
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 2000, 425 )
+
+[node name="Camera_Fase2" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 2, 2 )
+limit_left = -125
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 1.0
+drag_margin_right = 0.84
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Timer_Obstacle" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer_Obstacle" to="." method="_on_Timer_Obstacle_timeout"]

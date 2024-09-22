@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/weapon_swoosh.MP3-218ff788027d1958014fc1d27d009e44.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/weapon_swoosh.MP3"
+dest_files=[ "res://.import/weapon_swoosh.MP3-218ff788027d1958014fc1d27d009e44.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
