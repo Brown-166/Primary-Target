@@ -9,6 +9,7 @@ extents = Vector2( 27.5, 27 )
 
 [node name="obstacle_outdoor" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
+z_index = -1
 collision_mask = 3
 script = ExtResource( 3 )
 

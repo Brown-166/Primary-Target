@@ -10,6 +10,8 @@ var action
 func _ready():
 	get_tree().paused = false
 	Global.dead = false
+	Global.life = 100
+	Global.stamina = 100
 	$Menu/Button_Restart.grab_focus()
 	$Menu/Button_Restart.disabled = false
 	$Menu/Button_Quit.disabled = false

@@ -10,6 +10,8 @@ func _physics_process(delta):
 
 func _get_layer(area, layer):
 	match area:
+		"Area2D_Ground":
+			layer = 0
 		"Layer_0":
 			layer = 0
 		"Layer_1":
@@ -32,6 +34,8 @@ func _get_layer(area, layer):
 
 func _get_z_index(area, z_index):
 	match area:
+		"Area2D_Ground":
+			z_index = 0
 		"Layer_0":
 			z_index = 0
 		"Layer_1":
