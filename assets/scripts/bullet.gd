@@ -14,10 +14,18 @@ func _set_layer(L):
 func _physics_process(delta):
 	if direction == 1:
 		$Sprite.flip_h = false
+		velocity.x = speed * delta * direction
 	elif direction == -1:
 		$Sprite.flip_h = true
-	velocity.x = speed * delta * direction
+		velocity.x = speed * delta * direction
+	elif direction == -2:
+		rotation_degrees = -90
+		velocity.y = speed * delta * -1
+	elif direction == 2:
+		rotation_degrees = 90
+		velocity.y = speed * delta * 1
 	translate(velocity)
+	
 	
 
 
