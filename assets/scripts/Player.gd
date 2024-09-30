@@ -221,6 +221,7 @@ func _ready():
 
 func _physics_process(delta):
 	if Global.life > 0:
+		print(layer)
 		velocity = Vector2.ZERO
 		_weapon_set()
 		
