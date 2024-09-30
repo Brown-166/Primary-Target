@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/images/Fase_3/bullet_train_inside_back_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Fase_3/bullet_train_inside_back_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/scripts/Fase_3.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 960, 12.5 )
+
+[node name="Fase_3" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="bullet_train" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -10
+
+[node name="tail" type="Node2D" parent="bullet_train"]
+position = Vector2( -2944, 0 )
+
+[node name="center1" type="Node2D" parent="bullet_train"]
+position = Vector2( -2208, 0 )
+
+[node name="center2" type="Node2D" parent="bullet_train"]
+position = Vector2( -1472, 0 )
+
+[node name="center4" type="Node2D" parent="bullet_train"]
+position = Vector2( -736, 0 )
+
+[node name="center5" type="Node2D" parent="bullet_train"]
+
+[node name="back_1" type="Sprite" parent="bullet_train/center5"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="back_2" type="Sprite" parent="bullet_train/center5"]
+position = Vector2( 640, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="bullet_train/center5"]
+
+[node name="center6" type="Node2D" parent="bullet_train"]
+position = Vector2( 736, 0 )
+
+[node name="center7" type="Node2D" parent="bullet_train"]
+position = Vector2( 1472, 0 )
+
+[node name="center8" type="Node2D" parent="bullet_train"]
+position = Vector2( 2208, 0 )
+
+[node name="head" type="Node2D" parent="bullet_train"]
+position = Vector2( 2944, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 117, 494 )
+
+[node name="Layers" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Layer_4" type="Area2D" parent="Layers"]
+position = Vector2( 0, 458 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_4"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_3" type="Area2D" parent="Layers"]
+position = Vector2( 0, 508 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_3"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_2" type="Area2D" parent="Layers"]
+position = Vector2( 0, 558 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_2"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_1" type="Area2D" parent="Layers"]
+position = Vector2( 0, 608 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_1"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_0" type="Area2D" parent="Layers"]
+position = Vector2( 0, 658 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_0"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}

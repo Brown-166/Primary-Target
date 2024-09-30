@@ -259,7 +259,7 @@ func _physics_process(delta):
 				else:
 					moveLeft = false
 				
-				if Global.fase == "Fase_1":
+				if Global.fase == "Fase_1" || Global.fase == "Fase_3":
 					if Input.is_action_pressed("ui_up"):
 						moveUp = true
 						velocity.y -= speed
@@ -391,7 +391,7 @@ func _physics_process(delta):
 		
 		
 		
-		if Global.fase == "Fase_1":
+		if Global.fase == "Fase_1" || Global.fase == "Fase_3":
 			velocity = velocity.normalized()
 			if dodge == false:
 				move_and_slide(velocity * speed)
