@@ -207,10 +207,10 @@ func _weapon_set():
 
 
 func _ready():
-	if Global.fase == "Fase_2":
-		$Camera2D.current = false
-	else:
+	if Global.fase == "Fase_1":
 		$Camera2D.current = true
+	else:
+		$Camera2D.current = false
 	
 	_weapon_set()
 	$AnimationPlayerUpper.play(ANI_idle)

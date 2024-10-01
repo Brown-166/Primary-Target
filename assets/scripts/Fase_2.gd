@@ -25,7 +25,7 @@ const BULLET = preload("res://assets/objects/AR_bullet.tscn")
 
 func _ready():
 	Global.fase = "Fase_2"
-	$Camera_Fase2.current = true
+	$Camera_Fase_2.current = true
 	for i in back.size():
 		back_original_position[i] = back[i].position.x
 	
@@ -51,7 +51,7 @@ func _physics_process(delta):
 	if Global.dead == true:
 		$AnimationPlayer.play("game_over")
 	
-	$Camera_Fase2.position.x = $Player.position.x + 500
+	$Camera_Fase_2.position.x = $Player.position.x + 500
 	$Position2D_obstacle.position.x = $Player.position.x + (2000-170)
 	if locked == false:
 		$bullet_positions.position.x = $Player.position.x + (290-170)

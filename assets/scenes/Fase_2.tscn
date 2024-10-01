@@ -283,7 +283,7 @@ position = Vector2( 2000, 468 )
 
 [node name="Timer_Obstacle" type="Timer" parent="."]
 
-[node name="Camera_Fase2" type="Camera2D" parent="."]
+[node name="Camera_Fase_2" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
 scale = Vector2( 2, 2 )
 limit_left = -125
