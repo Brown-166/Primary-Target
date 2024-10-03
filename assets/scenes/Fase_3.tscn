@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_back_1.png" type="Texture" id=2]
@@ -6,28 +6,175 @@
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_front_1.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_front_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_front_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Fase_3/bullet_train_inside_tail.png" type="Texture" id=7]
 [ext_resource path="res://assets/scripts/Fase_3.gd" type="Script" id=8]
+[ext_resource path="res://assets/images/Fase_3/bullet_train_inside_head.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Fase_3/rail_road.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5152, 25 )
+extents = Vector2( 6602, 25.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 5152, 25 )
+extents = Vector2( 6602, 25 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5152, 25 )
+extents = Vector2( 6602, 25 )
 
 [node name="Fase_3" type="Node2D"]
 script = ExtResource( 8 )
 
+[node name="rail_road" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -10
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="road0" type="Sprite" parent="rail_road"]
+position = Vector2( -3840, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road1" type="Sprite" parent="rail_road"]
+position = Vector2( -3200, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road2" type="Sprite" parent="rail_road"]
+position = Vector2( -2560, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road3" type="Sprite" parent="rail_road"]
+position = Vector2( -1920, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road4" type="Sprite" parent="rail_road"]
+position = Vector2( -1280, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road5" type="Sprite" parent="rail_road"]
+position = Vector2( -640, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road6" type="Sprite" parent="rail_road"]
+position = Vector2( 0, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road7" type="Sprite" parent="rail_road"]
+position = Vector2( 640, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road8" type="Sprite" parent="rail_road"]
+position = Vector2( 1280, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road9" type="Sprite" parent="rail_road"]
+position = Vector2( 1920, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road10" type="Sprite" parent="rail_road"]
+position = Vector2( 2560, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road11" type="Sprite" parent="rail_road"]
+position = Vector2( 3200, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road12" type="Sprite" parent="rail_road"]
+position = Vector2( 3840, 9 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="road13" type="Sprite" parent="rail_road"]
+position = Vector2( 4480, 9 )
+texture = ExtResource( 10 )
+centered = false
+
 [node name="bullet_train" type="Node2D" parent="."]
 scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="tail" type="Node2D" parent="bullet_train"]
 position = Vector2( -2944, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="back_1" type="Sprite" parent="bullet_train/tail"]
+z_index = -5
+texture = ExtResource( 7 )
+centered = false
+
+[node name="back_2" type="Sprite" parent="bullet_train/tail"]
+position = Vector2( 640, 0 )
+z_index = -5
+texture = ExtResource( 3 )
+centered = false
+
+[node name="front_1" type="Sprite" parent="bullet_train/tail"]
+position = Vector2( 102, -100 )
+z_index = -3
+texture = ExtResource( 4 )
+centered = false
+
+[node name="front_2" type="Sprite" parent="bullet_train/tail"]
+position = Vector2( 426.67, 0 )
+texture = ExtResource( 5 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="front_3" type="Sprite" parent="bullet_train/tail"]
+z_index = 2
+texture = ExtResource( 4 )
+centered = false
+
+[node name="front_4" type="Sprite" parent="bullet_train/tail"]
+position = Vector2( 640, 1 )
+z_index = 1
+texture = ExtResource( 6 )
+centered = false
+
+[node name="front_5" type="Sprite" parent="bullet_train/tail"]
+position = Vector2( -345, 0 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bullet_train/tail"]
+visible = false
+collision_mask = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bullet_train/tail/StaticBody2D"]
+polygon = PoolVector2Array( 229, 355, 5, 355, 31, 329, 106, 254, 107, 254, 32, 329, 253, 329, 230, 354, 355, 354, 383, 329, 736, 329, 736, 330, 634, 330, 610, 355 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="bullet_train/tail/StaticBody2D"]
+polygon = PoolVector2Array( 331, 254, 354, 229, 485, 229, 457, 254, 736, 254, 736, 253, 711, 253, 735.5, 228, 485, 228, 457, 228, 355, 228, 132, 228, 106, 254 )
 
 [node name="center1" type="Node2D" parent="bullet_train"]
 position = Vector2( -2208, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center1"]
 z_index = -5
@@ -77,6 +224,10 @@ polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 73
 
 [node name="center2" type="Node2D" parent="bullet_train"]
 position = Vector2( -1472, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center2"]
 z_index = -5
@@ -126,6 +277,10 @@ polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 73
 
 [node name="center4" type="Node2D" parent="bullet_train"]
 position = Vector2( -736, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center4"]
 z_index = -5
@@ -174,6 +329,10 @@ polygon = PoolVector2Array( 229, 355, 5, 355, 29.5, 330.5, 30, 330, 0, 330, 0, 3
 polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 736, 254, 736, 253, 711, 253, 735.5, 228, 485, 228, 457, 228, 355, 228, 132, 228, 107, 253, 0, 253, 0, 254 )
 
 [node name="center5" type="Node2D" parent="bullet_train"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center5"]
 z_index = -5
@@ -223,6 +382,10 @@ polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 73
 
 [node name="center6" type="Node2D" parent="bullet_train"]
 position = Vector2( 736, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center6"]
 z_index = -5
@@ -272,6 +435,10 @@ polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 73
 
 [node name="center7" type="Node2D" parent="bullet_train"]
 position = Vector2( 1472, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center7"]
 z_index = -5
@@ -321,6 +488,10 @@ polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 73
 
 [node name="center8" type="Node2D" parent="bullet_train"]
 position = Vector2( 2208, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="back_1" type="Sprite" parent="bullet_train/center8"]
 z_index = -5
@@ -370,6 +541,58 @@ polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 73
 
 [node name="head" type="Node2D" parent="bullet_train"]
 position = Vector2( 2944, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="back_1" type="Sprite" parent="bullet_train/head"]
+z_index = -5
+texture = ExtResource( 2 )
+centered = false
+
+[node name="back_2" type="Sprite" parent="bullet_train/head"]
+position = Vector2( 640, 0 )
+z_index = -5
+texture = ExtResource( 3 )
+centered = false
+hframes = 8
+
+[node name="front_1" type="Sprite" parent="bullet_train/head"]
+position = Vector2( 102, -100 )
+z_index = -3
+texture = ExtResource( 4 )
+centered = false
+
+[node name="front_2" type="Sprite" parent="bullet_train/head"]
+texture = ExtResource( 5 )
+centered = false
+hframes = 2
+
+[node name="front_3" type="Sprite" parent="bullet_train/head"]
+z_index = 2
+texture = ExtResource( 4 )
+centered = false
+
+[node name="front_4" type="Sprite" parent="bullet_train/head"]
+position = Vector2( 610, 0 )
+z_index = 1
+texture = ExtResource( 9 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bullet_train/head"]
+visible = false
+collision_mask = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bullet_train/head/StaticBody2D"]
+polygon = PoolVector2Array( 229, 355, 5, 355, 29.5, 330.5, 30, 330, 0, 330, 0, 329, 31, 329, 253, 329, 230, 354, 355, 354, 383, 329, 598, 329, 634, 329, 710, 253, 711, 254, 635, 330, 610, 355 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="bullet_train/head/StaticBody2D"]
+polygon = PoolVector2Array( 107, 254, 331, 254, 354, 229, 485, 229, 457, 254, 711, 254, 737, 228, 485, 228, 457, 228, 355, 228, 132, 228, 107, 253, 0, 253, 0, 254 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 117, 494 )
@@ -388,7 +611,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_4"]
-position = Vector2( 736, 25 )
+position = Vector2( 726, 25 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -401,7 +624,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_3"]
-position = Vector2( 736, 25 )
+position = Vector2( 726, 25 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -414,7 +637,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_2"]
-position = Vector2( 736, 25 )
+position = Vector2( 726, 24.5 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -427,7 +650,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_1"]
-position = Vector2( 736, 25 )
+position = Vector2( 726, 25 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -440,7 +663,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_0"]
-position = Vector2( 736, 25 )
+position = Vector2( 726, 25 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true

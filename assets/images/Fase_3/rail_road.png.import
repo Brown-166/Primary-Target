@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bullet_train_back_tail.png-825c13ed645bb61132a45ae8499ce034.stex"
+path="res://.import/rail_road.png-987bd6d7bfdcb360553db9de2686f191.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Fase_3/bullet_train_back_tail.png"
-dest_files=[ "res://.import/bullet_train_back_tail.png-825c13ed645bb61132a45ae8499ce034.stex" ]
+source_file="res://assets/images/Fase_3/rail_road.png"
+dest_files=[ "res://.import/rail_road.png-987bd6d7bfdcb360553db9de2686f191.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
