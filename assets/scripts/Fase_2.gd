@@ -11,7 +11,7 @@ var locked = false
 onready var back = [$background/Sprite0, $background/Sprite, $background/Sprite2, $background/Sprite3, 
 $background/Sprite4, $background/Sprite5, $background/Sprite6,$background/Sprite7, $background/Sprite8, 
 $background/Sprite9, $background/Sprite10]
-export var back_velocity = 5.0
+export var back_velocity = 1.0
 var back_original_position : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 ,10]
 
 
@@ -130,7 +130,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		get_tree().change_scene("res://assets/interfaces/credits.tscn")
 
 
-func _on_Area2D_Next_Part_body_entered(body):
+func _on_Area2D_Next_Fase_body_entered(body):
 	if body.name == "Player":
 		$AnimationPlayer.play("loading_out")
 

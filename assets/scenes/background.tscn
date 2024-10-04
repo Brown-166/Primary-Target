@@ -4,9 +4,9 @@
 [ext_resource path="res://assets/images/Fase_1/brick_wall.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/Fase_1/sidewalk_0.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/Fase_1/sidewalk_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/Fase_1/city_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/Fase_1/city_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/Fase_1/city_3.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Fase_1/city_1_F1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Fase_1/city_2_F1.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Fase_1/city_3_F1.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/Fase_1/pole.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/Fase_1/hydrant.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/Fase_1/light_pole_(off).png" type="Texture" id=10]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/images/Fase_1/light_pole_(on).png" type="Texture" id=12]
 [ext_resource path="res://assets/images/Fase_1/sewer_0.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_1/sewer_1.png" type="Texture" id=14]
+
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 960, 12.5 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_back_1.png" type="Texture" id=2]
@@ -10,9 +10,64 @@
 [ext_resource path="res://assets/scripts/Fase_3.gd" type="Script" id=8]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_head.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/Fase_3/rail_road.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Fase_3/grass.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Fase_3/grass-dirt.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Fase_2/city_1_F2.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Fase_2/city_2_F2.png" type="Texture" id=14]
+[ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=17]
+
+[sub_resource type="Animation" id=4]
+resource_name = "game_over"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "loading_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "loading_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6602, 25.5 )
+extents = Vector2( 6602, 25 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6602, 25 )
@@ -20,8 +75,103 @@ extents = Vector2( 6602, 25 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 6602, 25 )
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 7.5, 353.75 )
+
 [node name="Fase_3" type="Node2D"]
+position = Vector2( 2, 9 )
 script = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="CanvasLayer" instance=ExtResource( 15 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading_in"
+anims/game_over = SubResource( 4 )
+anims/loading_in = SubResource( 5 )
+anims/loading_out = SubResource( 6 )
+
+[node name="city_background" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -10
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="city0" type="Sprite" parent="city_background"]
+position = Vector2( -3840, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city1" type="Sprite" parent="city_background"]
+position = Vector2( -3200, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city2" type="Sprite" parent="city_background"]
+position = Vector2( -2560, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city3" type="Sprite" parent="city_background"]
+position = Vector2( -1920, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city4" type="Sprite" parent="city_background"]
+position = Vector2( -1280, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city5" type="Sprite" parent="city_background"]
+position = Vector2( -640, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city6" type="Sprite" parent="city_background"]
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city7" type="Sprite" parent="city_background"]
+position = Vector2( 640, 0 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="city8" type="Sprite" parent="city_background"]
+position = Vector2( 1280, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city9" type="Sprite" parent="city_background"]
+position = Vector2( 1920, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city10" type="Sprite" parent="city_background"]
+position = Vector2( 2560, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city11" type="Sprite" parent="city_background"]
+position = Vector2( 3200, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city12" type="Sprite" parent="city_background"]
+position = Vector2( 3840, 0 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="city13" type="Sprite" parent="city_background"]
+position = Vector2( 4480, 0 )
+texture = ExtResource( 13 )
+centered = false
 
 [node name="rail_road" type="Node2D" parent="."]
 scale = Vector2( 2, 2 )
@@ -36,9 +186,67 @@ position = Vector2( -3840, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road0"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road1" type="Sprite" parent="rail_road"]
 position = Vector2( -3200, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road1"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="road2" type="Sprite" parent="rail_road"]
@@ -46,9 +254,67 @@ position = Vector2( -2560, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road2"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road3" type="Sprite" parent="rail_road"]
 position = Vector2( -1920, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road3"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="road4" type="Sprite" parent="rail_road"]
@@ -56,9 +322,67 @@ position = Vector2( -1280, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road4"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road5" type="Sprite" parent="rail_road"]
 position = Vector2( -640, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road5"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="road6" type="Sprite" parent="rail_road"]
@@ -66,9 +390,67 @@ position = Vector2( 0, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road6"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road7" type="Sprite" parent="rail_road"]
 position = Vector2( 640, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road7"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="road8" type="Sprite" parent="rail_road"]
@@ -76,9 +458,67 @@ position = Vector2( 1280, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road8"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road9" type="Sprite" parent="rail_road"]
 position = Vector2( 1920, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road9"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="road10" type="Sprite" parent="rail_road"]
@@ -86,9 +526,67 @@ position = Vector2( 2560, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road10"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road11" type="Sprite" parent="rail_road"]
 position = Vector2( 3200, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road11"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="road12" type="Sprite" parent="rail_road"]
@@ -96,9 +594,67 @@ position = Vector2( 3840, 9 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="grass-dirt" type="Sprite" parent="rail_road/road12"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road12"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road12"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road12"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road12"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
+centered = false
+
 [node name="road13" type="Sprite" parent="rail_road"]
 position = Vector2( 4480, 9 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="grass-dirt" type="Sprite" parent="rail_road/road13"]
+position = Vector2( 0, 65.5 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="grass" type="Sprite" parent="rail_road/road13"]
+show_behind_parent = true
+position = Vector2( 0, 13.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass2" type="Sprite" parent="rail_road/road13"]
+show_behind_parent = true
+position = Vector2( 0, -37.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass3" type="Sprite" parent="rail_road/road13"]
+show_behind_parent = true
+position = Vector2( 0, -88.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="grass4" type="Sprite" parent="rail_road/road13"]
+show_behind_parent = true
+position = Vector2( 0, -139.5 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="bullet_train" type="Node2D" parent="."]
@@ -637,7 +1193,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_2"]
-position = Vector2( 726, 24.5 )
+position = Vector2( 726, 25 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -671,3 +1227,28 @@ __meta__ = {
 
 [node name="Camera_Fase_3" type="Camera2D" parent="."]
 position = Vector2( 302, 462 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D_Next_Fase" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Next_Fase"]
+position = Vector2( 4920, 353.75 )
+shape = SubResource( 7 )
+
+[node name="Enemy_AR" parent="." instance=ExtResource( 16 )]
+position = Vector2( 968, 501 )
+
+[node name="Enemy_Knife" parent="." instance=ExtResource( 17 )]
+position = Vector2( 891, 461 )
+
+[node name="Enemy_Knife2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 827, 556 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Area2D_Next_Fase" to="." method="_on_Area2D_Next_Fase_body_entered"]

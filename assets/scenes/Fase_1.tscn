@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/images/Fase_1/pole.png" type="Texture" id=12]
 [ext_resource path="res://assets/images/Fase_1/light_pole_(off).png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_1/sidewalk_1.png" type="Texture" id=14]
-[ext_resource path="res://assets/images/Fase_1/city_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/Fase_1/city_3_F1.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/Fase_1/light_pole_(on).png" type="Texture" id=16]
 [ext_resource path="res://assets/images/Fase_1/brick_wall.png" type="Texture" id=17]
 [ext_resource path="res://assets/images/Fase_1/tile nav 5x5.png" type="Texture" id=18]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Fase_1/tile nav.png" type="Texture" id=21]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=22]
+
 
 [sub_resource type="Animation" id=17]
 resource_name = "game_over"

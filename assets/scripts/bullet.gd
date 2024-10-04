@@ -4,7 +4,7 @@ var speed = 800
 var velocity = Vector2.ZERO
 var direction = 1
 var layer
-var damage
+var damage : int
 
 func _set_direction(dir):
 	direction = dir

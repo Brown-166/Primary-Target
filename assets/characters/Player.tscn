@@ -15257,6 +15257,7 @@ shape = SubResource( 314 )
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2( 205, -95 )
 current = true
 limit_left = -125

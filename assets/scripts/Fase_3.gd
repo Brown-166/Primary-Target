@@ -8,6 +8,14 @@ $rail_road/road11, $rail_road/road12, $rail_road/road13]
 var road_original_position : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
 12, 13]
 
+onready var city = [$city_background/city0, $city_background/city1, 
+$city_background/city2, $city_background/city3, $city_background/city4,
+$city_background/city5, $city_background/city6, $city_background/city7,
+$city_background/city8, $city_background/city9, $city_background/city10,
+$city_background/city11, $city_background/city12, $city_background/city13]
+
+var city_original_positon : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+12, 13]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +24,9 @@ func _ready():
 	
 	for i in rail_road.size():
 		road_original_position[i] = rail_road[i].position.x
+	
+	for i in city.size():
+		city_original_positon[i] = city[i].position.x
 
 
 func _physics_process(delta):
@@ -25,3 +36,21 @@ func _physics_process(delta):
 		rail_road[i].position.x -= 15
 		if rail_road[i].position.x <= (road_original_position[i] - 640):
 			rail_road[i].position.x = road_original_position[i]
+	
+	for i in city.size():
+		city[i].position.x -= 1
+		if city[i].position.x <= (city_original_positon[i] - 640):
+			city[i].position.x = city_original_positon[i]
+
+
+func _on_Area2D_Next_Fase_body_entered(body):
+	if body.name == "Player":
+		$AnimationPlayer.play("loading_out")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "game_over":
+		get_tree().change_scene("res://assets/interfaces/game_over.tscn")
+	if anim_name == "loading_out":
+		print("finish")
+		#get_tree().change_scene("res://assets/interfaces/credits.tscn")
