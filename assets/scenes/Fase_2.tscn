@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://assets/images/Fase_2/bullet_train_head.png" type="Texture" id=8]
 [ext_resource path="res://assets/scripts/Fase_2.gd" type="Script" id=9]
 [ext_resource path="res://assets/images/Fase_2/city_2_F2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Fase_2/bullet_hole.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Fase_3/grass.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Fase_3/rail_road.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Fase_3/grass-dirt.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=19]
 resource_name = "game_over"
@@ -70,6 +74,7 @@ extents = Vector2( 9, 219 )
 
 [node name="Fase_2" type="Node2D"]
 script = ExtResource( 9 )
+bullet_hole_texture = ExtResource( 11 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -151,6 +156,439 @@ centered = false
 position = Vector2( 11520, 0 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite11" type="Sprite" parent="background"]
+position = Vector2( 12800, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="rail_road" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="road0" type="Sprite" parent="rail_road"]
+position = Vector2( -640, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road0"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road1" type="Sprite" parent="rail_road"]
+position = Vector2( 0, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road1"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road2" type="Sprite" parent="rail_road"]
+position = Vector2( 640, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road2"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road3" type="Sprite" parent="rail_road"]
+position = Vector2( 1280, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road3"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road4" type="Sprite" parent="rail_road"]
+position = Vector2( 1920, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road4"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road5" type="Sprite" parent="rail_road"]
+position = Vector2( 2560, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road5"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road6" type="Sprite" parent="rail_road"]
+position = Vector2( 3200, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road6"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road7" type="Sprite" parent="rail_road"]
+position = Vector2( 3840, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road7"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road8" type="Sprite" parent="rail_road"]
+position = Vector2( 4480, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road8"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road9" type="Sprite" parent="rail_road"]
+position = Vector2( 5120, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road9"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road10" type="Sprite" parent="rail_road"]
+position = Vector2( 5760, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road10"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="road11" type="Sprite" parent="rail_road"]
+position = Vector2( 6400, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="rail_road/road11"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="Bullet_Train" type="Node2D" parent="."]
@@ -285,7 +723,8 @@ position = Vector2( 2000, 468 )
 [node name="Timer_Obstacle" type="Timer" parent="."]
 
 [node name="Camera_Fase_2" type="Camera2D" parent="."]
-position = Vector2( 640, 360 )
+visible = false
+position = Vector2( 640, 378 )
 scale = Vector2( 2, 2 )
 limit_left = -125
 drag_margin_h_enabled = true
