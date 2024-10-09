@@ -3,19 +3,20 @@ extends Node2D
 onready var rail_road = [$rail_road/road0, $rail_road/road1, $rail_road/road2,
 $rail_road/road3, $rail_road/road4, $rail_road/road5, $rail_road/road6, 
 $rail_road/road7, $rail_road/road8, $rail_road/road9, $rail_road/road10,
-$rail_road/road11, $rail_road/road12, $rail_road/road13]
+$rail_road/road11, $rail_road/road12, $rail_road/road13, $rail_road/road14]
 
 var road_original_position : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
-12, 13]
+12, 13, 14]
 
 onready var city = [$city_background/city0, $city_background/city1, 
 $city_background/city2, $city_background/city3, $city_background/city4,
 $city_background/city5, $city_background/city6, $city_background/city7,
 $city_background/city8, $city_background/city9, $city_background/city10,
-$city_background/city11, $city_background/city12, $city_background/city13]
+$city_background/city11, $city_background/city12, $city_background/city13,
+$city_background/city14]
 
 var city_original_positon : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
-12, 13]
+12, 13, 14]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

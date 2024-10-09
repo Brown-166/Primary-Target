@@ -10899,11 +10899,10 @@ position = Vector2( 0, 5.5 )
 shape = SubResource( 189 )
 
 [node name="Area2D_Ground" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Ground"]
-position = Vector2( 0, 39 )
+position = Vector2( 0, 37 )
 shape = SubResource( 190 )
 
 [node name="Area2D_Follow" type="Area2D" parent="."]

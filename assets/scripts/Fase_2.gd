@@ -8,6 +8,8 @@ var bullet_timer
 var ammo = 0
 var locked = false
 
+var next_fase = false
+
 export(Texture) var bullet_hole_texture
 
 onready var back = [$background/Sprite0, $background/Sprite, $background/Sprite2, $background/Sprite3, 
@@ -97,7 +99,7 @@ func _on_Timer_Obstacle_timeout():
 
 
 func _on_Timer_bullet_warning_timeout():
-	$bullet_positions/warning.visible = true
+	#$bullet_positions/warning.visible = true
 	locked = true
 
 
@@ -115,6 +117,7 @@ func _on_Timer_bullet_timeout():
 
 func _on_Timer_shoot_timeout():
 	if ammo > 0:
+		
 		$bullet_positions/audio_shoot.play()
 		var bullet = BULLET.instance()
 		get_parent().add_child(bullet)
@@ -140,7 +143,7 @@ func _on_Timer_shoot_timeout():
 		ammo -= 1
 		bullet_hole.position = bullet.position
 	else:
-		$bullet_positions/audio_shoot.stop()
+		#$bullet_positions/audio_shoot.stop()
 		locked = false
 		$Timer_shoot.stop()
 
@@ -155,8 +158,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_Area2D_Next_Fase_body_entered(body):
 	if body.name == "Player":
 		$AnimationPlayer.play("loading_out")
+		next_fase = true
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	Global.life = 0
-	$AnimationPlayer.play("game_over")
+	if next_fase == false:
+		Global.life = 0
+		$AnimationPlayer.play("game_over")

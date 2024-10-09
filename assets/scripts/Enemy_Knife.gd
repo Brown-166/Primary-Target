@@ -267,26 +267,34 @@ func _on_Area2D_Enemy_Knife_area_entered(area):
 	if layer == LAYER.playerLayer:
 		match area.name:
 			"Area2D_Katana":
+				$audio_cut_dmg_1.play()
 				life -= Global.katana_DMG
 				_cut_DMG()
 			"Area2D_Hammer":
+				$audio_smash_dmg_1.play()
 				life -= Global.hammer_DMG
 				_cut_DMG()
 			"Area2D_Hammer_stagger":
+				$audio_smash_dmg_1.play()
 				life -= Global.hammer_DMG/3
 				staggered = true
 				_cut_DMG()
 			"Area2D_Katar":
+				$audio_cut_dmg_2.play()
 				life -= Global.katar_DMG
 				_cut_DMG()
 			"Area2D_Axe":
 				life -= Global.axe_DMG
+				_cut_DMG()
 			"Area2D_Tonfa":
 				life -= Global.tonfa_DMG
+				_cut_DMG()
 			"Area2D_Wakizashi":
 				life -= Global.wakizashi_DMG
+				_cut_DMG()
 			"Area2D_Great_Sword":
 				life -= Global.great_sword_DMG
+				_cut_DMG()
 		
 #
 #		if area.name == "Area2D_Player":

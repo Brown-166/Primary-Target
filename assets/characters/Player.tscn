@@ -15231,10 +15231,9 @@ position = Vector2( 0, 6.5 )
 shape = SubResource( 137 )
 
 [node name="Area2D_Ground" type="Area2D" parent="."]
-visible = false
 
 [node name="Collision_Ground" type="CollisionShape2D" parent="Area2D_Ground"]
-position = Vector2( 0.472222, 40 )
+position = Vector2( 0.472222, 38 )
 shape = SubResource( 136 )
 
 [node name="Area2D_Block" type="Area2D" parent="."]
@@ -15298,7 +15297,7 @@ __meta__ = {
 
 [node name="audio_block_2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 120 )
-volume_db = 10.0
+volume_db = 2.0
 __meta__ = {
 "_edit_lock_": true
 }
