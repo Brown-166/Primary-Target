@@ -59,6 +59,5 @@ func _on_Area2D_bullet_area_entered(area):
 				queue_free()
 		elif area.name == "Area2D_Player":
 			if Global.dodge == false:
-				print("Bullet")
 				Global.life -= damage
 				queue_free()

@@ -3063,7 +3063,7 @@ shape = SubResource( 324 )
 [node name="Area2D_Ground" type="Area2D" parent="."]
 
 [node name="Collision_Ground" type="CollisionShape2D" parent="Area2D_Ground"]
-position = Vector2( 0.472222, 38 )
+position = Vector2( 0.472222, 40 )
 shape = SubResource( 322 )
 
 [node name="Timer_Stamina" type="Timer" parent="."]

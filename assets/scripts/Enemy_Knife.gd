@@ -31,6 +31,7 @@ var back = false
 var attack = false
 var attackVar = false
 
+var pushed = false
 
 onready var enemy_parts = [
 	$Enemy_Parts/Upper_Right/Head, $Enemy_Parts/Upper_Right/Chest, 
@@ -56,6 +57,8 @@ onready var enemy_dmg = [
 	
 
 onready var knife_sprites = [$Enemy_Parts/Upper_Right/Knife/Sprite]
+
+onready var ray_casts = [$RayCasts/Right, $RayCasts/Left, $RayCasts/Up, $RayCasts/Down]
 
 
 func _attack():
@@ -142,8 +145,9 @@ func _physics_process(delta):
 				
 				if back == false:
 					if moving == true:
-						velocity = global_position.direction_to(target.global_position)
-						move_and_collide(velocity * speed * delta)
+						if pushed == false:
+							velocity = global_position.direction_to(target.global_position)
+							move_and_collide(velocity * speed * delta)
 				else:
 					if moving == true:
 						velocity = -(global_position.direction_to(target.global_position))
@@ -165,6 +169,18 @@ func _physics_process(delta):
 			for area in $Area2D_Ground.get_overlapping_areas():
 				layer = LAYER._get_layer(area.name, layer)
 				z_index = LAYER._get_z_index(area.name, z_index)
+			
+			
+			if $RayCasts/Right.is_colliding():
+				pushed = true
+			elif $RayCasts/Left.is_colliding():
+				pushed = true
+			elif $RayCasts/Up.is_colliding():
+				pushed = true
+			elif $RayCasts/Down.is_colliding():
+				pushed = true
+			else:
+				pushed = false
 			
 			
 			for area in $Enemy_Parts/Upper_Right/Knife/Knife_2D.get_overlapping_areas():

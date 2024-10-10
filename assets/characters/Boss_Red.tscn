@@ -3537,7 +3537,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Ground"]
-position = Vector2( 0.5, 38 )
+position = Vector2( 0.5, 41 )
 shape = SubResource( 47 )
 
 [node name="Timer_Stamina" type="Timer" parent="."]

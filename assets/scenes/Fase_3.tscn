@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_back_1.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/characters/Enemy_Pistol.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/objects/medKit.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=4]
 resource_name = "game_over"
@@ -67,13 +69,13 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6602, 25 )
+extents = Vector2( 7338, 25 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6602, 25 )
+extents = Vector2( 7338, 25 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6602, 25 )
+extents = Vector2( 7338, 25 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 7.5, 353.75 )
@@ -1376,9 +1378,6 @@ centered = false
 hframes = 9
 frame = 8
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 117, 494 )
-
 [node name="Layers" type="Node2D" parent="."]
 visible = false
 __meta__ = {
@@ -1393,7 +1392,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_4"]
-position = Vector2( 726, 25 )
+position = Vector2( -10, 25 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -1406,7 +1405,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_3"]
-position = Vector2( 726, 25 )
+position = Vector2( -10, 25 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -1419,7 +1418,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_2"]
-position = Vector2( 726, 25 )
+position = Vector2( -10, 25 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -1432,7 +1431,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_1"]
-position = Vector2( 726, 25 )
+position = Vector2( -10, 25 )
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -1445,7 +1444,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_0"]
-position = Vector2( 726, 25 )
+position = Vector2( -10, 25 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
@@ -1475,6 +1474,36 @@ position = Vector2( 891, 461 )
 
 [node name="Enemy_Knife2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 827, 556 )
+
+[node name="Enemy_Pistol" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2362, 453 )
+
+[node name="Enemy_Pistol2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2128, 555 )
+
+[node name="Enemy_Knife3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2292, 502 )
+
+[node name="Enemy_Knife4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3813, 463 )
+
+[node name="Enemy_Knife5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 4017, 507 )
+
+[node name="Enemy_Knife6" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3657, 555 )
+
+[node name="Enemy_AR2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 4114, 463 )
+
+[node name="Enemy_Pistol3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 4538, 505 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 117, 494 )
+
+[node name="medKit" parent="." instance=ExtResource( 19 )]
+position = Vector2( -6848, 582 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Area2D_Next_Fase" to="." method="_on_Area2D_Next_Fase_body_entered"]

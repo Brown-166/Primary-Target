@@ -248,31 +248,39 @@ func _physics_process(delta):
 					moveRight = true
 					velocity.x += speed
 					$AnimationPlayerLower.play("walk")
+					$RayCasts/Right.enabled = true
 				else:
 					moveRight = false
+					$RayCasts/Right.enabled = false
 				
 				if Input.is_action_pressed("ui_left"):
 					flip = true
 					moveLeft = true
 					velocity.x -= speed
 					$AnimationPlayerLower.play("walk")
+					$RayCasts/Left.enabled = true
 				else:
 					moveLeft = false
+					$RayCasts/Left.enabled = false
 				
 				if Global.fase == "Fase_1" || Global.fase == "Fase_3":
 					if Input.is_action_pressed("ui_up"):
 						moveUp = true
 						velocity.y -= speed
 						$AnimationPlayerLower.play("walk")
+						$RayCasts/Up.enabled = true
 					else:
 						moveUp = false
+						$RayCasts/Up.enabled = false
 					
 					if Input.is_action_pressed("ui_down"):
 						moveDown = true
 						velocity.y += speed
 						$AnimationPlayerLower.play("walk")
+						$RayCasts/Down.enabled = true
 					else:
 						moveDown = false
+						$RayCasts/Down.enabled = false
 				if Global.fase == "Fase_2":
 					if Input.is_action_just_pressed("space"):
 						if grounded == true:
@@ -410,6 +418,22 @@ func _physics_process(delta):
 				move_and_slide(velocity * jumpForce)
 			if jump == false:
 				move_and_slide(velocity * gravity)
+		
+		
+		
+		
+		if $RayCasts/Right.is_colliding():
+			var enemy = $RayCasts/Right.get_collider()
+			enemy.move_and_slide(Vector2(15, 0) * speed * delta)
+		if $RayCasts/Left.is_colliding():
+			var enemy = $RayCasts/Left.get_collider()
+			enemy.move_and_slide(Vector2(-15, 0) * speed * delta)
+		if $RayCasts/Up.is_colliding():
+			var enemy = $RayCasts/Up.get_collider()
+			enemy.move_and_slide(Vector2(0, -15) * speed * delta)
+		if $RayCasts/Down.is_colliding():
+			var enemy = $RayCasts/Down.get_collider()
+			enemy.move_and_slide(Vector2(0, 15) * speed * delta)
 		
 		
 		

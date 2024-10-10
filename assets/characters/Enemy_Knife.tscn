@@ -7930,6 +7930,30 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="RayCasts" type="Node2D" parent="."]
+visible = false
+position = Vector2( 0, 31.25 )
+
+[node name="Right" type="RayCast2D" parent="RayCasts"]
+enabled = true
+cast_to = Vector2( 15, 0 )
+collision_mask = 2
+
+[node name="Left" type="RayCast2D" parent="RayCasts"]
+enabled = true
+cast_to = Vector2( -15, 0 )
+collision_mask = 2
+
+[node name="Up" type="RayCast2D" parent="RayCasts"]
+enabled = true
+cast_to = Vector2( 0, -15 )
+collision_mask = 2
+
+[node name="Down" type="RayCast2D" parent="RayCasts"]
+enabled = true
+cast_to = Vector2( 0, 15 )
+collision_mask = 2
+
 [node name="Area2D_Enemy_Knife" type="Area2D" parent="."]
 visible = false
 collision_layer = 4
@@ -7943,7 +7967,7 @@ shape = SubResource( 189 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Ground"]
-position = Vector2( 0, 37 )
+position = Vector2( 0, 39 )
 shape = SubResource( 190 )
 
 [node name="Area2D_Follow" type="Area2D" parent="."]

@@ -31,6 +31,9 @@ func _ready():
 
 
 func _physics_process(delta):
+	if Global.dead == true:
+		$AnimationPlayer.play("game_over")
+		
 	$Camera_Fase_3.position.x = $Player.position.x + 300
 	
 	for i in rail_road.size():
@@ -53,5 +56,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "game_over":
 		get_tree().change_scene("res://assets/interfaces/game_over.tscn")
 	if anim_name == "loading_out":
-		print("finish")
-		#get_tree().change_scene("res://assets/interfaces/credits.tscn")
+		get_tree().change_scene("res://assets/interfaces/credits.tscn")
