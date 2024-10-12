@@ -23,7 +23,6 @@
 [ext_resource path="res://assets/images/Fase_1/tile nav.png" type="Texture" id=21]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=22]
 
-
 [sub_resource type="Animation" id=17]
 resource_name = "game_over"
 length = 5.0
@@ -216,7 +215,7 @@ visible = false
 margin_top = 681.0
 margin_right = 1231.0
 margin_bottom = 703.0
-max_value = 250.0
+max_value = 300.0
 step = 1.0
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]

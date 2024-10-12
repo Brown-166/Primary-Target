@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var life = 250
+var life = 300
 var stamina = 15
 var velocity = Vector2.ZERO
 var speed = 150
