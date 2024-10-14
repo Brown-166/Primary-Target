@@ -202,7 +202,10 @@ func _physics_process(delta):
 #	print("dodge: " + String(dodge))
 #	print("stamina: " + String(stamina))
 #	print(dodge_time)
-	print(dodge)
+#	print("layer: " + String(get_collision_layer_bit(2)))
+#	print("mask: " + String(get_collision_mask_bit(1)))
+#	print("player: " + String(LAYER.playerLayer))
+#	print("boss: " + String(layer))
 
 func _dead():
 	moving = false

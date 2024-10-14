@@ -4,7 +4,7 @@ var velocity = Vector2.ZERO
 var speed = 200
 var jumpForce = speed * 5
 var gravity = speed * 5
-var layer
+var layer :int
 var grounded = false
 var moveRight = false
 var moveLeft = false

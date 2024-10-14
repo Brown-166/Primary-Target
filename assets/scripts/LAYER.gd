@@ -1,6 +1,6 @@
 extends Node
 
-var playerLayer = 0
+var playerLayer :int = 0
 var enemysLayer = [ 0, 0, 0 ]
 
 func _physics_process(delta):

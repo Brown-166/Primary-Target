@@ -3068,7 +3068,6 @@ collision_mask = 3
 [node name="Collision_Boss_Blue" type="CollisionShape2D" parent="Area2D_Boss_Blue"]
 position = Vector2( 0, 6.5 )
 shape = SubResource( 319 )
-disabled = true
 
 [node name="Area2D_Follow" type="Area2D" parent="."]
 visible = false

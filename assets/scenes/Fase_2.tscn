@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=2]
+[ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/images/Fase_2/city_1_F2.png" type="Texture" id=4]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/images/Fase_2/bullet_train_tail.png" type="Texture" id=6]
@@ -81,6 +82,9 @@ bullet_hole_texture = ExtResource( 11 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[node name="pause_menu" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"
