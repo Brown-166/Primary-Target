@@ -1,4 +1,4 @@
-[gd_scene load_steps=309 format=2]
+[gd_scene load_steps=310 format=2]
 
 [ext_resource path="res://assets/scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Player/Red/Head.png" type="Texture" id=2]
@@ -123,6 +123,7 @@
 [ext_resource path="res://assets/audios/walk.MP3" type="AudioStream" id=121]
 [ext_resource path="res://assets/audios/weapon_swoosh_3.MP3" type="AudioStream" id=122]
 [ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=123]
+[ext_resource path="res://assets/audios/fall_1.MP3" type="AudioStream" id=124]
 
 [sub_resource type="AtlasTexture" id=270]
 atlas = ExtResource( 103 )
@@ -12743,6 +12744,18 @@ tracks/32/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/33/type = "value"
+tracks/33/path = NodePath("audio_fall:playing")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=316]
 resource_name = "katana_staggered"
@@ -13168,6 +13181,18 @@ tracks/34/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("audio_fall:playing")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=321]
@@ -14531,6 +14556,18 @@ tracks/34/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/35/type = "value"
+tracks/35/path = NodePath("audio_fall:playing")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 1.4, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="RectangleShape2D" id=304]
 extents = Vector2( 8.48958, 8.55554 )
@@ -15289,6 +15326,10 @@ editor_draw_drag_margin = true
 
 [node name="audio_walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 121 )
+
+[node name="audio_fall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 124 )
+volume_db = 10.0
 
 [node name="audio_attack_1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 36 )

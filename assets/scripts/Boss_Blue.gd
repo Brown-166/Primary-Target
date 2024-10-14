@@ -202,7 +202,7 @@ func _physics_process(delta):
 #	print("dodge: " + String(dodge))
 #	print("stamina: " + String(stamina))
 #	print(dodge_time)
-	print(Global.block)
+	print(dodge)
 
 func _dead():
 	moving = false
@@ -216,8 +216,6 @@ func _dead():
 	$AnimationPlayerUpper.queue_free()
 	$AnimationPlayerLower.queue_free()
 	$Timer_Stamina.queue_free()
-	
-	#$Audio_DMG3.play()
 	
 	$AnimationPlayerFull.play("Dead")
 
@@ -247,14 +245,9 @@ func _on_Area2D_Boss_Blue_area_entered(area):
 			"Area2D_Great_Sword":
 				life -= Global.great_sword_DMG
 		
-#
-#		if area.name == "Area2D_Player":
-#			attack = false
-#			moving = true
-#			stop = false
-#			back = true
 		
 		if life <= 0:
+			$AnimationPlayerFull.playback_speed = 1
 			_dead()
 
 
