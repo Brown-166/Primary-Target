@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/scripts/Player_motorcycle.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_side_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_side_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/Player_back.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/Player_side.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_back_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_back_2.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "back",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "side",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "back",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "side",
+"speed": 8.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "back",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "side",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 38 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 11.6745, 42.9609 )
+
+[node name="Player_motorcycle" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 1 )
+
+[node name="motorcycle" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "back"
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="tire_back" type="AnimatedSprite" parent="motorcycle"]
+frames = SubResource( 2 )
+animation = "back"
+frame = 1
+playing = true
+
+[node name="tire_front" type="AnimatedSprite" parent="motorcycle"]
+show_behind_parent = true
+position = Vector2( 63, -23 )
+frames = SubResource( 3 )
+animation = "back"
+
+[node name="CollisionBack" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="CollisionSide" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -7, 2.943 )
+rotation = 0.994838
+shape = SubResource( 5 )
+disabled = true
