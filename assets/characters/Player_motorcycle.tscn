@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/scripts/Player_motorcycle.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_side_2.png" type="Texture" id=2]
@@ -53,6 +53,9 @@ extents = Vector2( 10, 38 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 11.6745, 42.9609 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 13, 0.25 )
+
 [node name="Player_motorcycle" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
 collision_layer = 2
@@ -90,3 +93,9 @@ position = Vector2( -7, 2.943 )
 rotation = 0.994838
 shape = SubResource( 5 )
 disabled = true
+
+[node name="Area2D_Player_motorcycle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Player_motorcycle"]
+position = Vector2( 0, 38.75 )
+shape = SubResource( 6 )

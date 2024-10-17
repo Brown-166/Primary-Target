@@ -1,27 +1,53 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Player_motorcycle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/images/Fase_5/road_1.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/Fase_5/road_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Fase_5/road_2_v2.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Fase_5/road_3_v2.png" type="Texture" id=4]
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/Fase_5/road_1_v2.png" type="Texture" id=7]
+[ext_resource path="res://assets/scripts/Fase_5.gd" type="Script" id=8]
+[ext_resource path="res://assets/images/Fase_5/building_color.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Fase_5/building.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "straight",
-"speed": 10.0
+"speed": 18.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 418.651 )
+extents = Vector2( 10, 303.122 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 649.5, 5 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 640, 9 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 640, 9 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 640, 26 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 640, 34 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 640, 47 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 640, 64 )
+
 [node name="Fase_5" type="Node2D"]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -32,37 +58,145 @@ visible = false
 
 [node name="background" type="Node2D" parent="."]
 scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="sky" type="Sprite" parent="background"]
 texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="background/sky"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 180.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
+
+[node name="buildings" type="Node2D" parent="background"]
+
+[node name="building2" type="Sprite" parent="background/buildings"]
+position = Vector2( 95, 69 )
+scale = Vector2( 0.645, 0.585 )
+texture = ExtResource( 10 )
+centered = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="color" type="Sprite" parent="background/buildings/building2"]
+modulate = Color( 0.141176, 0.137255, 0.278431, 1 )
+show_behind_parent = true
+texture = ExtResource( 9 )
+centered = false
+
+[node name="building" type="Sprite" parent="background/buildings"]
+position = Vector2( -70, 39 )
+texture = ExtResource( 10 )
+centered = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="color" type="Sprite" parent="background/buildings/building"]
+modulate = Color( 0.141176, 0.137255, 0.278431, 1 )
+show_behind_parent = true
+texture = ExtResource( 9 )
 centered = false
 
 [node name="road" type="AnimatedSprite" parent="background"]
 frames = SubResource( 1 )
 animation = "straight"
-frame = 1
-playing = true
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player_motorcycle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 631, 619 )
+position = Vector2( 642, 611 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 collision_mask = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 145, 375 )
-rotation = 0.418879
+position = Vector2( 240, 530 )
+rotation = 0.925025
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 1135, 375 )
-rotation = -0.418879
+position = Vector2( 1040, 530 )
+rotation = -0.925025
 shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 collision_mask = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 639.5, 5 )
+position = Vector2( 639.5, 355 )
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 639.5, 725 )
+shape = SubResource( 3 )
+
+[node name="Layers" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="distance_5" type="Area2D" parent="Layers"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/distance_5"]
+position = Vector2( 640, 351 )
+shape = SubResource( 5 )
+
+[node name="distance_4" type="Area2D" parent="Layers"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/distance_4"]
+position = Vector2( 640, 369 )
+shape = SubResource( 6 )
+
+[node name="distance_3" type="Area2D" parent="Layers"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/distance_3"]
+position = Vector2( 640, 404 )
+shape = SubResource( 7 )
+
+[node name="distance_2" type="Area2D" parent="Layers"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/distance_2"]
+position = Vector2( 640, 464 )
+shape = SubResource( 8 )
+
+[node name="distance_1" type="Area2D" parent="Layers"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/distance_1"]
+position = Vector2( 640, 545 )
+shape = SubResource( 9 )
+
+[node name="distance_0" type="Area2D" parent="Layers"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/distance_0"]
+position = Vector2( 640, 656 )
+shape = SubResource( 4 )

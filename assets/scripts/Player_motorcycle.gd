@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 var speed = 4
-
+var max_speed = 0
 
 onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_front]
 # Declare member variables here. Examples:
@@ -16,7 +16,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= speed
 	elif Input.is_action_pressed("ui_down"):
@@ -60,6 +59,15 @@ func _physics_process(delta):
 		$CollisionSide.disabled = true
 		for i in sprites.size():
 			sprites[i].play("back")
+	
+	if velocity.x > max_speed:
+		velocity.x = max_speed
+	elif velocity.x < -max_speed:
+		velocity.x = -max_speed
+	if velocity.y > max_speed:
+		velocity.y = max_speed
+	elif velocity.y < -max_speed:
+		velocity.y = -max_speed
 	
 	velocity.normalized()
 	move_and_slide(velocity * speed)
