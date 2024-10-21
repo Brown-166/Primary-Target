@@ -23,12 +23,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "back",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "side",
 "speed": 8.0
@@ -41,7 +41,7 @@ animations = [ {
 "name": "back",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "side",
 "speed": 8.0
@@ -73,14 +73,14 @@ __meta__ = {
 [node name="tire_back" type="AnimatedSprite" parent="motorcycle"]
 frames = SubResource( 2 )
 animation = "back"
-frame = 1
-playing = true
+speed_scale = 10.0
 
 [node name="tire_front" type="AnimatedSprite" parent="motorcycle"]
 show_behind_parent = true
 position = Vector2( 63, -23 )
 frames = SubResource( 3 )
 animation = "back"
+speed_scale = 10.0
 
 [node name="CollisionBack" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
@@ -97,5 +97,5 @@ disabled = true
 [node name="Area2D_Player_motorcycle" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Player_motorcycle"]
-position = Vector2( 0, 38.75 )
+position = Vector2( 0, 24.75 )
 shape = SubResource( 6 )
