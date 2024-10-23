@@ -50,6 +50,9 @@ func _color_build(build):
 func _ready():
 	Global.fase = "Fase_5"
 	_color_build(0)
+	$background/road.play("straight")
+	$background/AnimationPlayerLeft.play("straight")
+	$background/AnimationPlayerLeft.play("straight")
 
 
 
@@ -62,7 +65,6 @@ func _physics_process(delta):
 		var vehicle = area.get_parent()
 		if vehicle.scale < Vector2(2, 2):
 			vehicle.scale += Vector2(scaling, scaling)
-		
 	
 	for area in $Layers/distance_1.get_overlapping_areas():
 		var vehicle = area.get_parent()
@@ -98,3 +100,18 @@ func _physics_process(delta):
 			vehicle.scale -= Vector2(scaling, scaling)
 		elif vehicle.scale < Vector2(0.5, 0.5):
 			vehicle.scale += Vector2(scaling, scaling)
+	
+	
+	if $background/AnimationPlayerLeft.current_animation == "turn_right":
+		$Player_motorcycle.position.x -= 5
+	
+	if Input.is_action_just_pressed("ui_right"):
+		$background/road.play("turn_right")
+		$background/AnimationPlayerLeft.play("turn_right")
+
+
+func _on_AnimationPlayerLeft_animation_finished(anim_name):
+	if anim_name == "turn_right":
+		$background/road.play("straight")
+		$background/AnimationPlayerLeft.play("straight")
+

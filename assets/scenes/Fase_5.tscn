@@ -1,168 +1,27 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Player_motorcycle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/images/Fase_5/road_2_v2.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/Fase_5/road_3_v2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Fase_5/road_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Fase_5/road_3.png" type="Texture" id=4]
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/images/Fase_5/road_1_v2.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Fase_5/road_1.png" type="Texture" id=7]
 [ext_resource path="res://assets/scripts/Fase_5.gd" type="Script" id=8]
 [ext_resource path="res://assets/images/Fase_5/building_color.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/Fase_5/building.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/Fase_2/city_1_F2.png" type="Texture" id=11]
-
-[sub_resource type="Animation" id=11]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("background/buildings/Left/building6:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -69, 39 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("background/buildings/Left/building6:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("background/buildings/Left/building6:z_index")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("background/buildings/Left/building5:z_index")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -2 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("background/buildings/Left/building7:z_index")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -1 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("background/buildings/Left/building7:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 95, 69 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("background/buildings/Left/building7:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.645, 0.585 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("background/buildings/Left/building5:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 208, 90 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("background/buildings/Left/building5:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.24, 0.45 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("background/buildings/Left/building8:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 255, 135 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("background/buildings/Left/building8:z_index")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -3 ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("background/buildings/Left/building8:scale")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.025, 0.350161 ) ]
-}
+[ext_resource path="res://assets/images/Fase_5/road_turn_right_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Fase_5/road_turn_right_0.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Fase_5/road_turn_right_4.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/Fase_5/road_turn_right_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/Fase_5/road_turn_right_3.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=10]
 resource_name = "straight"
 length = 12.0
 loop = true
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("background/buildings/Left/building5:position")
 tracks/0/interp = 1
@@ -317,6 +176,189 @@ tracks/12/keys = {
 "times": PoolRealArray( 2.8, 5.8, 8.8, 11.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
+"args": [ 5 ],
+"method": "_color_build"
+}, {
+"args": [ 6 ],
+"method": "_color_build"
+}, {
+"args": [ 7 ],
+"method": "_color_build"
+}, {
+"args": [ 8 ],
+"method": "_color_build"
+} ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "turn_right"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("background/buildings/Left/building5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 3, 6, 9, 12, 14.7, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30, 179 ), Vector2( -178.5, 211 ), Vector2( 297.688, 176.94 ), Vector2( 276, 155.125 ), Vector2( 192.125, 157.731 ), Vector2( 44.5, 173 ), Vector2( -178.5, 211 ), Vector2( 378.063, 162.821 ), Vector2( 276, 155.125 ), Vector2( 170.375, 153.244 ), Vector2( 30, 179 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("background/buildings/Left/building5:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.7, 3, 6, 9, 12, 14.7, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.176, 0.363 ), Vector2( 0.412, 0.483 ), Vector2( 0.825, 0.647 ), Vector2( 1.145, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.477, 0.389 ), Vector2( 0.412, 0.483 ), Vector2( 0.705, 0.606 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("background/buildings/Left/building6:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3, 5.7, 6, 9, 12, 15, 17.7, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 159.5, 151 ), Vector2( 33.625, 177.5 ), Vector2( -178.5, 211 ), Vector2( 337.875, 169.881 ), Vector2( 298, 156.188 ), Vector2( 203, 159.975 ), Vector2( 40.875, 174.5 ), Vector2( -178.5, 211 ), Vector2( 337.875, 169.881 ), Vector2( 254, 154.063 ), Vector2( 159.5, 151 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("background/buildings/Left/building6:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 5.7, 6, 9, 12, 15, 17.7, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.645, 0.585 ), Vector2( 1.036, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.326, 0.376 ), Vector2( 0.499, 0.5 ), Vector2( 0.885, 0.667678 ), Vector2( 1.109, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.326, 0.376 ), Vector2( 0.326, 0.467 ), Vector2( 0.645, 0.585 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("background/buildings/Left/building7:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3, 6, 8.7, 9, 12, 15, 18, 20.7, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 232, 153 ), Vector2( 170.375, 153.244 ), Vector2( 37.25, 176 ), Vector2( -178.5, 211 ), Vector2( 378.063, 162.821 ), Vector2( 320, 157.25 ), Vector2( 192.125, 157.731 ), Vector2( 37.25, 176 ), Vector2( -178.5, 211 ), Vector2( 297.688, 176.94 ), Vector2( 232, 153 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("background/buildings/Left/building7:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3, 6, 8.7, 9, 12, 15, 18, 20.7, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.24, 0.45 ), Vector2( 0.705, 0.606 ), Vector2( 1.072, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.477, 0.389 ), Vector2( 0.585, 0.516071 ), Vector2( 0.825, 0.647 ), Vector2( 1.072, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.176, 0.363 ), Vector2( 0.24, 0.45 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("background/buildings/Left/building5:z_index")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2.7, 2.71, 3, 6, 9, 12, 14.7, 14.71, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, -11, -3, -2, -1, 0, 0, -11, -3, -2, -1, 0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("background/buildings/Left/building6:z_index")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3, 5.7, 5.71, 6, 9, 15, 17.7, 17.71, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -1, 0, 0, -11, -3, -2, 0, 0, -11, -3, -2, -1 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("background/buildings/Left/building7:z_index")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 3, 6, 8.7, 8.71, 9, 12, 15, 18, 20.7, 20.71, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -2, -1, 0, 0, -11, -3, -2, -1, 0, 0, -11, -3, -2 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("background/buildings/Left/building8:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 11.7, 12, 15, 18, 21, 23.7, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 257.5, 184 ), Vector2( 254, 154.063 ), Vector2( 181.25, 155.487 ), Vector2( 40.875, 174.5 ), Vector2( -178.5, 211 ), Vector2( 418.25, 155.761 ), Vector2( 298, 156.188 ), Vector2( 181.25, 155.488 ), Vector2( 33.625, 177.518 ), Vector2( -178.5, 211 ), Vector2( 257.5, 184 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("background/buildings/Left/building8:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 11.7, 12, 15, 18, 21, 23.7, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.025, 0.350161 ), Vector2( 0.326, 0.467 ), Vector2( 0.765, 0.626 ), Vector2( 1.109, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.6275, 0.401866 ), Vector2( 0.499, 0.5 ), Vector2( 0.765, 0.626 ), Vector2( 1.036, 1 ), Vector2( 1.8, 1.8 ), Vector2( 0.025, 0.350161 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("background/buildings/Left/building8:z_index")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 11.7, 11.71, 12, 15, 18, 21, 23.7, 23.71, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -3, -2, -1, 0, 0, -11, -3, -2, -1, 0, 0, -11, -3 ]
+}
+tracks/12/type = "method"
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 2.8, 5.8, 8.8, 11.8, 14.8, 17.8, 20.8, 23.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 5 ],
+"method": "_color_build"
+}, {
+"args": [ 6 ],
+"method": "_color_build"
+}, {
+"args": [ 7 ],
+"method": "_color_build"
+}, {
+"args": [ 8 ],
+"method": "_color_build"
+}, {
 "args": [ 5 ],
 "method": "_color_build"
 }, {
@@ -509,6 +551,11 @@ animations = [ {
 "loop": true,
 "name": "straight",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "turn_right",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -562,18 +609,15 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="background/sky"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 180.0
-color = Color( 0.25098, 0.25098, 0.25098, 1 )
-
 [node name="city" type="Sprite" parent="background"]
 position = Vector2( 0, 90 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 texture = ExtResource( 11 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="city2" type="Sprite" parent="background"]
 position = Vector2( 320, 90 )
@@ -581,13 +625,31 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 texture = ExtResource( 11 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="background"]
+z_index = -10
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="background/Sprite"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 180.0
+margin_right = 639.0
+margin_bottom = 361.0
+color = Color( 0.25098, 0.25098, 0.25098, 1 )
 
 [node name="buildings" type="Node2D" parent="background"]
 
 [node name="Left" type="Node2D" parent="background/buildings"]
 
 [node name="building8" type="Sprite" parent="background/buildings/Left"]
-position = Vector2( 255, 135 )
+position = Vector2( 257.5, 184 )
 scale = Vector2( 0.025, 0.350161 )
 z_index = -3
 texture = ExtResource( 10 )
@@ -601,9 +663,9 @@ show_behind_parent = true
 texture = ExtResource( 9 )
 
 [node name="building7" type="Sprite" parent="background/buildings/Left"]
-position = Vector2( 95, 69 )
-scale = Vector2( 0.645, 0.585 )
-z_index = -1
+position = Vector2( 232, 153 )
+scale = Vector2( 0.24, 0.45 )
+z_index = -2
 texture = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -615,7 +677,9 @@ show_behind_parent = true
 texture = ExtResource( 9 )
 
 [node name="building6" type="Sprite" parent="background/buildings/Left"]
-position = Vector2( -69, 39 )
+position = Vector2( 159.5, 151 )
+scale = Vector2( 0.645, 0.585 )
+z_index = -1
 texture = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -627,9 +691,7 @@ show_behind_parent = true
 texture = ExtResource( 9 )
 
 [node name="building5" type="Sprite" parent="background/buildings/Left"]
-position = Vector2( 208, 90 )
-scale = Vector2( 0.24, 0.45 )
-z_index = -2
+position = Vector2( 30, 179 )
 texture = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
@@ -707,8 +769,8 @@ flip_h = true
 [node name="AnimationPlayerLeft" type="AnimationPlayer" parent="background"]
 root_node = NodePath("../..")
 autoplay = "straight"
-anims/RESET = SubResource( 11 )
 anims/straight = SubResource( 10 )
+anims/turn_right = SubResource( 14 )
 
 [node name="AnimationPlayerRight" type="AnimationPlayer" parent="background"]
 autoplay = "straight"
@@ -716,10 +778,7 @@ anims/straight = SubResource( 12 )
 
 [node name="road" type="AnimatedSprite" parent="background"]
 frames = SubResource( 1 )
-animation = "straight"
-frame = 13
-speed_scale = 0.0
-playing = true
+animation = "turn_right"
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -810,3 +869,5 @@ shape = SubResource( 4 )
 
 [node name="Player_motorcycle" parent="." instance=ExtResource( 2 )]
 position = Vector2( 642, 611 )
+
+[connection signal="animation_finished" from="background/AnimationPlayerLeft" to="." method="_on_AnimationPlayerLeft_animation_finished"]
