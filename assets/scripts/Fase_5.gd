@@ -108,10 +108,25 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_right"):
 		$background/road.play("turn_right")
 		$background/AnimationPlayerLeft.play("turn_right")
+		$background/AnimationPlayerRight.play("turn_right")
 
 
 func _on_AnimationPlayerLeft_animation_finished(anim_name):
 	if anim_name == "turn_right":
 		$background/road.play("straight")
 		$background/AnimationPlayerLeft.play("straight")
+		$background/AnimationPlayerRight.play("straight")
 
+
+
+func _on_Area2D_side_walk_body_entered(body):
+	if body.name == "Player_motorcycle":
+		Global.life = 0
+		$AnimationPlayer.play("game_over")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "game_over":
+		get_tree().change_scene("res://assets/interfaces/game_over.tscn")
+	if anim_name == "loading_out":
+		get_tree().change_scene("res://assets/interfaces/credits.tscn")
