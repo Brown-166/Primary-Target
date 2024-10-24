@@ -26,7 +26,7 @@ var rail_road_original_position : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 ,10, 11]
 const outdoor = preload("res://assets/objects/obstacle_outdoor.tscn")
 
 const BULLET = preload("res://assets/objects/AR_bullet.tscn")
-
+const HOLE = preload("res://assets/objects/bullet_hole.tscn")
 
 
 
@@ -124,10 +124,8 @@ func _on_Timer_shoot_timeout():
 		bullet._set_direction(-2)
 		bullet._set_layer(0)
 		
-		var bullet_hole = Sprite.new()
+		var bullet_hole = HOLE.instance()
 		bullet_hole.texture = bullet_hole_texture
-		bullet_hole.scale.x = 0.5
-		bullet_hole.scale.y = 0.5
 		get_parent().add_child(bullet_hole)
 		match ammo:
 			5:

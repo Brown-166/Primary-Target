@@ -122,7 +122,7 @@ centered = false
 texture = ExtResource( 7 )
 centered = false
 
-[node name="bullet_train" type="Sprite" parent="back"]
+[node name="Sprite" type="Sprite" parent="back"]
 position = Vector2( 0, 81 )
 texture = ExtResource( 6 )
 centered = false
@@ -276,14 +276,14 @@ shape = SubResource( 5 )
 position = Vector2( 640, 445 )
 shape = SubResource( 5 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 190, 568 )
-
 [node name="Camera_Fase_4" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="Boss_Blue" parent="." instance=ExtResource( 5 )]
 position = Vector2( 775, 563 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 190, 568 )
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

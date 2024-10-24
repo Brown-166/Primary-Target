@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/car_1_side.png-46ec17536fbadddae32d8449fec9614b.stex"
+path="res://.import/car_back.png-cb75c275e0169717c2873047727306da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Vehicles/Car_1/car_1_side.png"
-dest_files=[ "res://.import/car_1_side.png-46ec17536fbadddae32d8449fec9614b.stex" ]
+source_file="res://assets/images/Vehicles/Car_1/car_back.png"
+dest_files=[ "res://.import/car_back.png-cb75c275e0169717c2873047727306da.stex" ]
 
 [params]
 

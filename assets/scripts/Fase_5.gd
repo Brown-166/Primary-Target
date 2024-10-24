@@ -292,7 +292,7 @@ func _on_Area2D_sonar_area_exited(area):
 	if area.name == "mini_target":
 		tracking_target = false
 		mini_target.visible = false
-		$CanvasLayer/minimap/player/Timer_last_chance.start()
+#		$CanvasLayer/minimap/player/Timer_last_chance.start()
 
 
 func _on_Timer_last_chance_timeout():

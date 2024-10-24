@@ -7931,7 +7931,6 @@ __meta__ = {
 }
 
 [node name="RayCasts" type="Node2D" parent="."]
-visible = false
 position = Vector2( 0, 31.25 )
 
 [node name="Right" type="RayCast2D" parent="RayCasts"]

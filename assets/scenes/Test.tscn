@@ -277,3 +277,6 @@ position = Vector2( 122, 576 )
 
 [node name="Enemy_Knife" parent="." instance=ExtResource( 7 )]
 position = Vector2( 725, 576 )
+
+[node name="Enemy_Knife2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 519, 570 )

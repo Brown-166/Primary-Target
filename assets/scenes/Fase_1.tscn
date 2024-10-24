@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Fase_1/tile nav.png" type="Texture" id=21]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/images/Characters/Boss_Red/life_bar_on.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/Characters/Boss_Red/life_bar_off.png" type="Texture" id=24]
 
 [sub_resource type="Animation" id=17]
 resource_name = "game_over"
@@ -210,13 +212,16 @@ anims/loading_out = SubResource( 20 )
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 2 )]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="ProgressBar" type="TextureProgress" parent="CanvasLayer"]
 visible = false
-margin_top = 681.0
-margin_right = 1231.0
-margin_bottom = 703.0
+margin_left = 7.0
+margin_top = 679.0
+margin_right = 640.0
+margin_bottom = 701.0
+rect_scale = Vector2( 2, 2 )
 max_value = 300.0
-step = 1.0
+texture_under = ExtResource( 24 )
+texture_progress = ExtResource( 23 )
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 wait_time = 5.0
@@ -369,14 +374,6 @@ position = Vector2( 335, 640 )
 [node name="medKit3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 457, 537 )
 
-[node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 143, 568 )
-
-[node name="Boss_Red" parent="." instance=ExtResource( 5 )]
-position = Vector2( 6607, 521 )
-
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Boss_Red"]
-
 [node name="Enemy_Pistol" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1565, 576 )
 
@@ -403,6 +400,14 @@ position = Vector2( 2026, 520 )
 
 [node name="Enemy_Knife2" parent="." instance=ExtResource( 22 )]
 position = Vector2( 3510, 522 )
+
+[node name="Boss_Red" parent="." instance=ExtResource( 5 )]
+position = Vector2( 6607, 521 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Boss_Red"]
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 143, 568 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]

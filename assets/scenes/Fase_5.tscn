@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Player_motorcycle.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/images/Fase_5/minimap_sonar_3.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Fase_5/minimap.png" type="Texture" id=21]
 [ext_resource path="res://assets/images/Fase_5/target_minimap.png" type="Texture" id=22]
+[ext_resource path="res://assets/characters/Car_obstacle.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 0.5, 0.5 )
@@ -1421,7 +1422,6 @@ show_behind_parent = true
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "sonar"
-frame = 1
 playing = true
 
 [node name="Area2D_sonar" type="Area2D" parent="CanvasLayer/minimap/player"]
@@ -1694,18 +1694,21 @@ rotation = -0.925025
 shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-visible = false
-collision_mask = 2
+collision_mask = 6
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 639.5, 355 )
+position = Vector2( 639.5, 332 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 639.5, 694 )
 shape = SubResource( 3 )
 
@@ -1781,6 +1784,15 @@ position = Vector2( 640, 610 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Car_obstacle" parent="." instance=ExtResource( 23 )]
+position = Vector2( 702, 341 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 714, 341 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 569, 341 )
 
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Left" to="." method="_on_Left_area_entered"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Right" to="." method="_on_Right_area_entered"]

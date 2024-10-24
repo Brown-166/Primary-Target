@@ -173,12 +173,16 @@ func _physics_process(delta):
 			
 			if $RayCasts/Right.is_colliding():
 				pushed = true
+				position.x -= 1
 			elif $RayCasts/Left.is_colliding():
 				pushed = true
+				position.x += 1
 			elif $RayCasts/Up.is_colliding():
 				pushed = true
+				position.y += 1
 			elif $RayCasts/Down.is_colliding():
 				pushed = true
+				position.y -= 1
 			else:
 				pushed = false
 			

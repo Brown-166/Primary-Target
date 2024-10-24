@@ -95,3 +95,21 @@ func _physics_process(delta):
 		
 		#velocity.normalized()
 		move_and_slide(velocity * speed)
+
+
+func _on_Area2D_Player_motorcycle_area_entered(area):
+	if area.name == "Area2D_car":
+		if foward == 100:
+			Global.life -= 70
+		elif foward < 100 && foward >= 75:
+			Global.life -= 50
+		elif foward < 75 && foward >= 50:
+			Global.life -= 20
+		elif foward < 50 && foward >=25:
+			Global.life -= 15
+		elif foward < 25 && foward > 0:
+			Global.life -= 10
+		
+		foward = 0
+		if Global.life <= 0:
+			Global.dead = true
