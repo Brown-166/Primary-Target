@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/scripts/Player_motorcycle.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_side_2.png" type="Texture" id=2]
@@ -48,10 +48,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 38 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 11.6745, 42.9609 )
+extents = Vector2( 10, 31.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 13, 0.25 )
@@ -63,7 +60,8 @@ script = ExtResource( 1 )
 
 [node name="motorcycle" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "back"
+animation = "side"
+flip_h = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -76,21 +74,21 @@ speed_scale = 10.0
 
 [node name="tire_front" type="AnimatedSprite" parent="motorcycle"]
 show_behind_parent = true
-position = Vector2( 63, -23 )
+position = Vector2( -63, -23 )
 frames = SubResource( 3 )
-animation = "back"
+animation = "side"
 speed_scale = 10.0
+flip_h = true
 
 [node name="CollisionBack" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
+position = Vector2( 0, 7.5 )
 shape = SubResource( 4 )
 disabled = true
 
-[node name="CollisionSide" type="CollisionShape2D" parent="."]
-visible = false
+[node name="CollisionSide" type="CollisionPolygon2D" parent="."]
 position = Vector2( -7, 2.943 )
 rotation = 0.994838
-shape = SubResource( 5 )
+polygon = PoolVector2Array( -4.48118, -53.5855, 8.51324, -57.0705, 10.1906, -55.9812, 10.4846, -54.5979, 10.528, -50.9926, 16.6059, -53.0074, 21.8885, -51.9616, 30.2753, -46.5152, 33.3793, -42.1146, 34.3049, -34.3594, 19.282, 31.0035, 7.29998, 49.4543, 3.15006, 50.3364, 0.0894053, 49.5411, -3.80992, 48.2012, -12.1966, 42.7549, -25.3647, 31.8187, -22.9139, 28.0446, -15.9186, -35.9735 )
 disabled = true
 
 [node name="Area2D_scale" type="Area2D" parent="."]

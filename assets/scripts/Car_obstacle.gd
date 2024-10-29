@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export var sides : bool
 
 var velocity = Vector2.ZERO
 var speed
@@ -14,10 +15,13 @@ onready var sprites = [$car, $car/color, $car/tire_back]
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+func _sides(check):
+	if check == true:
+		set_collision_mask_bit(3, true)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_sides(sides)
 	randomize()
 	color = C[randi() % C.size()]
 	$car/color.modulate = color
@@ -35,25 +39,27 @@ func _physics_process(delta):
 		speed = 2
 	elif player.foward < 70 && player.foward >= 60:
 		speed = 1
-	elif player.foward < 60 && player.foward >= 50:
-		speed = 0
-	elif player.foward < 50 && player.foward >= 40:
-		speed = -1
-	elif player.foward < 40 && player.foward >= 30:
-		speed = -2
-	elif player.foward < 30 && player.foward >= 20:
-		speed = -3
-	elif player.foward < 20 && player.foward >= 10:
-		speed = -4
-	elif player.foward < 10:
-		speed = -5
+#	elif player.foward < 60 && player.foward >= 50:
+#		speed = 0
+#	elif player.foward < 50 && player.foward >= 40:
+#		speed = -1
+#	elif player.foward < 40 && player.foward >= 30:
+#		speed = -2
+#	elif player.foward < 30 && player.foward >= 20:
+#		speed = -3
+#	elif player.foward < 20 && player.foward >= 10:
+#		speed = -4
+#	elif player.foward < 10:
+#		speed = -5
 	
 	if speed > 0:
-		position.x += 2
 		velocity.y += speed
 	elif speed < 0:
-		position.x -= 2
 		velocity.y -= speed
+		if global_position.x > 640:
+			global_position.x -= 1
+		elif global_position.x < 640:
+			global_position.x += 1
 #		if Input.is_action_pressed("ui_right"):
 #			velocity.x += speed
 #			if velocity.x >= 70:

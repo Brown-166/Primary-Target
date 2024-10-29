@@ -5,6 +5,9 @@ var speed = 4
 var max_speed = 100
 var foward = 100
 
+var original_pol : Array  = [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO,
+Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO,
+Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
 
 onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_front]
 # Declare member variables here. Examples:
@@ -14,7 +17,9 @@ onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_fron
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	for i in $CollisionSide.polygon.size():
+		original_pol[i] = $CollisionSide.polygon[i]
+		print(original_pol[i])
 
 
 func _physics_process(delta):
@@ -25,11 +30,13 @@ func _physics_process(delta):
 				foward = max_speed
 		elif Input.is_action_pressed("ui_down"):
 			foward -= speed
-			if foward < 0:
-				foward = 0
+			if foward < 60:
+				foward = 60
 		
 		$motorcycle/tire_back.speed_scale = foward/10
 		$motorcycle/tire_front.speed_scale = foward/10
+		
+		
 		
 		if foward == 100:
 			speed = 5
@@ -37,12 +44,12 @@ func _physics_process(delta):
 			speed = 4
 		elif foward < 75 && foward >= 50:
 			speed = 3
-		elif foward < 50 && foward >=25:
-			speed = 2
-		elif foward < 25 && foward > 0:
-			speed = 1
-		else:
-			speed = 0.5
+#		elif foward < 50 && foward >=25:
+#			speed = 2
+#		elif foward < 25 && foward > 0:
+#			speed = 1
+#		else:
+#			speed = 0.5
 		
 		
 		if Input.is_action_pressed("ui_right"):
@@ -56,6 +63,8 @@ func _physics_process(delta):
 				for i in sprites.size():
 					sprites[i].play("side")
 					sprites[i].flip_h = false
+				for i in $CollisionSide.polygon.size():
+					
 		elif Input.is_action_pressed("ui_left"):
 			velocity.x -= speed
 			if velocity.x <= -70:

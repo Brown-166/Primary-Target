@@ -294,11 +294,35 @@ tracks/14/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("Static_Sides/Collision_Right:polygon")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Static_Sides/Collision_Left:polygon")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 ) ]
+}
 
 [sub_resource type="Animation" id=20]
 resource_name = "turn_left"
 length = 24.0
-step = 12.0
+step = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("background/buildings/Left/building5:position")
 tracks/0/interp = 1
@@ -502,11 +526,35 @@ tracks/14/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 320, 0 ) ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("Static_Sides/Collision_Right:polygon")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 ), PoolVector2Array( 1102, 689, 938, 532, 880, 462, 806, 416, 644, 360, 644, 337, 684, 360, 858, 408, 952, 452, 1046, 546, 1236, 689 ), PoolVector2Array( 1102, 689, 913, 512, 847, 456, 741, 412, 532, 360, 532, 337, 575, 360, 811, 410, 929, 454, 1236, 689 ), PoolVector2Array( 1102, 689, 946, 544, 818, 456, 692, 414, 420, 360, 420, 337, 469, 360, 704, 401, 832, 433, 907, 457, 1042, 544, 1236, 689 ), PoolVector2Array( 1102, 689, 946, 544, 789, 455, 643, 414, 312, 360, 312, 337, 352, 360, 682, 408, 868, 453, 1042, 544, 1236, 689 ), PoolVector2Array( 1102, 689, 946, 544, 818, 456, 692, 414, 420, 360, 420, 337, 469, 360, 704, 401, 832, 433, 907, 457, 1042, 544, 1236, 689 ), PoolVector2Array( 1102, 689, 913, 512, 847, 456, 741, 412, 532, 360, 532, 337, 575, 360, 811, 410, 929, 454, 1236, 689 ), PoolVector2Array( 1102, 689, 938, 532, 880, 462, 806, 416, 644, 360, 644, 337, 684, 360, 858, 408, 952, 452, 1046, 546, 1236, 689 ), PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Static_Sides/Collision_Left:polygon")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 ), PoolVector2Array( 174, 689, 324, 548, 345, 458, 366, 408, 408, 360, 408, 337, 368, 360, 295, 408, 261, 458, 229, 548, 40, 689 ), PoolVector2Array( 174, 689, 324, 548, 312, 408, 288, 360, 288, 337, 256, 360, 239, 408, 229, 548, 40, 689 ), PoolVector2Array( 174, 689, 312, 558, 312, 544, 280, 454, 250, 412, 176, 360, 176, 337, 144, 360, 196, 424, 212, 460, 230, 548, 40, 689 ), PoolVector2Array( 174, 689, 312, 558, 312, 546, 252, 454, 190, 408, 70, 360, 70, 337, 38, 360, 132, 408, 187, 460, 230, 548, 40, 689 ), PoolVector2Array( 174, 689, 312, 558, 312, 544, 280, 454, 250, 412, 176, 360, 176, 337, 144, 360, 196, 424, 212, 460, 230, 548, 40, 689 ), PoolVector2Array( 174, 689, 324, 548, 312, 408, 288, 360, 288, 337, 256, 360, 239, 408, 229, 548, 40, 689 ), PoolVector2Array( 174, 689, 324, 548, 345, 458, 366, 408, 408, 360, 408, 337, 368, 360, 295, 408, 261, 458, 229, 548, 40, 689 ), PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 ) ]
+}
 
 [sub_resource type="Animation" id=14]
 resource_name = "turn_right"
 length = 24.0
-step = 12.0
+step = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("background/buildings/Left/building5:position")
 tracks/0/interp = 1
@@ -709,6 +757,30 @@ tracks/14/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -320, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Static_Sides/Collision_Right:polygon")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 ), PoolVector2Array( 1102, 689, 952, 548, 932, 460, 918, 425, 868, 360, 868, 337, 908, 360, 982, 411, 1016, 458, 1047, 547, 1236, 689 ), PoolVector2Array( 1102, 689, 952, 548, 964, 408, 988, 360, 988, 337, 1021, 360, 1038, 408, 1046, 547, 1236, 689 ), PoolVector2Array( 1102, 689, 964, 558, 964, 544, 998, 450, 1030, 408, 1100, 360, 1100, 337, 1132, 360, 1089, 408, 1067, 452, 1046, 547, 1236, 689 ), PoolVector2Array( 1102, 689, 964, 558, 964, 546, 1026, 451, 1085, 409, 1206, 360, 1206, 337, 1238, 360, 1141, 410, 1091, 456, 1046, 544, 1236, 689 ), PoolVector2Array( 1102, 689, 964, 558, 964, 544, 998, 450, 1030, 408, 1100, 360, 1100, 337, 1132, 360, 1089, 408, 1067, 452, 1046, 547, 1236, 689 ), PoolVector2Array( 1102, 689, 952, 548, 964, 408, 988, 360, 988, 337, 1021, 360, 1038, 408, 1046, 547, 1236, 689 ), PoolVector2Array( 1102, 689, 952, 548, 932, 460, 918, 425, 868, 360, 868, 337, 908, 360, 982, 411, 1016, 458, 1047, 547, 1236, 689 ), PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Static_Sides/Collision_Left:polygon")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 3, 6, 9, 12, 15, 18, 21, 24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 ), PoolVector2Array( 174, 689, 322, 548, 399, 456, 470, 416, 632, 360, 632, 337, 592, 360, 409, 410, 315, 456, 226, 548, 40, 689 ), PoolVector2Array( 174, 689, 367, 510, 428, 456, 528, 413, 744, 360, 744, 337, 700, 360, 469, 409, 339, 460, 40, 689 ), PoolVector2Array( 174, 689, 317, 554, 433, 471, 486, 447, 579, 415, 856, 360, 856, 337, 816, 360, 534, 408, 471, 425, 352, 468, 40, 689 ), PoolVector2Array( 174, 689, 326, 547, 488, 456, 588, 428, 680, 406, 964, 360, 964, 337, 924, 360, 570, 412, 406, 454, 229, 547, 40, 689 ), PoolVector2Array( 174, 689, 317, 554, 433, 471, 486, 447, 579, 415, 856, 360, 856, 337, 816, 360, 534, 408, 471, 425, 352, 468, 40, 689 ), PoolVector2Array( 174, 689, 367, 510, 428, 456, 528, 413, 744, 360, 744, 337, 700, 360, 469, 409, 339, 460, 40, 689 ), PoolVector2Array( 174, 689, 322, 548, 399, 456, 470, 416, 632, 360, 632, 337, 592, 360, 409, 410, 315, 456, 226, 548, 40, 689 ), PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1298,11 +1370,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 303.122 )
-
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 649.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 303.122 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 640, 9 )
@@ -1422,6 +1494,7 @@ show_behind_parent = true
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "sonar"
+frame = 1
 playing = true
 
 [node name="Area2D_sonar" type="Area2D" parent="CanvasLayer/minimap/player"]
@@ -1593,9 +1666,8 @@ texture = ExtResource( 9 )
 [node name="Right" type="Node2D" parent="background/buildings"]
 
 [node name="building4" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 382.5, 184 )
-scale = Vector2( 0.025, 0.350161 )
-z_index = -3
+position = Vector2( 625.556, 181.444 )
+scale = Vector2( 1.05926, 1.05926 )
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1609,9 +1681,9 @@ texture = ExtResource( 9 )
 flip_h = true
 
 [node name="building3" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 408, 153 )
-scale = Vector2( 0.24, 0.45 )
-z_index = -2
+position = Vector2( 384.2, 181.933 )
+scale = Vector2( 0.0393333, 0.356667 )
+z_index = -3
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1625,9 +1697,9 @@ texture = ExtResource( 9 )
 flip_h = true
 
 [node name="building2" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 480.5, 151 )
-scale = Vector2( 0.645, 0.585 )
-z_index = -1
+position = Vector2( 412.833, 152.867 )
+scale = Vector2( 0.267, 0.459 )
+z_index = -2
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1641,7 +1713,9 @@ texture = ExtResource( 9 )
 flip_h = true
 
 [node name="building1" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 610, 179 )
+position = Vector2( 489.133, 152.773 )
+scale = Vector2( 0.668667, 0.612667 )
+z_index = -1
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1669,46 +1743,56 @@ anims/turn_right = SubResource( 15 )
 
 [node name="road" type="AnimatedSprite" parent="background"]
 frames = SubResource( 1 )
-animation = "straight"
+animation = "turn"
 centered = false
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
+[node name="Static_Top" type="StaticBody2D" parent="."]
 collision_mask = 6
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 240, 530 )
-rotation = 0.925025
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 1040, 530 )
-rotation = -0.925025
-shape = SubResource( 2 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-collision_mask = 6
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Static_Top"]
 position = Vector2( 639.5, 332 )
 shape = SubResource( 3 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="Static_Sides" type="StaticBody2D" parent="."]
+collision_mask = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Collision_Right" type="CollisionPolygon2D" parent="Static_Sides"]
+position = Vector2( 4, 0 )
+polygon = PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 )
+
+[node name="Collision_Left" type="CollisionPolygon2D" parent="Static_Sides"]
+polygon = PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 )
+
+[node name="Static_Center" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Collision_Right" type="CollisionPolygon2D" parent="Static_Center"]
+polygon = PoolVector2Array( 671, 337, 669, 337, 760, 689, 765, 689 )
+
+[node name="Collision_Left" type="CollisionPolygon2D" parent="Static_Center"]
+polygon = PoolVector2Array( 610, 337, 611, 337, 519, 689, 515, 689 )
+
+[node name="Static_Bottom" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Static_Bottom"]
 position = Vector2( 639.5, 694 )
 shape = SubResource( 3 )
 
@@ -1721,13 +1805,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_side_walk"]
-position = Vector2( 244, 530 )
-rotation = 0.925025
+position = Vector2( 329, 530 )
+rotation = 0.802851
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D_side_walk"]
-position = Vector2( 1036, 530 )
-rotation = -0.925025
+position = Vector2( 952, 530 )
+rotation = -0.802851
 shape = SubResource( 2 )
 
 [node name="Layers" type="Node2D" parent="."]
@@ -1786,13 +1870,27 @@ __meta__ = {
 }
 
 [node name="Car_obstacle" parent="." instance=ExtResource( 23 )]
-position = Vector2( 702, 341 )
+position = Vector2( 706, 341 )
+sides = true
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 714, 341 )
+[node name="Car_obstacle2" parent="." instance=ExtResource( 23 )]
+position = Vector2( 640, 341 )
 
-[node name="Position2D2" type="Position2D" parent="."]
-position = Vector2( 569, 341 )
+[node name="Car_obstacle3" parent="." instance=ExtResource( 23 )]
+position = Vector2( 576, 341 )
+sides = true
+
+[node name="Position_Right" type="Position2D" parent="."]
+visible = false
+position = Vector2( 706, 341 )
+
+[node name="Position_Middle" type="Position2D" parent="."]
+visible = false
+position = Vector2( 640, 341 )
+
+[node name="Position_Left" type="Position2D" parent="."]
+visible = false
+position = Vector2( 576, 341 )
 
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Left" to="." method="_on_Left_area_entered"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Right" to="." method="_on_Right_area_entered"]
