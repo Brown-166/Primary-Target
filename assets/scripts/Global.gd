@@ -37,6 +37,9 @@ var great_sword_DMG = 100
 var weapon = "katana"
 
 
+var motorcycle_speed
+
+
 func _ready():
 	pass
 func _physics_process(delta):

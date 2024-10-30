@@ -5,14 +5,22 @@ var color
 
 var scaling = 0.05
 var player_speed
+
 onready var mini_player = $CanvasLayer/minimap/player
 onready var mini_player_speed
 var mini_player_dir = "up"
+
 onready var mini_target = $CanvasLayer/minimap/target
 var mini_target_speed = 0.1
 var mini_target_dir = "up"
-
 var tracking_target = true
+
+
+const CAR = preload("res://assets/characters/Car_obstacle.tscn")
+var CarP = [1, 2, 3]
+var car_position
+var CarT = [1, 1, 1, 2, 2, 3, 4]
+var car_timer
 
 func _sort_color():
 	randomize()
@@ -128,6 +136,10 @@ func _ready():
 	$background/road.play("straight")
 	$background/AnimationPlayerLeft.play("straight")
 	$background/AnimationPlayerLeft.play("straight")
+	randomize()
+	car_timer = CarT[randi() % CarT.size()]
+	$Timer_spawn_car.wait_time = car_timer
+	$Timer_spawn_car.start()
 
 
 
@@ -216,17 +228,17 @@ func _on_AnimationPlayerLeft_animation_finished(anim_name):
 func _on_Area2D_side_walk_body_entered(body):
 	if body.name == "Player_motorcycle":
 		if player_speed == 100:
-			Global.life -= 70
-		elif player_speed < 100 && player_speed >= 75:
-			Global.life -= 50
-		elif player_speed < 75 && player_speed >= 50:
 			Global.life -= 20
+		elif player_speed < 100 && player_speed >= 75:
+			Global.life -= 15
+		elif player_speed < 75 && player_speed >= 50:
+			Global.life -= 10
 		elif player_speed < 50 && player_speed >=25:
 			Global.life -= 15
 		elif player_speed < 25 && player_speed > 0:
 			Global.life -= 10
 		
-		$Player_motorcycle.foward = 0
+		$Player_motorcycle.foward = 50
 		if Global.life <= 0:
 			Global.dead = true
 
@@ -300,3 +312,22 @@ func _on_Timer_last_chance_timeout():
 		$AnimationPlayer.play("game_over")
 
 
+
+
+func _on_Timer_spawn_car_timeout():
+	randomize()
+	car_position = CarP[randi() % CarP.size()]
+	car_timer = CarT[randi() % CarT.size()]
+	if $background/AnimationPlayerLeft.current_animation == "straight" && Global.life > 0 && $AnimationPlayer.current_animation == "loading_out":
+		var car = CAR.instance()
+		match car_position:
+			1:
+				car.position = $Position_Left.position
+				car._sides(true)
+			2:
+				car.position = $Position_Middle.position
+			3:
+				car.position = $Position_Right.position
+				car._sides(true)
+		get_parent().add_child(car)
+	$Timer_spawn_car.wait_time = car_timer

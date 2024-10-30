@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Player_motorcycle.tscn" type="PackedScene" id=2]
@@ -22,7 +22,6 @@
 [ext_resource path="res://assets/images/Fase_5/minimap_sonar_3.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Fase_5/minimap.png" type="Texture" id=21]
 [ext_resource path="res://assets/images/Fase_5/target_minimap.png" type="Texture" id=22]
-[ext_resource path="res://assets/characters/Car_obstacle.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 0.5, 0.5 )
@@ -1869,28 +1868,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Car_obstacle" parent="." instance=ExtResource( 23 )]
-position = Vector2( 706, 341 )
-sides = true
-
-[node name="Car_obstacle2" parent="." instance=ExtResource( 23 )]
-position = Vector2( 640, 341 )
-
-[node name="Car_obstacle3" parent="." instance=ExtResource( 23 )]
-position = Vector2( 576, 341 )
-sides = true
-
-[node name="Position_Right" type="Position2D" parent="."]
+[node name="Position_Left" type="Position2D" parent="."]
 visible = false
-position = Vector2( 706, 341 )
+position = Vector2( 576, 341 )
 
 [node name="Position_Middle" type="Position2D" parent="."]
 visible = false
 position = Vector2( 640, 341 )
 
-[node name="Position_Left" type="Position2D" parent="."]
+[node name="Position_Right" type="Position2D" parent="."]
 visible = false
-position = Vector2( 576, 341 )
+position = Vector2( 706, 341 )
+
+[node name="Timer_spawn_car" type="Timer" parent="."]
 
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Left" to="." method="_on_Left_area_entered"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Right" to="." method="_on_Right_area_entered"]
@@ -1903,3 +1893,4 @@ position = Vector2( 576, 341 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="background/AnimationPlayerLeft" to="." method="_on_AnimationPlayerLeft_animation_finished"]
 [connection signal="body_entered" from="Area2D_side_walk" to="." method="_on_Area2D_side_walk_body_entered"]
+[connection signal="timeout" from="Timer_spawn_car" to="." method="_on_Timer_spawn_car_timeout"]

@@ -19,7 +19,6 @@ onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_fron
 func _ready():
 	for i in $CollisionSide.polygon.size():
 		original_pol[i] = $CollisionSide.polygon[i]
-		print(original_pol[i])
 
 
 func _physics_process(delta):
@@ -56,26 +55,29 @@ func _physics_process(delta):
 			velocity.x += speed
 			if velocity.x >= 70:
 				$motorcycle/tire_front.position.x = 63
-				$CollisionBack.disabled = true
-				$CollisionSide.disabled = false
-				$CollisionSide.position.x = -7
-				$CollisionSide.rotation_degrees = 57
+#				$CollisionBack.disabled = true
+#				$CollisionSide.disabled = false
+#				$CollisionSide.position.x = -7
+#				$CollisionSide.rotation_degrees = 57
 				for i in sprites.size():
 					sprites[i].play("side")
 					sprites[i].flip_h = false
-				for i in $CollisionSide.polygon.size():
-					
+#				for i in $CollisionSide.polygon.size():
+#					$CollisionSide.polygon[i] = original_pol[i]
 		elif Input.is_action_pressed("ui_left"):
 			velocity.x -= speed
 			if velocity.x <= -70:
 				$motorcycle/tire_front.position.x = -63
-				$CollisionBack.disabled = true
-				$CollisionSide.disabled = false
-				$CollisionSide.position.x = 7
-				$CollisionSide.rotation_degrees = -57
+#				$CollisionBack.disabled = true
+#				$CollisionSide.disabled = false
+#				$CollisionSide.position.x = 7
+#				$CollisionSide.rotation_degrees = -57
 				for i in sprites.size():
 					sprites[i].play("side")
 					sprites[i].flip_h = true
+#				for i in $CollisionSide.polygon.size():
+#					if $CollisionSide.polygon[i].x == original_pol[i].x:
+#						$CollisionSide.polygon[i].x *= -1
 		else:
 			if velocity.x > 0:
 				velocity.x -= 4
@@ -102,23 +104,27 @@ func _physics_process(delta):
 				velocity.y = -max_speed
 		
 		
-		#velocity.normalized()
+		Global.motorcycle_speed = foward
 		move_and_slide(velocity * speed)
-
+	else:
+		foward = 0
+		speed = 0
+		$motorcycle/tire_back.playing = false
+		$motorcycle/tire_front.playing = false
 
 func _on_Area2D_Player_motorcycle_area_entered(area):
 	if area.name == "Area2D_car":
 		if foward == 100:
-			Global.life -= 70
-		elif foward < 100 && foward >= 75:
-			Global.life -= 50
-		elif foward < 75 && foward >= 50:
 			Global.life -= 20
+		elif foward < 100 && foward >= 75:
+			Global.life -= 15
+		elif foward < 75 && foward >= 50:
+			Global.life -= 10
 		elif foward < 50 && foward >=25:
 			Global.life -= 15
 		elif foward < 25 && foward > 0:
 			Global.life -= 10
 		
-		foward = 0
+		foward = 50
 		if Global.life <= 0:
 			Global.dead = true

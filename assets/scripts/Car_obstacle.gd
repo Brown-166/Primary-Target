@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var sides : bool
 
 var velocity = Vector2.ZERO
-var speed
+var speed : int
 var max_speed = 60
 onready var player = get_parent().get_node("Player_motorcycle")
 onready var road = get_parent().get_node("background/road")
@@ -25,19 +25,18 @@ func _ready():
 	randomize()
 	color = C[randi() % C.size()]
 	$car/color.modulate = color
-	pass # Replace with function body.
 
 
 func _physics_process(delta):
-	if player.foward == 100:
+	if Global.motorcycle_speed == 100:
 		speed = 5
-	elif player.foward < 100 && player.foward >= 90:
+	elif Global.motorcycle_speed < 100 && Global.motorcycle_speed >= 90:
 		speed = 4
-	elif player.foward < 90 && player.foward >= 80:
+	elif Global.motorcycle_speed < 90 && Global.motorcycle_speed >= 80:
 		speed = 3
-	elif player.foward < 80 && player.foward >= 70:
+	elif Global.motorcycle_speed < 80 && Global.motorcycle_speed >= 70:
 		speed = 2
-	elif player.foward < 70 && player.foward >= 60:
+	elif Global.motorcycle_speed < 70 && Global.motorcycle_speed >= 60:
 		speed = 1
 #	elif player.foward < 60 && player.foward >= 50:
 #		speed = 0
@@ -107,5 +106,4 @@ func _physics_process(delta):
 		if velocity.y < -max_speed:
 			velocity.y = -max_speed
 		
-	print(velocity.y)
 	move_and_slide(velocity * speed)
