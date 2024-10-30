@@ -10,12 +10,12 @@ Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZE
 Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
 
 onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_front]
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
+func _crash():
+	$Audio_Crash_sides.play()
+
+
 func _ready():
 	for i in $CollisionSide.polygon.size():
 		original_pol[i] = $CollisionSide.polygon[i]
@@ -23,14 +23,24 @@ func _ready():
 
 func _physics_process(delta):
 	if Global.life > 0:
-		if Input.is_action_pressed("ui_up"):
-			foward += speed
-			if foward > max_speed:
-				foward = max_speed
-		elif Input.is_action_pressed("ui_down"):
-			foward -= speed
-			if foward < 60:
-				foward = 60
+		if Input.is_action_just_pressed("medkit"):
+			if Global.medKit > 0:
+				Global.medKit -=1
+				Global.life += 60
+#		if Input.is_action_pressed("ui_up"):
+#			foward += speed
+#			if foward > max_speed:
+#				foward = max_speed
+#		elif Input.is_action_pressed("ui_down"):
+#			foward -= speed
+#			if foward < 60:
+#				foward = 60
+		if foward < 100:
+			foward *= 1.02
+		if foward > max_speed:
+			foward = max_speed
+		if foward <= 0:
+			foward = 10
 		
 		$motorcycle/tire_back.speed_scale = foward/10
 		$motorcycle/tire_front.speed_scale = foward/10
@@ -111,6 +121,7 @@ func _physics_process(delta):
 		speed = 0
 		$motorcycle/tire_back.playing = false
 		$motorcycle/tire_front.playing = false
+		$Audio_Running.stop()
 
 func _on_Area2D_Player_motorcycle_area_entered(area):
 	if area.name == "Area2D_car":
@@ -121,10 +132,13 @@ func _on_Area2D_Player_motorcycle_area_entered(area):
 		elif foward < 75 && foward >= 50:
 			Global.life -= 10
 		elif foward < 50 && foward >=25:
-			Global.life -= 15
-		elif foward < 25 && foward > 0:
-			Global.life -= 10
+			Global.life -= 5
 		
-		foward = 50
+		foward = 0
+		$Audio_Crash.play()
 		if Global.life <= 0:
 			Global.dead = true
+
+
+func _on_Audio_Running_finished():
+	$Audio_Running.play()

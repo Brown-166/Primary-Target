@@ -19,8 +19,11 @@ var tracking_target = true
 const CAR = preload("res://assets/characters/Car_obstacle.tscn")
 var CarP = [1, 2, 3]
 var car_position
-var CarT = [1, 1, 1, 2, 2, 3, 4]
+var CarT = [1, 2, 2, 2, 3, 3, 4]
 var car_timer
+
+
+var finish = false
 
 func _sort_color():
 	randomize()
@@ -179,19 +182,21 @@ func _physics_process(delta):
 			$Player_motorcycle.position.x += 2
 	
 	
-	
-	if player_speed == 100:
-		mini_player_speed = 0.1
-	elif player_speed < 100 && player_speed >= 75:
-		mini_player_speed = 0.08
-	elif player_speed < 75 && player_speed >= 50:
-		mini_player_speed = 0.06
-	elif player_speed < 50 && player_speed >=25:
-		mini_player_speed = 0.04
-	elif player_speed < 25 && player_speed > 0:
-		mini_player_speed = 0.02
+	if finish == false:
+		if player_speed == 100:
+			mini_player_speed = 0.1
+		elif player_speed < 100 && player_speed >= 75:
+			mini_player_speed = 0.08
+		elif player_speed < 75 && player_speed >= 50:
+			mini_player_speed = 0.06
+		elif player_speed < 50 && player_speed >=25:
+			mini_player_speed = 0.04
+		elif player_speed < 25 && player_speed > 0:
+			mini_player_speed = 0.02
+		else:
+			mini_player_speed = 0
 	else:
-		mini_player_speed = 0
+		mini_player_speed
 	
 	
 	
@@ -228,17 +233,16 @@ func _on_AnimationPlayerLeft_animation_finished(anim_name):
 func _on_Area2D_side_walk_body_entered(body):
 	if body.name == "Player_motorcycle":
 		if player_speed == 100:
-			Global.life -= 20
-		elif player_speed < 100 && player_speed >= 75:
-			Global.life -= 15
-		elif player_speed < 75 && player_speed >= 50:
 			Global.life -= 10
-		elif player_speed < 50 && player_speed >=25:
-			Global.life -= 15
-		elif player_speed < 25 && player_speed > 0:
-			Global.life -= 10
+		elif player_speed < 100 && player_speed >= 50:
+			Global.life -= 5
 		
-		$Player_motorcycle.foward = 50
+		$Player_motorcycle.foward = 40
+		$Player_motorcycle._crash()
+		if $Player_motorcycle.position.x > 640:
+			$Player_motorcycle.global_position.x += 30
+		else:
+			$Player_motorcycle.global_position.x -= 30
 		if Global.life <= 0:
 			Global.dead = true
 
@@ -289,6 +293,7 @@ func _on_Right_area_entered(area):
 func _on_Finish_area_entered(area):
 	if area.name == "mini_player":
 		$AnimationPlayer.play("loading_out")
+		finish = true
 	if area.name == "mini_target":
 		mini_target_speed = 0
 
@@ -304,7 +309,7 @@ func _on_Area2D_sonar_area_exited(area):
 	if area.name == "mini_target":
 		tracking_target = false
 		mini_target.visible = false
-#		$CanvasLayer/minimap/player/Timer_last_chance.start()
+		$CanvasLayer/minimap/player/Timer_last_chance.start()
 
 
 func _on_Timer_last_chance_timeout():
@@ -318,7 +323,7 @@ func _on_Timer_spawn_car_timeout():
 	randomize()
 	car_position = CarP[randi() % CarP.size()]
 	car_timer = CarT[randi() % CarT.size()]
-	if $background/AnimationPlayerLeft.current_animation == "straight" && Global.life > 0 && $AnimationPlayer.current_animation == "loading_out":
+	if $background/AnimationPlayerLeft.current_animation == "straight" && Global.life > 0 && $AnimationPlayer.current_animation != "loading_out":
 		var car = CAR.instance()
 		match car_position:
 			1:

@@ -1493,7 +1493,7 @@ show_behind_parent = true
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "sonar"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Area2D_sonar" type="Area2D" parent="CanvasLayer/minimap/player"]
@@ -1749,6 +1749,7 @@ __meta__ = {
 }
 
 [node name="Static_Top" type="StaticBody2D" parent="."]
+visible = false
 collision_mask = 6
 __meta__ = {
 "_edit_group_": true,
@@ -1760,6 +1761,7 @@ position = Vector2( 639.5, 332 )
 shape = SubResource( 3 )
 
 [node name="Static_Sides" type="StaticBody2D" parent="."]
+visible = false
 collision_mask = 6
 __meta__ = {
 "_edit_group_": true,
@@ -1774,6 +1776,7 @@ polygon = PoolVector2Array( 1102, 689, 732, 337, 765, 337, 1236, 689 )
 polygon = PoolVector2Array( 174, 689, 546, 337, 511, 337, 40, 689 )
 
 [node name="Static_Center" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 8
 __meta__ = {
@@ -1788,11 +1791,20 @@ polygon = PoolVector2Array( 671, 337, 669, 337, 760, 689, 765, 689 )
 polygon = PoolVector2Array( 610, 337, 611, 337, 519, 689, 515, 689 )
 
 [node name="Static_Bottom" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Static_Bottom"]
 position = Vector2( 639.5, 694 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Static_Bottom"]
+position = Vector2( 639.5, 557 )
 shape = SubResource( 3 )
 
 [node name="Area2D_side_walk" type="Area2D" parent="."]
