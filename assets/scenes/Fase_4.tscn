@@ -6,12 +6,13 @@
 [ext_resource path="res://assets/scripts/Fase_4.gd" type="Script" id=4]
 [ext_resource path="res://assets/characters/Boss_Blue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/images/Fase_2/bullet_train_center.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/Fase_1/brick_wall.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Fase_1/brick_wall_1.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/Fase_2/city_1_F2.png" type="Texture" id=8]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_off.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_on.png" type="Texture" id=12]
+
 
 [sub_resource type="Animation" id=6]
 resource_name = "game_over"

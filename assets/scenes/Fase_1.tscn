@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/images/Fase_1/sidewalk_1.png" type="Texture" id=14]
 [ext_resource path="res://assets/images/Fase_1/city_3_F1.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/Fase_1/light_pole_(on).png" type="Texture" id=16]
-[ext_resource path="res://assets/images/Fase_1/brick_wall.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/Fase_1/brick_wall_1.png" type="Texture" id=17]
 [ext_resource path="res://assets/images/Fase_1/tile nav 5x5.png" type="Texture" id=18]
 [ext_resource path="res://assets/images/Fase_1/tile collision.png" type="Texture" id=19]
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=20]
@@ -24,6 +24,19 @@
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=22]
 [ext_resource path="res://assets/images/Characters/Boss_Red/life_bar_on.png" type="Texture" id=23]
 [ext_resource path="res://assets/images/Characters/Boss_Red/life_bar_off.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_center.png" type="Texture" id=25]
+[ext_resource path="res://assets/images/Fase_1/train_station_ceiling_2.png" type="Texture" id=26]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_tail.png" type="Texture" id=27]
+[ext_resource path="res://assets/images/Fase_3/rail_road.png" type="Texture" id=28]
+[ext_resource path="res://assets/images/Fase_1/train_station_ground_1.png" type="Texture" id=29]
+[ext_resource path="res://assets/images/Fase_3/grass.png" type="Texture" id=30]
+[ext_resource path="res://assets/images/Fase_1/train_station_ground_2.png" type="Texture" id=31]
+[ext_resource path="res://assets/images/Fase_1/train_station_column.png" type="Texture" id=32]
+[ext_resource path="res://assets/images/Fase_3/grass-dirt.png" type="Texture" id=33]
+[ext_resource path="res://assets/images/Fase_1/train_station_ceiling_1.png" type="Texture" id=34]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_head.png" type="Texture" id=35]
+[ext_resource path="res://assets/images/Fase_1/brick_wall_2.png" type="Texture" id=36]
+[ext_resource path="res://assets/images/Fase_1/trash_can_(back).png" type="Texture" id=37]
 
 [sub_resource type="Animation" id=17]
 resource_name = "game_over"
@@ -100,6 +113,58 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "on_off",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 960, 12.5 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 28, 54 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "off",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
 "name": "on_off",
 "speed": 3.0
@@ -199,7 +264,6 @@ outlines = [ PoolVector2Array( 5, 5, 0, 5, 0, 0, 5, 0 ) ]
 extents = Vector2( 60.5, 200 )
 
 [node name="Fase_1" type="Node2D"]
-modulate = Color( 0, 0, 0, 1 )
 script = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -348,6 +412,1184 @@ z_index = 0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="background4" type="Node2D" parent="."]
+position = Vector2( 7680, 0 )
+scale = Vector2( 2, 2 )
+z_index = -11
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="rail_road" type="Node2D" parent="background4"]
+position = Vector2( -4480, -230.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="road0" type="Sprite" parent="background4/rail_road"]
+position = Vector2( -640, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road0"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road0"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road1" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 0, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road1"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road1"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road2" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 640, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road2"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road2"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road3" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 1280, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road3"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road3"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road4" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 1920, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road4"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road4"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road5" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 2560, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road5"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road5"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road6" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 3200, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road6"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road6"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road7" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 3840, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road7"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road7"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road8" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 4480, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road8"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road8"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road9" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 5120, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road9"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road9"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road10" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 5760, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road10"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road10"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="road11" type="Sprite" parent="background4/rail_road"]
+position = Vector2( 6400, 182 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/rail_road/road11"]
+position = Vector2( 0, 79 )
+texture = ExtResource( 33 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="background4/rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, 46 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="background4/rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -24 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="background4/rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -75 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="background4/rail_road/road11"]
+show_behind_parent = true
+position = Vector2( 0, -114 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Bullet_Train" type="Node2D" parent="background4"]
+position = Vector2( -4480, -218.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="tail" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 0, 172.5 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="center1" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 640, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center2" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 1280, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center3" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 1920, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center4" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 2560, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center5" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 3200, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center6" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 3840, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center7" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 4480, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="center8" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 5120, 172.5 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="head" type="Sprite" parent="background4/Bullet_Train"]
+position = Vector2( 5760, 172.5 )
+texture = ExtResource( 35 )
+centered = false
+
+[node name="road" type="Node2D" parent="background4"]
+position = Vector2( 0, -125 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="road" type="Sprite" parent="background4/road"]
+position = Vector2( 0, 150 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="road2" type="Sprite" parent="background4/road"]
+position = Vector2( 452.5, 453 )
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 187.5, -303 )
+
+[node name="road3" type="Sprite" parent="background4/road"]
+position = Vector2( 1280, 150 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="road4" type="Sprite" parent="background4/road"]
+position = Vector2( 0, 175 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="road5" type="Sprite" parent="background4/road"]
+position = Vector2( 452.5, 478 )
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 187.5, -303 )
+
+[node name="road6" type="Sprite" parent="background4/road"]
+position = Vector2( 1280, 175 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="road7" type="Sprite" parent="background4/road"]
+position = Vector2( 0, 200 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="road8" type="Sprite" parent="background4/road"]
+position = Vector2( 452.5, 503 )
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 187.5, -303 )
+
+[node name="road9" type="Sprite" parent="background4/road"]
+position = Vector2( 1280, 200 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="sidewalk" type="Node2D" parent="background4"]
+position = Vector2( 0, -125 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Layer_8" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 260 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_8"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_8"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_8"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_8"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_7" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 285 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_7"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_7"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_7"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_7"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_6" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 310 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_6"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_6"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_6"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_6"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_5" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 335 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_5"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_5"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_5"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_5"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_4" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 360 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_4"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_4"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_4"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_4"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_3" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 385 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_3"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_3"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_3"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_3"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_2" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 410 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_2"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_2"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_2"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_2"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_1" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 435 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_1"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_1"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_1"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_1"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_0" type="Area2D" parent="background4/sidewalk"]
+position = Vector2( 0, 460 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk/Layer_0"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk/Layer_0"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk/Layer_0"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk/Layer_0"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="sidewalk2" type="Node2D" parent="background4"]
+position = Vector2( 0, -125 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Layer_8" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 260 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_8"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_8"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_8"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_8"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_7" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 285 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_7"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_7"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_7"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_7"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_6" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 310 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_6"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_6"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_6"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_6"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_5" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 335 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_5"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_5"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_5"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_5"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_4" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 360 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_4"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_4"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_4"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_4"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_3" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 385 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_3"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_3"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_3"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_3"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_2" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 410 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_2"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_2"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_2"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_2"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_1" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 435 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_1"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 29 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_1"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_1"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_1"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Layer_0" type="Area2D" parent="background4/sidewalk2"]
+position = Vector2( 0, 460 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background4/sidewalk2/Layer_0"]
+position = Vector2( 960, 12.5 )
+shape = SubResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ground" type="Sprite" parent="background4/sidewalk2/Layer_0"]
+position = Vector2( 0, -335 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="background4/sidewalk2/Layer_0"]
+position = Vector2( 640, -335 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="background4/sidewalk2/Layer_0"]
+position = Vector2( 1280, -335 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="brick_wall" type="Node2D" parent="background4"]
+position = Vector2( 0, -125 )
+
+[node name="wall1" type="Sprite" parent="background4/brick_wall"]
+texture = ExtResource( 36 )
+centered = false
+
+[node name="wall2" type="Sprite" parent="background4/brick_wall"]
+position = Vector2( 1280, 0 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="train_station" type="Node2D" parent="background4"]
+position = Vector2( 0, -86 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ground1" type="Sprite" parent="background4/train_station"]
+texture = ExtResource( 29 )
+centered = false
+
+[node name="ground_2" type="Sprite" parent="background4/train_station"]
+position = Vector2( 640, 0 )
+texture = ExtResource( 31 )
+centered = false
+
+[node name="column1" type="Sprite" parent="background4/train_station"]
+texture = ExtResource( 32 )
+centered = false
+
+[node name="column2" type="Sprite" parent="background4/train_station"]
+position = Vector2( 920, 0 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="ceiling1" type="Sprite" parent="background4/train_station"]
+texture = ExtResource( 34 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="background4/train_station"]
+position = Vector2( 640, 0 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="poles" type="Node2D" parent="background4"]
+position = Vector2( 0, -125 )
+
+[node name="pole" type="Node2D" parent="background4/poles"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="pole" type="Sprite" parent="background4/poles/pole"]
+position = Vector2( 320, 348 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ligh_pole" type="AnimatedSprite" parent="background4/poles/pole/pole"]
+position = Vector2( -11, 0 )
+frames = SubResource( 35 )
+animation = "on"
+playing = true
+
+[node name="pole2" type="Sprite" parent="background4/poles/pole"]
+position = Vector2( 960, 348 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ligh_pole" type="AnimatedSprite" parent="background4/poles/pole/pole2"]
+position = Vector2( -11, 0 )
+frames = SubResource( 35 )
+animation = "on_off"
+frame = 5
+playing = true
+
+[node name="trash_can" type="Sprite" parent="background4/poles/pole/pole2"]
+show_behind_parent = true
+position = Vector2( 1.5, 55 )
+texture = ExtResource( 37 )
+
+[node name="pole3" type="Sprite" parent="background4/poles/pole"]
+position = Vector2( 1600, 348 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ligh_pole" type="AnimatedSprite" parent="background4/poles/pole/pole3"]
+position = Vector2( -11, 0 )
+frames = SubResource( 35 )
+animation = "off"
+playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
 visible = false
