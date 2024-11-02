@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Font_Letter 2-2.png-ca6e6fb578d234521d566ca93adfe200.stex"
+path="res://.import/pixil-layer-Layer 1.png-a67006369126a547689b0edfe943a958.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fonts/Font_Letter 2-2.png"
-dest_files=[ "res://.import/Font_Letter 2-2.png-ca6e6fb578d234521d566ca93adfe200.stex" ]
+source_file="res://assets/images/Fase_1/pixil-layer-Layer 1.png"
+dest_files=[ "res://.import/pixil-layer-Layer 1.png-a67006369126a547689b0edfe943a958.stex" ]
 
 [params]
 

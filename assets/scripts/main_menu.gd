@@ -59,7 +59,10 @@ func _loading_out():
 	$Screen_Saves/Button_Save_2.disabled = true
 	$Screen_Saves/Button_Save_3.disabled = true
 	$Screen_Saves/Button_Back.disabled = true
-	$AnimationPlayer.play("loading_out")
+	if action == "new game":
+		$AnimationPlayer.play("new_game")
+	else:
+		$AnimationPlayer.play("loading_out")
 
 
 func _on_Button_Continue_pressed():

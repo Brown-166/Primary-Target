@@ -1,9 +1,44 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/UI/main_menu/background.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/main_menu_btn.tres" type="Theme" id=3]
 [ext_resource path="res://assets/themes/label.tres" type="Theme" id=4]
+[ext_resource path="res://assets/images/UI/main_menu/loading_bar_off.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/UI/main_menu/loading_bar_on.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Characters/Hades/Hand.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Characters/Hades/Chest.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Characters/Hades/Arm.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Characters/Hades/Head.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Characters/Hades/Forearm.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=4]
+resource_name = "loading_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Game_Title:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 479, 67 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "loading_out"
@@ -19,6 +54,244 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
+
+[sub_resource type="Animation" id=5]
+resource_name = "new_game"
+length = 9.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Screen_Menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Screen_Saves:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Game_Title:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 479, 67 ), Vector2( 479, -70 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Screen_new_game:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Screen_new_game/loading_bar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Screen_new_game/loading_bar:value")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Screen_new_game/loading_text:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Screen_new_game/loading_text:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ..." ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Screen_new_game/target_picture:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Screen_new_game/target_picture:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 19, 19 ), Vector2( 220, 330 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Screen_new_game/target_picture:rect_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Screen_new_game/target_description:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Screen_new_game/target_description:text")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "", "Novo contrato selecionado
+Tipo de contrato: Assassinato
+Contratante: Anonimo
+Dificuldade: Médio
+Recompença: R$500.000,00
+
+Alvo principal: Hades
+Nome real: Frederico Hard
+Ocupação: Comandante da máfia de São Paulo
+Situação atual: Fazendo negócios na cidade" ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Screen_new_game/target_description:rect_scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Screen_new_game/target_description:rect_size")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 36, 36 ), Vector2( 966, 387 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Screen_new_game/target_picture/target:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Screen_new_game/Label_good_hunt:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath(".:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 9, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.933333, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.188235, 0.188235, 0.188235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -42,12 +315,16 @@ color = Color( 0, 0, 0, 0.564706 )
 [node name="Game_Title" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -108.0
-margin_top = 75.0
-margin_right = 108.0
-margin_bottom = 110.0
+margin_left = -161.0
+margin_top = -70.0
+margin_right = 161.0
+margin_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource( 4 )
 text = "Primary Target"
+align = 1
+valign = 1
 
 [node name="Screen_Menu" type="Control" parent="."]
 anchor_right = 0.4
@@ -190,7 +467,190 @@ theme = ExtResource( 3 )
 text = "VOLTAR"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading_in"
+anims/loading_in = SubResource( 4 )
 anims/loading_out = SubResource( 2 )
+anims/new_game = SubResource( 5 )
+
+[node name="Screen_new_game" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="loading_bar" type="TextureProgress" parent="Screen_new_game"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -180.0
+margin_right = 320.0
+margin_bottom = 180.0
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 6 )
+
+[node name="loading_text" type="Label" parent="Screen_new_game"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -161.0
+margin_top = 27.0
+margin_right = 161.0
+margin_bottom = 63.0
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 161, 0 )
+theme = ExtResource( 4 )
+text = "Carregando ..."
+align = 1
+valign = 1
+
+[node name="target_picture" type="Panel" parent="Screen_new_game"]
+margin_left = 256.0
+margin_top = 200.0
+margin_right = 476.0
+margin_bottom = 530.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="Panel" parent="Screen_new_game/target_picture"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Panel2" type="Panel" parent="Screen_new_game/target_picture"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="target" type="Node2D" parent="Screen_new_game/target_picture"]
+position = Vector2( 110, 214 )
+scale = Vector2( 6, 6 )
+
+[node name="L_Arm" type="Sprite" parent="Screen_new_game/target_picture/target"]
+modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
+position = Vector2( 10, -6 )
+texture = ExtResource( 10 )
+
+[node name="L_Forearm" type="Sprite" parent="Screen_new_game/target_picture/target/L_Arm"]
+show_behind_parent = true
+position = Vector2( 0, 12 )
+texture = ExtResource( 12 )
+
+[node name="L_Hand" type="Sprite" parent="Screen_new_game/target_picture/target/L_Arm/L_Forearm"]
+show_behind_parent = true
+position = Vector2( 0, 7 )
+texture = ExtResource( 8 )
+
+[node name="L_Leg" type="Sprite" parent="Screen_new_game/target_picture/target"]
+modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
+position = Vector2( 4.00002, 10 )
+texture = ExtResource( 10 )
+
+[node name="Head" type="Sprite" parent="Screen_new_game/target_picture/target"]
+position = Vector2( 0, -21 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 11 )
+
+[node name="R_Leg" type="Sprite" parent="Screen_new_game/target_picture/target"]
+position = Vector2( -5, 10 )
+texture = ExtResource( 10 )
+
+[node name="Chest" type="Sprite" parent="Screen_new_game/target_picture/target"]
+modulate = Color( 0.929412, 0.929412, 0.929412, 1 )
+texture = ExtResource( 9 )
+
+[node name="R_Arm" type="Sprite" parent="Screen_new_game/target_picture/target"]
+position = Vector2( -11, -6 )
+texture = ExtResource( 10 )
+
+[node name="R_Forearm" type="Sprite" parent="Screen_new_game/target_picture/target/R_Arm"]
+show_behind_parent = true
+position = Vector2( 0, 12 )
+texture = ExtResource( 12 )
+
+[node name="R_Hand" type="Sprite" parent="Screen_new_game/target_picture/target/R_Arm/R_Forearm"]
+show_behind_parent = true
+position = Vector2( 0, 7 )
+texture = ExtResource( 8 )
+
+[node name="target_description" type="Label" parent="Screen_new_game"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -160.0
+margin_right = 838.0
+margin_bottom = 227.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 4 )
+text = "Novo contrato selecionado
+Tipo de contrato: Assassinato
+Contratante: Anonimo
+Dificuldade: Médio
+Recompença: R$500.000,00
+
+Alvo principal: Hades
+Nome real: Frederico Hard
+Ocupação: Comandante da máfia de São Paulo
+Situação atual: Fazendo negócios na cidade"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="target_picture" type="Panel" parent="Screen_new_game/target_description"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 6.0
+margin_bottom = 5.0
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="Screen_new_game/target_description/target_picture"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Label_good_hunt" type="Label" parent="Screen_new_game"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = 80.0
+margin_right = 452.0
+margin_bottom = 116.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 4 )
+text = "Tenha uma boa caçada"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="Screen_Menu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
 [connection signal="pressed" from="Screen_Menu/Button_New_Game" to="." method="_on_Button_New_Game_pressed"]

@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,11 +8,12 @@ extends Sprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Global.fase != "Fase_2":
-		visible = false
-		queue_free()
+	Global.fase = "cutscene_1"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "loading_out":
+		get_tree().change_scene("res://assets/scenes/Fase_1.tscn")
