@@ -1,4 +1,4 @@
-[gd_scene load_steps=225 format=2]
+[gd_scene load_steps=447 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/scenes/background.tscn" type="PackedScene" id=2]
@@ -105,12 +105,658 @@
 [ext_resource path="res://assets/images/Characters/Player/Purple/Chest.png" type="Texture" id=103]
 [ext_resource path="res://assets/images/Characters/Player/Green/R_Arm.png" type="Texture" id=104]
 [ext_resource path="res://assets/scripts/cutscene_1.gd" type="Script" id=105]
+[ext_resource path="res://assets/images/Characters/Boss_Red/R_Leg.png" type="Texture" id=106]
+[ext_resource path="res://assets/images/Characters/Boss_Red/R_Foot.png" type="Texture" id=107]
+[ext_resource path="res://assets/images/Characters/Boss_Red/R_Hand.png" type="Texture" id=108]
+[ext_resource path="res://assets/images/Characters/Boss_Red/L_Leg.png" type="Texture" id=109]
+[ext_resource path="res://assets/images/Characters/Boss_Red/R_Arm.png" type="Texture" id=110]
+[ext_resource path="res://assets/images/Characters/Boss_Red/Chest.png" type="Texture" id=111]
+[ext_resource path="res://assets/images/Characters/Boss_Red/R_Thigh.png" type="Texture" id=112]
+[ext_resource path="res://assets/images/Characters/Boss_Red/Head.png" type="Texture" id=113]
+[ext_resource path="res://assets/images/Characters/Boss_Red/L_Thigh.png" type="Texture" id=114]
+[ext_resource path="res://assets/images/Characters/Boss_Red/L_Forearm.png" type="Texture" id=115]
+[ext_resource path="res://assets/images/Characters/Boss_Red/L_Hand.png" type="Texture" id=116]
+[ext_resource path="res://assets/images/Characters/Boss_Red/L_Foot.png" type="Texture" id=117]
+[ext_resource path="res://assets/images/Characters/Boss_Red/L_Arm.png" type="Texture" id=118]
+[ext_resource path="res://assets/images/Characters/Boss_Red/R_Forearm.png" type="Texture" id=119]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/L_Hand.png" type="Texture" id=120]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Blade.png" type="Texture" id=121]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/R_Thigh.png" type="Texture" id=122]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/Head.png" type="Texture" id=123]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/L_Forearm.png" type="Texture" id=124]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/R_Arm.png" type="Texture" id=125]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/L_Leg.png" type="Texture" id=126]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Hilt.png" type="Texture" id=127]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Head_1.png" type="Texture" id=128]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Head_3.png" type="Texture" id=129]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Head_2.png" type="Texture" id=130]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/Chest.png" type="Texture" id=131]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/R_Hand.png" type="Texture" id=132]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/R_Forearm.png" type="Texture" id=133]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/L_Arm.png" type="Texture" id=134]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Hilt.png" type="Texture" id=135]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/L_Foot.png" type="Texture" id=136]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/R_Leg.png" type="Texture" id=137]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/R_Foot.png" type="Texture" id=138]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/L_Thigh.png" type="Texture" id=139]
+[ext_resource path="res://assets/images/Characters/Hades/Foot.png" type="Texture" id=140]
+[ext_resource path="res://assets/images/Characters/Hades/Thigh.png" type="Texture" id=141]
+[ext_resource path="res://assets/images/Characters/Hades/Leg.png" type="Texture" id=142]
+[ext_resource path="res://assets/images/Characters/Hades/Head.png" type="Texture" id=143]
+[ext_resource path="res://assets/images/Characters/Hades/Forearm.png" type="Texture" id=144]
+[ext_resource path="res://assets/images/Characters/Hades/Hand.png" type="Texture" id=145]
+[ext_resource path="res://assets/images/Characters/Hades/Chest.png" type="Texture" id=146]
+[ext_resource path="res://assets/images/Characters/Hades/Arm.png" type="Texture" id=147]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Hand.png" type="Texture" id=148]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/Forearm.png" type="Texture" id=149]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Leg.png" type="Texture" id=150]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Thigh.png" type="Texture" id=151]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Chest.png" type="Texture" id=152]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Chest.png" type="Texture" id=153]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Chest.png" type="Texture" id=154]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Chest.png" type="Texture" id=155]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Forearm.png" type="Texture" id=156]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Foot.png" type="Texture" id=157]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Arm.png" type="Texture" id=158]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Arm.png" type="Texture" id=159]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Arm.png" type="Texture" id=160]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Forearm.png" type="Texture" id=161]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Foot.png" type="Texture" id=162]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Hand.png" type="Texture" id=163]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Foot.png" type="Texture" id=164]
+[ext_resource path="res://assets/images/Weapons/enemy_Weapons/AK-47/AK-47 Reloader.png" type="Texture" id=165]
+[ext_resource path="res://assets/images/Weapons/enemy_Weapons/AK-47/AK-47.png" type="Texture" id=166]
+[ext_resource path="res://assets/images/Weapons/enemy_Weapons/Fire.png" type="Texture" id=167]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Foot.png" type="Texture" id=168]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Thigh.png" type="Texture" id=169]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Thigh.png" type="Texture" id=170]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Leg.png" type="Texture" id=171]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Leg.png" type="Texture" id=172]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/Head 1.png" type="Texture" id=173]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/Arm.png" type="Texture" id=174]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/UpLeg.png" type="Texture" id=175]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/Chest.png" type="Texture" id=176]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/LowLeg.png" type="Texture" id=177]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Leg.png" type="Texture" id=178]
+[ext_resource path="res://assets/images/Characters/Enemy/DMG/Head 2.png" type="Texture" id=179]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Hand.png" type="Texture" id=180]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Arm.png" type="Texture" id=181]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Forearm.png" type="Texture" id=182]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 1/Head.png" type="Texture" id=183]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Forearm.png" type="Texture" id=184]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 2/Head.png" type="Texture" id=185]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Head.png" type="Texture" id=186]
+[ext_resource path="res://assets/images/Weapons/enemy_Weapons/M-16/M-16.png" type="Texture" id=187]
+[ext_resource path="res://assets/images/Weapons/enemy_Weapons/M-16/M-16 Reloader.png" type="Texture" id=188]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Thigh.png" type="Texture" id=189]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 4/Head.png" type="Texture" id=190]
+[ext_resource path="res://assets/images/Characters/Enemy/Option 3/Hand.png" type="Texture" id=191]
+
+[sub_resource type="AtlasTexture" id=195]
+atlas = ExtResource( 180 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=196]
+atlas = ExtResource( 163 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=197]
+atlas = ExtResource( 191 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=198]
+atlas = ExtResource( 148 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=358]
+animations = [ {
+"frames": [ SubResource( 195 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 196 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 197 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 198 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=359]
+extents = Vector2( 4, 2 )
+
+[sub_resource type="AtlasTexture" id=201]
+atlas = ExtResource( 182 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=202]
+atlas = ExtResource( 184 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=203]
+atlas = ExtResource( 156 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=204]
+atlas = ExtResource( 161 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=360]
+animations = [ {
+"frames": [ SubResource( 201 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 202 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 203 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 204 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=173]
+atlas = ExtResource( 149 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="SpriteFrames" id=361]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 173 ) ],
+"loop": true,
+"name": "option1",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=362]
+extents = Vector2( 4, 8.5 )
+
+[sub_resource type="AtlasTexture" id=205]
+atlas = ExtResource( 158 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=206]
+atlas = ExtResource( 160 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=207]
+atlas = ExtResource( 159 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=208]
+atlas = ExtResource( 181 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=363]
+animations = [ {
+"frames": [ SubResource( 205 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 206 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 207 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 208 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=171]
+atlas = ExtResource( 174 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="SpriteFrames" id=364]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 171 ) ],
+"loop": true,
+"name": "option1",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=365]
+extents = Vector2( 4, 8 )
+
+[sub_resource type="AtlasTexture" id=209]
+atlas = ExtResource( 157 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=210]
+atlas = ExtResource( 162 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=211]
+atlas = ExtResource( 164 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=212]
+atlas = ExtResource( 168 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=366]
+animations = [ {
+"frames": [ SubResource( 209 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 210 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 211 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 212 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=367]
+extents = Vector2( 4.5, 2.5 )
+
+[sub_resource type="AtlasTexture" id=215]
+atlas = ExtResource( 178 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=216]
+atlas = ExtResource( 150 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=217]
+atlas = ExtResource( 172 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=218]
+atlas = ExtResource( 171 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=368]
+animations = [ {
+"frames": [ SubResource( 215 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 216 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 217 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 218 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=177]
+atlas = ExtResource( 177 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="SpriteFrames" id=369]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 177 ) ],
+"loop": true,
+"name": "option1",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=370]
+extents = Vector2( 4, 9.5 )
+
+[sub_resource type="AtlasTexture" id=219]
+atlas = ExtResource( 169 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=220]
+atlas = ExtResource( 170 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=221]
+atlas = ExtResource( 151 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=222]
+atlas = ExtResource( 189 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=371]
+animations = [ {
+"frames": [ SubResource( 219 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 220 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 221 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 222 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=175]
+atlas = ExtResource( 175 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="SpriteFrames" id=372]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 175 ) ],
+"loop": true,
+"name": "option1",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=373]
+extents = Vector2( 4, 6 )
+
+[sub_resource type="AtlasTexture" id=223]
+atlas = ExtResource( 183 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=224]
+atlas = ExtResource( 185 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=225]
+atlas = ExtResource( 186 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=226]
+atlas = ExtResource( 190 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=374]
+animations = [ {
+"frames": [ SubResource( 223 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 224 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 225 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 226 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=166]
+atlas = ExtResource( 173 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="AtlasTexture" id=167]
+atlas = ExtResource( 179 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="SpriteFrames" id=375]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 166 ) ],
+"loop": true,
+"name": "option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 167 ) ],
+"loop": true,
+"name": "option2",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=376]
+extents = Vector2( 7.5, 7 )
+
+[sub_resource type="AtlasTexture" id=227]
+atlas = ExtResource( 152 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=228]
+atlas = ExtResource( 155 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=229]
+atlas = ExtResource( 154 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="AtlasTexture" id=230]
+atlas = ExtResource( 153 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=377]
+animations = [ {
+"frames": [ SubResource( 227 ) ],
+"loop": true,
+"name": "Option1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 228 ) ],
+"loop": true,
+"name": "Option2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 229 ) ],
+"loop": true,
+"name": "Option3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 230 ) ],
+"loop": true,
+"name": "Option4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=169]
+atlas = ExtResource( 176 )
+region = Rect2( 0, 0, 19, 54 )
+
+[sub_resource type="SpriteFrames" id=378]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 169 ) ],
+"loop": true,
+"name": "option1",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=379]
+extents = Vector2( 8.5, 13 )
+
+[sub_resource type="AtlasTexture" id=191]
+atlas = ExtResource( 166 )
+region = Rect2( 0, 0, 70, 54 )
+
+[sub_resource type="AtlasTexture" id=239]
+atlas = ExtResource( 187 )
+region = Rect2( 0, 0, 70, 54 )
+
+[sub_resource type="SpriteFrames" id=380]
+animations = [ {
+"frames": [ SubResource( 191 ) ],
+"loop": true,
+"name": "AK-47",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 239 ) ],
+"loop": true,
+"name": "M-16",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=194]
+atlas = ExtResource( 165 )
+region = Rect2( 0, 0, 70, 54 )
+
+[sub_resource type="AtlasTexture" id=240]
+atlas = ExtResource( 188 )
+region = Rect2( 0, 0, 70, 54 )
+
+[sub_resource type="SpriteFrames" id=381]
+animations = [ {
+"frames": [ SubResource( 194 ) ],
+"loop": true,
+"name": "AK-47",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 240 ) ],
+"loop": true,
+"name": "M-16",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=192]
+atlas = ExtResource( 167 )
+region = Rect2( 0, 0, 70, 54 )
+
+[sub_resource type="AtlasTexture" id=193]
+atlas = ExtResource( 167 )
+region = Rect2( 0, 0, 70, 54 )
+
+[sub_resource type="SpriteFrames" id=382]
+animations = [ {
+"frames": [ SubResource( 192 ), null, SubResource( 193 ) ],
+"loop": true,
+"name": "Fire",
+"speed": 30.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=176]
 atlas = ExtResource( 91 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=198]
+[sub_resource type="AtlasTexture" id=383]
 atlas = ExtResource( 41 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -122,15 +768,15 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 56 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=177]
+[sub_resource type="AtlasTexture" id=384]
 atlas = ExtResource( 71 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=201]
+[sub_resource type="AtlasTexture" id=385]
 atlas = ExtResource( 102 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=166]
+[sub_resource type="AtlasTexture" id=386]
 atlas = ExtResource( 84 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -141,7 +787,7 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 198 ) ],
+"frames": [ SubResource( 383 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
@@ -156,35 +802,35 @@ animations = [ {
 "name": "Purple",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 177 ) ],
+"frames": [ SubResource( 384 ) ],
 "loop": true,
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 201 ) ],
+"frames": [ SubResource( 385 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 166 ) ],
+"frames": [ SubResource( 386 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=175]
+[sub_resource type="AtlasTexture" id=387]
 atlas = ExtResource( 66 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=194]
+[sub_resource type="AtlasTexture" id=388]
 atlas = ExtResource( 99 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=195]
+[sub_resource type="AtlasTexture" id=389]
 atlas = ExtResource( 74 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=196]
+[sub_resource type="AtlasTexture" id=390]
 atlas = ExtResource( 54 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -192,7 +838,7 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 60 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=197]
+[sub_resource type="AtlasTexture" id=391]
 atlas = ExtResource( 92 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -202,22 +848,22 @@ region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="SpriteFrames" id=295]
 animations = [ {
-"frames": [ SubResource( 175 ) ],
+"frames": [ SubResource( 387 ) ],
 "loop": true,
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 194 ) ],
+"frames": [ SubResource( 388 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 195 ) ],
+"frames": [ SubResource( 389 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 196 ) ],
+"frames": [ SubResource( 390 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -227,7 +873,7 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 197 ) ],
+"frames": [ SubResource( 391 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
@@ -308,15 +954,15 @@ animations = [ {
 atlas = ExtResource( 81 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=206]
+[sub_resource type="AtlasTexture" id=392]
 atlas = ExtResource( 50 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=207]
+[sub_resource type="AtlasTexture" id=393]
 atlas = ExtResource( 76 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=208]
+[sub_resource type="AtlasTexture" id=394]
 atlas = ExtResource( 55 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -324,7 +970,7 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 58 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=209]
+[sub_resource type="AtlasTexture" id=395]
 atlas = ExtResource( 95 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -339,17 +985,17 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 206 ) ],
+"frames": [ SubResource( 392 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 207 ) ],
+"frames": [ SubResource( 393 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 208 ) ],
+"frames": [ SubResource( 394 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -359,7 +1005,7 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 209 ) ],
+"frames": [ SubResource( 395 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
@@ -374,15 +1020,15 @@ animations = [ {
 atlas = ExtResource( 45 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=202]
+[sub_resource type="AtlasTexture" id=396]
 atlas = ExtResource( 61 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=203]
+[sub_resource type="AtlasTexture" id=397]
 atlas = ExtResource( 67 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=204]
+[sub_resource type="AtlasTexture" id=398]
 atlas = ExtResource( 46 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -390,11 +1036,11 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 88 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=205]
+[sub_resource type="AtlasTexture" id=399]
 atlas = ExtResource( 93 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=167]
+[sub_resource type="AtlasTexture" id=400]
 atlas = ExtResource( 86 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -405,17 +1051,17 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 202 ) ],
+"frames": [ SubResource( 396 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 203 ) ],
+"frames": [ SubResource( 397 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 204 ) ],
+"frames": [ SubResource( 398 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -425,12 +1071,12 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 205 ) ],
+"frames": [ SubResource( 399 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 167 ) ],
+"frames": [ SubResource( 400 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
@@ -510,11 +1156,11 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 98 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=215]
+[sub_resource type="AtlasTexture" id=401]
 atlas = ExtResource( 49 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=216]
+[sub_resource type="AtlasTexture" id=402]
 atlas = ExtResource( 42 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -522,7 +1168,7 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 72 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=217]
+[sub_resource type="AtlasTexture" id=403]
 atlas = ExtResource( 47 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -542,12 +1188,12 @@ animations = [ {
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 215 ) ],
+"frames": [ SubResource( 401 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 216 ) ],
+"frames": [ SubResource( 402 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -557,7 +1203,7 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 217 ) ],
+"frames": [ SubResource( 403 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
@@ -572,15 +1218,15 @@ animations = [ {
 atlas = ExtResource( 64 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=210]
+[sub_resource type="AtlasTexture" id=404]
 atlas = ExtResource( 96 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=211]
+[sub_resource type="AtlasTexture" id=405]
 atlas = ExtResource( 36 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=212]
+[sub_resource type="AtlasTexture" id=406]
 atlas = ExtResource( 37 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -592,7 +1238,7 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 101 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=169]
+[sub_resource type="AtlasTexture" id=407]
 atlas = ExtResource( 70 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -603,17 +1249,17 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 210 ) ],
+"frames": [ SubResource( 404 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 211 ) ],
+"frames": [ SubResource( 405 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 212 ) ],
+"frames": [ SubResource( 406 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -628,7 +1274,7 @@ animations = [ {
 "name": "White",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 169 ) ],
+"frames": [ SubResource( 407 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
@@ -704,15 +1350,15 @@ animations = [ {
 atlas = ExtResource( 34 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=222]
+[sub_resource type="AtlasTexture" id=408]
 atlas = ExtResource( 80 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=223]
+[sub_resource type="AtlasTexture" id=409]
 atlas = ExtResource( 62 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=224]
+[sub_resource type="AtlasTexture" id=410]
 atlas = ExtResource( 51 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -720,7 +1366,7 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 68 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=225]
+[sub_resource type="AtlasTexture" id=411]
 atlas = ExtResource( 90 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -735,17 +1381,17 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 222 ) ],
+"frames": [ SubResource( 408 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 223 ) ],
+"frames": [ SubResource( 409 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 224 ) ],
+"frames": [ SubResource( 410 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -755,7 +1401,7 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 225 ) ],
+"frames": [ SubResource( 411 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
@@ -770,15 +1416,15 @@ animations = [ {
 atlas = ExtResource( 73 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=218]
+[sub_resource type="AtlasTexture" id=412]
 atlas = ExtResource( 100 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=219]
+[sub_resource type="AtlasTexture" id=413]
 atlas = ExtResource( 35 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=220]
+[sub_resource type="AtlasTexture" id=414]
 atlas = ExtResource( 103 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -786,11 +1432,11 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 63 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=221]
+[sub_resource type="AtlasTexture" id=415]
 atlas = ExtResource( 94 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=171]
+[sub_resource type="AtlasTexture" id=416]
 atlas = ExtResource( 53 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -801,17 +1447,17 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 218 ) ],
+"frames": [ SubResource( 412 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 219 ) ],
+"frames": [ SubResource( 413 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 220 ) ],
+"frames": [ SubResource( 414 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
@@ -821,12 +1467,12 @@ animations = [ {
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 221 ) ],
+"frames": [ SubResource( 415 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 171 ) ],
+"frames": [ SubResource( 416 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
@@ -861,11 +1507,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=192]
+[sub_resource type="AtlasTexture" id=417]
 atlas = ExtResource( 52 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=230]
+[sub_resource type="AtlasTexture" id=418]
 atlas = ExtResource( 104 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -877,7 +1523,7 @@ region = Rect2( 0, 0, 17, 26 )
 atlas = ExtResource( 44 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=193]
+[sub_resource type="AtlasTexture" id=419]
 atlas = ExtResource( 79 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -891,12 +1537,12 @@ region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="SpriteFrames" id=307]
 animations = [ {
-"frames": [ SubResource( 192 ) ],
+"frames": [ SubResource( 417 ) ],
 "loop": true,
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 230 ) ],
+"frames": [ SubResource( 418 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
@@ -911,7 +1557,7 @@ animations = [ {
 "name": "Purple",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 193 ) ],
+"frames": [ SubResource( 419 ) ],
 "loop": true,
 "name": "Red",
 "speed": 5.0
@@ -931,27 +1577,27 @@ animations = [ {
 atlas = ExtResource( 77 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=226]
+[sub_resource type="AtlasTexture" id=420]
 atlas = ExtResource( 97 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=227]
+[sub_resource type="AtlasTexture" id=421]
 atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=228]
+[sub_resource type="AtlasTexture" id=422]
 atlas = ExtResource( 48 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=191]
+[sub_resource type="AtlasTexture" id=423]
 atlas = ExtResource( 59 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=229]
+[sub_resource type="AtlasTexture" id=424]
 atlas = ExtResource( 40 )
 region = Rect2( 0, 0, 17, 26 )
 
-[sub_resource type="AtlasTexture" id=173]
+[sub_resource type="AtlasTexture" id=425]
 atlas = ExtResource( 83 )
 region = Rect2( 0, 0, 17, 26 )
 
@@ -962,32 +1608,32 @@ animations = [ {
 "name": "Blue",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 226 ) ],
+"frames": [ SubResource( 420 ) ],
 "loop": true,
 "name": "Green",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 227 ) ],
+"frames": [ SubResource( 421 ) ],
 "loop": true,
 "name": "Orange",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 228 ) ],
+"frames": [ SubResource( 422 ) ],
 "loop": true,
 "name": "Purple",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 191 ) ],
+"frames": [ SubResource( 423 ) ],
 "loop": true,
 "name": "Red",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 229 ) ],
+"frames": [ SubResource( 424 ) ],
 "loop": true,
 "name": "White",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 173 ) ],
+"frames": [ SubResource( 425 ) ],
 "loop": true,
 "name": "Yellow",
 "speed": 5.0
@@ -1056,6 +1702,408 @@ animations = [ {
 "frames": [ SubResource( 263 ) ],
 "loop": true,
 "name": "Yellow",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 120 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=311]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 124 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=312]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 134 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=313]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 135 )
+region = Rect2( 0, 0, 11, 3 )
+
+[sub_resource type="SpriteFrames" id=314]
+animations = [ {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 121 )
+region = Rect2( 0, 0, 15, 33 )
+
+[sub_resource type="SpriteFrames" id=315]
+animations = [ {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 136 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=316]
+animations = [ {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 126 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=317]
+animations = [ {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 139 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=318]
+animations = [ {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 138 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=319]
+animations = [ {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 137 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=320]
+animations = [ {
+"frames": [ SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 122 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=321]
+animations = [ {
+"frames": [ SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 123 )
+region = Rect2( 0, 0, 27, 26 )
+
+[sub_resource type="SpriteFrames" id=322]
+animations = [ {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 131 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=323]
+animations = [ {
+"frames": [ SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 132 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=324]
+animations = [ {
+"frames": [ SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 133 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=325]
+animations = [ {
+"frames": [ SubResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 125 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=326]
+animations = [ {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=327]
+atlas = ExtResource( 116 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=328]
+animations = [ {
+"frames": [ SubResource( 327 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=329]
+atlas = ExtResource( 115 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=330]
+animations = [ {
+"frames": [ SubResource( 329 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=331]
+atlas = ExtResource( 118 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=332]
+animations = [ {
+"frames": [ SubResource( 331 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=333]
+atlas = ExtResource( 117 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=334]
+animations = [ {
+"frames": [ SubResource( 333 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 109 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=335]
+animations = [ {
+"frames": [ SubResource( 49 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 114 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=336]
+animations = [ {
+"frames": [ SubResource( 50 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=337]
+atlas = ExtResource( 107 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=338]
+animations = [ {
+"frames": [ SubResource( 337 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=339]
+atlas = ExtResource( 106 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=340]
+animations = [ {
+"frames": [ SubResource( 339 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=341]
+atlas = ExtResource( 112 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=342]
+animations = [ {
+"frames": [ SubResource( 341 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=343]
+atlas = ExtResource( 113 )
+region = Rect2( 0, 0, 23, 26 )
+
+[sub_resource type="SpriteFrames" id=344]
+animations = [ {
+"frames": [ SubResource( 343 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=345]
+atlas = ExtResource( 111 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=346]
+animations = [ {
+"frames": [ SubResource( 345 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=347]
+atlas = ExtResource( 108 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=348]
+animations = [ {
+"frames": [ SubResource( 347 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=349]
+atlas = ExtResource( 119 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=350]
+animations = [ {
+"frames": [ SubResource( 349 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 110 )
+region = Rect2( 0, 0, 17, 26 )
+
+[sub_resource type="SpriteFrames" id=351]
+animations = [ {
+"frames": [ SubResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=352]
+atlas = ExtResource( 127 )
+region = Rect2( 0, 0, 3, 54 )
+
+[sub_resource type="SpriteFrames" id=353]
+animations = [ {
+"frames": [ SubResource( 352 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=354]
+atlas = ExtResource( 128 )
+region = Rect2( 0, 0, 19, 12 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 130 )
+region = Rect2( 0, 0, 19, 12 )
+
+[sub_resource type="AtlasTexture" id=355]
+atlas = ExtResource( 129 )
+region = Rect2( 0, 0, 19, 12 )
+
+[sub_resource type="SpriteFrames" id=356]
+animations = [ {
+"frames": [ SubResource( 354 ) ],
+"loop": true,
+"name": "Head_1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "Head_2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 355 ) ],
+"loop": true,
+"name": "Head_3",
 "speed": 5.0
 } ]
 
@@ -1509,8 +2557,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "loading_out"
+[sub_resource type="Animation" id=357]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -1526,6 +2573,10 @@ tracks/0/keys = {
 
 [node name="cutscene_1" type="Node2D"]
 script = ExtResource( 105 )
+enemy_ar_flip = true
+hades_flip = true
+boss_blue_flip = true
+boss_red_flip = true
 
 [node name="sky" type="Node2D" parent="."]
 position = Vector2( 0, -910 )
@@ -1583,6 +2634,334 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Enemy_AR" type="Node2D" parent="."]
+position = Vector2( 47, 525 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Upper_Left" type="Node2D" parent="Enemy_AR"]
+
+[node name="L_Forearm" type="Node2D" parent="Enemy_AR/Upper_Left"]
+position = Vector2( 11.5, 5.5 )
+rotation = -0.626573
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Hand" type="Node2D" parent="Enemy_AR/Upper_Left/L_Forearm"]
+position = Vector2( 0, 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Left/L_Forearm/L_Hand"]
+frames = SubResource( 358 )
+animation = "Option1"
+
+[node name="Area2D_L_Hand" type="Area2D" parent="Enemy_AR/Upper_Left/L_Forearm/L_Hand"]
+visible = false
+
+[node name="Collision_L_Hand" type="CollisionShape2D" parent="Enemy_AR/Upper_Left/L_Forearm/L_Hand/Area2D_L_Hand"]
+position = Vector2( 0.5, 2 )
+shape = SubResource( 359 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Left/L_Forearm"]
+frames = SubResource( 360 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Upper_Left/L_Forearm"]
+frames = SubResource( 361 )
+
+[node name="Area2D_L_Forearm" type="Area2D" parent="Enemy_AR/Upper_Left/L_Forearm"]
+visible = false
+
+[node name="Collision_L_Forearm" type="CollisionShape2D" parent="Enemy_AR/Upper_Left/L_Forearm/Area2D_L_Forearm"]
+position = Vector2( 0.5, -1.5 )
+shape = SubResource( 362 )
+
+[node name="L_Arm" type="Node2D" parent="Enemy_AR/Upper_Left"]
+position = Vector2( 8.5, -6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Left/L_Arm"]
+frames = SubResource( 363 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Upper_Left/L_Arm"]
+frames = SubResource( 364 )
+
+[node name="Area2D_L_Arm" type="Area2D" parent="Enemy_AR/Upper_Left/L_Arm"]
+visible = false
+
+[node name="Collision_L_Arm" type="CollisionShape2D" parent="Enemy_AR/Upper_Left/L_Arm/Area2D_L_Arm"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 365 )
+
+[node name="Lower" type="Node2D" parent="Enemy_AR"]
+
+[node name="L_Leg" type="Node2D" parent="Enemy_AR/Lower"]
+position = Vector2( 6, 28 )
+z_index = -3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Foot" type="Node2D" parent="Enemy_AR/Lower/L_Leg"]
+position = Vector2( 0, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Lower/L_Leg/L_Foot"]
+frames = SubResource( 366 )
+animation = "Option1"
+
+[node name="Area2D_L_Foot" type="Area2D" parent="Enemy_AR/Lower/L_Leg/L_Foot"]
+visible = false
+
+[node name="Collision_L_Foot" type="CollisionShape2D" parent="Enemy_AR/Lower/L_Leg/L_Foot/Area2D_L_Foot"]
+position = Vector2( 1, 1.5 )
+shape = SubResource( 367 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Lower/L_Leg"]
+frames = SubResource( 368 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Lower/L_Leg"]
+frames = SubResource( 369 )
+
+[node name="Area2D_L_Leg" type="Area2D" parent="Enemy_AR/Lower/L_Leg"]
+visible = false
+
+[node name="Collision_L_Leg" type="CollisionShape2D" parent="Enemy_AR/Lower/L_Leg/Area2D_L_Leg"]
+position = Vector2( 0.5, -2.5 )
+shape = SubResource( 370 )
+
+[node name="L_Thigh" type="Node2D" parent="Enemy_AR/Lower"]
+position = Vector2( 5, 17 )
+rotation = -0.174533
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Lower/L_Thigh"]
+frames = SubResource( 371 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Lower/L_Thigh"]
+frames = SubResource( 372 )
+
+[node name="Area2D_L_Thigh" type="Area2D" parent="Enemy_AR/Lower/L_Thigh"]
+visible = false
+
+[node name="Collision_L_Thigh" type="CollisionShape2D" parent="Enemy_AR/Lower/L_Thigh/Area2D_L_Thigh"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 373 )
+
+[node name="R_Leg" type="Node2D" parent="Enemy_AR/Lower"]
+position = Vector2( -6, 28 )
+rotation = 0.0698132
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Foot" type="Node2D" parent="Enemy_AR/Lower/R_Leg"]
+position = Vector2( 0, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Lower/R_Leg/R_Foot"]
+frames = SubResource( 366 )
+animation = "Option1"
+
+[node name="Area2D_R_Foot" type="Area2D" parent="Enemy_AR/Lower/R_Leg/R_Foot"]
+visible = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision_R_Foot" type="CollisionShape2D" parent="Enemy_AR/Lower/R_Leg/R_Foot/Area2D_R_Foot"]
+position = Vector2( 1, 1.5 )
+shape = SubResource( 367 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Lower/R_Leg"]
+frames = SubResource( 368 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Lower/R_Leg"]
+frames = SubResource( 369 )
+
+[node name="Area2D_R_Leg" type="Area2D" parent="Enemy_AR/Lower/R_Leg"]
+visible = false
+
+[node name="Collision_R_Leg" type="CollisionShape2D" parent="Enemy_AR/Lower/R_Leg/Area2D_R_Leg"]
+position = Vector2( 0.5, -3.5 )
+shape = SubResource( 370 )
+
+[node name="R_Thigh" type="Node2D" parent="Enemy_AR/Lower"]
+position = Vector2( -5.5, 17 )
+rotation = 0.0523599
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Lower/R_Thigh"]
+frames = SubResource( 371 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Lower/R_Thigh"]
+frames = SubResource( 372 )
+
+[node name="Area2D_R_Thigh" type="Area2D" parent="Enemy_AR/Lower/R_Thigh"]
+visible = false
+
+[node name="Collision_R_Thigh" type="CollisionShape2D" parent="Enemy_AR/Lower/R_Thigh/Area2D_R_Thigh"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 373 )
+
+[node name="Upper_Right" type="Node2D" parent="Enemy_AR"]
+
+[node name="Head" type="Node2D" parent="Enemy_AR/Upper_Right"]
+position = Vector2( 0, -21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Head"]
+frames = SubResource( 374 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Head"]
+frames = SubResource( 375 )
+
+[node name="Area2D_Head" type="Area2D" parent="Enemy_AR/Upper_Right/Head"]
+visible = false
+
+[node name="Collision_Head" type="CollisionShape2D" parent="Enemy_AR/Upper_Right/Head/Area2D_Head"]
+position = Vector2( 0, 1 )
+shape = SubResource( 376 )
+
+[node name="Chest" type="Node2D" parent="Enemy_AR/Upper_Right"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Chest"]
+frames = SubResource( 377 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Chest"]
+frames = SubResource( 378 )
+
+[node name="Area2D_Chest" type="Area2D" parent="Enemy_AR/Upper_Right/Chest"]
+visible = false
+
+[node name="Collision_Chest" type="CollisionShape2D" parent="Enemy_AR/Upper_Right/Chest/Area2D_Chest"]
+shape = SubResource( 379 )
+
+[node name="Weapon_Set" type="Node2D" parent="Enemy_AR/Upper_Right"]
+position = Vector2( 12, 10.5 )
+rotation = 0.523599
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Weapon" type="Node2D" parent="Enemy_AR/Upper_Right/Weapon_Set"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Weapon_Set/Weapon"]
+frames = SubResource( 380 )
+animation = "AK-47"
+
+[node name="Reloader" type="Node2D" parent="Enemy_AR/Upper_Right/Weapon_Set"]
+position = Vector2( 3, 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Weapon_Set/Reloader"]
+frames = SubResource( 381 )
+animation = "AK-47"
+
+[node name="Fire" type="Node2D" parent="Enemy_AR/Upper_Right/Weapon_Set"]
+position = Vector2( 35, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Weapon_Set/Fire"]
+frames = SubResource( 382 )
+
+[node name="R_Forearm" type="Node2D" parent="Enemy_AR/Upper_Right"]
+position = Vector2( -6.5, 5.5 )
+rotation = -1.0472
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Hand" type="Node2D" parent="Enemy_AR/Upper_Right/R_Forearm"]
+position = Vector2( 0, 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/R_Forearm/R_Hand"]
+frames = SubResource( 358 )
+animation = "Option1"
+
+[node name="Area2D_R_Hand" type="Area2D" parent="Enemy_AR/Upper_Right/R_Forearm/R_Hand"]
+visible = false
+
+[node name="Collision_R_Hand" type="CollisionShape2D" parent="Enemy_AR/Upper_Right/R_Forearm/R_Hand/Area2D_R_Hand"]
+position = Vector2( 0.5, 2 )
+shape = SubResource( 359 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/R_Forearm"]
+frames = SubResource( 360 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/R_Forearm"]
+frames = SubResource( 361 )
+
+[node name="Area2D_R_Forearm" type="Area2D" parent="Enemy_AR/Upper_Right/R_Forearm"]
+visible = false
+
+[node name="Collision_R_Forearm" type="CollisionShape2D" parent="Enemy_AR/Upper_Right/R_Forearm/Area2D_R_Forearm"]
+position = Vector2( 0.5, -1.5 )
+shape = SubResource( 362 )
+
+[node name="R_Arm" type="Node2D" parent="Enemy_AR/Upper_Right"]
+position = Vector2( -10, -6 )
+rotation = 0.174533
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/R_Arm"]
+frames = SubResource( 363 )
+animation = "Option1"
+
+[node name="Sprite_DMG" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/R_Arm"]
+frames = SubResource( 364 )
+
+[node name="Area2D_R_Arm" type="Area2D" parent="Enemy_AR/Upper_Right/R_Arm"]
+visible = false
+
+[node name="Collision_R_Arm" type="CollisionShape2D" parent="Enemy_AR/Upper_Right/R_Arm/Area2D_R_Arm"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 365 )
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2( -496, -524 )
@@ -1707,13 +3086,485 @@ position = Vector2( 0, 7 )
 frames = SubResource( 309 )
 animation = "Yellow"
 
+[node name="Boss_Blue" type="Node2D" parent="."]
+position = Vector2( 319, 484 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Upper_Left" type="Node2D" parent="Boss_Blue"]
+
+[node name="L_Arm" type="Node2D" parent="Boss_Blue/Upper_Left"]
+position = Vector2( 4.66667, -6.44444 )
+rotation = -0.171042
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Forearm" type="Node2D" parent="Boss_Blue/Upper_Left/L_Arm"]
+position = Vector2( 8.19121, 9.18499 )
+rotation = -2.03854
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Hand" type="Node2D" parent="Boss_Blue/Upper_Left/L_Arm/L_Forearm"]
+position = Vector2( 0, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Left/L_Arm/L_Forearm/L_Hand"]
+frames = SubResource( 311 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Left/L_Arm/L_Forearm"]
+frames = SubResource( 312 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Left/L_Arm"]
+frames = SubResource( 313 )
+
+[node name="Katar" type="Node2D" parent="Boss_Blue/Upper_Left"]
+position = Vector2( 21.8334, -4.88889 )
+rotation = 0.911062
+scale = Vector2( 0.999998, 0.999998 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hilt" type="AnimatedSprite" parent="Boss_Blue/Upper_Left/Katar"]
+frames = SubResource( 314 )
+
+[node name="Blade" type="AnimatedSprite" parent="Boss_Blue/Upper_Left/Katar"]
+position = Vector2( 1.14441e-05, -5.00001 )
+frames = SubResource( 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Boss_Katar" type="Area2D" parent="Boss_Blue/Upper_Left/Katar/Blade"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss_Blue/Upper_Left/Katar/Blade/Boss_Katar"]
+polygon = PoolVector2Array( 0.444822, -16.473, -0.490238, -16.4968, -7.48146, -0.479193, -7.4666, 1.46666, 7.53634, 1.48208, 7.43861, -0.524266 )
+disabled = true
+
+[node name="Lower" type="Node2D" parent="Boss_Blue"]
+
+[node name="L_Thigh" type="Node2D" parent="Boss_Blue/Lower"]
+position = Vector2( 4.55556, 16 )
+rotation = -0.174533
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Leg" type="Node2D" parent="Boss_Blue/Lower/L_Thigh"]
+position = Vector2( -1, 13 )
+rotation = 0.174533
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Foot" type="Node2D" parent="Boss_Blue/Lower/L_Thigh/L_Leg"]
+position = Vector2( 0, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Lower/L_Thigh/L_Leg/L_Foot"]
+frames = SubResource( 316 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Lower/L_Thigh/L_Leg"]
+frames = SubResource( 317 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Lower/L_Thigh"]
+frames = SubResource( 318 )
+
+[node name="R_Thigh" type="Node2D" parent="Boss_Blue/Lower"]
+position = Vector2( -5.55556, 16 )
+rotation = 0.0872665
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Leg" type="Node2D" parent="Boss_Blue/Lower/R_Thigh"]
+position = Vector2( -0.553441, 13.0484 )
+rotation = 0.0872665
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Foot" type="Node2D" parent="Boss_Blue/Lower/R_Thigh/R_Leg"]
+position = Vector2( -0.000444651, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Lower/R_Thigh/R_Leg/R_Foot"]
+frames = SubResource( 319 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Lower/R_Thigh/R_Leg"]
+frames = SubResource( 320 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Lower/R_Thigh"]
+frames = SubResource( 321 )
+
+[node name="Upper_Right" type="Node2D" parent="Boss_Blue"]
+
+[node name="Head" type="Node2D" parent="Boss_Blue/Upper_Right"]
+position = Vector2( 0, -21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/Head"]
+frames = SubResource( 322 )
+
+[node name="Chest" type="Node2D" parent="Boss_Blue/Upper_Right"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/Chest"]
+frames = SubResource( 323 )
+
+[node name="Katar" type="Node2D" parent="Boss_Blue/Upper_Right"]
+position = Vector2( 6.61117, -5.44445 )
+rotation = 0.841249
+scale = Vector2( 0.999998, 0.999998 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hilt" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/Katar"]
+frames = SubResource( 314 )
+
+[node name="Blade" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/Katar"]
+position = Vector2( 1.14441e-05, -5.00001 )
+frames = SubResource( 315 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Boss_Katar" type="Area2D" parent="Boss_Blue/Upper_Right/Katar/Blade"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss_Blue/Upper_Right/Katar/Blade/Boss_Katar"]
+polygon = PoolVector2Array( 0.444822, -16.473, -0.490238, -16.4968, -7.48146, -0.479193, -7.4666, 1.46666, 7.53634, 1.48208, 7.43861, -0.524266 )
+disabled = true
+
+[node name="R_Arm" type="Node2D" parent="Boss_Blue/Upper_Right"]
+position = Vector2( -10, -5.88889 )
+rotation = -0.282743
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Forearm" type="Node2D" parent="Boss_Blue/Upper_Right/R_Arm"]
+position = Vector2( 7.87343, 9.0146 )
+rotation = -1.95477
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Hand" type="Node2D" parent="Boss_Blue/Upper_Right/R_Arm/R_Forearm"]
+position = Vector2( 0.0464876, 7.55361 )
+rotation = -0.0872665
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/R_Arm/R_Forearm/R_Hand"]
+frames = SubResource( 324 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/R_Arm/R_Forearm"]
+frames = SubResource( 325 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Blue/Upper_Right/R_Arm"]
+frames = SubResource( 326 )
+
+[node name="Hades" type="Node2D" parent="."]
+position = Vector2( 202, 525 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Upper_Left" type="Node2D" parent="Hades"]
+
+[node name="L_Arm" type="Sprite" parent="Hades/Upper_Left"]
+modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
+position = Vector2( 10, -6 )
+texture = ExtResource( 147 )
+
+[node name="L_Forearm" type="Sprite" parent="Hades/Upper_Left/L_Arm"]
+show_behind_parent = true
+position = Vector2( 0, 12 )
+texture = ExtResource( 144 )
+
+[node name="L_Hand" type="Sprite" parent="Hades/Upper_Left/L_Arm/L_Forearm"]
+show_behind_parent = true
+position = Vector2( 0, 7 )
+texture = ExtResource( 145 )
+
+[node name="Lower" type="Node2D" parent="Hades"]
+
+[node name="L_Thigh" type="Sprite" parent="Hades/Lower"]
+modulate = Color( 0.878431, 0.878431, 0.878431, 1 )
+position = Vector2( 4, 16 )
+texture = ExtResource( 141 )
+
+[node name="L_Leg" type="Sprite" parent="Hades/Lower/L_Thigh"]
+position = Vector2( 0, 13 )
+texture = ExtResource( 142 )
+
+[node name="L_Foot" type="Sprite" parent="Hades/Lower/L_Thigh/L_Leg"]
+position = Vector2( 0, 8 )
+texture = ExtResource( 140 )
+
+[node name="R_Thigh" type="Sprite" parent="Hades/Lower"]
+position = Vector2( -5, 16 )
+texture = ExtResource( 141 )
+
+[node name="R_Leg" type="Sprite" parent="Hades/Lower/R_Thigh"]
+position = Vector2( 0, 13 )
+texture = ExtResource( 142 )
+
+[node name="R_Foot" type="Sprite" parent="Hades/Lower/R_Thigh/R_Leg"]
+position = Vector2( 0, 8 )
+texture = ExtResource( 140 )
+
+[node name="Upper_Right" type="Node2D" parent="Hades"]
+
+[node name="Head" type="Sprite" parent="Hades/Upper_Right"]
+position = Vector2( 0, -21 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 143 )
+
+[node name="Chest" type="Sprite" parent="Hades/Upper_Right"]
+modulate = Color( 0.929412, 0.929412, 0.929412, 1 )
+texture = ExtResource( 146 )
+
+[node name="R_Arm" type="Sprite" parent="Hades/Upper_Right"]
+position = Vector2( -11, -6 )
+texture = ExtResource( 147 )
+
+[node name="R_Forearm" type="Sprite" parent="Hades/Upper_Right/R_Arm"]
+show_behind_parent = true
+position = Vector2( 0, 12 )
+texture = ExtResource( 144 )
+
+[node name="R_Hand" type="Sprite" parent="Hades/Upper_Right/R_Arm/R_Forearm"]
+show_behind_parent = true
+position = Vector2( 0, 7 )
+texture = ExtResource( 145 )
+
+[node name="Boss_Red" type="Node2D" parent="."]
+position = Vector2( 266, 557 )
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Upper_Left" type="Node2D" parent="Boss_Red"]
+
+[node name="L_Arm" type="Node2D" parent="Boss_Red/Upper_Left"]
+position = Vector2( 9, -5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Forearm" type="Node2D" parent="Boss_Red/Upper_Left/L_Arm"]
+position = Vector2( 0, 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Hand" type="Node2D" parent="Boss_Red/Upper_Left/L_Arm/L_Forearm"]
+position = Vector2( 0, 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Left/L_Arm/L_Forearm/L_Hand"]
+frames = SubResource( 328 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Left/L_Arm/L_Forearm"]
+frames = SubResource( 330 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Left/L_Arm"]
+frames = SubResource( 332 )
+
+[node name="Lower" type="Node2D" parent="Boss_Red"]
+
+[node name="L_Thigh" type="Node2D" parent="Boss_Red/Lower"]
+position = Vector2( 4, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Leg" type="Node2D" parent="Boss_Red/Lower/L_Thigh"]
+position = Vector2( 0, 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L_Foot" type="Node2D" parent="Boss_Red/Lower/L_Thigh/L_Leg"]
+position = Vector2( 0, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Lower/L_Thigh/L_Leg/L_Foot"]
+frames = SubResource( 334 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Lower/L_Thigh/L_Leg"]
+frames = SubResource( 335 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Lower/L_Thigh"]
+frames = SubResource( 336 )
+
+[node name="R_Thigh" type="Node2D" parent="Boss_Red/Lower"]
+position = Vector2( -5, 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Leg" type="Node2D" parent="Boss_Red/Lower/R_Thigh"]
+position = Vector2( 0, 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Foot" type="Node2D" parent="Boss_Red/Lower/R_Thigh/R_Leg"]
+position = Vector2( 0, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Lower/R_Thigh/R_Leg/R_Foot"]
+frames = SubResource( 338 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Lower/R_Thigh/R_Leg"]
+frames = SubResource( 340 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Lower/R_Thigh"]
+frames = SubResource( 342 )
+
+[node name="Upper_Right" type="Node2D" parent="Boss_Red"]
+
+[node name="Head" type="Node2D" parent="Boss_Red/Upper_Right"]
+position = Vector2( 0, -22 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Right/Head"]
+frames = SubResource( 344 )
+
+[node name="Chest" type="Node2D" parent="Boss_Red/Upper_Right"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Right/Chest"]
+frames = SubResource( 346 )
+
+[node name="R_Arm" type="Node2D" parent="Boss_Red/Upper_Right"]
+position = Vector2( -11, -5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Forearm" type="Node2D" parent="Boss_Red/Upper_Right/R_Arm"]
+position = Vector2( 0, 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="R_Hand" type="Node2D" parent="Boss_Red/Upper_Right/R_Arm/R_Forearm"]
+position = Vector2( 0, 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Right/R_Arm/R_Forearm/R_Hand"]
+frames = SubResource( 348 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Right/R_Arm/R_Forearm"]
+frames = SubResource( 350 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Boss_Red/Upper_Right/R_Arm"]
+frames = SubResource( 351 )
+
+[node name="Hammer" type="Node2D" parent="Boss_Red/Upper_Right"]
+position = Vector2( 36, 4 )
+rotation = 3.14159
+scale = Vector2( 0.999998, 0.999998 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hilt" type="AnimatedSprite" parent="Boss_Red/Upper_Right/Hammer"]
+frames = SubResource( 353 )
+
+[node name="Head" type="AnimatedSprite" parent="Boss_Red/Upper_Right/Hammer"]
+position = Vector2( 0, -32 )
+frames = SubResource( 356 )
+animation = "Head_1"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Boss_Hammer" type="Area2D" parent="Boss_Red/Upper_Right/Hammer/Head"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss_Red/Upper_Right/Hammer/Head/Boss_Hammer"]
+polygon = PoolVector2Array( -9.48864, -5, 9.52173, -5, 9.57428, 5, 1.50096, 5, 1.46245, 59.0005, -1.50005, 59.0034, -1.50922, 5, -9.46236, 5 )
+disabled = true
+
+[node name="Boss_Stagger" type="Area2D" parent="Boss_Red/Upper_Right/Hammer/Head"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss_Red/Upper_Right/Hammer/Head/Boss_Stagger"]
+polygon = PoolVector2Array( -9.48864, -5, 9.52173, -5, 9.57428, 5, 1.50096, 5, 1.46245, 59.0005, -1.50005, 59.0034, -1.50922, 5, -9.46236, 5 )
+disabled = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"
 anims/RESET = SubResource( 310 )
 anims/loading_in = SubResource( 2 )
-anims/loading_out = SubResource( 3 )
+anims/loading_out = SubResource( 357 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
 
+[node name="Timer_Flip" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]
