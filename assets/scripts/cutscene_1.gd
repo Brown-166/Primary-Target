@@ -22,6 +22,25 @@ onready var enemy_ar_sprites = [
 var enemy_ar_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 
 	14, 15, 16, 17]
 
+export var player_flip : bool
+onready var player_parts = [
+	$Player/Upper_Right, $Player/Upper_Left, $Player/Lower,
+	$Player/Upper_Right/Head, $Player/Upper_Right/Chest,
+	$Player/Upper_Right/R_Arm, $Player/Upper_Right/R_Arm/R_Forearm, $Player/Upper_Right/R_Arm/R_Forearm/R_Hand,
+	$Player/Upper_Left/L_Arm, $Player/Upper_Left/L_Arm/L_Forearm, $Player/Upper_Left/L_Arm/L_Forearm/L_Hand,
+	$Player/Lower/R_Thigh, $Player/Lower/R_Thigh/R_Leg, $Player/Lower/R_Thigh/R_Leg/R_Foot,
+	$Player/Lower/L_Thigh, $Player/Lower/L_Thigh/L_Leg, $Player/Lower/L_Thigh/L_Leg/L_Foot,
+	$Player/Upper_Right/Katana]
+onready var player_sprites = [
+	$Player/Upper_Right/Head, $Player/Upper_Right/Chest,
+	$Player/Upper_Right/R_Arm, $Player/Upper_Right/R_Arm/R_Forearm, $Player/Upper_Right/R_Arm/R_Forearm/R_Hand,
+	$Player/Upper_Left/L_Arm, $Player/Upper_Left/L_Arm/L_Forearm, $Player/Upper_Left/L_Arm/L_Forearm/L_Hand,
+	$Player/Lower/R_Thigh, $Player/Lower/R_Thigh/R_Leg, $Player/Lower/R_Thigh/R_Leg/R_Foot,
+	$Player/Lower/L_Thigh, $Player/Lower/L_Thigh/L_Leg, $Player/Lower/L_Thigh/L_Leg/L_Foot,
+	$Player/Upper_Right/Katana/Blade, $Player/Upper_Right/Katana/Hilt]
+var player_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 
+	14, 15, 16, 17]
+
 export var hades_flip : bool
 onready var hades_parts = [
 	$Hades/Upper_Right, $Hades/Upper_Left, $Hades/Lower,
@@ -78,10 +97,51 @@ var boss_red_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 	14, 15, 16, 17, 18]
 
 
+
+func _enemy_ar_flip():
+	if enemy_ar_flip == false:
+		enemy_ar_flip = true
+	else:
+		enemy_ar_flip = false
+	print(enemy_ar_flip)
+
+
+func _player_flip():
+	if player_flip == false:
+		player_flip = true
+	else:
+		player_flip = false
+
+
+func _boss_blue_flip():
+	if boss_blue_flip == false:
+		boss_blue_flip = true
+	else:
+		boss_blue_flip = false
+
+
+func _hades_flip():
+	if hades_flip == false:
+		hades_flip = true
+	else:
+		hades_flip = false
+
+
+func _boss_red_flip():
+	if boss_red_flip == false:
+		boss_red_flip = true
+	else:
+		boss_red_flip = false
+
+
+
 func _ready():
 	Global.fase = "cutscene_1"
 	for i in enemy_ar_parts.size():
 		enemy_ar_or_position_x[i] = enemy_ar_parts[i].position.x
+	
+	for i in player_parts.size():
+		player_or_position_x[i] = player_parts[i].position.x
 	
 	for i in hades_parts.size():
 		hades_or_position_x[i] = hades_parts[i].position.x
@@ -94,6 +154,11 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "loading_in":
+		$AnimationPlayer.play("cutscene")
+		$Player_anim.play("cutscene")
+	if anim_name == "cutscene":
+		$AnimationPlayer.play("loading_out")
 	if anim_name == "loading_out":
 		get_tree().change_scene("res://assets/scenes/Fase_1.tscn")
 
@@ -106,6 +171,18 @@ func _on_Timer_Flip_timeout():
 				enemy_ar_parts[i].rotation_degrees *= -1
 		for i in enemy_ar_sprites.size():
 			enemy_ar_sprites[i].flip_h = true
+	else:
+		for i in enemy_ar_sprites.size():
+			enemy_ar_sprites[i].flip_h = false
+	
+	
+	if player_flip == true:
+		for i in player_parts.size():
+			if player_parts[i].position.x == player_or_position_x[i]:
+				player_parts[i].position.x *= -1
+				player_parts[i].rotation_degrees *= -1
+		for i in player_sprites.size():
+			player_sprites[i].flip_h = true
 	else:
 		for i in enemy_ar_sprites.size():
 			enemy_ar_sprites[i].flip_h = false
