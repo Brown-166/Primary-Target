@@ -99,16 +99,8 @@ var boss_red_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 func _enemy_ar_flip():
 	if enemy_ar_flip == false:
 		enemy_ar_flip = true
-		for i in enemy_ar_parts.size():
-			if enemy_ar_parts[i].position.x == enemy_ar_or_position_x[i]:
-				enemy_ar_parts[i].position.x *= -1
-				enemy_ar_parts[i].rotation_degrees *= -1
-		for i in enemy_ar_sprites.size():
-			enemy_ar_sprites[i].flip_h = true
-			print(enemy_ar_sprites[i].flip_h)
 	else:
 		enemy_ar_flip = false
-	print(enemy_ar_flip)
 
 
 func _player_flip():

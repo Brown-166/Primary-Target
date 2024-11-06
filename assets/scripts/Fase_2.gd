@@ -89,7 +89,6 @@ func _physics_process(delta):
 
 
 func _on_Timer_Obstacle_timeout():
-	print("obstacle")
 	randomize()
 	obstacle_timer = OT[randi() % OT.size()]
 	$Timer_Obstacle.wait_time = obstacle_timer

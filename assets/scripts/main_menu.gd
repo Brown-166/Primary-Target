@@ -102,7 +102,7 @@ func _on_Button_Save_1_pressed():
 		Global.life = 100
 		Global.stamina = 100
 		Global.medKit = 0
-		Global.fase = "Fase_1"
+		Global.fase = "cutscene_1"
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -118,7 +118,7 @@ func _on_Button_Save_2_pressed():
 		Global.life = 100
 		Global.stamina = 100
 		Global.medKit = 0
-		Global.fase = "Fase_1"
+		Global.fase = "cutscene_1"
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -134,7 +134,7 @@ func _on_Button_Save_3_pressed():
 		Global.life = 100
 		Global.stamina = 100
 		Global.medKit = 0
-		Global.fase = "Fase_1"
+		Global.fase = "cutscene_1"
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -158,6 +158,9 @@ func _on_Button_Back_pressed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if action == "continue" || action == "new game" || action == "load game":
-		get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")
+		if Global.fase in ["cutscene_1"]:
+			get_tree().change_scene("res://assets/cutscenes/"+ Global.fase +".tscn")
+		else:
+			get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")
 	if action == "credits":
 		get_tree().change_scene("res://assets/interfaces/credits.tscn")

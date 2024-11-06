@@ -1,4 +1,4 @@
-[gd_scene load_steps=310 format=2]
+[gd_scene load_steps=312 format=2]
 
 [ext_resource path="res://assets/scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Player/Red/Head.png" type="Texture" id=2]
@@ -124,6 +124,8 @@
 [ext_resource path="res://assets/audios/weapon_swoosh_3.MP3" type="AudioStream" id=122]
 [ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=123]
 [ext_resource path="res://assets/audios/fall_1.MP3" type="AudioStream" id=124]
+[ext_resource path="res://assets/audios/jump.MP3" type="AudioStream" id=125]
+[ext_resource path="res://assets/audios/medkit.MP3" type="AudioStream" id=126]
 
 [sub_resource type="AtlasTexture" id=270]
 atlas = ExtResource( 103 )
@@ -15367,7 +15369,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="audio_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 125 )
+
+[node name="audio_medkit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 126 )
+volume_db = 10.0
 
 [node name="Timer_Dead" type="Timer" parent="."]
 wait_time = 3.0

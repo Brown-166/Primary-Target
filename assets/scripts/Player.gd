@@ -226,9 +226,10 @@ func _physics_process(delta):
 		
 		
 		if Input.is_action_just_pressed("medkit"):
-			if Global.medKit > 0:
+			if Global.medKit > 0 && Global.life <= 90:
 				Global.medKit -=1
 				Global.life += 60
+				$audio_medkit.play()
 		
 		
 		
@@ -286,6 +287,7 @@ func _physics_process(delta):
 						if grounded == true:
 							jump = true
 							grounded = false
+							$audio_jump.play()
 			
 			
 			
@@ -442,6 +444,7 @@ func _physics_process(delta):
 			z_index = LAYER._get_z_index(area.name, z_index)
 			if area.name == "Area2D_Ground":
 				grounded = true
+#				$audio_fall.play()
 		LAYER.playerLayer = layer
 	else:
 		if Global.dead == false:
@@ -486,6 +489,8 @@ func _on_Area2D_Ground_area_entered(area):
 	layer = LAYER._get_layer(area.name, layer)
 	z_index = LAYER._get_z_index(area.name, z_index)
 	LAYER.playerLayer = layer
+#	if area.name == "Area2D_Ground":
+#		$audio_fall.play()
 
 
 func _on_Area2D_Ground_area_exited(area):

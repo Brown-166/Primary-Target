@@ -1,4 +1,4 @@
-[gd_scene load_steps=450 format=2]
+[gd_scene load_steps=452 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/scenes/background.tscn" type="PackedScene" id=2]
@@ -192,6 +192,8 @@
 [ext_resource path="res://assets/images/Characters/Enemy/Option 4/Head.png" type="Texture" id=190]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 3/Hand.png" type="Texture" id=191]
 [ext_resource path="res://assets/audios/vehicle_crash.MP3" type="AudioStream" id=192]
+[ext_resource path="res://assets/audios/jump.MP3" type="AudioStream" id=193]
+[ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=194]
 
 [sub_resource type="Animation" id=435]
 resource_name = "RESET"
@@ -456,12 +458,24 @@ tracks/21/keys = {
 "values": [ true ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("audio_player_car:playing")
+tracks/22/path = NodePath("Player/audio_player_car:playing")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Player/jump:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -820,7 +834,7 @@ tracks/28/keys = {
 "values": [ true, false ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("audio_player_car:playing")
+tracks/29/path = NodePath("Player/audio_player_car:playing")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -830,6 +844,18 @@ tracks/29/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true, false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Player/jump:playing")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 1, 6.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -6249,6 +6275,11 @@ hades_flip = true
 boss_blue_flip = true
 boss_red_flip = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 194 )]
+visible = false
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"
 anims/RESET = SubResource( 435 )
@@ -6707,7 +6738,15 @@ animation = "Yellow"
 [node name="audio_player_walk" type="AudioStreamPlayer2D" parent="Player"]
 scale = Vector2( 0.5, 0.5 )
 stream = ExtResource( 167 )
-volume_db = -10.0
+volume_db = 5.0
+
+[node name="jump" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource( 193 )
+
+[node name="audio_player_car" type="AudioStreamPlayer2D" parent="Player"]
+scale = Vector2( 0.5, 0.5 )
+stream = ExtResource( 177 )
+volume_db = -5.0
 
 [node name="Boss_Blue" type="Node2D" parent="."]
 position = Vector2( 319, 484 )
@@ -6996,7 +7035,7 @@ texture = ExtResource( 145 )
 [node name="audio_walk" type="AudioStreamPlayer2D" parent="Hades"]
 scale = Vector2( 0.5, 0.5 )
 stream = ExtResource( 167 )
-volume_db = -10.0
+volume_db = 5.0
 
 [node name="Boss_Red" type="Node2D" parent="."]
 position = Vector2( 268, 557 )
@@ -7223,13 +7262,10 @@ anims/walk = SubResource( 443 )
 wait_time = 0.01
 autostart = true
 
-[node name="audio_player_car" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 177 )
-
 [node name="audio_car_crash" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -351, 596 )
 stream = ExtResource( 192 )
-volume_db = -20.0
+volume_db = -10.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]

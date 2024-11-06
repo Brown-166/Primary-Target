@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/images/Fase_3/grass.png" type="Texture" id=12]
 [ext_resource path="res://assets/images/Fase_3/rail_road.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_3/grass-dirt.png" type="Texture" id=14]
+[ext_resource path="res://assets/audios/bullet_train_outside.MP3" type="AudioStream" id=15]
 
 [sub_resource type="Animation" id=19]
 resource_name = "game_over"
@@ -746,6 +747,10 @@ editor_draw_drag_margin = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Next_Fase"]
 position = Vector2( 6665, 218 )
 shape = SubResource( 22 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="screen_exited" from="Player/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
