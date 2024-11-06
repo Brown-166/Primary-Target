@@ -8,8 +8,7 @@ onready var enemy_ar_parts = [
 	$Enemy_AR/Lower/R_Thigh, $Enemy_AR/Lower/R_Leg, $Enemy_AR/Lower/R_Leg/R_Foot,
 	$Enemy_AR/Lower/L_Thigh, $Enemy_AR/Lower/L_Leg, $Enemy_AR/Lower/L_Leg/L_Foot,
 	$Enemy_AR/Upper_Right/Weapon_Set, $Enemy_AR/Upper_Right/Weapon_Set/Weapon, 
-	$Enemy_AR/Upper_Right/Weapon_Set/Reloader, 
-	$Enemy_AR/Upper_Right/Weapon_Set/Fire]
+	$Enemy_AR/Upper_Right/Weapon_Set/Reloader]
 onready var enemy_ar_sprites = [
 	$Enemy_AR/Upper_Right/Head/Sprite, $Enemy_AR/Upper_Right/Chest/Sprite, 
 	$Enemy_AR/Upper_Right/R_Arm/Sprite, $Enemy_AR/Upper_Right/R_Forearm/Sprite, $Enemy_AR/Upper_Right/R_Forearm/R_Hand/Sprite, 
@@ -17,10 +16,9 @@ onready var enemy_ar_sprites = [
 	$Enemy_AR/Lower/R_Thigh/Sprite, $Enemy_AR/Lower/R_Leg/Sprite, $Enemy_AR/Lower/R_Leg/R_Foot/Sprite,
 	$Enemy_AR/Lower/L_Thigh/Sprite, $Enemy_AR/Lower/L_Leg/Sprite, $Enemy_AR/Lower/L_Leg/L_Foot/Sprite,
 	$Enemy_AR/Upper_Right/Weapon_Set/Weapon/Sprite, 
-	$Enemy_AR/Upper_Right/Weapon_Set/Reloader/Sprite, 
-	$Enemy_AR/Upper_Right/Weapon_Set/Fire/Sprite]
+	$Enemy_AR/Upper_Right/Weapon_Set/Reloader/Sprite]
 var enemy_ar_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 
-	14, 15, 16, 17]
+	14, 15, 16]
 
 export var player_flip : bool
 onready var player_parts = [
@@ -101,6 +99,13 @@ var boss_red_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 func _enemy_ar_flip():
 	if enemy_ar_flip == false:
 		enemy_ar_flip = true
+		for i in enemy_ar_parts.size():
+			if enemy_ar_parts[i].position.x == enemy_ar_or_position_x[i]:
+				enemy_ar_parts[i].position.x *= -1
+				enemy_ar_parts[i].rotation_degrees *= -1
+		for i in enemy_ar_sprites.size():
+			enemy_ar_sprites[i].flip_h = true
+			print(enemy_ar_sprites[i].flip_h)
 	else:
 		enemy_ar_flip = false
 	print(enemy_ar_flip)
@@ -184,8 +189,8 @@ func _on_Timer_Flip_timeout():
 		for i in player_sprites.size():
 			player_sprites[i].flip_h = true
 	else:
-		for i in enemy_ar_sprites.size():
-			enemy_ar_sprites[i].flip_h = false
+		for i in player_sprites.size():
+			player_sprites[i].flip_h = false
 	
 	
 	if hades_flip == true:

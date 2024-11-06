@@ -1,4 +1,4 @@
-[gd_scene load_steps=451 format=2]
+[gd_scene load_steps=450 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/scenes/background.tscn" type="PackedScene" id=2]
@@ -166,7 +166,7 @@
 [ext_resource path="res://assets/images/Characters/Enemy/Option 3/Foot.png" type="Texture" id=164]
 [ext_resource path="res://assets/images/Weapons/enemy_Weapons/AK-47/AK-47 Reloader.png" type="Texture" id=165]
 [ext_resource path="res://assets/images/Weapons/enemy_Weapons/AK-47/AK-47.png" type="Texture" id=166]
-[ext_resource path="res://assets/images/Weapons/enemy_Weapons/Fire.png" type="Texture" id=167]
+[ext_resource path="res://assets/audios/walk.MP3" type="AudioStream" id=167]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 4/Foot.png" type="Texture" id=168]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 1/Thigh.png" type="Texture" id=169]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 2/Thigh.png" type="Texture" id=170]
@@ -176,6 +176,7 @@
 [ext_resource path="res://assets/images/Characters/Enemy/DMG/Arm.png" type="Texture" id=174]
 [ext_resource path="res://assets/cutsceneswalk.tres" type="Animation" id=175]
 [ext_resource path="res://assets/images/Characters/Enemy/DMG/Chest.png" type="Texture" id=176]
+[ext_resource path="res://assets/audios/fall_1.MP3" type="AudioStream" id=177]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 1/Leg.png" type="Texture" id=178]
 [ext_resource path="res://assets/images/Characters/Enemy/DMG/Head 2.png" type="Texture" id=179]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 1/Hand.png" type="Texture" id=180]
@@ -190,6 +191,7 @@
 [ext_resource path="res://assets/images/Characters/Enemy/Option 4/Thigh.png" type="Texture" id=189]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 4/Head.png" type="Texture" id=190]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 3/Hand.png" type="Texture" id=191]
+[ext_resource path="res://assets/audios/vehicle_crash.MP3" type="AudioStream" id=192]
 
 [sub_resource type="Animation" id=435]
 resource_name = "RESET"
@@ -440,6 +442,30 @@ tracks/20/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Player/audio_player_walk:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("audio_player_car:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=428]
@@ -756,6 +782,54 @@ tracks/25/enabled = true
 tracks/25/keys = {
 "clips": PoolStringArray( "walk" ),
 "times": PoolRealArray( 8.5 )
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Player/audio_player_walk:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0, 4, 5.7, 6, 8.5, 10, 11.1, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false, true, false, true, false ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Hades/audio_walk:playing")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("audio_car_crash:playing")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 7.3, 10.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("audio_player_car:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 7.2, 8.3, 10.6, 11.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -1289,27 +1363,6 @@ animations = [ {
 "loop": true,
 "name": "M-16",
 "speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=192]
-atlas = ExtResource( 167 )
-region = Rect2( 0, 0, 70, 54 )
-
-[sub_resource type="AtlasTexture" id=193]
-atlas = ExtResource( 167 )
-region = Rect2( 0, 0, 70, 54 )
-
-[sub_resource type="SpriteFrames" id=382]
-animations = [ {
-"frames": [ SubResource( 192 ), null, SubResource( 193 ) ],
-"loop": true,
-"name": "Fire",
-"speed": 30.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -6462,16 +6515,6 @@ __meta__ = {
 frames = SubResource( 381 )
 animation = "AK-47"
 
-[node name="Fire" type="Node2D" parent="Enemy_AR/Upper_Right/Weapon_Set"]
-position = Vector2( 35, 0 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Enemy_AR/Upper_Right/Weapon_Set/Fire"]
-frames = SubResource( 382 )
-
 [node name="R_Forearm" type="Node2D" parent="Enemy_AR/Upper_Right"]
 position = Vector2( -6.5, 5.5 )
 rotation = -1.0472
@@ -6660,6 +6703,11 @@ show_behind_parent = true
 position = Vector2( 0, 7 )
 frames = SubResource( 309 )
 animation = "Yellow"
+
+[node name="audio_player_walk" type="AudioStreamPlayer2D" parent="Player"]
+scale = Vector2( 0.5, 0.5 )
+stream = ExtResource( 167 )
+volume_db = -10.0
 
 [node name="Boss_Blue" type="Node2D" parent="."]
 position = Vector2( 319, 484 )
@@ -6945,6 +6993,11 @@ show_behind_parent = true
 position = Vector2( 0, 7 )
 texture = ExtResource( 145 )
 
+[node name="audio_walk" type="AudioStreamPlayer2D" parent="Hades"]
+scale = Vector2( 0.5, 0.5 )
+stream = ExtResource( 167 )
+volume_db = -10.0
+
 [node name="Boss_Red" type="Node2D" parent="."]
 position = Vector2( 268, 557 )
 scale = Vector2( 2, 2 )
@@ -7169,6 +7222,14 @@ anims/walk = SubResource( 443 )
 [node name="Timer_Flip" type="Timer" parent="."]
 wait_time = 0.01
 autostart = true
+
+[node name="audio_player_car" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 177 )
+
+[node name="audio_car_crash" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -351, 596 )
+stream = ExtResource( 192 )
+volume_db = -20.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]
