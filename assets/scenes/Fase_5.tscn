@@ -1493,7 +1493,6 @@ show_behind_parent = true
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "sonar"
-frame = 2
 playing = true
 
 [node name="Area2D_sonar" type="Area2D" parent="CanvasLayer/minimap/player"]
@@ -1665,8 +1664,9 @@ texture = ExtResource( 9 )
 [node name="Right" type="Node2D" parent="background/buildings"]
 
 [node name="building4" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 625.556, 181.444 )
-scale = Vector2( 1.05926, 1.05926 )
+position = Vector2( 382.5, 184 )
+scale = Vector2( 0.025, 0.350161 )
+z_index = -3
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1680,9 +1680,9 @@ texture = ExtResource( 9 )
 flip_h = true
 
 [node name="building3" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 384.2, 181.933 )
-scale = Vector2( 0.0393333, 0.356667 )
-z_index = -3
+position = Vector2( 408, 153 )
+scale = Vector2( 0.24, 0.45 )
+z_index = -2
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1696,9 +1696,9 @@ texture = ExtResource( 9 )
 flip_h = true
 
 [node name="building2" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 412.833, 152.867 )
-scale = Vector2( 0.267, 0.459 )
-z_index = -2
+position = Vector2( 480.5, 151 )
+scale = Vector2( 0.645, 0.585 )
+z_index = -1
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
@@ -1712,9 +1712,7 @@ texture = ExtResource( 9 )
 flip_h = true
 
 [node name="building1" type="Sprite" parent="background/buildings/Right"]
-position = Vector2( 489.133, 152.773 )
-scale = Vector2( 0.668667, 0.612667 )
-z_index = -1
+position = Vector2( 610, 179 )
 texture = ExtResource( 10 )
 flip_h = true
 __meta__ = {
