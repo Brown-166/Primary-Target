@@ -1457,9 +1457,6 @@ __meta__ = {
 
 [node name="Camera_Fase_3" type="Camera2D" parent="."]
 position = Vector2( 302, 462 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Area2D_Next_Fase" type="Area2D" parent="."]
 __meta__ = {

@@ -23,34 +23,6 @@
 [ext_resource path="res://assets/images/Fase_5/minimap.png" type="Texture" id=21]
 [ext_resource path="res://assets/images/Fase_5/target_minimap.png" type="Texture" id=22]
 
-[sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 0.5, 0.5 )
-
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 0.5, 1.5 )
-
-[sub_resource type="SpriteFrames" id=23]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "sonar",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=27]
-radius = 99.1262
-
-[sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 0.5, 6.5 )
-
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 0.5, 3 )
-
 [sub_resource type="Animation" id=17]
 resource_name = "game_over"
 length = 5.0
@@ -96,6 +68,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 0.5, 0.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 0.5, 1.5 )
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "sonar",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=27]
+radius = 99.1262
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 0.5, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 0.5, 3 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "straight"
@@ -1399,6 +1399,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading_in"
+anims/game_over = SubResource( 17 )
+anims/loading_in = SubResource( 18 )
+anims/loading_out = SubResource( 19 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 6 )]
@@ -1493,6 +1499,7 @@ show_behind_parent = true
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "sonar"
+frame = 2
 playing = true
 
 [node name="Area2D_sonar" type="Area2D" parent="CanvasLayer/minimap/player"]
@@ -1528,12 +1535,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/minimap/target/mini_target"]
 position = Vector2( 0, -7.5 )
 shape = SubResource( 28 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "loading_in"
-anims/game_over = SubResource( 17 )
-anims/loading_in = SubResource( 18 )
-anims/loading_out = SubResource( 19 )
 
 [node name="background" type="Node2D" parent="."]
 scale = Vector2( 2, 2 )
@@ -1892,6 +1893,7 @@ position = Vector2( 706, 341 )
 
 [node name="Timer_spawn_car" type="Timer" parent="."]
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Left" to="." method="_on_Left_area_entered"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Right" to="." method="_on_Right_area_entered"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Finish" to="." method="_on_Finish_area_entered"]
@@ -1900,7 +1902,6 @@ position = Vector2( 706, 341 )
 [connection signal="area_exited" from="CanvasLayer/minimap/player/Area2D_sonar" to="." method="_on_Area2D_sonar_area_exited"]
 [connection signal="timeout" from="CanvasLayer/minimap/player/Timer_sonar" to="." method="_on_Timer_sonar_timeout"]
 [connection signal="timeout" from="CanvasLayer/minimap/player/Timer_last_chance" to="." method="_on_Timer_last_chance_timeout"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="background/AnimationPlayerLeft" to="." method="_on_AnimationPlayerLeft_animation_finished"]
 [connection signal="body_entered" from="Area2D_side_walk" to="." method="_on_Area2D_side_walk_body_entered"]
 [connection signal="timeout" from="Timer_spawn_car" to="." method="_on_Timer_spawn_car_timeout"]
