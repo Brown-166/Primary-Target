@@ -1,14 +1,9 @@
 extends Node
 
 var current_save = ""
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
 
 
 func _save_DB():
@@ -42,7 +37,8 @@ func _save():
 		"stamina":Global.stamina,
 		"medKit":Global.medKit,
 		"weapon":Global.weapon,
-		"fase":Global.fase
+		"fase":Global.fase,
+		"arsenal":Global.arsenal
 	}
 	return dic_save
 
@@ -68,4 +64,5 @@ func _load_game(save):
 		Global.medKit = save_line["medKit"]
 		Global.weapon = save_line["weapon"]
 		Global.fase = save_line["fase"]
+		Global.arsenal = save_line["arsenal"]
 		game_file.close()

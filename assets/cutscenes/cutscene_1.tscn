@@ -1,4 +1,4 @@
-[gd_scene load_steps=452 format=2]
+[gd_scene load_steps=454 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/scenes/background.tscn" type="PackedScene" id=2]
@@ -194,6 +194,8 @@
 [ext_resource path="res://assets/audios/vehicle_crash.MP3" type="AudioStream" id=192]
 [ext_resource path="res://assets/audios/jump.MP3" type="AudioStream" id=193]
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=194]
+[ext_resource path="res://assets/images/UI/credits/skip_off.png" type="Texture" id=195]
+[ext_resource path="res://assets/images/UI/credits/skip_on.png" type="Texture" id=196]
 
 [sub_resource type="Animation" id=435]
 resource_name = "RESET"
@@ -6279,6 +6281,21 @@ boss_red_flip = true
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 194 )]
 visible = false
+
+[node name="Skip_button" type="TextureProgress" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -90.0
+margin_right = -40.0
+margin_bottom = -39.0
+step = 0.001
+texture_under = ExtResource( 195 )
+texture_progress = ExtResource( 196 )
+fill_mode = 4
+nine_patch_stretch = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"

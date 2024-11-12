@@ -9,6 +9,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.fase = "Fase_4"
+	DB._save_new_game(DB.current_save)
 	$Camera_Fase_4.current = true
 
 
@@ -18,6 +19,7 @@ func _physics_process(delta):
 	if get_node("Boss_Blue").life <= 0:
 		if $CanvasLayer/Timer.is_stopped() == true:
 			$CanvasLayer/Timer.start()
+			Global.arsenal[2] = "katar"
 	
 	if Global.dead == true:
 		$AnimationPlayer.play("game_over")

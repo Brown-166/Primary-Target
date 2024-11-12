@@ -36,6 +36,8 @@ var great_sword_DMG = 100
 
 var weapon = "katana"
 
+var arsenal = ["katana", "", ""]
+
 
 var motorcycle_speed
 

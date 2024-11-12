@@ -135,6 +135,7 @@ func _set_dir(new_dir, old_dir):
 
 func _ready():
 	Global.fase = "Fase_5"
+	DB._save_new_game(DB.current_save)
 	_color_build(0)
 	$background/road.play("straight")
 	$background/AnimationPlayerLeft.play("straight")
@@ -302,6 +303,7 @@ func _on_Area2D_sonar_area_entered(area):
 	if area.name == "mini_target":
 		tracking_target = true
 		mini_target.visible = true
+		$Label.visible = false
 
 
 
@@ -309,6 +311,7 @@ func _on_Area2D_sonar_area_exited(area):
 	if area.name == "mini_target":
 		tracking_target = false
 		mini_target.visible = false
+		$Label.visible = true
 		$CanvasLayer/minimap/player/Timer_last_chance.start()
 
 

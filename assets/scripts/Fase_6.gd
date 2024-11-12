@@ -6,6 +6,7 @@ extends Node2D
 
 func _ready():
 	Global.fase = "Fase_6"
+	DB._save_new_game(DB.current_save)
 	$Camera_Fase_6.current = true
 
 

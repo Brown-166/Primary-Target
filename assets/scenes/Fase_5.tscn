@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/characters/Player_motorcycle.tscn" type="PackedScene" id=2]
@@ -22,10 +22,11 @@
 [ext_resource path="res://assets/images/Fase_5/minimap_sonar_3.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Fase_5/minimap.png" type="Texture" id=21]
 [ext_resource path="res://assets/images/Fase_5/target_minimap.png" type="Texture" id=22]
+[ext_resource path="res://assets/themes/label.tres" type="Theme" id=23]
 
 [sub_resource type="Animation" id=17]
 resource_name = "game_over"
-length = 5.0
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -33,14 +34,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=18]
 resource_name = "loading_in"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -48,7 +50,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -56,6 +58,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=19]
 resource_name = "loading_out"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -63,7 +66,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
@@ -1892,6 +1895,25 @@ visible = false
 position = Vector2( 706, 341 )
 
 [node name="Timer_spawn_car" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 529.5
+margin_top = 64.0
+margin_right = 897.5
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 23 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "O alvo vai fugir"
+align = 1
+valign = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="CanvasLayer/minimap/map/Left" to="." method="_on_Left_area_entered"]

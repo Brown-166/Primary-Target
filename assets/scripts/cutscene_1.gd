@@ -1,5 +1,7 @@
 extends Node2D
 
+var skip = false
+
 export var enemy_ar_flip : bool
 onready var enemy_ar_parts = [
 	$Enemy_AR/Upper_Right/Head, $Enemy_AR/Upper_Right/Chest, 
@@ -148,6 +150,35 @@ func _ready():
 	
 	for i in boss_red_parts.size():
 		boss_red_or_position_x[i] = boss_red_parts[i].position.x
+	
+	
+	$CanvasLayer/Skip_button.visible = false
+	$CanvasLayer/Skip_button.value = 0.1
+
+
+
+
+func _physics_process(delta):
+	if skip == false:
+		if Input.is_action_pressed("space"):
+			$CanvasLayer/Skip_button.value *= 1.1
+		else:
+			if $CanvasLayer/Skip_button.value > 0.1:
+				$CanvasLayer/Skip_button.value /= 1.1
+		
+		if $CanvasLayer/Skip_button.value < 0.1:
+			$CanvasLayer/Skip_button.value = 0.1
+		
+		if $CanvasLayer/Skip_button.value == 0.1:
+			$CanvasLayer/Skip_button.visible = false
+		else:
+			$CanvasLayer/Skip_button.visible = true
+		
+		if $CanvasLayer/Skip_button.value == 100:
+			skip = true
+			$AnimationPlayer.play("loading_out")
+
+
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

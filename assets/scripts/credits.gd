@@ -11,8 +11,8 @@ var skip = false
 func _ready():
 	original_position1 = back1.position.x
 	original_position2 = back2.position.x
-	$Menu/Skip_Progress.visible = true
-	$Menu/Skip_Progress.value = 0.1
+	$Menu/Skip_button.visible = false
+	$Menu/Skip_button.value = 0.1
 	
 	
 func _physics_process(delta):
@@ -25,20 +25,20 @@ func _physics_process(delta):
 	
 	if skip == false:
 		if Input.is_action_pressed("space"):
-			$Menu/Skip_Progress.value *= 1.1
+			$Menu/Skip_button.value *= 1.1
 		else:
-			if $Menu/Skip_Progress.value > 0.1:
-				$Menu/Skip_Progress.value /= 1.1
+			if $Menu/Skip_button.value > 0.1:
+				$Menu/Skip_button.value /= 1.1
 		
-		if $Menu/Skip_Progress.value < 0.1:
-			$Menu/Skip_Progress.value = 0.1
+		if $Menu/Skip_button.value < 0.1:
+			$Menu/Skip_button.value = 0.1
 		
-		if $Menu/Skip_Progress.value == 0.1:
-			$Menu/Skip_Progress.visible = false
+		if $Menu/Skip_button.value == 0.1:
+			$Menu/Skip_button.visible = false
 		else:
-			$Menu/Skip_Progress.visible = true
+			$Menu/Skip_button.visible = true
 		
-		if $Menu/Skip_Progress.value == 100:
+		if $Menu/Skip_button.value == 100:
 			skip = true
 			$AnimationPlayer.play("load_out")
 

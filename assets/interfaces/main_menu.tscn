@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/UI/main_menu/background.png" type="Texture" id=2]
@@ -6,11 +6,13 @@
 [ext_resource path="res://assets/themes/label.tres" type="Theme" id=4]
 [ext_resource path="res://assets/images/UI/main_menu/loading_bar_off.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/UI/main_menu/loading_bar_on.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/UI/credits/skip_off.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/Characters/Hades/Hand.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/Characters/Hades/Chest.png" type="Texture" id=9]
 [ext_resource path="res://assets/images/Characters/Hades/Arm.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/Characters/Hades/Head.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/Characters/Hades/Forearm.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/UI/credits/skip_on.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=4]
 resource_name = "loading_in"
@@ -510,8 +512,8 @@ valign = 1
 visible = false
 margin_left = 256.0
 margin_top = 200.0
-margin_right = 476.0
-margin_bottom = 530.0
+margin_right = 275.0
+margin_bottom = 219.0
 custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -596,20 +598,10 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -128.0
 margin_top = -160.0
-margin_right = 838.0
-margin_bottom = 227.0
+margin_right = -92.0
+margin_bottom = -124.0
 rect_scale = Vector2( 0.5, 0.5 )
 theme = ExtResource( 4 )
-text = "Novo contrato selecionado
-Tipo de contrato: Assassinato
-Contratante: Anonimo
-Dificuldade: Médio
-Recompença: R$500.000,00
-
-Alvo principal: Hades
-Nome real: Frederico Hard
-Ocupação: Comandante da máfia de São Paulo
-Situação atual: Fazendo negócios na cidade"
 __meta__ = {
 "_edit_group_": true
 }
@@ -652,6 +644,21 @@ theme = ExtResource( 4 )
 text = "Tenha uma boa caçada"
 align = 1
 valign = 1
+
+[node name="Skip_button" type="TextureProgress" parent="Screen_new_game"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -90.0
+margin_right = -40.0
+margin_bottom = -39.0
+step = 0.001
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 13 )
+fill_mode = 4
+nine_patch_stretch = true
 
 [connection signal="pressed" from="Screen_Menu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
 [connection signal="pressed" from="Screen_Menu/Button_New_Game" to="." method="_on_Button_New_Game_pressed"]

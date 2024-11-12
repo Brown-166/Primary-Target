@@ -21,6 +21,7 @@ var city_original_positon : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.fase = "Fase_3"
+	DB._save_new_game(DB.current_save)
 	$Camera_Fase_3.current = true
 	
 	for i in rail_road.size():

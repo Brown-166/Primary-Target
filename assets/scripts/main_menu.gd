@@ -2,7 +2,7 @@ extends Control
 
 var action
 var game_file = File.new()
-
+var skip = false
 
 
 
@@ -21,6 +21,7 @@ func _ready():
 	$Screen_Saves/Button_Back.disabled = false
 	$Screen_Menu.visible = true
 	$Screen_Saves.visible = false
+	$Screen_new_game.visible = false
 	if not game_file.file_exists("./save_files/game_1.save") && not game_file.file_exists("./save_files/game_2.save") && not game_file.file_exists("./save_files/game_3.save"):
 		$Screen_Menu/Button_Continue.visible = false
 		$Screen_Menu/Button_Load_Game.visible = false
@@ -30,6 +31,10 @@ func _ready():
 		$Screen_Menu/Button_Load_Game.visible = true
 		$Screen_Menu/Button_Continue.grab_focus()
 	
+	
+	
+	$Screen_new_game/Skip_button.visible = false
+	$Screen_new_game/Skip_button.value = 0.1
 
 
 func _physics_process(delta):
@@ -47,6 +52,29 @@ func _physics_process(delta):
 		$Screen_Saves/Button_Save_3.text = "VAZIO"
 	else:
 		$Screen_Saves/Button_Save_3.text = "SAVE 3"
+	
+	
+	
+	
+	if $AnimationPlayer.current_animation == "new_game":
+		if skip == false:
+			if Input.is_action_pressed("space"):
+				$Screen_new_game/Skip_button.value *= 1.1
+			else:
+				if $Screen_new_game/Skip_button.value > 0.1:
+					$Screen_new_game/Skip_button.value /= 1.1
+			
+			if $Screen_new_game/Skip_button.value < 0.1:
+				$Screen_new_game/Skip_button.value = 0.1
+			
+			if $Screen_new_game/Skip_button.value == 0.1:
+				$Screen_new_game/Skip_button.visible = false
+			else:
+				$Screen_new_game/Skip_button.visible = true
+			
+			if $Screen_new_game/Skip_button.value == 100:
+				skip = true
+				$AnimationPlayer.play("loading_out")
 
 
 func _loading_out():

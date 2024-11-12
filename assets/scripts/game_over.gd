@@ -40,6 +40,9 @@ func _on_Button_Quit_pressed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if action == "restart":
-		get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")
+		if Global.fase in ["Fase_1", "Fase_2", "Fase_3", "Fase_4", "Fase_5", "Fase_6"]:
+			get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")
+		else:
+			get_tree().change_scene("res://assets/cutscenes/"+ Global.fase +".tscn")
 	if action == "quit":
 		get_tree().change_scene("res://assets/interfaces/main_menu.tscn")

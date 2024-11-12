@@ -57,6 +57,7 @@ animation = "back"
 [node name="tire_back" type="AnimatedSprite" parent="car"]
 frames = SubResource( 4 )
 animation = "back"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

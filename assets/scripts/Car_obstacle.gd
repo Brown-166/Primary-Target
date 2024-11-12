@@ -29,7 +29,7 @@ func _ready():
 
 func _physics_process(delta):
 	if Global.motorcycle_speed == 100:
-		speed = 5
+		speed = 4.5
 	elif Global.motorcycle_speed < 100 && Global.motorcycle_speed >= 90:
 		speed = 4
 	elif Global.motorcycle_speed < 90 && Global.motorcycle_speed >= 80:

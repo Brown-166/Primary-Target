@@ -5,6 +5,7 @@ var i = false
 func _ready():
 	Global.fase = "Fase_1"
 	$CanvasLayer/ProgressBar.visible = false
+	DB._save_new_game(DB.current_save)
 	
 
 func _physics_process(delta):
@@ -15,6 +16,7 @@ func _physics_process(delta):
 	if get_node("Boss_Red").life <= 0:
 		if $CanvasLayer/Timer.is_stopped() == true:
 			$CanvasLayer/Timer.start()
+			Global.arsenal[1] = "hammer"
 	
 	if Global.dead == true:
 		$AnimationPlayer.play("game_over")

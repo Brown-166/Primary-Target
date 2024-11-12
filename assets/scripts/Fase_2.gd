@@ -34,6 +34,7 @@ const HOLE = preload("res://assets/objects/bullet_hole.tscn")
 
 func _ready():
 	Global.fase = "Fase_2"
+	DB._save_new_game(DB.current_save)
 	$Camera_Fase_2.current = true
 	for i in back.size():
 		back_original_position[i] = back[i].position.x

@@ -84,26 +84,23 @@ Samuel Maia"
 align = 1
 valign = 1
 
-[node name="Skip_Progress" type="TextureProgress" parent="Menu"]
+[node name="Skip_button" type="TextureProgress" parent="Menu"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -50.0
-margin_top = -51.0
+margin_top = -50.0
+margin_bottom = 1.0
 step = 0.001
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
 fill_mode = 4
 nine_patch_stretch = true
 
-[node name="Timer_Skip" type="Timer" parent="Menu"]
-autostart = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "load_in"
 anims/load_in = SubResource( 1 )
 anims/load_out = SubResource( 2 )
 
-[connection signal="timeout" from="Menu/Timer_Skip" to="." method="_on_Timer_Skip_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
