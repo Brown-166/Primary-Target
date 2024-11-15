@@ -135,21 +135,26 @@ func _boss_red_flip():
 
 
 func _ready():
-	Global.fase = "cutscene_1"
-	for i in enemy_ar_parts.size():
-		enemy_ar_or_position_x[i] = enemy_ar_parts[i].position.x
+	Global.fase = name
+	if get_node("Enemy_AR"):
+		for i in enemy_ar_parts.size():
+			enemy_ar_or_position_x[i] = enemy_ar_parts[i].position.x
 	
-	for i in player_parts.size():
-		player_or_position_x[i] = player_parts[i].position.x
+	if get_node("Player"):
+		for i in player_parts.size():
+			player_or_position_x[i] = player_parts[i].position.x
 	
-	for i in hades_parts.size():
-		hades_or_position_x[i] = hades_parts[i].position.x
+	if get_node("Hades"):
+		for i in hades_parts.size():
+			hades_or_position_x[i] = hades_parts[i].position.x
 	
-	for i in boss_blue_parts.size():
-		boss_blue_or_position_x[i] = boss_blue_parts[i].position.x
+	if get_node("Boss_Blue"):
+		for i in boss_blue_parts.size():
+			boss_blue_or_position_x[i] = boss_blue_parts[i].position.x
 	
-	for i in boss_red_parts.size():
-		boss_red_or_position_x[i] = boss_red_parts[i].position.x
+	if get_node("Boss_Red"):
+		for i in boss_red_parts.size():
+			boss_red_or_position_x[i] = boss_red_parts[i].position.x
 	
 	
 	$CanvasLayer/Skip_button.visible = false
@@ -188,65 +193,85 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "cutscene":
 		$AnimationPlayer.play("loading_out")
 	if anim_name == "loading_out":
-		get_tree().change_scene("res://assets/scenes/Fase_1.tscn")
+		match Global.fase:
+			"cutscene_1":
+				get_tree().change_scene("res://assets/scenes/Fase_1.tscn")
+			"cutscene_2":
+				get_tree().change_scene("res://assets/scenes/Fase_2.tscn")
+			"cutscene_3":
+				get_tree().change_scene("res://assets/scenes/Fase_3.tscn")
+			"cutscene_4":
+				get_tree().change_scene("res://assets/scenes/Fase_4.tscn")
+			"cutscene_5":
+				get_tree().change_scene("res://assets/scenes/Fase_5.tscn")
+			"cutscene_6":
+				get_tree().change_scene("res://assets/scenes/Fase_6.tscn")
+			"cutscene_7":
+				get_tree().change_scene("res://assets/interfaces/credits.tscn")
+		
 
 
 func _on_Timer_Flip_timeout():
-	if enemy_ar_flip == true:
-		for i in enemy_ar_parts.size():
-			if enemy_ar_parts[i].position.x == enemy_ar_or_position_x[i]:
-				enemy_ar_parts[i].position.x *= -1
-				enemy_ar_parts[i].rotation_degrees *= -1
-		for i in enemy_ar_sprites.size():
-			enemy_ar_sprites[i].flip_h = true
-	else:
-		for i in enemy_ar_sprites.size():
-			enemy_ar_sprites[i].flip_h = false
+	if get_node("Enemy_AR"):
+		if enemy_ar_flip == true:
+			for i in enemy_ar_parts.size():
+				if enemy_ar_parts[i].position.x == enemy_ar_or_position_x[i]:
+					enemy_ar_parts[i].position.x *= -1
+					enemy_ar_parts[i].rotation_degrees *= -1
+			for i in enemy_ar_sprites.size():
+				enemy_ar_sprites[i].flip_h = true
+		else:
+			for i in enemy_ar_sprites.size():
+				enemy_ar_sprites[i].flip_h = false
 	
 	
-	if player_flip == true:
-		for i in player_parts.size():
-			if player_parts[i].position.x == player_or_position_x[i]:
-				player_parts[i].position.x *= -1
-				player_parts[i].rotation_degrees *= -1
-		for i in player_sprites.size():
-			player_sprites[i].flip_h = true
-	else:
-		for i in player_sprites.size():
-			player_sprites[i].flip_h = false
+	if get_node("Player"):
+		if player_flip == true:
+			for i in player_parts.size():
+				if player_parts[i].position.x == player_or_position_x[i]:
+					player_parts[i].position.x *= -1
+					player_parts[i].rotation_degrees *= -1
+			for i in player_sprites.size():
+				player_sprites[i].flip_h = true
+		else:
+			for i in player_sprites.size():
+				player_sprites[i].flip_h = false
 	
 	
-	if hades_flip == true:
-		for i in hades_parts.size():
-			if hades_parts[i].position.x == hades_or_position_x[i]:
-				hades_parts[i].position.x *= -1
-				hades_parts[i].rotation_degrees *= -1
-		for i in hades_sprites.size():
-			hades_sprites[i].flip_h = true
-	else:
-		for i in hades_sprites.size():
-			hades_sprites[i].flip_h = false
+	if get_node("Hades"):
+		if hades_flip == true:
+			for i in hades_parts.size():
+				if hades_parts[i].position.x == hades_or_position_x[i]:
+					hades_parts[i].position.x *= -1
+					hades_parts[i].rotation_degrees *= -1
+			for i in hades_sprites.size():
+				hades_sprites[i].flip_h = true
+		else:
+			for i in hades_sprites.size():
+				hades_sprites[i].flip_h = false
 	
 	
-	if boss_blue_flip == true:
-		for i in boss_blue_parts.size():
-			if boss_blue_parts[i].position.x == boss_blue_or_position_x[i]:
-				boss_blue_parts[i].position.x *= -1
-				boss_blue_parts[i].rotation_degrees *= -1
-		for i in boss_blue_sprites.size():
-			boss_blue_sprites[i].flip_h = true
-	else:
-		for i in boss_blue_sprites.size():
-			boss_blue_sprites[i].flip_h = false
+	if get_node("Boss_Blue"):
+		if boss_blue_flip == true:
+			for i in boss_blue_parts.size():
+				if boss_blue_parts[i].position.x == boss_blue_or_position_x[i]:
+					boss_blue_parts[i].position.x *= -1
+					boss_blue_parts[i].rotation_degrees *= -1
+			for i in boss_blue_sprites.size():
+				boss_blue_sprites[i].flip_h = true
+		else:
+			for i in boss_blue_sprites.size():
+				boss_blue_sprites[i].flip_h = false
 	
 	
-	if boss_red_flip == true:
-		for i in boss_red_parts.size():
-			if boss_red_parts[i].position.x == boss_red_or_position_x[i]:
-				boss_red_parts[i].position.x *= -1
-				boss_red_parts[i].rotation_degrees *= -1
-		for i in boss_red_sprites.size():
-			boss_red_sprites[i].flip_h = true
-	else:
-		for i in boss_red_sprites.size():
-			boss_red_sprites[i].flip_h = false
+	if get_node("Boss_Red"):
+		if boss_red_flip == true:
+			for i in boss_red_parts.size():
+				if boss_red_parts[i].position.x == boss_red_or_position_x[i]:
+					boss_red_parts[i].position.x *= -1
+					boss_red_parts[i].rotation_degrees *= -1
+			for i in boss_red_sprites.size():
+				boss_red_sprites[i].flip_h = true
+		else:
+			for i in boss_red_sprites.size():
+				boss_red_sprites[i].flip_h = false

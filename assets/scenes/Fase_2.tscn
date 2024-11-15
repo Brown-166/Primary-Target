@@ -748,7 +748,7 @@ editor_draw_drag_margin = true
 position = Vector2( 6665, 218 )
 shape = SubResource( 22 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="audio_bullet_train" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
 autoplay = true
 
