@@ -70,7 +70,6 @@ func _ready():
 		hades_or_position_x[i] = hades_parts[i].position.x
 	
 	
-	$Player_anim.get_animation("kick")
 	
 	
 	
@@ -102,18 +101,16 @@ func _physics_process(delta):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "loading_in":
 		$AnimationPlayer.play("cutscene")
-		$Player_anim.play("cutscene")
 	if anim_name == "cutscene":
 		$AnimationPlayer.play("loading_out")
 	if anim_name == "loading_out":
-		get_tree().change_scene("res://assets/scenes/Fase_1.tscn")
+		get_tree().change_scene("res://assets/interfaces/credits.tscn")
 
 
 func _on_Timer_Flip_timeout():
 	if player_flip == true:
 		for i in player_parts.size():
-			if player_parts[i].position.x == player_or_position_x[i] || player_parts[i].rotation_degrees == player_or_rotation[i]:
-				print("flip")
+			if player_parts[i].position.x == player_or_position_x[i]:
 				player_parts[i].position.x *= -1
 				player_parts[i].rotation_degrees *= -1
 		for i in player_sprites.size():
