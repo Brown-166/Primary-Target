@@ -6,10 +6,9 @@
 [ext_resource path="res://assets/images/Fase_1/brick_wall_1.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/Fase_1/tile nav 5x5.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=6]
-[ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/characters/Enemy_Pistol.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/scripts/Test.gd" type="Script" id=9]
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 320, 12.5 )
@@ -276,8 +275,5 @@ position = Vector2( 122, 576 )
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 8 )]
 
-[node name="Enemy_Knife" parent="." instance=ExtResource( 7 )]
-position = Vector2( 725, 576 )
-
-[node name="Enemy_Knife2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 519, 570 )
+[node name="Enemy_Pistol" parent="." instance=ExtResource( 7 )]
+position = Vector2( 490, 570 )

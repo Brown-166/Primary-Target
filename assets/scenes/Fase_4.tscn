@@ -13,7 +13,6 @@
 [ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_off.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_on.png" type="Texture" id=12]
 
-
 [sub_resource type="Animation" id=6]
 resource_name = "game_over"
 length = 5.0
@@ -32,6 +31,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=7]
 resource_name = "loading_in"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -39,7 +39,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -47,6 +47,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=8]
 resource_name = "loading_out"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -54,7 +55,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
@@ -281,10 +282,10 @@ shape = SubResource( 5 )
 anchor_mode = 0
 
 [node name="Boss_Blue" parent="." instance=ExtResource( 5 )]
-position = Vector2( 775, 563 )
+position = Vector2( 1120, 525 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 190, 568 )
+position = Vector2( 630, 525 )
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

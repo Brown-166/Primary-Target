@@ -4,7 +4,7 @@ var life = 100
 var stamina = 100
 var fase
 var playerPosition = Vector2.ZERO
-var medKit = 0
+var medKit = 1
 
 var block
 var dodge

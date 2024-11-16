@@ -25,6 +25,9 @@ var TIME = [1, 2, 3, 4, 5]
 var dodge_time
 
 
+var MEDKIT = preload("res://assets/objects/medKit.tscn")
+
+
 onready var boss_parts = [
 	$Boss_Parts/Upper_Right, $Boss_Parts/Upper_Left, $Boss_Parts/Lower,
 	$Boss_Parts/Upper_Right/Head, $Boss_Parts/Upper_Right/Chest,
@@ -197,15 +200,7 @@ func _physics_process(delta):
 		
 		if stamina > 60:
 			stamina = 60
-	
-#	print("life: " + String(life))
-#	print("dodge: " + String(dodge))
-#	print("stamina: " + String(stamina))
-#	print(dodge_time)
-#	print("layer: " + String(get_collision_layer_bit(2)))
-#	print("mask: " + String(get_collision_mask_bit(1)))
-#	print("player: " + String(LAYER.playerLayer))
-#	print("boss: " + String(layer))
+
 
 func _dead():
 	moving = false
@@ -221,6 +216,11 @@ func _dead():
 	$Timer_Stamina.queue_free()
 	
 	$AnimationPlayerFull.play("Dead")
+	
+	var medkit = MEDKIT.instance()
+	get_parent().add_child(medkit)
+	medkit.z_as_relative = false
+	medkit.position = $Area2D_Ground/Collision_Ground.global_position
 
 
 func _on_Area2D_Boss_Blue_area_entered(area):

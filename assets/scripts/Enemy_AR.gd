@@ -31,6 +31,10 @@ var staggered = false
 var target = null
 const BULLET = preload("res://assets/objects/AR_bullet.tscn")
 
+var MEDKIT = preload("res://assets/objects/medKit.tscn")
+var MD = [1, 2, 3, 4, 5]
+var med_drop
+
 onready var enemy_parts = [
 	$Enemy_Parts/Upper_Right/Head, $Enemy_Parts/Upper_Right/Chest, 
 	$Enemy_Parts/Upper_Right/R_Arm, $Enemy_Parts/Upper_Right/R_Forearm, $Enemy_Parts/Upper_Right/R_Forearm/R_Hand, 
@@ -149,16 +153,18 @@ func _physics_process(delta):
 						move_and_collide(velocity * speed * delta)
 				
 				
-			for area in $Area2D_Ground.get_overlapping_areas():
-				layer = LAYER._get_layer(area.name, layer)
-				z_index = LAYER._get_z_index(area.name, z_index)
-			
-			if layer == LAYER.playerLayer && Global.dodge == true:
+			if Global.dodge == true:
 				set_collision_layer_bit(2, false)
 				set_collision_mask_bit(1, false)
 			else:
 				set_collision_layer_bit(2, true)
 				set_collision_mask_bit(1, true)
+	
+	
+	for area in $Area2D_Ground.get_overlapping_areas():
+		layer = LAYER._get_layer(area.name, layer)
+		z_index = LAYER._get_z_index(area.name, z_index)
+	
 	
 	if attack == false || life <= 0 || staggered == true:
 		$Enemy_Parts/Upper_Right/Weapon_Set/Fire/Sprite.play("default")
@@ -244,6 +250,16 @@ func _dead():
 	else:
 		staggered = false
 		$AnimationPlayerDead.play("Dead(stagger)")
+	
+	
+	randomize()
+	med_drop = MD[randi() % MD.size()]
+	if med_drop == 1:
+		var medkit = MEDKIT.instance()
+		get_parent().add_child(medkit)
+		medkit.z_as_relative = false
+		medkit.position = $Area2D_Ground/CollisionShape2D.global_position
+
 
 
 func _on_Area2D_Enemy_AR_area_entered(area):

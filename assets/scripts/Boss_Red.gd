@@ -20,6 +20,9 @@ var attackVar = true
 var hammer_stagger = false
 
 
+var MEDKIT = preload("res://assets/objects/medKit.tscn")
+
+
 onready var boss_parts = [
 	$Boss_Parts/Upper_Right, $Boss_Parts/Upper_Left, $Boss_Parts/Lower,
 	$Boss_Parts/Upper_Right/Head, $Boss_Parts/Upper_Right/Chest,
@@ -186,6 +189,12 @@ func _dead():
 	#$Audio_DMG3.play()
 	
 	$AnimationPlayerFull.play("Dead")
+	
+
+	var medkit = MEDKIT.instance()
+	get_parent().add_child(medkit)
+	medkit.z_as_relative = false
+	medkit.position = $Area2D_Ground/CollisionShape2D.global_position
 
 
 func _on_Area2D_Boss_Red_area_entered(area):
