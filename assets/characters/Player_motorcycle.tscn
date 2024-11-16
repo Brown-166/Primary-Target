@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/scripts/Player_motorcycle.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Player/motorcycle/tire_side_2.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://assets/audios/motorcycle_running.MP3" type="AudioStream" id=8]
 [ext_resource path="res://assets/audios/vehicle_crash.MP3" type="AudioStream" id=9]
 [ext_resource path="res://assets/audios/motorcycle_crash(sides).MP3" type="AudioStream" id=10]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katana/Katana_Blade.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katana/Katana_Hilt.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/motorcylce_back.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Characters/Player/motorcycle/motorcylce_side.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,6 +23,19 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "side",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "back",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "side",
 "speed": 5.0
@@ -69,6 +86,49 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="katana_back" type="Sprite" parent="motorcycle"]
+position = Vector2( 12.5, -28.5 )
+rotation = -2.61799
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="motorcycle/katana_back"]
+position = Vector2( 0, -35.0249 )
+texture = ExtResource( 11 )
+
+[node name="katana_side_R" type="Sprite" parent="motorcycle"]
+visible = false
+position = Vector2( 14.5, -23.5 )
+rotation = -1.99666
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="motorcycle/katana_side_R"]
+position = Vector2( 0, -35.0249 )
+texture = ExtResource( 11 )
+
+[node name="katana_side_L" type="Sprite" parent="motorcycle"]
+visible = false
+position = Vector2( 6, -33.5 )
+rotation = 3.07527
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="motorcycle/katana_side_L"]
+position = Vector2( 0, -35.0249 )
+texture = ExtResource( 11 )
+
+[node name="moto_back" type="AnimatedSprite" parent="motorcycle"]
+frames = SubResource( 7 )
+animation = "back"
+flip_h = true
 
 [node name="tire_back" type="AnimatedSprite" parent="motorcycle"]
 frames = SubResource( 2 )

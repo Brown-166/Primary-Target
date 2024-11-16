@@ -9,7 +9,7 @@ var original_pol : Array  = [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.Z
 Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO,
 Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
 
-onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_front]
+onready var sprites = [$motorcycle, $motorcycle/tire_back, $motorcycle/tire_front, $motorcycle/moto_back]
 
 
 func _crash():
@@ -65,29 +65,22 @@ func _physics_process(delta):
 			velocity.x += speed
 			if velocity.x >= 70:
 				$motorcycle/tire_front.position.x = 63
-#				$CollisionBack.disabled = true
-#				$CollisionSide.disabled = false
-#				$CollisionSide.position.x = -7
-#				$CollisionSide.rotation_degrees = 57
 				for i in sprites.size():
 					sprites[i].play("side")
 					sprites[i].flip_h = false
-#				for i in $CollisionSide.polygon.size():
-#					$CollisionSide.polygon[i] = original_pol[i]
+				$motorcycle/katana_back.visible = false
+				$motorcycle/katana_side_R.visible = true
+				$motorcycle/katana_side_L.visible = false
 		elif Input.is_action_pressed("ui_left"):
 			velocity.x -= speed
 			if velocity.x <= -70:
 				$motorcycle/tire_front.position.x = -63
-#				$CollisionBack.disabled = true
-#				$CollisionSide.disabled = false
-#				$CollisionSide.position.x = 7
-#				$CollisionSide.rotation_degrees = -57
 				for i in sprites.size():
 					sprites[i].play("side")
 					sprites[i].flip_h = true
-#				for i in $CollisionSide.polygon.size():
-#					if $CollisionSide.polygon[i].x == original_pol[i].x:
-#						$CollisionSide.polygon[i].x *= -1
+				$motorcycle/katana_back.visible = false
+				$motorcycle/katana_side_R.visible = false
+				$motorcycle/katana_side_L.visible = true
 		else:
 			if velocity.x > 0:
 				velocity.x -= 4
@@ -97,6 +90,9 @@ func _physics_process(delta):
 			$CollisionSide.disabled = true
 			for i in sprites.size():
 				sprites[i].play("back")
+			$motorcycle/katana_back.visible = true
+			$motorcycle/katana_side_R.visible = false
+			$motorcycle/katana_side_L.visible = false
 		
 		if velocity.x > 0:
 			if velocity.x > max_speed:
