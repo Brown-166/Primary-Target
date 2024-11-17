@@ -1,4 +1,4 @@
-[gd_scene load_steps=342 format=2]
+[gd_scene load_steps=341 format=2]
 
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/audios/walk.MP3" type="AudioStream" id=2]
@@ -144,7 +144,6 @@
 [ext_resource path="res://assets/audios/motorcycle_idle.MP3" type="AudioStream" id=142]
 [ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Blade.png" type="Texture" id=143]
 [ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Hilt.png" type="Texture" id=144]
-[ext_resource path="res://assets/charactersDead.tres" type="Animation" id=145]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/L_Forearm.png" type="Texture" id=146]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/R_Forearm.png" type="Texture" id=147]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/R_Thigh.png" type="Texture" id=148]
@@ -9632,7 +9631,6 @@ anims/walk = SubResource( 464 )
 autoplay = "RESET"
 anims/Dead = SubResource( 494 )
 anims/RESET = SubResource( 495 )
-anims/charactersDead = ExtResource( 145 )
 anims/equip_weapon = SubResource( 496 )
 anims/equip_weapon_flip = SubResource( 497 )
 anims/idle_flip = SubResource( 498 )

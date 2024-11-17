@@ -1469,13 +1469,13 @@ position = Vector2( 4920, 353.75 )
 shape = SubResource( 7 )
 
 [node name="Enemy_AR" parent="." instance=ExtResource( 16 )]
-position = Vector2( 968, 501 )
+position = Vector2( 1369, 510 )
 
 [node name="Enemy_Knife" parent="." instance=ExtResource( 17 )]
-position = Vector2( 891, 461 )
+position = Vector2( 1455, 460 )
 
 [node name="Enemy_Knife2" parent="." instance=ExtResource( 17 )]
-position = Vector2( 827, 556 )
+position = Vector2( 1312, 550 )
 
 [node name="Enemy_Pistol" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2362, 453 )
@@ -1502,12 +1502,12 @@ position = Vector2( 4114, 463 )
 position = Vector2( 4538, 505 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 117, 494 )
+position = Vector2( 390, 505 )
 
 [node name="medKit" parent="." instance=ExtResource( 19 )]
 position = Vector2( -6848, 582 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="audio_bullet_train" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
 autoplay = true
 

@@ -299,6 +299,10 @@ bg_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1280.0

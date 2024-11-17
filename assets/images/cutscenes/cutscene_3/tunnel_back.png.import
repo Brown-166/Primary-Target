@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tracker.png-a32802d6861c0f4b643fed197cdf29b1.stex"
+path="res://.import/tunnel_back.png-2a323b984be28f656926cc0225772eb4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cutscenes/tracker.png"
-dest_files=[ "res://.import/tracker.png-a32802d6861c0f4b643fed197cdf29b1.stex" ]
+source_file="res://assets/images/cutscenes/cutscene_3/tunnel_back.png"
+dest_files=[ "res://.import/tunnel_back.png-2a323b984be28f656926cc0225772eb4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

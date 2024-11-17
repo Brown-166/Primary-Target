@@ -27,14 +27,9 @@ func _physics_process(delta):
 			if Global.medKit > 0:
 				Global.medKit -=1
 				Global.life += 60
-#		if Input.is_action_pressed("ui_up"):
-#			foward += speed
-#			if foward > max_speed:
-#				foward = max_speed
-#		elif Input.is_action_pressed("ui_down"):
-#			foward -= speed
-#			if foward < 60:
-#				foward = 60
+				$audio_medkit.play()
+	
+	
 		if foward < 100:
 			foward *= 1.02
 		if foward > max_speed:

@@ -98,6 +98,45 @@ var boss_red_or_position_x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
 
 
 
+
+
+onready var background_1 = [$background_1/city/Sprite0, $background_1/city/Sprite, 
+$background_1/city/Sprite2, $background_1/city/Sprite3, $background_1/city/Sprite4, 
+$background_1/city/Sprite5, $background_1/city/Sprite6,$background_1/city/Sprite7, 
+$background_1/city/Sprite8, $background_1/city/Sprite9, $background_1/city/Sprite10, 
+$background_1/city/Sprite11, $background_1/city/Sprite12, $background_1/city/Sprite13,
+$background_1/city/Sprite14, $background_1/city/Sprite15, $background_1/city/Sprite16]
+export var background_1_velocity = 1.0
+var background_1_original_position : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9 ,10, 11, 12, 13,
+14, 15, 16]
+
+
+onready var rail_road = [$background_2/rail_road/road0, $background_2/rail_road/road1, 
+$background_2/rail_road/road2, $background_2/rail_road/road3, $background_2/rail_road/road4, 
+$background_2/rail_road/road5, $background_2/rail_road/road6, $background_2/rail_road/road7, 
+$background_2/rail_road/road8, $background_2/rail_road/road9, $background_2/rail_road/road10,
+$background_2/rail_road/road11, $background_2/rail_road/road12, $background_2/rail_road/road13, 
+$background_2/rail_road/road14]
+
+var road_original_position : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+12, 13, 14]
+
+onready var city = [$background_2/city_background/city0, $background_2/city_background/city1, 
+$background_2/city_background/city2, $background_2/city_background/city3, 
+$background_2/city_background/city4,$background_2/city_background/city5, 
+$background_2/city_background/city6, $background_2/city_background/city7,
+$background_2/city_background/city8, $background_2/city_background/city9, 
+$background_2/city_background/city10,$background_2/city_background/city11, 
+$background_2/city_background/city12, $background_2/city_background/city13,
+$background_2/city_background/city14]
+
+var city_original_positon : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 
+12, 13, 14]
+
+
+
+
+
 func _enemy_ar_flip():
 	if enemy_ar_flip == false:
 		enemy_ar_flip = true
@@ -136,6 +175,8 @@ func _boss_red_flip():
 
 func _ready():
 	Global.fase = name
+	DB._save_new_game(DB.current_save)
+	
 	if get_node("Enemy_AR"):
 		for i in enemy_ar_parts.size():
 			enemy_ar_or_position_x[i] = enemy_ar_parts[i].position.x
@@ -156,6 +197,16 @@ func _ready():
 		for i in boss_red_parts.size():
 			boss_red_or_position_x[i] = boss_red_parts[i].position.x
 	
+	if Global.fase == "cutscene_3":
+		for i in background_1.size():
+			background_1_original_position[i] = background_1[i].position.x
+		
+		for i in rail_road.size():
+			road_original_position[i] = rail_road[i].position.x
+	
+		for i in city.size():
+			city_original_positon[i] = city[i].position.x
+	
 	
 	$CanvasLayer/Skip_button.visible = false
 	$CanvasLayer/Skip_button.value = 0.1
@@ -164,6 +215,23 @@ func _ready():
 
 
 func _physics_process(delta):
+	if Global.fase == "cutscene_3":
+		for i in background_1.size():
+			background_1[i].position.x -= background_1_velocity
+			if background_1[i].position.x <= (background_1_original_position[i] - 1280):
+				background_1[i].position.x = background_1_original_position[i]
+		
+		for i in rail_road.size():
+			rail_road[i].position.x -= 15
+			if rail_road[i].position.x <= (road_original_position[i] - 640):
+				rail_road[i].position.x = road_original_position[i]
+		
+		for i in city.size():
+			city[i].position.x -= 1
+			if city[i].position.x <= (city_original_positon[i] - 640):
+				city[i].position.x = city_original_positon[i]
+	
+	
 	if skip == false:
 		if Input.is_action_pressed("space"):
 			$CanvasLayer/Skip_button.value *= 1.1

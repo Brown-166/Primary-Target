@@ -120,13 +120,13 @@ func _on_Timer_shoot_timeout():
 		
 		$bullet_positions/audio_shoot.play()
 		var bullet = BULLET.instance()
-		get_parent().add_child(bullet)
+		add_child(bullet)
 		bullet._set_direction(-2)
 		bullet._set_layer(0)
 		
 		var bullet_hole = HOLE.instance()
 		bullet_hole.texture = bullet_hole_texture
-		get_parent().add_child(bullet_hole)
+		add_child(bullet_hole)
 		match ammo:
 			5:
 				bullet.position = $position_bullet_1.position
@@ -150,7 +150,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "game_over":
 		get_tree().change_scene("res://assets/interfaces/game_over.tscn")
 	if anim_name == "loading_out":
-		get_tree().change_scene("res://assets/scenes/Fase_3.tscn")
+		get_tree().change_scene("res://assets/cutscenes/cutscene_3.tscn")
 
 
 func _on_Area2D_Next_Fase_body_entered(body):
