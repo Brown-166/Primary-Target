@@ -10,6 +10,7 @@ func _ready():
 	get_tree().paused = false
 	DB._load_DB()
 	action = ""
+	$audio_menu.play()
 	$Screen_Menu/Button_Continue.disabled = false
 	$Screen_Menu/Button_New_Game.disabled = false
 	$Screen_Menu/Button_Load_Game.disabled = false
@@ -37,6 +38,8 @@ func _ready():
 	$Screen_new_game/Skip_button.value = 0.1
 
 
+
+
 func _physics_process(delta):
 	if DB._load_game("game_1") == false:
 		$Screen_Saves/Button_Save_1.text = "VAZIO"
@@ -52,6 +55,8 @@ func _physics_process(delta):
 		$Screen_Saves/Button_Save_3.text = "VAZIO"
 	else:
 		$Screen_Saves/Button_Save_3.text = "SAVE 3"
+	
+	
 	
 	
 	
@@ -94,12 +99,14 @@ func _loading_out():
 
 
 func _on_Button_Continue_pressed():
+	$audio_btn.play()
 	action = "continue"
 	DB._load_game(DB.current_save)
 	_loading_out()
 
 
 func _on_Button_New_Game_pressed():
+	$audio_btn.play()
 	$Screen_Menu.visible = false
 	$Screen_Saves.visible = true
 	$Screen_Saves/Button_Save_1.grab_focus()
@@ -107,6 +114,7 @@ func _on_Button_New_Game_pressed():
 
 
 func _on_Button_Load_Game_pressed():
+	$audio_btn.play()
 	$Screen_Menu.visible = false
 	$Screen_Saves.visible = true
 	$Screen_Saves/Button_Save_1.grab_focus()
@@ -114,23 +122,28 @@ func _on_Button_Load_Game_pressed():
 
 
 func _on_Button_Credits_pressed():
+	$audio_btn.play()
 	action = "credits"
 	_loading_out()
 
 
 func _on_Button_Quit_pressed():
+	$audio_btn.play()
 	get_tree().quit()
 
 
 
 func _on_Button_Save_1_pressed():
+	$audio_btn.play()
 	DB.current_save = "game_1"
 	DB._save_DB()
 	if action == "new game":
 		Global.life = 100
 		Global.stamina = 100
-		Global.medKit = 0
+		Global.medKit = 1
 		Global.fase = "cutscene_1"
+		Global.weapon = "katana"
+		Global.arsenal = ["katana", "", ""]
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -140,13 +153,16 @@ func _on_Button_Save_1_pressed():
 
 
 func _on_Button_Save_2_pressed():
+	$audio_btn.play()
 	DB.current_save = "game_2"
 	DB._save_DB()
 	if action == "new game":
 		Global.life = 100
 		Global.stamina = 100
-		Global.medKit = 0
+		Global.medKit = 1
 		Global.fase = "cutscene_1"
+		Global.weapon = "katana"
+		Global.arsenal = ["katana", "", ""]
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -156,13 +172,16 @@ func _on_Button_Save_2_pressed():
 
 
 func _on_Button_Save_3_pressed():
+	$audio_btn.play()
 	DB.current_save = "game_3"
 	DB._save_DB()
 	if action == "new game":
 		Global.life = 100
 		Global.stamina = 100
-		Global.medKit = 0
+		Global.medKit = 1
 		Global.fase = "cutscene_1"
+		Global.weapon = "katana"
+		Global.arsenal = ["katana", "", ""]
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -172,6 +191,7 @@ func _on_Button_Save_3_pressed():
 
 
 func _on_Button_Back_pressed():
+	$audio_btn.play()
 	$Screen_Menu.visible = true
 	$Screen_Saves.visible = false
 	if not game_file.file_exists("./save_files/game_1.save") && not game_file.file_exists("./save_files/game_2.save") && not game_file.file_exists("./save_files/game_3.save"):
@@ -192,3 +212,42 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")
 	if action == "credits":
 		get_tree().change_scene("res://assets/interfaces/credits.tscn")
+
+
+
+func _on_Button_Continue_focus_entered():
+	if $AnimationPlayer.is_playing() == false:
+		$audio_select.play()
+
+
+func _on_Button_New_Game_focus_entered():
+	if $AnimationPlayer.is_playing() == false:
+		$audio_select.play()
+
+
+func _on_Button_Load_Game_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Credits_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Quit_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Save_1_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Save_2_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Save_3_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Back_focus_entered():
+	$audio_select.play()

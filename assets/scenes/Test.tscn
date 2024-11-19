@@ -276,4 +276,4 @@ position = Vector2( 122, 576 )
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="Enemy_Pistol" parent="." instance=ExtResource( 7 )]
-position = Vector2( 490, 570 )
+position = Vector2( 497, 587 )

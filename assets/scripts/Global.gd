@@ -6,6 +6,8 @@ var fase
 var playerPosition = Vector2.ZERO
 var medKit = 1
 
+var hit = ""
+
 var block
 var dodge
 var staggered = false

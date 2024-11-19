@@ -218,6 +218,7 @@ func _dead():
 	$AnimationPlayerFull.play("Dead")
 	
 	var medkit = MEDKIT.instance()
+	medkit._set_layer(layer)
 	get_parent().add_child(medkit)
 	medkit.z_as_relative = false
 	medkit.position = $Area2D_Ground/Collision_Ground.global_position
@@ -292,9 +293,11 @@ func _on_Boss_Katar_area_entered(area):
 			else:
 				Global.life -= 5
 				Global.stamina -= 10
+				Global.hit = "attack"
 		elif area.name == "Area2D_Player":
 			if Global.dodge == false && blocked == false:
 				Global.life -= 5
+				Global.hit = "attack"
 
 
 func _on_Area2D_Ground_area_entered(area):

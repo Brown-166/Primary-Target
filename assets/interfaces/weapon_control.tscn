@@ -1,0 +1,416 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://assets/themes/label.tres" type="Theme" id=1]
+[ext_resource path="res://assets/scripts/weapon_control.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katana/Katana_Blade.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katana/Katana_Hilt.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Head_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Hilt.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Head_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Hilt.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Hammer/Hammer_Head_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Blade.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/UI/weapon_control/E.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/UI/weapon_control/shift.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/UI/weapon_control/right_click.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/UI/weapon_control/3.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/UI/weapon_control/Q.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/UI/weapon_control/left_click.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/UI/weapon_control/2.png" type="Texture" id=17]
+[ext_resource path="res://assets/themes/pause_menu_btn.tres" type="Theme" id=18]
+[ext_resource path="res://assets/audios/pause_btn.MP3" type="AudioStream" id=19]
+
+[sub_resource type="AtlasTexture" id=238]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 3, 54 )
+
+[sub_resource type="SpriteFrames" id=303]
+animations = [ {
+"frames": [ SubResource( 238 ) ],
+"loop": true,
+"name": "Hilt",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=302]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 19, 12 )
+
+[sub_resource type="AtlasTexture" id=296]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 19, 12 )
+
+[sub_resource type="AtlasTexture" id=297]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 19, 12 )
+
+[sub_resource type="SpriteFrames" id=304]
+animations = [ {
+"frames": [ SubResource( 302 ) ],
+"loop": true,
+"name": "Head_1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 296 ) ],
+"loop": true,
+"name": "Head_2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 297 ) ],
+"loop": true,
+"name": "Head_3",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=234]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 11, 3 )
+
+[sub_resource type="SpriteFrames" id=305]
+animations = [ {
+"frames": [ SubResource( 234 ) ],
+"loop": true,
+"name": "Hilt",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=236]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 15, 33 )
+
+[sub_resource type="SpriteFrames" id=306]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "Blade_Off",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 236 ) ],
+"loop": true,
+"name": "Blade_On",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=307]
+resource_name = "loading_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Katana_control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hammer_control:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Katar_control:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Button_quit:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="weapon_control" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.152941, 0.152941, 0.152941, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Katana_control" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="katana" type="Node2D" parent="Katana_control"]
+position = Vector2( 285, 100 )
+rotation = 0.785398
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Katana_control/katana"]
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="Katana_control/katana"]
+position = Vector2( 0, -35 )
+texture = ExtResource( 3 )
+
+[node name="name" type="Label" parent="Katana_control"]
+margin_left = 278.5
+margin_top = 120.0
+margin_right = 416.5
+margin_bottom = 156.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "Katana"
+
+[node name="attack" type="Label" parent="Katana_control"]
+margin_left = 138.5
+margin_top = 265.0
+margin_right = 276.5
+margin_bottom = 301.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "ATACAR"
+
+[node name="block" type="Label" parent="Katana_control"]
+margin_left = 264.5
+margin_top = 265.0
+margin_right = 448.5
+margin_bottom = 301.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "Bloquear"
+
+[node name="medkit" type="Label" parent="Katana_control"]
+margin_left = 417.5
+margin_top = 265.0
+margin_right = 624.5
+margin_bottom = 301.0
+grow_horizontal = 2
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "USAR CURA"
+
+[node name="Left_Click" type="Sprite" parent="Katana_control"]
+position = Vector2( 180, 220 )
+texture = ExtResource( 16 )
+
+[node name="Right_Click" type="Sprite" parent="Katana_control"]
+position = Vector2( 320, 220 )
+texture = ExtResource( 13 )
+
+[node name="Q" type="Sprite" parent="Katana_control"]
+position = Vector2( 480, 220 )
+texture = ExtResource( 15 )
+
+[node name="Hammer_control" type="Node2D" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Hammer" type="Node2D" parent="Hammer_control"]
+position = Vector2( 300, 100 )
+rotation = 0.785398
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hilt" type="AnimatedSprite" parent="Hammer_control/Hammer"]
+frames = SubResource( 303 )
+animation = "Hilt"
+
+[node name="Head" type="AnimatedSprite" parent="Hammer_control/Hammer"]
+position = Vector2( 0.000333786, -32 )
+frames = SubResource( 304 )
+animation = "Head_1"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="2" type="Sprite" parent="Hammer_control"]
+position = Vector2( 240, 220 )
+texture = ExtResource( 17 )
+
+[node name="R" type="Sprite" parent="Hammer_control"]
+position = Vector2( 400, 220 )
+texture = ExtResource( 11 )
+
+[node name="name" type="Label" parent="Hammer_control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 271.5
+margin_top = 141.5
+margin_right = 432.5
+margin_bottom = 177.5
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "Martelo"
+
+[node name="equip" type="Label" parent="Hammer_control"]
+margin_left = 191.5
+margin_top = 265.0
+margin_right = 352.5
+margin_bottom = 301.0
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "EQUIPAR"
+
+[node name="stagger" type="Label" parent="Hammer_control"]
+margin_left = 344.5
+margin_top = 265.0
+margin_right = 528.5
+margin_bottom = 301.0
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "DERRUBAR"
+
+[node name="Katar_control" type="Node2D" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Katar_R" type="Node2D" parent="Katar_control"]
+position = Vector2( 340, 100 )
+rotation = 0.785398
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hilt" type="AnimatedSprite" parent="Katar_control/Katar_R"]
+frames = SubResource( 305 )
+animation = "Hilt"
+
+[node name="Blade" type="AnimatedSprite" parent="Katar_control/Katar_R"]
+position = Vector2( 0, -5 )
+frames = SubResource( 306 )
+animation = "Blade_On"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Katar_L" type="Node2D" parent="Katar_control"]
+position = Vector2( 300, 100 )
+rotation = 0.785398
+scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hilt" type="AnimatedSprite" parent="Katar_control/Katar_L"]
+frames = SubResource( 305 )
+animation = "Hilt"
+
+[node name="Blade" type="AnimatedSprite" parent="Katar_control/Katar_L"]
+position = Vector2( 0, -5 )
+frames = SubResource( 306 )
+animation = "Blade_On"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="3" type="Sprite" parent="Katar_control"]
+position = Vector2( 240, 220 )
+texture = ExtResource( 14 )
+
+[node name="Shift" type="Sprite" parent="Katar_control"]
+position = Vector2( 400, 220 )
+texture = ExtResource( 12 )
+
+[node name="name" type="Label" parent="Katar_control"]
+margin_left = 285.5
+margin_top = 130.0
+margin_right = 400.5
+margin_bottom = 166.0
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "Katar"
+
+[node name="equip" type="Label" parent="Katar_control"]
+margin_left = 191.5
+margin_top = 265.0
+margin_right = 352.5
+margin_bottom = 301.0
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "EQUIPAR"
+
+[node name="dodge" type="Label" parent="Katar_control"]
+margin_left = 345.0
+margin_top = 265.0
+margin_right = 529.0
+margin_bottom = 301.0
+rect_scale = Vector2( 0.6, 0.6 )
+theme = ExtResource( 1 )
+text = "ESQUIVAR"
+
+[node name="Button_quit" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -162.0
+margin_top = -81.0
+margin_right = -50.0
+margin_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource( 18 )
+text = "FECHAR"
+icon_align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading_in"
+anims/loading_in = SubResource( 307 )
+
+[node name="audio_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[connection signal="pressed" from="Button_quit" to="." method="_on_Button_quit_pressed"]

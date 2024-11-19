@@ -260,6 +260,7 @@ func _dead():
 	med_drop = MD[randi() % MD.size()]
 	if med_drop == 1:
 		var medkit = MEDKIT.instance()
+		medkit._set_layer(layer)
 		get_parent().add_child(medkit)
 		medkit.z_as_relative = false
 		medkit.position = $Area2D_Ground/CollisionShape2D.global_position

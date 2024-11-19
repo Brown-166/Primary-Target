@@ -1,4 +1,4 @@
-[gd_scene load_steps=312 format=2]
+[gd_scene load_steps=314 format=2]
 
 [ext_resource path="res://assets/scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Player/Red/Head.png" type="Texture" id=2]
@@ -126,6 +126,8 @@
 [ext_resource path="res://assets/audios/fall_1.MP3" type="AudioStream" id=124]
 [ext_resource path="res://assets/audios/jump.MP3" type="AudioStream" id=125]
 [ext_resource path="res://assets/audios/medkit.MP3" type="AudioStream" id=126]
+[ext_resource path="res://assets/audios/player_hit_1.MP3" type="AudioStream" id=127]
+[ext_resource path="res://assets/audios/player_hit_2.MP3" type="AudioStream" id=128]
 
 [sub_resource type="AtlasTexture" id=270]
 atlas = ExtResource( 103 )
@@ -15295,7 +15297,6 @@ position = Vector2( 0.472222, 40 )
 shape = SubResource( 136 )
 
 [node name="Area2D_Block" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -15379,6 +15380,12 @@ volume_db = 10.0
 [node name="Timer_Dead" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="audio_dmg_1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 127 )
+
+[node name="audio_dmg_2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 128 )
 
 [connection signal="area_entered" from="Player_Parts/Upper_Right/R_Weapons/Katana/Blade/Area2D_Katana" to="." method="_on_katana_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayerFull" to="." method="_on_AnimationPlayerFull_animation_finished"]

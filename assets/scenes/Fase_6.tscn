@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/scripts/Fase_6.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/characters/Enemy_Pistol.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/interfaces/weapon_control.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=26]
 resource_name = "game_over"
@@ -172,7 +173,10 @@ anims/loading_out = SubResource( 28 )
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 11 )]
 
-[node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 7 )]
+[node name="pause_menu" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="weapon_control" parent="." instance=ExtResource( 18 )]
 visible = false
 
 [node name="background_dark" type="Node2D" parent="."]

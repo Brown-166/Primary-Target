@@ -27,12 +27,14 @@ func _loading_out():
 	
 
 func _on_Button_Restart_pressed():
+	$audio_btn.play()
 	DB._load_game(DB.current_save)
 	action = "restart"
 	_loading_out()
 
 
 func _on_Button_Quit_pressed():
+	$audio_btn.play()
 	action = "quit"
 	_loading_out()
 
@@ -46,3 +48,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			get_tree().change_scene("res://assets/cutscenes/"+ Global.fase +".tscn")
 	if action == "quit":
 		get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+
+
+func _on_Button_Restart_focus_entered():
+	if $AnimationPlayer.is_playing() == false:
+		$audio_select.play()
+
+
+func _on_Button_Quit_focus_entered():
+	$audio_select.play()

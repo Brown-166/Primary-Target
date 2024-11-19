@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/images/UI/pause_menu/Background.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/pause_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/themes/pause_menu_btn.tres" type="Theme" id=3]
+[ext_resource path="res://assets/audios/menu_select.MP3" type="AudioStream" id=4]
+[ext_resource path="res://assets/audios/pause_btn.MP3" type="AudioStream" id=5]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_pause"
@@ -101,6 +103,14 @@ color = Color( 0, 0, 0, 0 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/loading_out = SubResource( 5 )
 
+[node name="audio_select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="audio_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="focus_entered" from="Menu/Resume" to="." method="_on_Resume_focus_entered"]
 [connection signal="pressed" from="Menu/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="focus_entered" from="Menu/Quit" to="." method="_on_Quit_focus_entered"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

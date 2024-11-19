@@ -252,7 +252,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "game_over":
 		get_tree().change_scene("res://assets/interfaces/game_over.tscn")
 	if anim_name == "loading_out":
-		get_tree().change_scene("res://assets/scenes/Fase_6.tscn")
+		get_tree().change_scene("res://assets/cutscenes/cutscene_6.tscn")
 
 
 

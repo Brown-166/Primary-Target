@@ -206,6 +206,17 @@ func _weapon_set():
 
 
 
+func _hit():
+	if Global.hit == "bullet":
+		if $audio_dmg_1.playing == false:
+			$audio_dmg_1.play()
+			Global.hit = ""
+	if Global.hit == "attack":
+		if $audio_dmg_2.playing == false:
+			$audio_dmg_2.play()
+			Global.hit = ""
+
+
 func _ready():
 #	if Global.fase == "Fase_1":
 #		$Camera2D.current = true
@@ -223,6 +234,8 @@ func _physics_process(delta):
 	if Global.life > 0:
 		velocity = Vector2.ZERO
 		_weapon_set()
+		
+		_hit()
 		
 		
 		if Input.is_action_just_pressed("medkit"):
@@ -472,6 +485,8 @@ func _on_TimerFlip_timeout():
 			weapons[i].rotation_degrees *= 1
 			#$Player_Parts/Katana/Blade.flip_h = false
 		$Area2D_Block/Collision_Block.position.x = 20
+		$Area2D_Block/Collision_Block_top.position.x = 12
+		$Area2D_Block/Collision_Block_bottom.position.x = 12
 			
 	else:
 		for i in player_parts.size():
@@ -484,7 +499,9 @@ func _on_TimerFlip_timeout():
 			weapons[i].rotation_degrees *= -1
 		for i in weapons_sprites.size():
 			weapons_sprites[i].flip_h = true
-		$Area2D_Block/Collision_Block.position.x *= -1
+		$Area2D_Block/Collision_Block.position.x = -20
+		$Area2D_Block/Collision_Block_top.position.x = -12
+		$Area2D_Block/Collision_Block_bottom.position.x = -12
 
 
 func _on_Area2D_Ground_area_entered(area):

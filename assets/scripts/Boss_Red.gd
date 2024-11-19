@@ -192,6 +192,7 @@ func _dead():
 	
 
 	var medkit = MEDKIT.instance()
+	medkit._set_layer(layer)
 	get_parent().add_child(medkit)
 	medkit.z_as_relative = false
 	medkit.position = $Area2D_Ground/CollisionShape2D.global_position
@@ -271,9 +272,11 @@ func _on_Boss_Hammer_area_entered(area):
 			else:
 				Global.life -= 20
 				Global.stamina -= 20
+				Global.hit = "attack"
 		elif area.name == "Area2D_Player":
 			if Global.dodge == false && blocked == false:
 				Global.life -= 20
+				Global.hit = "attack"
 
 
 func _on_Area2D_Ground_area_entered(area):
@@ -320,3 +323,4 @@ func _on_Boss_Stagger_area_entered(area):
 			if Global.dodge == false:
 				Global.life -= 10
 				Global.staggered = true
+				Global.hit = "attack"
