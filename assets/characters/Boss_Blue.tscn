@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Hilt.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/Weapons/player_Weapons/Katar/Katar_Blade.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://assets/audios/Boss_Blue_death.MP3" type="AudioStream" id=23]
 [ext_resource path="res://assets/audios/weapon_drop.MP3" type="AudioStream" id=24]
 [ext_resource path="res://assets/audios/fall_1.MP3" type="AudioStream" id=25]
+[ext_resource path="res://assets/audios/dodge.MP3" type="AudioStream" id=26]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 13 )
@@ -217,6 +218,21 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=329]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("audio_attack:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=312]
 resource_name = "attack_1"
@@ -523,6 +539,18 @@ tracks/24/keys = {
 "method": "_attack"
 } ]
 }
+tracks/25/type = "value"
+tracks/25/path = NodePath("audio_attack:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=313]
 resource_name = "attack_2"
@@ -828,6 +856,18 @@ tracks/24/keys = {
 "args": [  ],
 "method": "_attack"
 } ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("audio_attack:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=314]
@@ -1927,6 +1967,21 @@ tracks/41/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=330]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("audio_dodge:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
 [sub_resource type="Animation" id=323]
 resource_name = "dodge"
 length = 2.0
@@ -2387,6 +2442,18 @@ tracks/37/keys = {
 "args": [  ],
 "method": "_dodge"
 } ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("audio_dodge:playing")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=327]
@@ -3042,6 +3109,7 @@ frames = SubResource( 30 )
 frames = SubResource( 32 )
 
 [node name="AnimationPlayerUpper" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 329 )
 anims/attack_1 = SubResource( 312 )
 anims/attack_2 = SubResource( 313 )
 anims/idle = SubResource( 314 )
@@ -3052,6 +3120,7 @@ anims/walk = SubResource( 316 )
 
 [node name="AnimationPlayerFull" type="AnimationPlayer" parent="."]
 anims/Dead = SubResource( 328 )
+anims/RESET = SubResource( 330 )
 anims/dodge = SubResource( 323 )
 anims/staggered = SubResource( 327 )
 
@@ -3140,6 +3209,9 @@ stream = ExtResource( 23 )
 [node name="audio_drop_weapon" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 24 )
 volume_db = -15.0
+
+[node name="audio_dodge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 26 )
 
 [connection signal="area_entered" from="Boss_Parts/Upper_Left/Katar/Blade/Boss_Katar" to="." method="_on_Boss_Katar_area_entered"]
 [connection signal="area_entered" from="Boss_Parts/Upper_Right/Katar/Blade/Boss_Katar" to="." method="_on_Boss_Katar_area_entered"]

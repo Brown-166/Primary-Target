@@ -1,4 +1,4 @@
-[gd_scene load_steps=274 format=2]
+[gd_scene load_steps=276 format=2]
 
 [ext_resource path="res://assets/scripts/cutscene.gd" type="Script" id=1]
 [ext_resource path="res://assets/audios/walk.MP3" type="AudioStream" id=2]
@@ -125,6 +125,8 @@
 [ext_resource path="res://assets/audios/kicking_metal_door.MP3" type="AudioStream" id=123]
 [ext_resource path="res://assets/audios/weapon_swoosh.MP3" type="AudioStream" id=124]
 [ext_resource path="res://assets/audios/motorcycle_idle.MP3" type="AudioStream" id=125]
+[ext_resource path="res://assets/images/Vehicles/Car_1/car_1_side.png" type="Texture" id=126]
+[ext_resource path="res://assets/images/cutscenes/cutscene_5/tracker.png" type="Texture" id=127]
 
 [sub_resource type="Animation" id=474]
 resource_name = "RESET"
@@ -7611,6 +7613,19 @@ centered = false
 position = Vector2( 640, 0 )
 texture = ExtResource( 109 )
 centered = false
+
+[node name="tracker" type="Sprite" parent="background"]
+position = Vector2( 82.0479, 462.5 )
+rotation = 2.44346
+z_index = 1
+texture = ExtResource( 127 )
+
+[node name="car" type="Sprite" parent="background"]
+position = Vector2( 201.048, 458.5 )
+texture = ExtResource( 126 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2( -1030, 970 )

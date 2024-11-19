@@ -206,7 +206,7 @@ func _on_Button_Back_pressed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if action == "continue" || action == "new game" || action == "load game":
-		if Global.fase in ["cutscene_1"]:
+		if Global.fase in ["cutscene_1", "cutscene_2", "cutscene_3", "cutscene_4", "cutscene_5", "cutscene_6", "cutscene_7"]:
 			get_tree().change_scene("res://assets/cutscenes/"+ Global.fase +".tscn")
 		else:
 			get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")

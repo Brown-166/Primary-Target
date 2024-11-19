@@ -135,6 +135,7 @@ func _set_dir(new_dir, old_dir):
 
 func _ready():
 	Global.fase = "Fase_5"
+	Global.block = false
 	DB._save_new_game(DB.current_save)
 	_color_build(0)
 	$background/road.play("straight")

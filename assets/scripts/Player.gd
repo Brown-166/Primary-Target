@@ -305,23 +305,24 @@ func _physics_process(delta):
 			
 			
 			
-			if Input.is_action_just_pressed("katana"):
-				Global.weapon = "katana"
-				for i in weapon_collisions.size():
-					weapon_collisions[i].disabled = true
-				_weapon_set()
-			if Input.is_action_just_pressed("hammer"):
-				if Global.arsenal[1] == "hammer":
-					Global.weapon = "hammer"
+			if attack == false && block == false && stagger == false && dodge == false && staggered == false:
+				if Input.is_action_just_pressed("katana"):
+					Global.weapon = "katana"
 					for i in weapon_collisions.size():
 						weapon_collisions[i].disabled = true
 					_weapon_set()
-			if Input.is_action_just_pressed("katar"):
-				if Global.arsenal[2] == "katar":
-					Global.weapon = "katar"
-					for i in weapon_collisions.size():
-						weapon_collisions[i].disabled = true
-					_weapon_set()
+				if Input.is_action_just_pressed("hammer"):
+					if Global.arsenal[1] == "hammer":
+						Global.weapon = "hammer"
+						for i in weapon_collisions.size():
+							weapon_collisions[i].disabled = true
+						_weapon_set()
+				if Input.is_action_just_pressed("katar"):
+					if Global.arsenal[2] == "katar":
+						Global.weapon = "katar"
+						for i in weapon_collisions.size():
+							weapon_collisions[i].disabled = true
+						_weapon_set()
 			
 			
 			
