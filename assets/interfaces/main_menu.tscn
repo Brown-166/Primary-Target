@@ -388,7 +388,6 @@ align = 1
 valign = 1
 
 [node name="Screen_Menu" type="Control" parent="."]
-visible = false
 anchor_right = 0.4
 anchor_bottom = 0.5
 margin_left = 230.0
@@ -536,6 +535,7 @@ anims/loading_out = SubResource( 2 )
 anims/new_game = SubResource( 5 )
 
 [node name="Screen_new_game" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -747,21 +747,30 @@ stream = ExtResource( 17 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="focus_entered" from="Screen_Menu/Button_Continue" to="." method="_on_Button_Continue_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Menu/Button_Continue" to="." method="_on_Button_Continue_mouse_entered"]
 [connection signal="pressed" from="Screen_Menu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
 [connection signal="focus_entered" from="Screen_Menu/Button_New_Game" to="." method="_on_Button_New_Game_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Menu/Button_New_Game" to="." method="_on_Button_New_Game_mouse_entered"]
 [connection signal="pressed" from="Screen_Menu/Button_New_Game" to="." method="_on_Button_New_Game_pressed"]
 [connection signal="focus_entered" from="Screen_Menu/Button_Load_Game" to="." method="_on_Button_Load_Game_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Menu/Button_Load_Game" to="." method="_on_Button_Load_Game_mouse_entered"]
 [connection signal="pressed" from="Screen_Menu/Button_Load_Game" to="." method="_on_Button_Load_Game_pressed"]
 [connection signal="focus_entered" from="Screen_Menu/Button_Credits" to="." method="_on_Button_Credits_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Menu/Button_Credits" to="." method="_on_Button_Credits_mouse_entered"]
 [connection signal="pressed" from="Screen_Menu/Button_Credits" to="." method="_on_Button_Credits_pressed"]
 [connection signal="focus_entered" from="Screen_Menu/Button_Quit" to="." method="_on_Button_Quit_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Menu/Button_Quit" to="." method="_on_Button_Quit_mouse_entered"]
 [connection signal="pressed" from="Screen_Menu/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 [connection signal="focus_entered" from="Screen_Saves/Button_Save_1" to="." method="_on_Button_Save_1_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Saves/Button_Save_1" to="." method="_on_Button_Save_1_mouse_entered"]
 [connection signal="pressed" from="Screen_Saves/Button_Save_1" to="." method="_on_Button_Save_1_pressed"]
 [connection signal="focus_entered" from="Screen_Saves/Button_Save_2" to="." method="_on_Button_Save_2_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Saves/Button_Save_2" to="." method="_on_Button_Save_2_mouse_entered"]
 [connection signal="pressed" from="Screen_Saves/Button_Save_2" to="." method="_on_Button_Save_2_pressed"]
 [connection signal="focus_entered" from="Screen_Saves/Button_Save_3" to="." method="_on_Button_Save_3_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Saves/Button_Save_3" to="." method="_on_Button_Save_3_mouse_entered"]
 [connection signal="pressed" from="Screen_Saves/Button_Save_3" to="." method="_on_Button_Save_3_pressed"]
 [connection signal="focus_entered" from="Screen_Saves/Button_Back" to="." method="_on_Button_Back_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Saves/Button_Back" to="." method="_on_Button_Back_mouse_entered"]
 [connection signal="pressed" from="Screen_Saves/Button_Back" to="." method="_on_Button_Back_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

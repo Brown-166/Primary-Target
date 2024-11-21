@@ -2,7 +2,7 @@ extends Node
 
 var current_save = ""
 
-
+var con_string : String = "user://"
 
 
 
@@ -11,17 +11,17 @@ func _save_DB():
 		"current_save":current_save
 	}
 	var DB_file = File.new()
-	DB_file.open_encrypted_with_pass("./save_files/DB.save", File.WRITE, "summer")
+	DB_file.open_encrypted_with_pass(con_string + "DB.save", File.WRITE, "summer")
 #	DB_file.open("./save_files/DB.save", File.WRITE)
 	DB_file.store_line(to_json(dic_save))
 	DB_file.close()
 
 func _load_DB():
 	var DB_file = File.new()
-	if not DB_file.file_exists("./save_files/DB.save"):
+	if not DB_file.file_exists(con_string + "DB.save"):
 		return false
 	else:
-		DB_file.open_encrypted_with_pass("./save_files/DB.save", File.READ, "summer")
+		DB_file.open_encrypted_with_pass(con_string + "DB.save", File.READ, "summer")
 #		DB_file.open("./save_files/DB.save", File.READ)
 		var save_line = parse_json(DB_file.get_line())
 		current_save = save_line["current_save"]
@@ -45,7 +45,7 @@ func _save():
 
 func _save_new_game(save):
 	var game_file = File.new()
-	game_file.open_encrypted_with_pass("./save_files/"+ save +".save", File.WRITE, "summer")
+	game_file.open_encrypted_with_pass(con_string + save +".save", File.WRITE, "summer")
 #	game_file.open("./save_files/"+ save +".save", File.WRITE)
 	game_file.store_line(to_json(_save()))
 	game_file.close()
@@ -53,10 +53,10 @@ func _save_new_game(save):
 
 func _load_game(save):
 	var game_file = File.new()
-	if not game_file.file_exists("./save_files/"+ save +".save"):
+	if not game_file.file_exists(con_string + save +".save"):
 		return false
 	else:
-		game_file.open_encrypted_with_pass("./save_files/"+ save +".save", File.READ, "summer")
+		game_file.open_encrypted_with_pass(con_string + save +".save", File.READ, "summer")
 #		game_file.open("./save_files/"+ save +".save", File.READ)
 		var save_line = parse_json(game_file.get_line())
 		Global.life = save_line["life"]

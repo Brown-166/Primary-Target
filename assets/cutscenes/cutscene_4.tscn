@@ -6698,7 +6698,7 @@ animation = "Yellow"
 [node name="audio_player_walk" type="AudioStreamPlayer2D" parent="Player"]
 scale = Vector2( 0.5, 0.5 )
 stream = ExtResource( 15 )
-volume_db = 5.0
+volume_db = 10.0
 
 [node name="jump" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 123 )

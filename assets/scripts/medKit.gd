@@ -12,7 +12,6 @@ func _set_layer(L):
 	z_index = L * -1
 
 func _physics_process(delta):
-	print(layer)
 	for area in $Area2D.get_overlapping_areas():
 #		layer = LAYER._get_layer(area.name, layer)
 #		z_index = LAYER._get_z_index(area.name, z_index)

@@ -7763,12 +7763,9 @@ animation = "Yellow"
 stream = ExtResource( 2 )
 volume_db = 10.0
 
-[node name="audio_attack_1" type="AudioStreamPlayer2D" parent="Player"]
+[node name="audio_attack_1" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 124 )
 volume_db = 5.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Player_anim" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 450 )
@@ -7828,16 +7825,12 @@ __meta__ = {
 position = Vector2( -0.5, 0.5 )
 texture = ExtResource( 114 )
 
-[node name="engine" type="AudioStreamPlayer2D" parent="motorcylce"]
-scale = Vector2( 0.5, 0.5 )
+[node name="engine" type="AudioStreamPlayer" parent="motorcylce"]
 stream = ExtResource( 125 )
-volume_db = 10.0
 autoplay = true
 
-[node name="metal" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 360, 619 )
+[node name="metal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 123 )
-volume_db = 5.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]

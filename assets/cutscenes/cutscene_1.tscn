@@ -768,8 +768,8 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"clips": PoolStringArray( "walk" ),
-"times": PoolRealArray( 8.5 )
+"clips": PoolStringArray( "RESET", "walk" ),
+"times": PoolRealArray( 0, 8.5 )
 }
 tracks/22/type = "animation"
 tracks/22/path = NodePath("Player_anim")
@@ -778,8 +778,8 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"clips": PoolStringArray( "walk_2", "RESET", "jump", "RESET", "jump", "RESET", "walk_2", "RESET", "equip_weapon" ),
-"times": PoolRealArray( 4, 6, 6.5, 7.5, 10.5, 11, 11.1, 12.5, 12.6 )
+"clips": PoolStringArray( "RESET", "walk_2", "RESET", "jump", "RESET", "jump", "RESET", "walk_2", "RESET", "equip_weapon" ),
+"times": PoolRealArray( 0, 4, 6, 6.5, 7.5, 10.5, 11, 11.1, 12.5, 12.6 )
 }
 tracks/23/type = "animation"
 tracks/23/path = NodePath("Boss_Blue_anim")
@@ -788,8 +788,8 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"clips": PoolStringArray( "walk" ),
-"times": PoolRealArray( 8.5 )
+"clips": PoolStringArray( "RESET", "walk" ),
+"times": PoolRealArray( 0, 8.5 )
 }
 tracks/24/type = "animation"
 tracks/24/path = NodePath("Hades_anim")
@@ -798,8 +798,8 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"clips": PoolStringArray( "walk" ),
-"times": PoolRealArray( 8.5 )
+"clips": PoolStringArray( "RESET", "walk" ),
+"times": PoolRealArray( 0, 8.5 )
 }
 tracks/25/type = "animation"
 tracks/25/path = NodePath("Boss_Red_anim")
@@ -808,8 +808,8 @@ tracks/25/loop_wrap = true
 tracks/25/imported = false
 tracks/25/enabled = true
 tracks/25/keys = {
-"clips": PoolStringArray( "walk" ),
-"times": PoolRealArray( 8.5 )
+"clips": PoolStringArray( "RESET", "walk" ),
+"times": PoolRealArray( 0, 8.5 )
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("Player/audio_player_walk:playing")
@@ -7034,16 +7034,14 @@ position = Vector2( 0, 7 )
 frames = SubResource( 309 )
 animation = "Yellow"
 
-[node name="audio_player_walk" type="AudioStreamPlayer2D" parent="Player"]
-scale = Vector2( 0.5, 0.5 )
+[node name="audio_player_walk" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 167 )
-volume_db = 5.0
+volume_db = 10.0
 
-[node name="jump" type="AudioStreamPlayer2D" parent="Player"]
+[node name="jump" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 193 )
 
-[node name="audio_player_car" type="AudioStreamPlayer2D" parent="Player"]
-scale = Vector2( 0.5, 0.5 )
+[node name="audio_player_car" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 177 )
 volume_db = -5.0
 
@@ -7561,10 +7559,9 @@ anims/walk = SubResource( 443 )
 wait_time = 0.01
 autostart = true
 
-[node name="audio_car_crash" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( -351, 596 )
+[node name="audio_car_crash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 192 )
-volume_db = -10.0
+volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]

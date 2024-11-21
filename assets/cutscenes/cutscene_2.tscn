@@ -6747,6 +6747,7 @@ __meta__ = {
 position = Vector2( -11, 0 )
 frames = SubResource( 38 )
 animation = "on_off"
+frame = 9
 playing = true
 
 [node name="trash_can" type="Sprite" parent="background4/poles/pole/pole2"]
@@ -6901,21 +6902,19 @@ position = Vector2( 0, 7 )
 frames = SubResource( 441 )
 animation = "Yellow"
 
-[node name="audio_player_walk" type="AudioStreamPlayer2D" parent="Player"]
-scale = Vector2( 0.5, 0.5 )
+[node name="audio_player_walk" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 148 )
 volume_db = 5.0
 
-[node name="jump" type="AudioStreamPlayer2D" parent="Player"]
+[node name="jump" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 65 )
 volume_db = 5.0
 
-[node name="audio_player_car" type="AudioStreamPlayer2D" parent="Player"]
-scale = Vector2( 0.5, 0.5 )
+[node name="audio_player_car" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 63 )
 volume_db = -5.0
 
-[node name="fall" type="AudioStreamPlayer2D" parent="Player"]
+[node name="fall" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 63 )
 volume_db = 5.0
 
@@ -7241,7 +7240,7 @@ volume_db = -5.0
 
 [node name="derpature" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 157 )
-volume_db = -5.0
+volume_db = 5.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]

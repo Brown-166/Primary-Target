@@ -23,7 +23,7 @@ func _ready():
 	$Screen_Menu.visible = true
 	$Screen_Saves.visible = false
 	$Screen_new_game.visible = false
-	if not game_file.file_exists("./save_files/game_1.save") && not game_file.file_exists("./save_files/game_2.save") && not game_file.file_exists("./save_files/game_3.save"):
+	if not game_file.file_exists(DB.con_string + "game_1.save") && not game_file.file_exists(DB.con_string + "game_2.save") && not game_file.file_exists(DB.con_string + "game_3.save"):
 		$Screen_Menu/Button_Continue.visible = false
 		$Screen_Menu/Button_Load_Game.visible = false
 		$Screen_Menu/Button_New_Game.grab_focus()
@@ -147,7 +147,7 @@ func _on_Button_Save_1_pressed():
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
-		if game_file.file_exists("./save_files/game_1.save"):
+		if game_file.file_exists(DB.con_string + "game_1.save"):
 			DB._load_game(DB.current_save)
 			_loading_out()
 
@@ -166,7 +166,7 @@ func _on_Button_Save_2_pressed():
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
-		if game_file.file_exists("./save_files/game_2.save"):
+		if game_file.file_exists(DB.con_string + "game_2.save"):
 			DB._load_game(DB.current_save)
 			_loading_out()
 
@@ -185,7 +185,7 @@ func _on_Button_Save_3_pressed():
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
-		if game_file.file_exists("./save_files/game_3.save"):
+		if game_file.file_exists(DB.con_string + "game_3.save"):
 			DB._load_game(DB.current_save)
 			_loading_out()
 
@@ -194,7 +194,7 @@ func _on_Button_Back_pressed():
 	$audio_btn.play()
 	$Screen_Menu.visible = true
 	$Screen_Saves.visible = false
-	if not game_file.file_exists("./save_files/game_1.save") && not game_file.file_exists("./save_files/game_2.save") && not game_file.file_exists("./save_files/game_3.save"):
+	if not game_file.file_exists(DB.con_string + "game_1.save") && not game_file.file_exists(DB.con_string + "game_2.save") && not game_file.file_exists(DB.con_string + "game_3.save"):
 		$Screen_Menu/Button_Continue.visible = false
 		$Screen_Menu/Button_Load_Game.visible = false
 		$Screen_Menu/Button_New_Game.grab_focus()
@@ -251,3 +251,39 @@ func _on_Button_Save_3_focus_entered():
 
 func _on_Button_Back_focus_entered():
 	$audio_select.play()
+
+
+func _on_Button_Continue_mouse_entered():
+	$Screen_Menu/Button_Continue.grab_focus()
+
+
+func _on_Button_New_Game_mouse_entered():
+	$Screen_Menu/Button_New_Game.grab_focus()
+
+
+func _on_Button_Load_Game_mouse_entered():
+	$Screen_Menu/Button_Load_Game.grab_focus()
+
+
+func _on_Button_Credits_mouse_entered():
+	$Screen_Menu/Button_Credits.grab_focus()
+
+
+func _on_Button_Quit_mouse_entered():
+	$Screen_Menu/Button_Quit.grab_focus()
+
+
+func _on_Button_Save_1_mouse_entered():
+	$Screen_Saves/Button_Save_1.grab_focus()
+
+
+func _on_Button_Save_2_mouse_entered():
+	$Screen_Saves/Button_Save_2.grab_focus()
+
+
+func _on_Button_Save_3_mouse_entered():
+	$Screen_Saves/Button_Save_3.grab_focus()
+
+
+func _on_Button_Back_mouse_entered():
+	$Screen_Saves/Button_Back.grab_focus()

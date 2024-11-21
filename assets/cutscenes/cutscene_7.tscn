@@ -7805,26 +7805,24 @@ position = Vector2( 0, 7 )
 frames = SubResource( 441 )
 animation = "Yellow"
 
-[node name="audio_player_walk" type="AudioStreamPlayer2D" parent="Player"]
-scale = Vector2( 0.5, 0.5 )
+[node name="audio_player_walk" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 8 )
 volume_db = 10.0
 
-[node name="jump" type="AudioStreamPlayer2D" parent="Player"]
+[node name="jump" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 16 )
 
-[node name="fall" type="AudioStreamPlayer2D" parent="Player"]
+[node name="fall" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 15 )
 
-[node name="katana" type="AudioStreamPlayer2D" parent="Player"]
+[node name="katana" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 126 )
 
-[node name="dmg" type="AudioStreamPlayer2D" parent="Player"]
+[node name="dmg" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 129 )
 
-[node name="kick" type="AudioStreamPlayer2D" parent="Player"]
+[node name="kick" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 127 )
-volume_db = 5.0
 
 [node name="Hades" type="Node2D" parent="."]
 position = Vector2( 619, 319 )
