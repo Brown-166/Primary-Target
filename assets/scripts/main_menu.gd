@@ -20,6 +20,9 @@ func _ready():
 	$Screen_Saves/Button_Save_2.disabled = false
 	$Screen_Saves/Button_Save_3.disabled = false
 	$Screen_Saves/Button_Back.disabled = false
+	$Screen_Saves/Button_Delete_1.visible = false
+	$Screen_Saves/Button_Delete_2.visible = false
+	$Screen_Saves/Button_Delete_3.visible = false
 	$Screen_Menu.visible = true
 	$Screen_Saves.visible = false
 	$Screen_new_game.visible = false
@@ -58,9 +61,6 @@ func _physics_process(delta):
 	
 	
 	
-	
-	
-	
 	if $AnimationPlayer.current_animation == "new_game":
 		if skip == false:
 			if Input.is_action_pressed("space"):
@@ -80,6 +80,26 @@ func _physics_process(delta):
 			if $Screen_new_game/Skip_button.value == 100:
 				skip = true
 				$AnimationPlayer.play("loading_out")
+	
+	
+	if $Screen_Saves.visible == true:
+		if $Screen_Saves.get_focus_owner().name in ["Button_Save_1", "Button_Delete_1"]:
+			if game_file.file_exists(DB.con_string + "game_1.save"):
+				$Screen_Saves/Button_Delete_1.visible = true
+		else:
+			$Screen_Saves/Button_Delete_1.visible = false
+		
+		if $Screen_Saves.get_focus_owner().name in ["Button_Save_2", "Button_Delete_2"]:
+			if game_file.file_exists(DB.con_string + "game_2.save"):
+				$Screen_Saves/Button_Delete_2.visible = true
+		else:
+			$Screen_Saves/Button_Delete_2.visible = false
+		
+		if $Screen_Saves.get_focus_owner().name in ["Button_Save_3", "Button_Delete_3"]:
+			if game_file.file_exists(DB.con_string + "game_3.save"):
+				$Screen_Saves/Button_Delete_3.visible = true
+		else:
+			$Screen_Saves/Button_Delete_3.visible = false
 
 
 func _loading_out():
@@ -287,3 +307,48 @@ func _on_Button_Save_3_mouse_entered():
 
 func _on_Button_Back_mouse_entered():
 	$Screen_Saves/Button_Back.grab_focus()
+
+
+func _on_Button_Delete_1_pressed():
+	$audio_btn.play()
+	if game_file.file_exists(DB.con_string + "game_1.save"):
+		var dir = Directory.new()
+		dir.remove(DB.con_string + "game_1.save")
+
+
+func _on_Button_Delete_2_pressed():
+	$audio_btn.play()
+	if game_file.file_exists(DB.con_string + "game_2.save"):
+		var dir = Directory.new()
+		dir.remove(DB.con_string + "game_2.save")
+
+
+func _on_Button_Delete_3_pressed():
+	$audio_btn.play()
+	if game_file.file_exists(DB.con_string + "game_3.save"):
+		var dir = Directory.new()
+		dir.remove(DB.con_string + "game_3.save")
+
+
+func _on_Button_Delete_1_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Delete_2_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Delete_3_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Delete_1_mouse_entered():
+	$Screen_Saves/Button_Delete_1.grab_focus()
+
+
+func _on_Button_Delete_2_mouse_entered():
+	$Screen_Saves/Button_Delete_2.grab_focus()
+
+
+func _on_Button_Delete_3_mouse_entered():
+	$Screen_Saves/Button_Delete_3.grab_focus()
