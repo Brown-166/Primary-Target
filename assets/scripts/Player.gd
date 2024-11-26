@@ -476,30 +476,32 @@ func _physics_process(delta):
 
 func _on_TimerFlip_timeout():
 	if flip == false:
-		for i in player_parts.size():
-			player_parts[i].position.x *= 1
-			player_parts[i].rotation_degrees *= 1
-		for i in player_sprites.size():
-			player_sprites[i].flip_h = false
-		for i in weapons.size():
-			weapons[i].position.x *= 1
-			weapons[i].rotation_degrees *= 1
+#		for i in player_parts.size():
+#			player_parts[i].position.x *= 1
+#			player_parts[i].rotation_degrees *= 1
+#		for i in player_sprites.size():
+#			player_sprites[i].flip_h = false
+#		for i in weapons.size():
+#			weapons[i].position.x *= 1
+#			weapons[i].rotation_degrees *= 1
+		$Player_Parts.scale.x = 1
 			#$Player_Parts/Katana/Blade.flip_h = false
 		$Area2D_Block/Collision_Block.position.x = 20
 		$Area2D_Block/Collision_Block_top.position.x = 12
 		$Area2D_Block/Collision_Block_bottom.position.x = 12
 			
 	else:
-		for i in player_parts.size():
-			player_parts[i].position.x *= -1
-			player_parts[i].rotation_degrees *= -1
-		for i in player_sprites.size():
-			player_sprites[i].flip_h = true
-		for i in weapons.size():
-			weapons[i].position.x *= -1
-			weapons[i].rotation_degrees *= -1
-		for i in weapons_sprites.size():
-			weapons_sprites[i].flip_h = true
+#		for i in player_parts.size():
+#			player_parts[i].position.x *= -1
+#			player_parts[i].rotation_degrees *= -1
+#		for i in player_sprites.size():
+#			player_sprites[i].flip_h = true
+#		for i in weapons.size():
+#			weapons[i].position.x *= -1
+#			weapons[i].rotation_degrees *= -1
+#		for i in weapons_sprites.size():
+#			weapons_sprites[i].flip_h = true
+		$Player_Parts.scale.x = -1
 		$Area2D_Block/Collision_Block.position.x = -20
 		$Area2D_Block/Collision_Block_top.position.x = -12
 		$Area2D_Block/Collision_Block_bottom.position.x = -12

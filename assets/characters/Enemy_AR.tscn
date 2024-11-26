@@ -4449,7 +4449,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=165]
+[sub_resource type="Animation" id=243]
 resource_name = "idle"
 length = 0.01
 tracks/0/type = "value"
@@ -5033,7 +5033,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=181]
+[sub_resource type="Animation" id=244]
 resource_name = "walk"
 loop = true
 tracks/0/type = "value"
@@ -12263,9 +12263,9 @@ anims/stop = SubResource( 151 )
 
 [node name="AnimationPlayerLower" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 238 )
-anims/idle = SubResource( 165 )
+anims/idle = SubResource( 243 )
 anims/stop = SubResource( 152 )
-anims/walk = SubResource( 181 )
+anims/walk = SubResource( 244 )
 
 [node name="AnimationPlayerFull" type="AnimationPlayer" parent="."]
 anims/Dead(stagger) = SubResource( 232 )

@@ -287,24 +287,26 @@ func _on_Area2D_Ground_area_entered(area):
 
 func _on_Timer_Flip_timeout():
 	if flip == false:
-		for i in boss_sprites.size():
-			boss_sprites[i].flip_h = false
-			
-		for i in hammer_sprites.size():
-			hammer_sprites[i].flip_h = false
+#		for i in boss_sprites.size():
+#			boss_sprites[i].flip_h = false
+#
+#		for i in hammer_sprites.size():
+#			hammer_sprites[i].flip_h = false
+		$Boss_Parts.scale.x = 1
 	else:
-		for i in boss_parts.size():
-			boss_parts[i].position.x *= -1
-			boss_parts[i].rotation_degrees *= -1
-		
-		for i in boss_sprites.size():
-			boss_sprites[i].flip_h = true
-			
-		hammer.position.x *= -1
-		hammer.rotation_degrees *= -1
-		
-		for i in hammer_sprites.size():
-			hammer_sprites[i].flip_h = true
+#		for i in boss_parts.size():
+#			boss_parts[i].position.x *= -1
+#			boss_parts[i].rotation_degrees *= -1
+#
+#		for i in boss_sprites.size():
+#			boss_sprites[i].flip_h = true
+#
+#		hammer.position.x *= -1
+#		hammer.rotation_degrees *= -1
+#
+#		for i in hammer_sprites.size():
+#			hammer_sprites[i].flip_h = true
+		$Boss_Parts.scale.x = -1
 
 
 func _on_AnimationPlayerFull_animation_finished(anim_name):

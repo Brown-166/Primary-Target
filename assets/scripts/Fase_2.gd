@@ -94,7 +94,7 @@ func _on_Timer_Obstacle_timeout():
 	obstacle_timer = OT[randi() % OT.size()]
 	$Timer_Obstacle.wait_time = obstacle_timer
 	var obstacle = outdoor.instance()
-	get_parent().add_child(obstacle)
+	add_child(obstacle)
 	obstacle.position = $Position2D_obstacle.position
 
 

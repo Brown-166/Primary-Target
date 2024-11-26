@@ -389,38 +389,39 @@ func _on_Timer_Reload_timeout():
 
 func _on_Timer_Flip_timeout():
 	if flip == false:
-		for i in enemy_sprites.size():
-			enemy_sprites[i].flip_h = false
-		
-		
-		for i in enemy_dmg.size():
-			enemy_dmg[i].flip_h = false
-		
-		
-		for i in weapon_sprites.size():
-			weapon_sprites[i].flip_h = false
-		
+#		for i in enemy_sprites.size():
+#			enemy_sprites[i].flip_h = false
+#
+#
+#		for i in enemy_dmg.size():
+#			enemy_dmg[i].flip_h = false
+#
+#
+#		for i in weapon_sprites.size():
+#			weapon_sprites[i].flip_h = false
+		$Enemy_Parts.scale.x = 1
 	else:
-		for i in enemy_parts.size():
-			enemy_parts[i].position.x *= -1
-			enemy_parts[i].rotation_degrees *= -1
-		
-		
-		for i in enemy_sprites.size():
-			enemy_sprites[i].flip_h = true
-		
-		
-		for i in enemy_dmg.size():
-			enemy_dmg[i].flip_h = true
-		
-		
-		for i in weapon_parts.size():
-			weapon_parts[i].position.x *= -1
-			weapon_parts[i].rotation_degrees *= -1
-		
-		
-		for i in weapon_sprites.size():
-			weapon_sprites[i].flip_h = true
+#		for i in enemy_parts.size():
+#			enemy_parts[i].position.x *= -1
+#			enemy_parts[i].rotation_degrees *= -1
+#
+#
+#		for i in enemy_sprites.size():
+#			enemy_sprites[i].flip_h = true
+#
+#
+#		for i in enemy_dmg.size():
+#			enemy_dmg[i].flip_h = true
+#
+#
+#		for i in weapon_parts.size():
+#			weapon_parts[i].position.x *= -1
+#			weapon_parts[i].rotation_degrees *= -1
+#
+#
+#		for i in weapon_sprites.size():
+#			weapon_sprites[i].flip_h = true
+		$Enemy_Parts.scale.x = -1
 
 
 func _on_AnimationPlayerDead_animation_finished(anim_name):
