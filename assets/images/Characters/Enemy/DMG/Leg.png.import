@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UpLeg.png-d2a33ace4c333b8c329d9eba9a99c1ee.stex"
+path="res://.import/Leg.png-92f365f131e5701def53dba04bb8fbda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Characters/Enemy/DMG/UpLeg.png"
-dest_files=[ "res://.import/UpLeg.png-d2a33ace4c333b8c329d9eba9a99c1ee.stex" ]
+source_file="res://assets/images/Characters/Enemy/DMG/Leg.png"
+dest_files=[ "res://.import/Leg.png-92f365f131e5701def53dba04bb8fbda.stex" ]
 
 [params]
 

@@ -14631,7 +14631,7 @@ extents = Vector2( 8.48958, 8.55554 )
 extents = Vector2( 8.61111, 34.5 )
 
 [sub_resource type="RectangleShape2D" id=136]
-extents = Vector2( 8.97222, 1 )
+extents = Vector2( 8.5, 0.5 )
 
 [sub_resource type="RectangleShape2D" id=301]
 extents = Vector2( 2.11111, 35.5 )
@@ -15311,10 +15311,12 @@ wait_time = 0.01
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 32.5 )
 shape = SubResource( 304 )
 
 [node name="RayCasts" type="Node2D" parent="."]
+visible = false
 position = Vector2( 0, 32.5 )
 
 [node name="Right" type="RayCast2D" parent="RayCasts"]
@@ -15342,13 +15344,21 @@ collision_mask = 5
 position = Vector2( 0, 6.5 )
 shape = SubResource( 137 )
 
-[node name="Area2D_Ground" type="Area2D" parent="."]
+[node name="Area2D_Ground_0" type="Area2D" parent="."]
 
-[node name="Collision_Ground" type="CollisionShape2D" parent="Area2D_Ground"]
-position = Vector2( 0.472222, 40 )
+[node name="Collision_Ground" type="CollisionShape2D" parent="Area2D_Ground_0"]
+position = Vector2( 0, 40.5 )
+shape = SubResource( 136 )
+
+[node name="Area2D_Ground_1" type="Area2D" parent="."]
+visible = false
+
+[node name="Collision_Ground" type="CollisionShape2D" parent="Area2D_Ground_1"]
+position = Vector2( 0, 35.5 )
 shape = SubResource( 136 )
 
 [node name="Area2D_Block" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -15443,7 +15453,6 @@ stream = ExtResource( 128 )
 [connection signal="animation_finished" from="AnimationPlayerFull" to="." method="_on_AnimationPlayerFull_animation_finished"]
 [connection signal="timeout" from="TimerFlip" to="." method="_on_TimerFlip_timeout"]
 [connection signal="area_entered" from="Area2D_Player" to="." method="_on_Area2D_Player_area_entered"]
-[connection signal="area_entered" from="Area2D_Ground" to="." method="_on_Area2D_Ground_area_entered"]
-[connection signal="area_exited" from="Area2D_Ground" to="." method="_on_Area2D_Ground_area_exited"]
+[connection signal="area_exited" from="Area2D_Ground_0" to="." method="_on_Area2D_Ground_0_area_exited"]
 [connection signal="area_entered" from="Area2D_Block" to="." method="_on_Area2D_Block_area_entered"]
 [connection signal="timeout" from="Timer_Dead" to="." method="_on_Timer_Dead_timeout"]

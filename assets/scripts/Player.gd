@@ -4,7 +4,7 @@ var velocity = Vector2.ZERO
 var speed = 200
 var jumpForce = speed * 5
 var gravity = speed * 5
-var layer :int
+var layer : Array = [0, 0]
 var grounded = false
 var moveRight = false
 var moveLeft = false
@@ -455,12 +455,13 @@ func _physics_process(delta):
 		
 		
 		
-		for area in $Area2D_Ground.get_overlapping_areas():
-			layer = LAYER._get_layer(area.name, layer)
+		for area in $Area2D_Ground_0.get_overlapping_areas():
+			layer[0] = LAYER._get_layer(area.name, layer[0])
 			z_index = LAYER._get_z_index(area.name, z_index)
 			if area.name == "Area2D_Ground":
 				grounded = true
-#				$audio_fall.play()
+		for area in $Area2D_Ground_1.get_overlapping_areas():
+			layer[1] = LAYER._get_layer(area.name, layer[1])
 		LAYER.playerLayer = layer
 	else:
 		if Global.dead == false:
@@ -507,15 +508,10 @@ func _on_TimerFlip_timeout():
 		$Area2D_Block/Collision_Block_bottom.position.x = -12
 
 
-func _on_Area2D_Ground_area_entered(area):
-	layer = LAYER._get_layer(area.name, layer)
-	z_index = LAYER._get_z_index(area.name, z_index)
-	LAYER.playerLayer = layer
-#	if area.name == "Area2D_Ground":
-#		$audio_fall.play()
 
 
-func _on_Area2D_Ground_area_exited(area):
+
+func _on_Area2D_Ground_0_area_exited(area):
 	if area.name == "Area2D_Ground":
 		grounded = false
 

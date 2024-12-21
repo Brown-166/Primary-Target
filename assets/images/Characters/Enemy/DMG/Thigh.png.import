@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LowLeg.png-47b9052d2ae8bbb5f74e0ef3caefe347.stex"
+path="res://.import/Thigh.png-b4c11ea4ab5ed78d7dd3eb162176d8a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Characters/Enemy/DMG/LowLeg.png"
-dest_files=[ "res://.import/LowLeg.png-47b9052d2ae8bbb5f74e0ef3caefe347.stex" ]
+source_file="res://assets/images/Characters/Enemy/DMG/Thigh.png"
+dest_files=[ "res://.import/Thigh.png-b4c11ea4ab5ed78d7dd3eb162176d8a8.stex" ]
 
 [params]
 

@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://assets/scripts/Character.gd"
+}, {
+"base": "Character",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://assets/scripts/Enemy.gd"
+} ]
+_global_script_class_icons={
+"Character": "",
+"Enemy": ""
+}
+
 [application]
 
 config/name="Primary Target"
@@ -29,7 +45,6 @@ DB="*res://assets/scripts/DB.gd"
 
 window/size/width=1280
 window/size/height=720
-window/size/fullscreen=true
 window/stretch/mode="viewport"
 
 [gui]

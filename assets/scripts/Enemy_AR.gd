@@ -1,371 +1,107 @@
 extends KinematicBody2D
 
-const S = [100, 100, 125, 125, 150, 150, 175, 175, 185]
-var speed
-var velocity
-var stop = true
-var moving = false
-var flee = false
+var enemy_ar = Enemy.new(100, 40, [100, 100, 125, 125, 150, 150, 175, 175, 185],
+[1, 2, 3, 4], [1, 2], [1, 2, 3, 4], [1,2,3], [1, 2, 3, 4, 5])
 
-var flip = false
-var OP = [1, 2, 3, 4]
-var option
-var WO = [1, 2]
-var weapon_option
-var DMG = [1, 2, 3, 4, 5, 6, 7]
-var damage
-var ADMG = [1, 2, 3, 4]
-var audio_dmg
-var audio
-var DEAD = [1,2,3]
-var dead = 0
 
-var ammo = 40
-var reload = false
-var aim = false
-var attack = false
-
-var life = 100
-var layer
-var staggered = false
-var target = null
 const BULLET = preload("res://assets/objects/AR_bullet.tscn")
 
-var MEDKIT = preload("res://assets/objects/medKit.tscn")
-var MD = [1, 2, 3, 4, 5]
-var med_drop
 
-onready var enemy_parts = [
-	$Enemy_Parts/Upper_Right/Head, $Enemy_Parts/Upper_Right/Chest, 
-	$Enemy_Parts/Upper_Right/R_Arm, $Enemy_Parts/Upper_Right/R_Forearm, $Enemy_Parts/Upper_Right/R_Forearm/R_Hand, 
-	$Enemy_Parts/Upper_Left/L_Arm, $Enemy_Parts/Upper_Left/L_Forearm, $Enemy_Parts/Upper_Left/L_Forearm/L_Hand, 
-	$Enemy_Parts/Lower/R_Thigh, $Enemy_Parts/Lower/R_Leg, $Enemy_Parts/Lower/R_Leg/R_Foot,
-	$Enemy_Parts/Lower/L_Thigh, $Enemy_Parts/Lower/L_Leg, $Enemy_Parts/Lower/L_Leg/L_Foot]
-
-onready var enemy_sprites = [
-	$Enemy_Parts/Upper_Right/Head/Sprite, $Enemy_Parts/Upper_Right/Chest/Sprite, 
-	$Enemy_Parts/Upper_Right/R_Arm/Sprite, $Enemy_Parts/Upper_Right/R_Forearm/Sprite, $Enemy_Parts/Upper_Right/R_Forearm/R_Hand/Sprite, 
-	$Enemy_Parts/Upper_Left/L_Arm/Sprite, $Enemy_Parts/Upper_Left/L_Forearm/Sprite, $Enemy_Parts/Upper_Left/L_Forearm/L_Hand/Sprite, 
-	$Enemy_Parts/Lower/R_Thigh/Sprite, $Enemy_Parts/Lower/R_Leg/Sprite, $Enemy_Parts/Lower/R_Leg/R_Foot/Sprite,
-	$Enemy_Parts/Lower/L_Thigh/Sprite, $Enemy_Parts/Lower/L_Leg/Sprite, $Enemy_Parts/Lower/L_Leg/L_Foot/Sprite]
-
-onready var enemy_dmg = [
-	$Enemy_Parts/Upper_Right/Head/Sprite_DMG, $Enemy_Parts/Upper_Right/Chest/Sprite_DMG,
-	$Enemy_Parts/Upper_Right/R_Arm/Sprite_DMG, $Enemy_Parts/Upper_Right/R_Forearm/Sprite_DMG,
-	$Enemy_Parts/Upper_Left/L_Arm/Sprite_DMG, $Enemy_Parts/Upper_Left/L_Forearm/Sprite_DMG,
-	$Enemy_Parts/Lower/L_Leg/Sprite_DMG, $Enemy_Parts/Lower/L_Thigh/Sprite_DMG,
-	$Enemy_Parts/Lower/R_Leg/Sprite_DMG, $Enemy_Parts/Lower/R_Thigh/Sprite_DMG]
-
-onready var weapon_parts = [
-	$Enemy_Parts/Upper_Right/Weapon_Set, $Enemy_Parts/Upper_Right/Weapon_Set/Weapon, 
-	$Enemy_Parts/Upper_Right/Weapon_Set/Reloader, 
-	$Enemy_Parts/Upper_Right/Weapon_Set/Fire]
-
-onready var weapon_sprites = [
-	$Enemy_Parts/Upper_Right/Weapon_Set/Weapon/Sprite, 
-	$Enemy_Parts/Upper_Right/Weapon_Set/Reloader/Sprite, 
-	$Enemy_Parts/Upper_Right/Weapon_Set/Fire/Sprite]
+onready var weapon = [$Body/Chest/R_Arm/R_Forearm/R_Hand/weapon, 
+$Body/Chest/R_Arm/R_Forearm/R_Hand/weapon/reloader]
 
 
 
-func _staggered():
-	staggered = false
 
 
 
 func _ready():
-	randomize()
-	speed = S[randi() % S.size()]
-	option = OP[randi() % OP.size()]
-	weapon_option = WO[randi() % WO.size()]
-	
-	match option:
+	enemy_ar._set_body($Body)
+	match enemy_ar.option:
 		1:
-			for i in enemy_sprites.size():
-				enemy_sprites[i].play("Option1")
+			for i in enemy_ar.body_parts.size():
+				if enemy_ar.body_parts[i].get_class() == "AnimatedSprite":
+					enemy_ar.body_parts[i].play("option_1")
 		2:
-			for i in enemy_sprites.size():
-				enemy_sprites[i].play("Option2")
+			for i in enemy_ar.body_parts.size():
+				if enemy_ar.body_parts[i].get_class() == "AnimatedSprite":
+					enemy_ar.body_parts[i].play("option_2")
 		3:
-			for i in enemy_sprites.size():
-				enemy_sprites[i].play("Option3")
+			for i in enemy_ar.body_parts.size():
+				if enemy_ar.body_parts[i].get_class() == "AnimatedSprite":
+					enemy_ar.body_parts[i].play("option_3")
 		4:
-			for i in enemy_sprites.size():
-				enemy_sprites[i].play("Option4")
+			for i in enemy_ar.body_parts.size():
+				if enemy_ar.body_parts[i].get_class() == "AnimatedSprite":
+					enemy_ar.body_parts[i].play("option_4")
+	
+	for i in enemy_ar.body_parts.size():
+		if enemy_ar.body_parts[i].name in ["Head_DMG", "Chest_DMG", "R_Arm_DMG", 
+		"R_Forearm_DMG","L_Arm_DMG", "L_Forearm_DMG", "R_Thigh_DMG", "R_Leg_DMG", 
+		"L_Thigh_DMG", "L_Leg_DMG"]:
+			enemy_ar.body_parts[i].play("default")
 	
 	
-	match weapon_option:
+	match enemy_ar.weapon_option:
 		1:
-			weapon_sprites[0].play("AK-47")
-			weapon_sprites[1].play("AK-47")
+			weapon[0].play("AK-47")
+			weapon[1].play("AK-47")
 		2:
-			weapon_sprites[0].play("M-16")
-			weapon_sprites[1].play("M-16")
+			weapon[0].play("M-16")
+			weapon[1].play("M-16")
 	
 
 
 func _physics_process(delta):
-	
-	if staggered == true:
-		$AnimationPlayerLower.stop()
-		$AnimationPlayerUpper.stop()
-		$AnimationPlayerFull.play("staggered")
-		$audio_walk.stop()
-	else:
-		if life > 0:
-			if moving == true:
-				$AnimationPlayerLower.play("walk")
-				if $audio_walk.playing == false:
-					$audio_walk.play()
-			elif stop == true: 
-				$AnimationPlayerLower.play("idle")
-				$audio_walk.stop()
-			
-			
-			if attack == false && reload == false && aim == false:
-				$AnimationPlayerUpper.play("idle")
-			if aim == true:
-				$AnimationPlayerUpper.play("aim")
-			elif attack == true  && ammo > 0:
-				$AnimationPlayerUpper.play("fire")
-				$Enemy_Parts/Upper_Right/Weapon_Set/Fire/Sprite.play("Fire")
-			elif reload == true:
-				$AnimationPlayerUpper.play("reload")
-			if attack == false:
-				$audio_shoot.stop()
-				$Timer_Shoot.stop()
-			if reload == false:
-				$audio_reload.stop()
-			
-			if target:
-				if global_position.x >= target.global_position.x:
-					flip = true
-				if global_position.x <= target.global_position.x:
-					flip = false
-				
-				if flee == false:
-					if moving == true:
-						velocity = global_position.direction_to(target.global_position)
-						move_and_collide(velocity * speed * delta)
-				else:
-					if moving == true:
-						velocity = -(global_position.direction_to(target.global_position))
-						move_and_collide(velocity * speed * delta)
-				
-				
-			if Global.dodge == true:
-				set_collision_layer_bit(2, false)
-				set_collision_mask_bit(1, false)
-			else:
-				set_collision_layer_bit(2, true)
-				set_collision_mask_bit(1, true)
-	
-	
-	for area in $Area2D_Ground.get_overlapping_areas():
-		layer = LAYER._get_layer(area.name, layer)
-		z_index = LAYER._get_z_index(area.name, z_index)
-	
-	
-	if attack == false || life <= 0 || staggered == true:
-		$Enemy_Parts/Upper_Right/Weapon_Set/Fire/Sprite.play("default")
+	enemy_ar._physics(delta, self, $Body/Animation_Lower, $Body/Animation_Upper, 
+	$Body/Animation_Full, $Area2D_Ground_0, $Area2D_Ground_1, $audio_walk, $audio_shoot, 
+	$audio_reload, $Timer_Shoot, $RayCasts/Right, $RayCasts/Left, $RayCasts/Up, 
+	$RayCasts/Down)
+	enemy_ar._flip($Body)
 
 
-func _cut_DMG():
-	flee = true
-	stop = false
-	attack = false
-	reload = false
-	moving = true
-	if $Enemy_Parts/Upper_Right/Head/Sprite_DMG.animation == "default":
-		randomize()
-		damage = DMG[randi() % DMG.size()]
-	else:
-		while damage == 6 || damage == 7:
-			randomize()
-			damage = DMG[randi() % DMG.size()]
-	
-	randomize()
-	audio_dmg = ADMG[randi() % ADMG.size()]
-	match audio_dmg:
-		1:
-			audio = $audio_dmg_1
-		2:
-			audio = $audio_dmg_2
-		3:
-			audio = $audio_dmg_3
-		4:
-			audio = $audio_dmg_4
-	
-	match damage:
-		1:
-			$Enemy_Parts/Lower/R_Thigh/Sprite_DMG.play("option1")
-			$Enemy_Parts/Lower/R_Leg/Sprite_DMG.play("option1")
-		2:
-			$Enemy_Parts/Lower/L_Thigh/Sprite_DMG.play("option1")
-			$Enemy_Parts/Lower/L_Leg/Sprite_DMG.play("option1")
-		3:
-			$Enemy_Parts/Upper_Right/R_Arm/Sprite_DMG.play("option1")
-			$Enemy_Parts/Upper_Right/R_Forearm/Sprite_DMG.play("option1")
-		4:
-			$Enemy_Parts/Upper_Left/L_Arm/Sprite_DMG.play("option1")
-			$Enemy_Parts/Upper_Left/L_Forearm/Sprite_DMG.play("option1")
-		5:
-			$Enemy_Parts/Upper_Right/Chest/Sprite_DMG.play("option1")
-		6:
-			$Enemy_Parts/Upper_Right/Head/Sprite_DMG.play("option1")
-		7:
-			$Enemy_Parts/Upper_Right/Head/Sprite_DMG.play("option2")
-	audio.play()
-	$Timer_audio.start()
-
-
-func _dead():
-	moving = false
-	stop = false
-	attack = false
-	reload = false
-	
-	$CollisionShape2D.queue_free()
-	$Area2D_Enemy_AR.queue_free()
-	$Area2D_Follow.queue_free()
-	$Area2D_Stop.queue_free()
-	$AnimationPlayerUpper.queue_free()
-	$AnimationPlayerLower.queue_free()
-	$AnimationPlayerFull.queue_free()
-	$Timer_Flip.queue_free()
-	$audio_shoot.queue_free()
-	$audio_reload.queue_free()
-	
-	
-	if staggered == false:
-		randomize()
-		dead = DEAD[randi() % DEAD.size()]
-		match dead:
-			1:
-				$AnimationPlayerDead.play("Dead1")
-			2:
-				$AnimationPlayerDead.play("Dead2")
-			3:
-				$AnimationPlayerDead.play("Dead3")
-	else:
-		staggered = false
-		$AnimationPlayerDead.play("Dead(stagger)")
-	
-	
-	randomize()
-	med_drop = MD[randi() % MD.size()]
-	if med_drop == 1:
-		var medkit = MEDKIT.instance()
-		medkit._set_layer(layer)
-		get_parent().add_child(medkit)
-		medkit.z_as_relative = false
-		medkit.position = $Area2D_Ground/CollisionShape2D.global_position
 
 
 
 func _on_Area2D_Enemy_AR_area_entered(area):
-	if layer == LAYER.playerLayer:
-		match area.name:
-			"Area2D_Katana":
-				$audio_cut_dmg_1.play()
-				life -= Global.katana_DMG
-				_cut_DMG()
-			"Area2D_Hammer":
-				$audio_smash_dmg_1.play()
-				life -= Global.hammer_DMG
-				_cut_DMG()
-			"Area2D_Hammer_stagger":
-				$audio_smash_dmg_1.play()
-				life -= Global.hammer_DMG/3
-				staggered = true
-				_cut_DMG()
-			"Area2D_Katar":
-				$audio_cut_dmg_2.play()
-				life -= Global.katar_DMG
-				_cut_DMG()
-			"Area2D_Axe":
-				life -= Global.axe_DMG
-				_cut_DMG()
-			"Area2D_Tonfa":
-				life -= Global.tonfa_DMG
-				_cut_DMG()
-			"Area2D_Wakizashi":
-				life -= Global.wakizashi_DMG
-				_cut_DMG()
-			"Area2D_Great_Sword":
-				life -= Global.great_sword_DMG
-				_cut_DMG()
-	
-	
-	
-	if life <= 0:
-		_dead()
-
-
-func _on_Area2D_Ground_area_entered(area):
-	layer = LAYER._get_layer(area.name, layer)
-	z_index = LAYER._get_z_index(area.name, z_index)
+	enemy_ar._take_dmg(area, $audio_cut_dmg_1, $audio_cut_dmg_2, $audio_smash_dmg_1, 
+	$audio_dmg_1, $audio_dmg_2, $audio_dmg_3, $audio_dmg_4)
+	if area.name in ["Area2D_Katana", "Area2D_Hammer", "Area2D_Hammer_stagger", 
+	"Area2D_Katar"]:
+		if enemy_ar.layer[0] in LAYER.playerLayer || enemy_ar.layer[1] in LAYER.playerLayer:
+			enemy_ar.action = "flee"
+	if enemy_ar.life <= 0:
+		enemy_ar._dead($Body/Animation_Full, $Area2D_Ground_0/CollisionShape2D, self, 
+		$Area2D_Enemy_AR)
 
 
 func _on_Area2D_Follow_body_entered(body):
-	if body.name == "Player" && life > 0:
-		target = body
-		moving = true
-		stop = false
-		attack = false
-		reload = false
+	enemy_ar._follow(body)
 
 
 func _on_Area2D_Follow_body_exited(body):
-	if body.name == "Player" && life > 0:
-		target = body
-		moving = true
-		stop = false
-		attack = false
-		reload = false
+	enemy_ar._follow(body)
 
 
 func _on_Area2D_Stop_body_entered(body):
-	if body.name == "Player" && life > 0:
-		moving = false
-		stop = true
-		flee = false
-		if aim == false && attack == false:
-			aim = true
-		if $Timer_Aim.is_stopped() == true && attack == false:
-			$Timer_Aim.start()
+	enemy_ar._stop(body)
 
 
 func _on_Area2D_Stop_body_exited(body):
-	if body.name == "Player" && life > 0:
-		if flee == true:
-			moving = false
-			stop = true
-			flee = false
-			if aim == false && attack == false:
-				aim = true
-			if $Timer_Aim.is_stopped() == true && attack == false:
-				$Timer_Aim.start()
-#		else:
-#			moving = true
-#			stop = false
-#			attack = false
+	enemy_ar._stop(body)
 
 
-func _on_Timer_Aim_timeout():
-	if life > 0:
-		aim = false
-		attack = true
-		$Timer_Shoot.start()
+func _on_Animation_Full_animation_finished(anim_name):
+	enemy_ar._animation_over(anim_name)
 
 
-func _on_Timer_Shoot_timeout():
-	if attack == true && ammo > 0 && stop == true && life > 0:
+func _on_Animation_Upper_animation_finished(anim_name):
+	enemy_ar._animation_over(anim_name)
+	if anim_name == "attack":
 		$audio_shoot.play()
-		ammo -= 1
 		var bulletInstance = BULLET.instance()
-		bulletInstance._set_layer(layer)
-		if flip == false:
+		bulletInstance._set_layer(enemy_ar.layer)
+		if enemy_ar.flip == false:
 			get_parent().add_child(bulletInstance)
 			bulletInstance.position = $PositionRight.global_position
 			bulletInstance._set_direction(1)
@@ -373,62 +109,8 @@ func _on_Timer_Shoot_timeout():
 			get_parent().add_child(bulletInstance)
 			bulletInstance.position = $PositionLeft.global_position
 			bulletInstance._set_direction(-1)
-	elif ammo <= 0 && life > 0:
-		attack = false
-		reload = true
-		$Timer_Reload.start()
+		
 
 
-func _on_Timer_Reload_timeout():
-	if reload == true && life > 0:
-		ammo = 40
-		reload = false
-		attack = true
-		$Timer_Shoot.start()
-
-
-func _on_Timer_Flip_timeout():
-	if flip == false:
-#		for i in enemy_sprites.size():
-#			enemy_sprites[i].flip_h = false
-#
-#
-#		for i in enemy_dmg.size():
-#			enemy_dmg[i].flip_h = false
-#
-#
-#		for i in weapon_sprites.size():
-#			weapon_sprites[i].flip_h = false
-		$Enemy_Parts.scale.x = 1
-	else:
-#		for i in enemy_parts.size():
-#			enemy_parts[i].position.x *= -1
-#			enemy_parts[i].rotation_degrees *= -1
-#
-#
-#		for i in enemy_sprites.size():
-#			enemy_sprites[i].flip_h = true
-#
-#
-#		for i in enemy_dmg.size():
-#			enemy_dmg[i].flip_h = true
-#
-#
-#		for i in weapon_parts.size():
-#			weapon_parts[i].position.x *= -1
-#			weapon_parts[i].rotation_degrees *= -1
-#
-#
-#		for i in weapon_sprites.size():
-#			weapon_sprites[i].flip_h = true
-		$Enemy_Parts.scale.x = -1
-
-
-func _on_AnimationPlayerDead_animation_finished(anim_name):
-	if life <= 0:
-		$AnimationPlayerDead.queue_free()
-
-
-
-func _on_Timer_audio_timeout():
-	audio.stop()
+func _on_Animation_Lower_animation_finished(anim_name):
+	enemy_ar._animation_over(anim_name)

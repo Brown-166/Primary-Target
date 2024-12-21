@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 800
 var velocity = Vector2.ZERO
 var direction = 1
-var layer
+var layer : Array
 var damage : int
 
 func _set_direction(dir):
@@ -47,7 +47,7 @@ func _delete():
 	queue_free()
 
 func _on_Area2D_bullet_area_entered(area):
-	if layer == LAYER.playerLayer:
+	if layer[0] in LAYER.playerLayer || layer[1] in LAYER.playerLayer:
 		if area.name == "Area2D_Block":
 			if Global.stamina >= (damage * 2):
 				Global.stamina -= damage * 2
