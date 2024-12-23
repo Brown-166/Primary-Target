@@ -60,9 +60,7 @@ func _init(l:int, ma:int, s:Array, op:Array, wo:Array, admg:Array, d:Array, md:A
 
 
 
-func _physics(delta, s:KinematicBody2D, animL:AnimationPlayer, animU:AnimationPlayer, 
-animF:AnimationPlayer, ground_0:Area2D,  ground_1:Area2D, walk:AudioStreamPlayer2D, 
-attack:AudioStreamPlayer2D, reload:AudioStreamPlayer2D, T_attack:Timer, ray_R:RayCast2D, 
+func _physics(delta, s:KinematicBody2D, ground_0:Area2D,  ground_1:Area2D, ray_R:RayCast2D, 
 ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 	if life > 0:
 		for area in ground_0.get_overlapping_areas():
@@ -71,41 +69,8 @@ ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 		for area in ground_1.get_overlapping_areas():
 			layer[1] = LAYER._get_layer(area.name, layer[1])
 		
-		if staggered == true:
-			animL.stop()
-			animU.stop()
-			animF.play("staggered")
-			walk.stop()
-		else:
+		if staggered == false:
 			if life > 0:
-				if action in ["follow", "flee"]:
-					animL.play("walk")
-					if walk.playing == false:
-						walk.play()
-				else: 
-					animL.play("idle")
-					walk.stop()
-				
-				
-				if not action in ["aim", "attack", "reload"]:
-					animU.play("idle")
-				if action == "aim":
-					if animU.current_animation != "aim":
-						animU.play("aim")
-				elif action == "attack" && ammo > 0:
-					if animU.current_animation != "attack":
-						animU.play("attack")
-				elif action == "reload":
-					if animU.current_animation != "reload":
-						animU.play("reload")
-				if not action == "attack":
-					attack.stop()
-					T_attack.stop()
-				if not action == "reload":
-					reload.stop()
-				
-				
-				
 				if Global.dodge == true:
 					s.set_collision_layer_bit(2, false)
 					s.set_collision_mask_bit(1, false)
@@ -152,27 +117,48 @@ ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 						velocity = -(s.global_position.direction_to(target.global_position))
 						s.move_and_collide(velocity * speed * delta)
 	else:
-		animL.stop()
-		animU.stop()
 		s.set_collision_layer_bit(2, false)
 		s.set_collision_mask_bit(1, false)
 
 
-func _move():
-	if target:
-		if global_position.x >= target.global_position.x:
-			flip = true
-		if global_position.x <= target.global_position.x:
-			flip = false
-		
-		if action == "follow":
-			velocity = global_position.direction_to(target.global_position)
-		elif action == "flee":
-			velocity = -(global_position.direction_to(target.global_position))
+func _set_animation(animL:AnimationPlayer, animU:AnimationPlayer, animF:AnimationPlayer, 
+aud_walk:AudioStreamPlayer2D, aud_attack:AudioStreamPlayer2D, aud_reload:AudioStreamPlayer2D,
+idle_anim:String, aim_anim:String, attack_anim:String, reload_anim:String, staggered_anim:String):
+	if staggered == true:
+		animL.stop()
+		animU.stop()
+		animF.play(staggered_anim)
+		aud_walk.stop()
+	else:
+		if life > 0:
+			if action in ["follow", "flee"]:
+				animL.play("walk")
+				if aud_walk.playing == false:
+					aud_walk.play()
+			else: 
+				animL.play("idle")
+				aud_walk.stop()
+			
+			
+			if not action in ["aim", "attack", "reload"]:
+				animU.play(idle_anim)
+			if action == "aim":
+				if animU.current_animation != aim_anim:
+					animU.play(aim_anim)
+			elif action == "attack" && ammo > 0:
+				if animU.current_animation != attack_anim:
+					animU.play(attack_anim)
+			elif action == "reload":
+				if animU.current_animation != reload_anim:
+					animU.play(reload_anim)
+			if not action == "attack":
+				aud_attack.stop()
+			if not action == "reload":
+				aud_reload.stop()
+		else:
+			animL.stop()
+			animU.stop()
 
-
-func _attack():
-	pass
 
 
 func _animation_over(anim):
@@ -252,18 +238,10 @@ au4:AudioStreamPlayer2D):
 					body_parts[i].play("option_2")
 
 
-func _dead(animF:AnimationPlayer, ground, s:KinematicBody2D, area:Area2D):
+func _dead(animF:AnimationPlayer, ground, s:KinematicBody2D, area:Area2D,
+dead_1:String, dead_2:String, dead_3:String, dead_staggered:String):
 	action = "dead"
 	
-#	$CollisionShape2D.queue_free()
-#	$Area2D_Enemy.queue_free()
-#	$Area2D_Follow.queue_free()
-#	$Area2D_Stop.queue_free()
-#	$AnimationPlayerUpper.queue_free()
-#	$AnimationPlayerLower.queue_free()
-#	$AnimationPlayerFull.queue_free()
-#	$audio_attack.queue_free()
-#	$audio_reload.queue_free()
 	area.queue_free()
 	
 	if staggered == false:
@@ -271,14 +249,14 @@ func _dead(animF:AnimationPlayer, ground, s:KinematicBody2D, area:Area2D):
 		dead = DEAD[randi() % DEAD.size()]
 		match dead:
 			1:
-				animF.play("dead_1")
+				animF.play(dead_1)
 			2:
-				animF.play("dead_2")
+				animF.play(dead_2)
 			3:
-				animF.play("dead_3")
+				animF.play(dead_3)
 	else:
 		staggered = false
-		animF.play("dead_staggered")
+		animF.play(dead_staggered)
 	
 	
 	randomize()
@@ -328,28 +306,3 @@ func _stop(body):
 	if body.name == "Player" && life > 0:
 		if not action in ["aim", "attack", "reload"]:
 			action = "aim"
-
-
-
-func _on_Timer_Aim_timeout():
-	if life > 0:
-		action = "attack"
-		$Timer_Attack.start()
-
-
-
-func _on_Timer_Attack_timeout():
-	if action == "attack" && ammo > 0 && life > 0:
-		$audio_attack.play()
-		_attack()
-	elif action == "attack" && ammo <= 0 && life > 0:
-		action = "reload"
-		$Timer_Reload.start()
-
-
-
-func _on_Timer_Reload_timeout():
-	if action == "reload" && life > 0:
-		ammo = max_ammo
-		action = "attack"
-		$Timer_attack.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/scripts/Fase_6.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=2]
@@ -14,9 +14,8 @@
 [ext_resource path="res://assets/images/Fase_6/wall_1.png" type="Texture" id=12]
 [ext_resource path="res://assets/images/Fase_6/cabin.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_6/wall_3.png" type="Texture" id=14]
-[ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/characters/Enemy_Pistol.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/characters/Enemy_Long_Range.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/interfaces/weapon_control.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=26]
@@ -408,23 +407,29 @@ position = Vector2( 1009, 419 )
 [node name="Enemy_Knife2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1065, 518 )
 
-[node name="Enemy_AR" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1609, 317 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR2" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1578, 624 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR3" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR3" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1507, 417 )
+enemy_type = "rifle"
 
 [node name="Enemy_Pistol" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2398, 379 )
+enemy_type = "pistol"
 
 [node name="Enemy_Pistol2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2272, 482 )
+enemy_type = "pistol"
 
 [node name="Enemy_Pistol3" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2406, 624 )
+enemy_type = "pistol"
 
 [node name="Enemy_Knife3" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2745, 431 )
@@ -435,50 +440,63 @@ position = Vector2( 2745, 563 )
 [node name="Enemy_Knife5" parent="." instance=ExtResource( 16 )]
 position = Vector2( 3046, 469 )
 
-[node name="Enemy_AR4" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR4" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3728, 415 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR5" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR5" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3700, 569 )
+enemy_type = "rifle"
 
 [node name="Enemy_Pistol4" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3950, 466 )
+enemy_type = "pistol"
 
-[node name="Enemy_AR6" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR6" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6807, 372 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR7" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR7" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6889, 423 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR8" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR8" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6786, 473 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR9" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR9" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6885, 519 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR10" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR10" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6778, 565 )
+enemy_type = "rifle"
 
-[node name="Enemy_AR11" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR11" parent="." instance=ExtResource( 17 )]
 position = Vector2( 6857, 623 )
+enemy_type = "rifle"
 
 [node name="Enemy_Pistol5" parent="." instance=ExtResource( 17 )]
 position = Vector2( 4693, 411 )
+enemy_type = "pistol"
 
 [node name="Enemy_Pistol6" parent="." instance=ExtResource( 17 )]
 position = Vector2( 4645, 559 )
+enemy_type = "pistol"
 
 [node name="Enemy_Knife6" parent="." instance=ExtResource( 16 )]
 position = Vector2( 4864, 471 )
 
-[node name="Enemy_AR12" parent="." instance=ExtResource( 15 )]
+[node name="Enemy_AR12" parent="." instance=ExtResource( 17 )]
 position = Vector2( 5614, 422 )
+enemy_type = "rifle"
 
 [node name="Enemy_Knife7" parent="." instance=ExtResource( 16 )]
 position = Vector2( 5767, 462 )
 
 [node name="Enemy_Pistol7" parent="." instance=ExtResource( 17 )]
 position = Vector2( 5625, 523 )
+enemy_type = "pistol"
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -25, 425 )

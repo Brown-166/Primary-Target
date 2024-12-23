@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Fase_3/bullet_train_inside_back_1.png" type="Texture" id=2]
@@ -15,9 +15,8 @@
 [ext_resource path="res://assets/images/Fase_2/city_1_F2.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_2/city_2_F2.png" type="Texture" id=14]
 [ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/characters/Enemy_AR.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=17]
-[ext_resource path="res://assets/characters/Enemy_Pistol.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/characters/Enemy_Long_Range.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/objects/medKit.tscn" type="PackedScene" id=19]
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/audios/bullet_train_inside.MP3" type="AudioStream" id=21]
@@ -1468,8 +1467,9 @@ __meta__ = {
 position = Vector2( 4920, 353.75 )
 shape = SubResource( 7 )
 
-[node name="Enemy_AR" parent="." instance=ExtResource( 16 )]
+[node name="Enemy_AR" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1369, 510 )
+enemy_type = "rifle"
 
 [node name="Enemy_Knife" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1455, 460 )
@@ -1479,9 +1479,11 @@ position = Vector2( 1312, 550 )
 
 [node name="Enemy_Pistol" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2362, 453 )
+enemy_type = "pistol"
 
 [node name="Enemy_Pistol2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2128, 555 )
+enemy_type = "pistol"
 
 [node name="Enemy_Knife3" parent="." instance=ExtResource( 17 )]
 position = Vector2( 2292, 502 )
@@ -1495,11 +1497,13 @@ position = Vector2( 4017, 507 )
 [node name="Enemy_Knife6" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3657, 555 )
 
-[node name="Enemy_AR2" parent="." instance=ExtResource( 16 )]
+[node name="Enemy_AR2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 4114, 463 )
+enemy_type = "rifle"
 
 [node name="Enemy_Pistol3" parent="." instance=ExtResource( 18 )]
 position = Vector2( 4538, 505 )
+enemy_type = "pistol"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 390, 505 )
