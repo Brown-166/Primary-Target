@@ -20,7 +20,7 @@
 [ext_resource path="res://assets/images/Fase_1/tile collision.png" type="Texture" id=19]
 [ext_resource path="res://assets/images/Fase_1/tile collison 5x5.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/Fase_1/tile nav.png" type="Texture" id=21]
-[ext_resource path="res://assets/characters/Enemy_Knife.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/characters/Enemy_Short_Range.tscn" type="PackedScene" id=22]
 [ext_resource path="res://assets/images/Characters/Boss_Red/life_bar_on.png" type="Texture" id=23]
 [ext_resource path="res://assets/images/Characters/Boss_Red/life_bar_off.png" type="Texture" id=24]
 

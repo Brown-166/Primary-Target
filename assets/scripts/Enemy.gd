@@ -122,8 +122,8 @@ ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 
 
 func _set_animation(animL:AnimationPlayer, animU:AnimationPlayer, animF:AnimationPlayer, 
-aud_walk:AudioStreamPlayer2D, aud_attack:AudioStreamPlayer2D, aud_reload:AudioStreamPlayer2D,
-idle_anim:String, aim_anim:String, attack_anim:String, reload_anim:String, staggered_anim:String):
+aud_walk:AudioStreamPlayer2D, idle_anim:String, aim_anim:String, attack_anim:String, 
+reload_anim:String, staggered_anim:String):
 	if staggered == true:
 		animL.stop()
 		animU.stop()
@@ -151,10 +151,6 @@ idle_anim:String, aim_anim:String, attack_anim:String, reload_anim:String, stagg
 			elif action == "reload":
 				if animU.current_animation != reload_anim:
 					animU.play(reload_anim)
-			if not action == "attack":
-				aud_attack.stop()
-			if not action == "reload":
-				aud_reload.stop()
 		else:
 			animL.stop()
 			animU.stop()

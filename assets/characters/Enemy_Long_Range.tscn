@@ -5749,7 +5749,7 @@ tracks/34/keys = {
 
 [sub_resource type="Animation" id=274]
 resource_name = "pistol_dead_staggered"
-length = 2.1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Chest:position")
 tracks/0/interp = 1
@@ -9065,8 +9065,8 @@ rotation = 1.5708
 shape = SubResource( 266 )
 
 [node name="PositionRight" type="Position2D" parent="."]
-position = Vector2( -4.95718, 56.3001 )
-rotation = 1.5708
+position = Vector2( 84.3161, 35.3014 )
+rotation = 0.0645771
 
 [node name="PositionLeft" type="Position2D" parent="."]
 position = Vector2( -56.5, -5 )
