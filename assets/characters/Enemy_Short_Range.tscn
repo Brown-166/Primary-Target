@@ -4823,13 +4823,15 @@ __meta__ = {
 
 [node name="weapon" type="AnimatedSprite" parent="Body/Chest/R_Arm/R_Forearm/R_Hand"]
 show_behind_parent = true
-position = Vector2( -0.95702, 2.3001 )
+position = Vector2( -0.957, 2.3 )
 rotation = 1.5708
 frames = SubResource( 315 )
 animation = "knife_2"
 offset = Vector2( 0, -8 )
 
 [node name="Area2D_weapon" type="Area2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/weapon"]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/weapon/Area2D_weapon"]
 position = Vector2( -13.5, -4.99995 )
@@ -4994,6 +4996,7 @@ volume_db = 5.0
 stream = ExtResource( 56 )
 volume_db = -10.0
 
+[connection signal="area_entered" from="Body/Chest/R_Arm/R_Forearm/R_Hand/weapon/Area2D_weapon" to="." method="_on_Area2D_weapon_area_entered"]
 [connection signal="animation_finished" from="Body/Animation_Upper" to="." method="_on_Animation_Upper_animation_finished"]
 [connection signal="animation_finished" from="Body/Animation_Lower" to="." method="_on_Animation_Lower_animation_finished"]
 [connection signal="animation_finished" from="Body/Animation_Full" to="." method="_on_Animation_Full_animation_finished"]

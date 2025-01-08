@@ -122,7 +122,7 @@ func _on_Timer_shoot_timeout():
 		var bullet = BULLET.instance()
 		add_child(bullet)
 		bullet._set_direction(-2)
-		bullet._set_layer(0)
+		bullet._set_layer([0,0])
 		
 		var bullet_hole = HOLE.instance()
 		bullet_hole.texture = bullet_hole_texture

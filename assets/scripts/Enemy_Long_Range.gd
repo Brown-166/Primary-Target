@@ -113,11 +113,12 @@ func _physics_process(delta):
 		"rifle":
 			enemy._set_animation($Body/Animation_Lower, $Body/Animation_Upper, 
 			$Body/Animation_Full, $audio_walk, "rifle_idle",
-			"rifle_aim", "rifle_attack", "rifle_reload", "rifle_staggered")
+			"rifle_aim", "rifle_attack", "rifle_attack", "rifle_reload", "rifle_staggered")
 		"pistol":
 			enemy._set_animation($Body/Animation_Lower, $Body/Animation_Upper, 
 			$Body/Animation_Full, $audio_walk, "pistol_idle",
-			"pistol_aim", "pistol_attack", "pistol_reload", "pistol_staggered")
+			"pistol_aim", "pistol_attack", "pistol_attack", "pistol_reload", 
+			"pistol_staggered")
 	
 	if not enemy.action == "attack":
 		$audio_shoot.stop()

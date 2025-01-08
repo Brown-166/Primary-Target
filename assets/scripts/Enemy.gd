@@ -30,6 +30,7 @@ var ammo : int
 var action : String = "stop"
 var pushed : bool = false
 
+var attack_var = false
 
 var layer : Array = [0, 0]
 var staggered = false
@@ -122,8 +123,8 @@ ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 
 
 func _set_animation(animL:AnimationPlayer, animU:AnimationPlayer, animF:AnimationPlayer, 
-aud_walk:AudioStreamPlayer2D, idle_anim:String, aim_anim:String, attack_anim:String, 
-reload_anim:String, staggered_anim:String):
+aud_walk:AudioStreamPlayer2D, idle_anim:String, aim_anim:String, attack_anim_1:String, 
+attack_anim_2:String, reload_anim:String, staggered_anim:String):
 	if staggered == true:
 		animL.stop()
 		animU.stop()
@@ -146,8 +147,13 @@ reload_anim:String, staggered_anim:String):
 				if animU.current_animation != aim_anim:
 					animU.play(aim_anim)
 			elif action == "attack" && ammo > 0:
-				if animU.current_animation != attack_anim:
-					animU.play(attack_anim)
+				if not animU.current_animation in [attack_anim_1, attack_anim_2]:
+					if attack_var == false:
+						animU.play(attack_anim_1)
+						attack_var = true
+					else:
+						animU.play(attack_anim_2)
+						attack_var = false
 			elif action == "reload":
 				if animU.current_animation != reload_anim:
 					animU.play(reload_anim)

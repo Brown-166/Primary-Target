@@ -48,18 +48,19 @@ func _delete():
 
 func _on_Area2D_bullet_area_entered(area):
 	if layer[0] in LAYER.playerLayer || layer[1] in LAYER.playerLayer:
-		if area.name == "Area2D_Block":
-			if Global.stamina >= (damage * 2):
-				Global.stamina -= damage * 2
-				Global.blocked = true
-				queue_free()
+		if area.name == "Area2D_Player":
+			if Global.block == true && $Sprite.flip_h != Global.flip:
+				if Global.stamina >= (damage * 2):
+					Global.stamina -= damage * 2
+					Global.blocked = true
+					queue_free()
+				else:
+					Global.stamina -= damage * 2
+					Global.life -= damage
+					Global.hit = "bullet"
+					queue_free()
 			else:
-				Global.stamina -= damage * 2
-				Global.life -= damage
-				Global.hit = "bullet"
-				queue_free()
-		elif area.name == "Area2D_Player":
-			if Global.dodge == false:
-				Global.life -= damage
-				Global.hit = "bullet"
-				queue_free()
+				if Global.dodge == false:
+					Global.life -= damage
+					Global.hit = "bullet"
+					queue_free()
