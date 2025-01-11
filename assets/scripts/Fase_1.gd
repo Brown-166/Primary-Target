@@ -1,5 +1,5 @@
 extends Node2D
-const ENEMY = preload("res://assets/characters/Enemy_AR.tscn")
+const ENEMY = preload("res://assets/characters/Enemy_Long_Range.tscn")
 var i = false
 
 func _ready():
@@ -9,11 +9,11 @@ func _ready():
 	
 
 func _physics_process(delta):
-	$CanvasLayer/ProgressBar.value = $CanvasLayer/ProgressBar.get_parent().get_parent().get_node("Boss_Red").life
+	$CanvasLayer/ProgressBar.value = $CanvasLayer/ProgressBar.get_parent().get_parent().get_node("Boss_Red").enemy.life
 	if i == true:
 		$Area2D/CollisionShape2D.disabled = true
 	
-	if get_node("Boss_Red").life <= 0:
+	if get_node("Boss_Red").enemy.life <= 0:
 		if $CanvasLayer/Timer.is_stopped() == true:
 			$CanvasLayer/Timer.start()
 			Global.arsenal[1] = "hammer"

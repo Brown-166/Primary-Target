@@ -55,7 +55,6 @@ func _weapon_set():
 			ANI_staggered = "katana_staggered"
 			ANI_dead = "katana_dead"
 			$Body/Animation_Upper.playback_speed = 1
-			$Body/Animation_Lower.playback_speed = 1
 			speed = 200
 		"hammer":
 			for i in body.body_parts.size():
@@ -68,7 +67,6 @@ func _weapon_set():
 			ANI_staggered = "hammer_staggered"
 			ANI_dead = "hammer_dead"
 			$Body/Animation_Upper.playback_speed = 0.6
-			$Body/Animation_Lower.playback_speed = 0.6
 			speed = 150
 		
 		"katar":
@@ -82,7 +80,6 @@ func _weapon_set():
 			ANI_staggered = "katar_staggered"
 			ANI_dead = "katar_dead"
 			$Body/Animation_Upper.playback_speed = 2
-			$Body/Animation_Lower.playback_speed = 2
 			speed = 250
 	
 	dodge_range = speed * 2.5
@@ -372,6 +369,9 @@ func _on_Animation_Lower_animation_finished(anim_name):
 func _on_Animation_Full_animation_finished(anim_name):
 	if anim_name == ANI_dodge:
 		dodge = false
+	if anim_name == ANI_staggered:
+		Global.staggered = false
+		staggered = false
 	if Global.life <= 0:
 		if Global.dead == true:
 			$Timer_Dead.start()

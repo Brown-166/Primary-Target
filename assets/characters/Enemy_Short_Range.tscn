@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://assets/scripts/Enemy_Short_Range.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/Characters/Enemy/Enemy_Knife-1/Forearm.png" type="Texture" id=2]
@@ -56,6 +56,7 @@
 [ext_resource path="res://assets/images/Characters/Enemy/Enemy_Knife-2/Leg.png" type="Texture" id=54]
 [ext_resource path="res://assets/audios/fall_1.MP3" type="AudioStream" id=55]
 [ext_resource path="res://assets/audios/weapon_drop.MP3" type="AudioStream" id=56]
+[ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=57]
 
 [sub_resource type="SpriteFrames" id=293]
 animations = [ {
@@ -4620,6 +4621,11 @@ scale = Vector2( 2, 2 )
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )
+
+[node name="shadow" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.227451 )
+position = Vector2( 0, 40.5 )
+texture = ExtResource( 57 )
 
 [node name="Body" type="Node2D" parent="."]
 

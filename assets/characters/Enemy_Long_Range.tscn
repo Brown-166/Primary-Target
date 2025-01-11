@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://assets/images/Characters/Enemy/Option 2/Leg.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/Characters/Enemy/Option 3/Chest.png" type="Texture" id=2]
@@ -80,6 +80,7 @@
 [ext_resource path="res://assets/images/Weapons/enemy_Weapons/Glock/Glock Reloader.png" type="Texture" id=78]
 [ext_resource path="res://assets/images/Weapons/enemy_Weapons/Colt/Colt.png" type="Texture" id=79]
 [ext_resource path="res://assets/images/Weapons/enemy_Weapons/Glock/Glock.png" type="Texture" id=80]
+[ext_resource path="res://assets/images/Characters/character_shadow.png" type="Texture" id=81]
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -8723,6 +8724,11 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource( 48 )
 
+[node name="shadow" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.227451 )
+position = Vector2( 0, 40.5 )
+texture = ExtResource( 81 )
+
 [node name="Body" type="Node2D" parent="."]
 
 [node name="Chest" type="AnimatedSprite" parent="Body"]
@@ -9065,8 +9071,8 @@ rotation = 1.5708
 shape = SubResource( 266 )
 
 [node name="PositionRight" type="Position2D" parent="."]
-position = Vector2( 84.3161, 35.3014 )
-rotation = 0.0645771
+position = Vector2( -4.95718, 56.3001 )
+rotation = 1.5708
 
 [node name="PositionLeft" type="Position2D" parent="."]
 position = Vector2( -56.5, -5 )

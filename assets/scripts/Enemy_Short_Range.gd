@@ -9,10 +9,9 @@ var S : Array
 
 var blocked = false
 
-var attack_var = false
-
 onready var weapon = [$Body/Chest/R_Arm/R_Forearm/R_Hand/weapon]
 
+var area_player = false
 
 var ST = [3, 4, 4, 5]
 
@@ -81,6 +80,7 @@ func _physics_process(delta):
 	
 	for body in $Area2D_Stop.get_overlapping_bodies():
 		if body.name == "Player":
+			area_player = true
 			if enemy.action == "follow":
 				enemy.action = "attack"
 			elif enemy.action == "attack":
@@ -122,7 +122,7 @@ func _on_Area2D_Stop_body_entered(body):
 
 func _on_Area2D_Stop_body_exited(body):
 	if enemy.ammo > 0:
-		enemy._follow(body)
+		area_player = false
 
 
 func _on_Area2D_Flee_body_exited(body):
@@ -139,6 +139,10 @@ func _on_Animation_Full_animation_finished(anim_name):
 
 
 func _on_Animation_Upper_animation_finished(anim_name):
+	if enemy.target:
+		if area_player == false:
+			if enemy.ammo > 0:
+				enemy._follow(enemy.target)
 	if anim_name in ["knife_idle"]:
 		enemy._animation_over("idle")
 	if anim_name in ["knife_recharge"]:

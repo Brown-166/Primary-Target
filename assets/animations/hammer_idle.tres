@@ -329,7 +329,7 @@ tracks/26/keys = {
 "values": [ "head_1" ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Hammer/Area2D_Hammer/Collision_Hammer:disabled")
+tracks/27/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Hammer/hilt:visible")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -341,7 +341,7 @@ tracks/27/keys = {
 "values": [ true ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Hammer/Area2D_Hammer_stagger/Collision_Hammer_stagger:disabled")
+tracks/28/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Hammer/Area2D_Hammer/Collision_Hammer:disabled")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -353,7 +353,7 @@ tracks/28/keys = {
 "values": [ true ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar:position")
+tracks/29/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Hammer/Area2D_Hammer_stagger/Collision_Hammer_stagger:disabled")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -361,11 +361,11 @@ tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -0.5, 2 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar:rotation_degrees")
+tracks/30/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -374,10 +374,10 @@ tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 180.0 ]
+"values": [ Vector2( -0.5, 2 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar:visible")
+tracks/31/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar:rotation_degrees")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -385,11 +385,11 @@ tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ 180.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar/Area2D_Katar/Collision_Katar:disabled")
+tracks/32/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar:visible")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -398,10 +398,10 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar:position")
+tracks/33/path = NodePath("Chest/R_Arm/R_Forearm/R_Hand/Katar/Area2D_Katar/Collision_Katar:disabled")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -409,11 +409,11 @@ tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -0.5, 2 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar:rotation_degrees")
+tracks/34/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar:position")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -422,10 +422,10 @@ tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 180.0 ]
+"values": [ Vector2( -0.5, 2 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar:visible")
+tracks/35/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar:rotation_degrees")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -433,16 +433,28 @@ tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ 180.0 ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar/Area2D_Katar/Collision_Katar:disabled")
+tracks/36/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar:visible")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
 tracks/36/enabled = true
 tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Chest/L_Arm/L_Forearm/L_Hand/Katar/Area2D_Katar/Collision_Katar:disabled")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,

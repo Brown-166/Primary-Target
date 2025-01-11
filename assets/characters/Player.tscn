@@ -8468,6 +8468,8 @@ position = Vector2( 0, -4.5 )
 texture = ExtResource( 76 )
 
 [node name="Area2D_Katar" type="Area2D" parent="Body/Chest/L_Arm/L_Forearm/L_Hand/Katar"]
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision_Katar" type="CollisionPolygon2D" parent="Body/Chest/L_Arm/L_Forearm/L_Hand/Katar/Area2D_Katar"]
 visible = false
@@ -8614,6 +8616,8 @@ texture = ExtResource( 48 )
 
 [node name="Area2D_Katana" type="Area2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Katana"]
 visible = false
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision_Katana" type="CollisionPolygon2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Katana/Area2D_Katana"]
 polygon = PoolVector2Array( 1.5, -10, 1.5, -60, -0.5, -62, -1.5, -62, -1.5, -10 )
@@ -8638,6 +8642,8 @@ frames = SubResource( 337 )
 animation = "head_1"
 
 [node name="Area2D_Hammer" type="Area2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Hammer"]
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision_Hammer" type="CollisionPolygon2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Hammer/Area2D_Hammer"]
 visible = false
@@ -8645,6 +8651,8 @@ polygon = PoolVector2Array( 9.5, -25, 9.5, -35, 1.5, -36, -1.5, -36, -9.5, -35, 
 disabled = true
 
 [node name="Area2D_Hammer_stagger" type="Area2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Hammer"]
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision_Hammer_stagger" type="CollisionPolygon2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Hammer/Area2D_Hammer_stagger"]
 visible = false
@@ -8669,6 +8677,8 @@ position = Vector2( 0, -4.5 )
 texture = ExtResource( 76 )
 
 [node name="Area2D_Katar" type="Area2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Katar"]
+collision_layer = 0
+collision_mask = 4
 
 [node name="Collision_Katar" type="CollisionPolygon2D" parent="Body/Chest/R_Arm/R_Forearm/R_Hand/Katar/Area2D_Katar"]
 visible = false

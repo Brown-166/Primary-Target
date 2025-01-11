@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/characters/Enemy_Long_Range.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/characters/Enemy_Short_Range.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/images/Fase_1/sidewalk_0.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/Fase_1/sidewalk_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/Fase_1/brick_wall_1.png" type="Texture" id=4]
@@ -276,9 +276,8 @@ __meta__ = {
 [node name="pause_menu" parent="." instance=ExtResource( 10 )]
 visible = false
 
-[node name="Enemy_Long_Range" parent="." instance=ExtResource( 1 )]
-position = Vector2( 837, 505 )
-enemy_type = "rifle"
+[node name="Enemy_Short_Range" parent="." instance=ExtResource( 1 )]
+position = Vector2( 776, 505 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 116, 521 )
