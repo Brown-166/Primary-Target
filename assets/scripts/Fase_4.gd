@@ -14,9 +14,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	$CanvasLayer/ProgressBar.value = $CanvasLayer/ProgressBar.get_parent().get_parent().get_node("Boss_Blue").life
+	$CanvasLayer/ProgressBar.value = $CanvasLayer/ProgressBar.get_parent().get_parent().get_node("Boss_Blue").enemy.life
 	
-	if get_node("Boss_Blue").life <= 0:
+	if get_node("Boss_Blue").enemy.life <= 0:
 		if $CanvasLayer/Timer.is_stopped() == true:
 			$CanvasLayer/Timer.start()
 			Global.arsenal[2] = "katar"

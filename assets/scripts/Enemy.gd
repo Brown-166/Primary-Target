@@ -72,7 +72,7 @@ ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 		
 		if staggered == false:
 			if life > 0:
-				if Global.dodge == true:
+				if Global.dodge == true || action == "dodge":
 					s.set_collision_layer_bit(2, false)
 					s.set_collision_mask_bit(1, false)
 				else:
@@ -99,24 +99,25 @@ ray_L:RayCast2D, ray_U:RayCast2D, ray_D:RayCast2D):
 				
 				
 				if target:
-					if s.global_position.x >= target.global_position.x:
-						if action != "flee":
-							flip = true
-						else:
-							flip = false
-					if s.global_position.x <= target.global_position.x:
-						if action != "flee":
-							flip = false
-						else:
-							flip = true
-					
-					if action == "follow":
-						if pushed == false:
-							velocity = s.global_position.direction_to(target.global_position)
+					if action != "dodge":
+						if s.global_position.x >= target.global_position.x:
+							if action != "flee":
+								flip = true
+							else:
+								flip = false
+						if s.global_position.x <= target.global_position.x:
+							if action != "flee":
+								flip = false
+							else:
+								flip = true
+						
+						if action == "follow":
+							if pushed == false:
+								velocity = s.global_position.direction_to(target.global_position)
+								s.move_and_collide(velocity * speed * delta)
+						if action == "flee":
+							velocity = -(s.global_position.direction_to(target.global_position))
 							s.move_and_collide(velocity * speed * delta)
-					if action == "flee":
-						velocity = -(s.global_position.direction_to(target.global_position))
-						s.move_and_collide(velocity * speed * delta)
 	else:
 		s.set_collision_layer_bit(2, false)
 		s.set_collision_mask_bit(1, false)

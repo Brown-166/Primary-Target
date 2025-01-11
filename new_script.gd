@@ -1,10 +1,9 @@
 extends Node
 
-
-var life = 300
-var stamina = 15
+var life = 250
+var stamina = 60
 var velocity = Vector2.ZERO
-var speed = 150
+var speed = 250
 var layer : int
 var moving = false
 var stop = true
@@ -18,7 +17,11 @@ var back = false
 
 var attack = false
 var attackVar = true
-var hammer_stagger = false
+var dodge = false
+var dodge_range = speed * 2.5
+
+var TIME = [1, 2, 3, 4, 5]
+var dodge_time
 
 
 var MEDKIT = preload("res://assets/objects/medKit.tscn")
@@ -41,13 +44,15 @@ onready var boss_sprites = [
 	$Boss_Parts/Lower/L_Thigh/Sprite, $Boss_Parts/Lower/L_Thigh/L_Leg/Sprite, $Boss_Parts/Lower/L_Thigh/L_Leg/L_Foot/Sprite
 ]
 
-onready var hammer = $Boss_Parts/Upper_Right/Hammer
+onready var katar = [$Boss_Parts/Upper_Right/Katar, $Boss_Parts/Upper_Left/Katar]
 
-onready var hammer_sprites = [$Boss_Parts/Upper_Right/Hammer/Hilt, $Boss_Parts/Upper_Right/Hammer/Head]
+onready var katar_sprites = [
+	$Boss_Parts/Upper_Right/Katar/Hilt, $Boss_Parts/Upper_Right/Katar/Blade,
+	$Boss_Parts/Upper_Left/Katar/Hilt, $Boss_Parts/Upper_Left/Katar/Blade]
 
-onready var hammer_collisions = [
-	$Boss_Parts/Upper_Right/Hammer/Head/Boss_Hammer/CollisionPolygon2D,
-	$Boss_Parts/Upper_Right/Hammer/Head/Boss_Stagger/CollisionPolygon2D
+onready var katar_collisions = [
+	$Boss_Parts/Upper_Right/Katar/Blade/Boss_Katar/CollisionPolygon2D,
+	$Boss_Parts/Upper_Left/Katar/Blade/Boss_Katar/CollisionPolygon2D
 ]
 
 
@@ -63,29 +68,20 @@ func _attack():
 	else:
 		attackVar = false
 	
-	if moving == false && follow == false:
-		if stamina == 60:
-			hammer_stagger = true
-		else:
-			attack = true
-	elif follow == true || layer != LAYER.playerLayer:
+#	if moving == false && follow == false && dodge == false:
+#		attack = true
+	if follow == true:
 		moving = true
 		stop = false
 
 
-func _hammer_stagger():
-	if global_position.x >= target.global_position.x:
-		flip = true
-	if global_position.x <= target.global_position.x:
-		flip = false
-	hammer_stagger = false
-	stamina = 0
-	attackVar = false
-	if moving == false && follow == false:
-		attack = true
-	elif follow == true || layer != LAYER.playerLayer:
-		moving = true
-		stop = false
+func _dodge():
+	moving = true
+	stop = false
+	attack = false
+	dodge = false
+	randomize()
+	dodge_time = TIME[randi() % TIME.size()]
 
 
 func _staggered():
@@ -95,9 +91,17 @@ func _staggered():
 func _ready():
 	for i in boss_sprites.size():
 		boss_sprites[i].play("default")
-	for i in hammer_collisions.size():
-		hammer_collisions[i].disabled = true
-	$AnimationPlayerUpper.playback_speed = 0.6
+	for i in katar_collisions.size():
+		katar_collisions[i].disabled = true
+	$AnimationPlayerUpper.playback_speed = 2
+	$AnimationPlayerFull.playback_speed = 4
+	
+	randomize()
+	dodge_time = TIME[randi() % TIME.size()]
+	$Timer_Dodge.wait_time = dodge_time
+	
+	randomize()
+	dodge_time = TIME[randi() % TIME.size()]
 
 
 func _physics_process(delta):
@@ -108,70 +112,93 @@ func _physics_process(delta):
 			$AnimationPlayerFull.play("staggered")
 			$audio_walk.stop()
 		else:
-			if moving == true:
-				$AnimationPlayerLower.play("walk")
-				if $audio_walk.playing == false:
-					$audio_walk.play()
-			elif stop == true: 
-				$AnimationPlayerLower.play("idle")
-				$audio_walk.stop()
-			
-			
-			if hammer_stagger == true:
-				$AnimationPlayerUpper.play("stagger")
-				attackVar = true
-			elif attack == true:
-				if attackVar == false:
-					$AnimationPlayerUpper.play("attack_1")
+			if dodge == true:
+				$AnimationPlayerUpper.stop()
+				$AnimationPlayerLower.stop()
+				$AnimationPlayerFull.play("dodge")
+				if flip == false:
+					velocity.x += dodge_range
 				else:
-					$AnimationPlayerUpper.play("attack_2")
+					velocity.x -= dodge_range
+				velocity = velocity.normalized()
+				move_and_collide(velocity * dodge_range * delta)
 			else:
-				$AnimationPlayerUpper.play("idle")
-			
-			
-			if target:
-				if attack == false && hammer_stagger == false && staggered == false:
-					if global_position.x >= target.global_position.x:
-						flip = true
-					if global_position.x <= target.global_position.x:
-						flip = false
-				
-				if back == true:
-					velocity = -(global_position.direction_to(target.global_position))
-					move_and_collide(velocity * speed * delta)
-				elif back == false && moving == true:
-					velocity = global_position.direction_to(target.global_position)
-					move_and_collide(velocity * speed * delta)
+				if moving == true:
+					$AnimationPlayerLower.play("walk")
+					if $audio_walk.playing == false:
+						$audio_walk.play()
+				elif stop == true: 
+					$AnimationPlayerLower.play("idle")
+					$audio_walk.stop()
 				
 				
-			for body in $Area2D_Close.get_overlapping_bodies():
-				if body.name == "Player" && layer == LAYER.playerLayer:
-					moving = false
-					stop = true
-					if stamina == 30:
-						hammer_stagger = true
+				
+				if attack == true:
+					if attackVar == false:
+						$AnimationPlayerUpper.play("attack_1")
 					else:
+						$AnimationPlayerUpper.play("attack_2")
+				else:
+					$AnimationPlayerUpper.play("idle")
+				
+				
+				if target:
+					if attack == false && staggered == false && dodge == false:
+						if global_position.x >= target.global_position.x:
+							flip = true
+						if global_position.x <= target.global_position.x:
+							flip = false
+					
+					if back == true:
+						velocity = -(global_position.direction_to(target.global_position))
+						move_and_collide(velocity * speed * delta)
+					elif back == false && moving == true:
+						velocity = global_position.direction_to(target.global_position)
+						move_and_collide(velocity * speed * delta)
+					
+					
+				for body in $Area2D_Close.get_overlapping_bodies():
+					if body.name == "Player" && layer == LAYER.playerLayer:
+						moving = false
+						stop = true
+						if stamina >= 10:
+							if $Timer_Dodge.is_stopped() == true:
+								$Timer_Dodge.start()
 						attack = true
-				elif body.name == "Player" && layer != LAYER.playerLayer:
-					follow = true
+					elif body.name == "Player" && layer != LAYER.playerLayer:
+						follow = true
+				
+				for area in $Boss_Parts/Upper_Left/Katar/Blade/Boss_Katar.get_overlapping_areas():
+					if layer == LAYER.playerLayer && staggered == false:
+						if Global.block == true && Global.flip != flip:
+							if Global.stamina >= 10:
+								blocked = true
+				
+				for area in $Boss_Parts/Upper_Right/Katar/Blade/Boss_Katar.get_overlapping_areas():
+					if layer == LAYER.playerLayer && staggered != false:
+						if Global.block == true && Global.flip == flip:
+							if Global.stamina >= 10:
+								blocked = true
+			
+			
+			
 			for area in $Area2D_Ground.get_overlapping_areas():
 				layer = LAYER._get_layer(area.name, layer)
 				z_index = LAYER._get_z_index(area.name, z_index)
 			
-			for area in $Boss_Parts/Upper_Right/Hammer/Head/Boss_Hammer.get_overlapping_areas():
-					if layer == LAYER.playerLayer && staggered == false:
-						if Global.block == true && Global.flip != flip:
-							if Global.stamina >= 20:
-								if blocked == false:
-									blocked = true
-									Global.stamina -= 20
-			
 			if layer == LAYER.playerLayer && Global.dodge == true:
+				set_collision_layer_bit(2, false)
+				set_collision_mask_bit(1, false)
+			elif dodge == true:
 				set_collision_layer_bit(2, false)
 				set_collision_mask_bit(1, false)
 			else:
 				set_collision_layer_bit(2, true)
 				set_collision_mask_bit(1, true)
+		
+		
+		if stamina > 60:
+			stamina = 60
 
 
 func _dead():
@@ -180,26 +207,23 @@ func _dead():
 	attack = false
 	
 	$CollisionShape2D.queue_free()
-	$Area2D_Boss_Red.queue_free()
+	$Area2D_Boss_Blue.queue_free()
 	$Area2D_Follow.queue_free()
 	$Area2D_Close.queue_free()
 	$AnimationPlayerUpper.queue_free()
 	$AnimationPlayerLower.queue_free()
 	$Timer_Stamina.queue_free()
 	
-	#$Audio_DMG3.play()
-	
 	$AnimationPlayerFull.play("Dead")
 	
-
 	var medkit = MEDKIT.instance()
 	medkit._set_layer(layer)
 	get_parent().add_child(medkit)
 	medkit.z_as_relative = false
-	medkit.position = $Area2D_Ground/CollisionShape2D.global_position
+	medkit.position = $Area2D_Ground/Collision_Ground.global_position
 
 
-func _on_Area2D_Boss_Red_area_entered(area):
+func _on_Area2D_Boss_Blue_area_entered(area):
 	if layer == LAYER.playerLayer:
 		match area.name:
 			"Area2D_Katana":
@@ -224,14 +248,9 @@ func _on_Area2D_Boss_Red_area_entered(area):
 			"Area2D_Great_Sword":
 				life -= Global.great_sword_DMG
 		
-#
-#		if area.name == "Area2D_Player":
-#			attack = false
-#			moving = true
-#			stop = false
-#			back = true
 		
 		if life <= 0:
+			$AnimationPlayerFull.playback_speed = 1
 			_dead()
 
 
@@ -241,7 +260,7 @@ func _on_Area2D_Follow_body_entered(body):
 		moving = true
 		stop = false
 		attack = false
-		hammer_stagger = false
+		dodge = false
 		if $Timer_Stamina.is_stopped() == true:
 			$Timer_Stamina.start()
 
@@ -251,33 +270,20 @@ func _on_Area2D_Close_body_entered(body):
 		moving = false
 		stop = true
 		follow = false
-		if stamina == 30:
-			hammer_stagger = true
-		else:
-			attack = true
+		if stamina >= 10:
+			if $Timer_Dodge.is_stopped() == true:
+				$Timer_Dodge.start()
+		attack = true
 
 
 func _on_Area2D_Close_body_exited(body):
 	if body.name == "Player" && life > 0:
-		follow = true
+		if $Timer_Follow.is_stopped() == true:
+			$Timer_Follow.start()
 
 
-func _on_Boss_Hammer_area_entered(area):
-	if layer == LAYER.playerLayer && staggered == false:
-		if Global.block == true && Global.flip != flip:
-			if Global.stamina >= 20:
-				if blocked == false:
-					Global.stamina -= 20
-					blocked = true
-					Global.blocked = true
-			else:
-				Global.life -= 20
-				Global.stamina -= 20
-				Global.hit = "attack"
-		elif area.name == "Area2D_Player":
-			if Global.dodge == false && blocked == false:
-				Global.life -= 20
-				Global.hit = "attack"
+func _on_Boss_Katar_area_entered(area):
+	
 
 
 func _on_Area2D_Ground_area_entered(area):
@@ -291,8 +297,8 @@ func _on_Timer_Flip_timeout():
 #		for i in boss_sprites.size():
 #			boss_sprites[i].flip_h = false
 #
-#		for i in hammer_sprites.size():
-#			hammer_sprites[i].flip_h = false
+#		for i in katar_sprites.size():
+#			katar_sprites[i].flip_h = false
 		$Boss_Parts.scale.x = 1
 	else:
 #		for i in boss_parts.size():
@@ -302,11 +308,12 @@ func _on_Timer_Flip_timeout():
 #		for i in boss_sprites.size():
 #			boss_sprites[i].flip_h = true
 #
-#		hammer.position.x *= -1
-#		hammer.rotation_degrees *= -1
+#		for i in katar.size():
+#			katar[i].position.x *= -1
+#			katar[i].rotation_degrees *= -1
 #
-#		for i in hammer_sprites.size():
-#			hammer_sprites[i].flip_h = true
+#		for i in katar_sprites.size():
+#			katar_sprites[i].flip_h = true
 		$Boss_Parts.scale.x = -1
 
 
@@ -316,14 +323,20 @@ func _on_AnimationPlayerFull_animation_finished(anim_name):
 
 
 func _on_Timer_Stamina_timeout():
-	if stamina < 30:
-		stamina += 1
+	if stamina < 60:
+		stamina += 2
 
 
-func _on_Boss_Stagger_area_entered(area):
-	if layer == LAYER.playerLayer && staggered == false:
-		if area.name == "Area2D_Player":
-			if Global.dodge == false:
-				Global.life -= 10
-				Global.staggered = true
-				Global.hit = "attack"
+func _on_Timer_Dodge_timeout():
+	if stamina >= 10:
+		dodge = true
+		stamina -= 10
+	$Timer_Dodge.stop()
+
+
+func _on_Timer_Follow_timeout():
+	follow = true
+	moving = true
+	stop = false
+	attack = false
+	dodge = false
