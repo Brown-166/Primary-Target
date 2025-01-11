@@ -1,87 +1,45 @@
-[gd_scene load_steps=456 format=2]
+[gd_scene load_steps=400 format=2]
 
 [ext_resource path="res://assets/images/Fase_1/sky night.png" type="Texture" id=1]
 [ext_resource path="res://assets/scenes/background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/Vehicles/Car_1/car_1_side.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/cutscenes/cutscene_1/building_ceiling_1.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/Characters/Player/Red/R_Foot.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/Characters/Player/Orange/R_Hand.png" type="Texture" id=6]
 [ext_resource path="res://assets/images/Characters/Player/Red/L_Foot.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/Characters/Player/Blue/L_Foot.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/Characters/Player/Red/R_Hand.png" type="Texture" id=9]
-[ext_resource path="res://assets/images/Characters/Player/Orange/L_Hand.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/Characters/Player/Blue/R_Foot.png" type="Texture" id=11]
-[ext_resource path="res://assets/images/Characters/Player/Green/L_Hand.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/Characters/Player/White/R_Hand.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/Characters/Player/White/R_Foot.png" type="Texture" id=14]
-[ext_resource path="res://assets/images/Characters/Player/Orange/R_Foot.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/L_Foot.png" type="Texture" id=16]
 [ext_resource path="res://assets/images/Characters/Player/Red/L_Hand.png" type="Texture" id=17]
-[ext_resource path="res://assets/images/Characters/Player/Green/R_Hand.png" type="Texture" id=18]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/R_Hand.png" type="Texture" id=19]
-[ext_resource path="res://assets/images/Characters/Player/Purple/R_Foot.png" type="Texture" id=20]
-[ext_resource path="res://assets/images/Characters/Player/Green/L_Foot.png" type="Texture" id=21]
-[ext_resource path="res://assets/images/Characters/Player/Green/R_Foot.png" type="Texture" id=22]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/R_Foot.png" type="Texture" id=23]
-[ext_resource path="res://assets/images/Characters/Player/Orange/L_Foot.png" type="Texture" id=24]
 [ext_resource path="res://assets/images/Characters/Player/Blue/L_Hand.png" type="Texture" id=25]
-[ext_resource path="res://assets/images/Characters/Player/White/L_Foot.png" type="Texture" id=26]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/L_Hand.png" type="Texture" id=27]
-[ext_resource path="res://assets/images/Characters/Player/White/L_Hand.png" type="Texture" id=28]
 [ext_resource path="res://assets/images/Characters/Player/Blue/R_Hand.png" type="Texture" id=29]
-[ext_resource path="res://assets/images/Characters/Player/Purple/L_Hand.png" type="Texture" id=30]
-[ext_resource path="res://assets/images/Characters/Player/Purple/L_Foot.png" type="Texture" id=31]
-[ext_resource path="res://assets/images/Characters/Player/Purple/R_Hand.png" type="Texture" id=32]
-[ext_resource path="res://assets/images/Characters/Player/Orange/R_Forearm.png" type="Texture" id=33]
 [ext_resource path="res://assets/images/Characters/Player/Blue/Head.png" type="Texture" id=34]
-[ext_resource path="res://assets/images/Characters/Player/Orange/Chest.png" type="Texture" id=35]
-[ext_resource path="res://assets/images/Characters/Player/Orange/R_Leg.png" type="Texture" id=36]
-[ext_resource path="res://assets/images/Characters/Player/Purple/R_Leg.png" type="Texture" id=37]
 [ext_resource path="res://assets/images/Weapons/player_Weapons/Katana/Katana_Hilt.png" type="Texture" id=38]
-[ext_resource path="res://assets/images/Characters/Player/White/R_Arm.png" type="Texture" id=39]
-[ext_resource path="res://assets/images/Characters/Player/White/R_Forearm.png" type="Texture" id=40]
-[ext_resource path="res://assets/images/Characters/Player/Green/L_Arm.png" type="Texture" id=41]
-[ext_resource path="res://assets/images/Characters/Player/Purple/R_Thigh.png" type="Texture" id=42]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/L_Forearm.png" type="Texture" id=43]
-[ext_resource path="res://assets/images/Characters/Player/Purple/R_Arm.png" type="Texture" id=44]
 [ext_resource path="res://assets/images/Characters/Player/Blue/L_Leg.png" type="Texture" id=45]
-[ext_resource path="res://assets/images/Characters/Player/Purple/L_Leg.png" type="Texture" id=46]
-[ext_resource path="res://assets/images/Characters/Player/White/R_Thigh.png" type="Texture" id=47]
-[ext_resource path="res://assets/images/Characters/Player/Purple/R_Forearm.png" type="Texture" id=48]
-[ext_resource path="res://assets/images/Characters/Player/Orange/R_Thigh.png" type="Texture" id=49]
-[ext_resource path="res://assets/images/Characters/Player/Green/L_Thigh.png" type="Texture" id=50]
-[ext_resource path="res://assets/images/Characters/Player/Purple/Head.png" type="Texture" id=51]
 [ext_resource path="res://assets/images/Characters/Player/Blue/R_Arm.png" type="Texture" id=52]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/Chest.png" type="Texture" id=53]
-[ext_resource path="res://assets/images/Characters/Player/Purple/L_Forearm.png" type="Texture" id=54]
-[ext_resource path="res://assets/images/Characters/Player/Purple/L_Thigh.png" type="Texture" id=55]
-[ext_resource path="res://assets/images/Characters/Player/Purple/L_Arm.png" type="Texture" id=56]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/R_Thigh.png" type="Texture" id=57]
 [ext_resource path="res://assets/images/Characters/Player/Red/L_Thigh.png" type="Texture" id=58]
 [ext_resource path="res://assets/images/Characters/Player/Red/R_Forearm.png" type="Texture" id=59]
 [ext_resource path="res://assets/images/Characters/Player/Red/L_Forearm.png" type="Texture" id=60]
-[ext_resource path="res://assets/images/Characters/Player/Green/L_Leg.png" type="Texture" id=61]
-[ext_resource path="res://assets/images/Characters/Player/Orange/Head.png" type="Texture" id=62]
 [ext_resource path="res://assets/images/Characters/Player/Red/Chest.png" type="Texture" id=63]
 [ext_resource path="res://assets/images/Characters/Player/Blue/R_Leg.png" type="Texture" id=64]
 [ext_resource path="res://assets/images/Characters/Player/Blue/R_Thigh.png" type="Texture" id=65]
 [ext_resource path="res://assets/images/Characters/Player/Blue/L_Forearm.png" type="Texture" id=66]
-[ext_resource path="res://assets/images/Characters/Player/Orange/L_Leg.png" type="Texture" id=67]
 [ext_resource path="res://assets/images/Characters/Player/Red/Head.png" type="Texture" id=68]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/R_Arm.png" type="Texture" id=69]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/R_Leg.png" type="Texture" id=70]
 [ext_resource path="res://assets/images/Characters/Player/Red/L_Arm.png" type="Texture" id=71]
 [ext_resource path="res://assets/images/Characters/Player/Red/R_Thigh.png" type="Texture" id=72]
 [ext_resource path="res://assets/images/Characters/Player/Blue/Chest.png" type="Texture" id=73]
-[ext_resource path="res://assets/images/Characters/Player/Orange/L_Forearm.png" type="Texture" id=74]
-[ext_resource path="res://assets/images/Characters/Player/Orange/L_Arm.png" type="Texture" id=75]
-[ext_resource path="res://assets/images/Characters/Player/Orange/L_Thigh.png" type="Texture" id=76]
 [ext_resource path="res://assets/images/Characters/Player/Blue/R_Forearm.png" type="Texture" id=77]
 [ext_resource path="res://assets/images/Characters/Player/Red/R_Leg.png" type="Texture" id=78]
 [ext_resource path="res://assets/images/Characters/Player/Red/R_Arm.png" type="Texture" id=79]
-[ext_resource path="res://assets/images/Characters/Player/Green/Head.png" type="Texture" id=80]
 [ext_resource path="res://assets/images/Characters/Player/Blue/L_Thigh.png" type="Texture" id=81]
-[ext_resource path="res://assets/images/Characters/Player/Orange/R_Arm.png" type="Texture" id=82]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/R_Forearm.png" type="Texture" id=83]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/L_Arm.png" type="Texture" id=84]
 [ext_resource path="res://assets/images/Characters/Player/Yellow/L_Thigh.png" type="Texture" id=85]
@@ -89,21 +47,7 @@
 [ext_resource path="res://assets/images/Characters/Player/Yellow/Head.png" type="Texture" id=87]
 [ext_resource path="res://assets/images/Characters/Player/Red/L_Leg.png" type="Texture" id=88]
 [ext_resource path="res://assets/images/Weapons/player_Weapons/Katana/Katana_Blade.png" type="Texture" id=89]
-[ext_resource path="res://assets/images/Characters/Player/White/Head.png" type="Texture" id=90]
 [ext_resource path="res://assets/images/Characters/Player/Blue/L_Arm.png" type="Texture" id=91]
-[ext_resource path="res://assets/images/Characters/Player/White/L_Forearm.png" type="Texture" id=92]
-[ext_resource path="res://assets/images/Characters/Player/White/L_Leg.png" type="Texture" id=93]
-[ext_resource path="res://assets/images/Characters/Player/White/Chest.png" type="Texture" id=94]
-[ext_resource path="res://assets/images/Characters/Player/White/L_Thigh.png" type="Texture" id=95]
-[ext_resource path="res://assets/images/Characters/Player/Green/R_Leg.png" type="Texture" id=96]
-[ext_resource path="res://assets/images/Characters/Player/Green/R_Forearm.png" type="Texture" id=97]
-[ext_resource path="res://assets/images/Characters/Player/Green/R_Thigh.png" type="Texture" id=98]
-[ext_resource path="res://assets/images/Characters/Player/Green/L_Forearm.png" type="Texture" id=99]
-[ext_resource path="res://assets/images/Characters/Player/Green/Chest.png" type="Texture" id=100]
-[ext_resource path="res://assets/images/Characters/Player/White/R_Leg.png" type="Texture" id=101]
-[ext_resource path="res://assets/images/Characters/Player/White/L_Arm.png" type="Texture" id=102]
-[ext_resource path="res://assets/images/Characters/Player/Purple/Chest.png" type="Texture" id=103]
-[ext_resource path="res://assets/images/Characters/Player/Green/R_Arm.png" type="Texture" id=104]
 [ext_resource path="res://assets/scripts/cutscene.gd" type="Script" id=105]
 [ext_resource path="res://assets/images/Characters/Boss_Red/R_Leg.png" type="Texture" id=106]
 [ext_resource path="res://assets/images/Characters/Boss_Red/R_Foot.png" type="Texture" id=107]
@@ -219,9 +163,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_hades_flip"
+} ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -230,9 +177,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_boss_blue_flip"
+} ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -241,9 +191,12 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_boss_red_flip"
+} ]
 }
 tracks/4/type = "method"
 tracks/4/path = NodePath(".")
@@ -457,7 +410,7 @@ tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("Player/audio_player_car:playing")
@@ -518,14 +471,11 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 7.5, 8.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 8.4 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "_enemy_ar_flip"
-}, {
-"args": [  ],
-"method": "_enemy_ar_flip"
+"method": "_hades_flip"
 } ]
 }
 tracks/2/type = "method"
@@ -535,9 +485,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
+"times": PoolRealArray( 8.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_boss_blue_flip"
+} ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -546,11 +499,11 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 8.5 ),
+"times": PoolRealArray( 8.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "_boss_blue_flip"
+"method": "_boss_red_flip"
 } ]
 }
 tracks/4/type = "method"
@@ -560,11 +513,14 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 8.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 7.5, 8.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
-"method": "_hades_flip"
+"method": "_enemy_ar_flip"
+}, {
+"args": [  ],
+"method": "_enemy_ar_flip"
 } ]
 }
 tracks/5/type = "method"
@@ -574,12 +530,9 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 8.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "_boss_red_flip"
-} ]
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Enemy_AR:position")
@@ -1440,15 +1393,12 @@ atlas = ExtResource( 91 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=383]
-atlas = ExtResource( 41 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=199]
-atlas = ExtResource( 75 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=200]
-atlas = ExtResource( 56 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=384]
@@ -1456,7 +1406,6 @@ atlas = ExtResource( 71 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=385]
-atlas = ExtResource( 102 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=386]
@@ -1506,15 +1455,12 @@ atlas = ExtResource( 66 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=388]
-atlas = ExtResource( 99 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=389]
-atlas = ExtResource( 74 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=390]
-atlas = ExtResource( 54 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=164]
@@ -1522,7 +1468,6 @@ atlas = ExtResource( 60 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=391]
-atlas = ExtResource( 92 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=165]
@@ -1572,15 +1517,12 @@ atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=271]
-atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=272]
-atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=273]
-atlas = ExtResource( 30 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=274]
@@ -1588,7 +1530,6 @@ atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=275]
-atlas = ExtResource( 28 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=260]
@@ -1638,15 +1579,12 @@ atlas = ExtResource( 81 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=392]
-atlas = ExtResource( 50 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=393]
-atlas = ExtResource( 76 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=394]
-atlas = ExtResource( 55 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=181]
@@ -1654,7 +1592,6 @@ atlas = ExtResource( 58 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=395]
-atlas = ExtResource( 95 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=168]
@@ -1704,15 +1641,12 @@ atlas = ExtResource( 45 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=396]
-atlas = ExtResource( 61 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=397]
-atlas = ExtResource( 67 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=398]
-atlas = ExtResource( 46 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=179]
@@ -1720,7 +1654,6 @@ atlas = ExtResource( 88 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=399]
-atlas = ExtResource( 93 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=400]
@@ -1770,15 +1703,12 @@ atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=277]
-atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=278]
-atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=279]
-atlas = ExtResource( 31 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=280]
@@ -1786,7 +1716,6 @@ atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=281]
-atlas = ExtResource( 26 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=265]
@@ -1836,15 +1765,12 @@ atlas = ExtResource( 65 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=214]
-atlas = ExtResource( 98 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=401]
-atlas = ExtResource( 49 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=402]
-atlas = ExtResource( 42 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=185]
@@ -1852,7 +1778,6 @@ atlas = ExtResource( 72 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=403]
-atlas = ExtResource( 47 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=170]
@@ -1902,15 +1827,12 @@ atlas = ExtResource( 64 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=404]
-atlas = ExtResource( 96 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=405]
-atlas = ExtResource( 36 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=406]
-atlas = ExtResource( 37 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=183]
@@ -1918,7 +1840,6 @@ atlas = ExtResource( 78 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=213]
-atlas = ExtResource( 101 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=407]
@@ -1968,15 +1889,12 @@ atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=283]
-atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=284]
-atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=285]
-atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=286]
@@ -1984,7 +1902,6 @@ atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=287]
-atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=268]
@@ -2034,15 +1951,12 @@ atlas = ExtResource( 34 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=408]
-atlas = ExtResource( 80 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=409]
-atlas = ExtResource( 62 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=410]
-atlas = ExtResource( 51 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=189]
@@ -2050,7 +1964,6 @@ atlas = ExtResource( 68 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=411]
-atlas = ExtResource( 90 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=172]
@@ -2100,15 +2013,12 @@ atlas = ExtResource( 73 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=412]
-atlas = ExtResource( 100 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=413]
-atlas = ExtResource( 35 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=414]
-atlas = ExtResource( 103 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=187]
@@ -2116,7 +2026,6 @@ atlas = ExtResource( 63 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=415]
-atlas = ExtResource( 94 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=416]
@@ -2195,15 +2104,12 @@ atlas = ExtResource( 52 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=418]
-atlas = ExtResource( 104 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=231]
-atlas = ExtResource( 82 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=232]
-atlas = ExtResource( 44 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=419]
@@ -2211,7 +2117,6 @@ atlas = ExtResource( 79 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=233]
-atlas = ExtResource( 39 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=174]
@@ -2261,15 +2166,12 @@ atlas = ExtResource( 77 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=420]
-atlas = ExtResource( 97 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=421]
-atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=422]
-atlas = ExtResource( 48 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=423]
@@ -2277,7 +2179,6 @@ atlas = ExtResource( 59 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=424]
-atlas = ExtResource( 40 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=425]
@@ -2327,15 +2228,12 @@ atlas = ExtResource( 29 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=289]
-atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=290]
-atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=291]
-atlas = ExtResource( 32 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=292]
@@ -2343,7 +2241,6 @@ atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=293]
-atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 17, 26 )
 
 [sub_resource type="AtlasTexture" id=263]
@@ -2804,7 +2701,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -21 ) ]
+"values": [ Vector2( -2, -21 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Enemy_AR/Upper_Right/Head:rotation_degrees")
@@ -6782,7 +6679,7 @@ animation = "Option1"
 [node name="Upper_Right" type="Node2D" parent="Enemy_AR"]
 
 [node name="Head" type="Node2D" parent="Enemy_AR/Upper_Right"]
-position = Vector2( 0, -21 )
+position = Vector2( -2, -21 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -7555,13 +7452,8 @@ autoplay = "RESET"
 anims/RESET = SubResource( 434 )
 anims/walk = SubResource( 443 )
 
-[node name="Timer_Flip" type="Timer" parent="."]
-wait_time = 0.01
-autostart = true
-
 [node name="audio_car_crash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 192 )
 volume_db = -5.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="Timer_Flip" to="." method="_on_Timer_Flip_timeout"]
