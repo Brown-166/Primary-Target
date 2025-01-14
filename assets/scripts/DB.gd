@@ -1,6 +1,10 @@
 extends Node
 
-var current_save = ""
+var current_save : String = ""
+
+var language : String = ""
+
+var language_selected : bool = false
 
 var con_string : String = "user://"
 
@@ -8,7 +12,9 @@ var con_string : String = "user://"
 
 func _save_DB():
 	var dic_save = {
-		"current_save":current_save
+		"current_save":current_save,
+		"language":language,
+		"language_selected":language_selected
 	}
 	var DB_file = File.new()
 	DB_file.open_encrypted_with_pass(con_string + "DB.save", File.WRITE, "summer")
@@ -25,6 +31,8 @@ func _load_DB():
 #		DB_file.open("./save_files/DB.save", File.READ)
 		var save_line = parse_json(DB_file.get_line())
 		current_save = save_line["current_save"]
+		language = save_line["language"]
+		language_selected = save_line["language_selected"]
 		DB_file.close()
 
 

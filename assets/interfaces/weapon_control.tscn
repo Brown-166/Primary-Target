@@ -264,6 +264,8 @@ grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "USAR CURA"
+align = 1
+valign = 1
 
 [node name="SPACE" type="Sprite" parent="Idle_control/keyboard"]
 position = Vector2( 493, 60 )
@@ -292,7 +294,6 @@ margin_top = 280.0
 margin_right = 416.5
 margin_bottom = 316.0
 grow_horizontal = 2
-grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "PAUSAR"
@@ -308,6 +309,8 @@ grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "ATACAR"
+align = 1
+valign = 1
 
 [node name="Left_Click" type="Sprite" parent="Idle_control/keyboard"]
 position = Vector2( 460, 225 )
@@ -370,7 +373,6 @@ margin_top = 188.0
 margin_right = 401.0
 margin_bottom = 224.0
 grow_horizontal = 2
-grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "ANDAR"
@@ -382,12 +384,9 @@ margin_left = 425.0
 margin_top = 130.0
 margin_right = 540.0
 margin_bottom = 166.0
-grow_horizontal = 2
-grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "PULAR"
-align = 1
 valign = 1
 
 [node name="medkit" type="Label" parent="Idle_control/controller"]
@@ -395,12 +394,12 @@ margin_left = 90.0
 margin_top = 130.0
 margin_right = 297.0
 margin_bottom = 166.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "USAR CURA"
-align = 1
+align = 2
 valign = 1
 
 [node name="pause" type="Label" parent="Idle_control/controller"]
@@ -409,7 +408,7 @@ margin_top = 80.0
 margin_right = 417.0
 margin_bottom = 116.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "PAUSAR"
@@ -421,12 +420,10 @@ margin_left = 413.5
 margin_top = 98.5
 margin_right = 551.5
 margin_bottom = 134.5
-grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "ATACAR"
-align = 1
 valign = 1
 
 [node name="Katana_control" type="Node2D" parent="."]
@@ -478,6 +475,8 @@ grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "BLOQUEAR"
+align = 1
+valign = 1
 
 [node name="Right_Click" type="Sprite" parent="Katana_control/keyboard"]
 position = Vector2( 410, 220 )
@@ -496,6 +495,8 @@ grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "EQUIPAR"
+align = 1
+valign = 1
 
 [node name="controller" type="Node2D" parent="Katana_control"]
 visible = false
@@ -537,6 +538,7 @@ grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "BLOQUEAR"
+valign = 1
 
 [node name="equip" type="Label" parent="Katana_control/controller"]
 margin_left = 122.0
@@ -548,6 +550,8 @@ grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "EQUIPAR"
+align = 2
+valign = 1
 
 [node name="Hammer_control" type="Node2D" parent="."]
 visible = false
@@ -586,9 +590,12 @@ margin_left = 271.5
 margin_top = 141.5
 margin_right = 432.5
 margin_bottom = 177.5
+grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "Martelo"
+align = 1
+valign = 1
 
 [node name="keyboard" type="Node2D" parent="Hammer_control"]
 visible = false
@@ -610,18 +617,24 @@ margin_left = 191.5
 margin_top = 265.0
 margin_right = 352.5
 margin_bottom = 301.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "EQUIPAR"
+align = 1
+valign = 1
 
 [node name="stagger" type="Label" parent="Hammer_control/keyboard"]
 margin_left = 344.5
 margin_top = 265.0
 margin_right = 528.5
 margin_bottom = 301.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "DERRUBAR"
+align = 1
+valign = 1
 
 [node name="controller" type="Node2D" parent="Hammer_control"]
 visible = false
@@ -663,6 +676,7 @@ grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "DERRUBAR"
+valign = 1
 
 [node name="equip" type="Label" parent="Hammer_control/controller"]
 margin_left = 122.0
@@ -674,6 +688,8 @@ grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "EQUIPAR"
+align = 2
+valign = 1
 
 [node name="Katar_control" type="Node2D" parent="."]
 visible = false
@@ -752,18 +768,24 @@ margin_left = 191.5
 margin_top = 265.0
 margin_right = 352.5
 margin_bottom = 301.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "EQUIPAR"
+align = 1
+valign = 1
 
 [node name="dodge" type="Label" parent="Katar_control/keyboard"]
 margin_left = 345.0
 margin_top = 265.0
 margin_right = 529.0
 margin_bottom = 301.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "ESQUIVAR"
+align = 1
+valign = 1
 
 [node name="controller" type="Node2D" parent="Katar_control"]
 visible = false
@@ -826,6 +848,7 @@ grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "ESQUIVAR	"
+valign = 1
 
 [node name="equip" type="Label" parent="Katar_control/controller"]
 margin_left = 122.0
@@ -837,6 +860,8 @@ grow_vertical = 2
 rect_scale = Vector2( 0.6, 0.6 )
 theme = ExtResource( 1 )
 text = "EQUIPAR"
+align = 2
+valign = 1
 
 [node name="Button_change_controller" type="Button" parent="."]
 margin_left = 1186.0
@@ -869,14 +894,17 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource( 18 )
 text = "PRÓXIMO"
+icon_align = 1
 
 [node name="Button_back" type="Button" parent="."]
 margin_left = 50.0
 margin_top = 640.0
 margin_right = 162.0
 margin_bottom = 671.0
+grow_vertical = 0
 theme = ExtResource( 18 )
 text = "VOLTAR"
+icon_align = 1
 
 [node name="Button_quit" type="Button" parent="."]
 anchor_left = 1.0

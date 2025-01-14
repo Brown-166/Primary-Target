@@ -39,23 +39,101 @@ func _ready():
 	
 	$Screen_new_game/Skip_button.visible = false
 	$Screen_new_game/Skip_button.value = 0.1
+	
+	
+	match DB.language:
+		"portuguese":
+			$Screen_Menu/Button_Continue.text = "CONTINUAR"
+			$Screen_Menu/Button_New_Game.text = "NOVO JOGO"
+			$Screen_Menu/Button_Load_Game.text = "CARREGAR JOGO"
+			$Screen_Menu/Button_Credits.text = "CRÉDITOS"
+			$Screen_Menu/Button_Quit.text = "SAIR"
+			$Screen_Menu/Button_Language.text = "IDIOMA"
+			$Screen_Saves/Button_Back.text = "VOLTAR"
+			$Screen_new_game/target_description.text = """Novo contrato selecionado
+			Tipo de contrato: Assassinato
+			Contratante: Anônimo
+			Dificuldade: Médio
+			Recompença: R$500.000,00
+			
+			Alvo principal: Hades
+			Nome real: Frederico Hard
+			Ocupação: Comandante da máfia de São Paulo
+			Situação atual: Fazendo negócios na cidade"""
+			$Screen_new_game/Label_good_hunt.text = "Tenha uma boa caçada"
+		"english":
+			$Screen_Menu/Button_Continue.text = "CONTINUE"
+			$Screen_Menu/Button_New_Game.text = "NEW GAME"
+			$Screen_Menu/Button_Load_Game.text = "LOAD GAME"
+			$Screen_Menu/Button_Credits.text = "CREDITS"
+			$Screen_Menu/Button_Quit.text = "QUIT"
+			$Screen_Menu/Button_Language.text = "LANGUAGE"
+			$Screen_Saves/Button_Back.text = "BACK"
+			$Screen_new_game/target_description.text = """New contract selected
+			Type of contract: Assassination
+			Contractor: Anonymous
+			Dificulty: Medium
+			Reward: $85.000,00
+			
+			Primary target: Hades
+			Real name: Frederico Hard
+			Ocupation: Commander of the Sao Paulo mafia
+			Current status: Doing business in the city"""
+			$Screen_new_game/Label_good_hunt.text = "Have a good hunt"
+		"spanish":
+			$Screen_Menu/Button_Continue.text = "CONTINUAR"
+			$Screen_Menu/Button_New_Game.text = "NUEVO JUEGO"
+			$Screen_Menu/Button_Load_Game.text = "CARGAR JUEGO"
+			$Screen_Menu/Button_Credits.text = "CRÉDITOS"
+			$Screen_Menu/Button_Quit.text = "SALIR"
+			$Screen_Menu/Button_Language.text = "IDIOMA"
+			$Screen_Saves/Button_Back.text = "VOLVER"
+			$Screen_new_game/target_description.text = """Nuevo contrato seleccionado
+			Tipo de contrato: Asesinato
+			Contratista: Anónimo
+			Dificultad: Medio
+			Recompensa: € 80.000,00
+			
+			Objetivo principal: Hades
+			Nombre real: Federico Hard
+			Ocupación: Comandante de la mafia de Sao Paulo
+			Situación actual: Hacer negocios en la ciudad"""
+			$Screen_new_game/Label_good_hunt.text = "Que tengas una buena cacería"
 
 
 
 
 func _physics_process(delta):
 	if DB._load_game("game_1") == false:
-		$Screen_Saves/Button_Save_1.text = "VAZIO"
+		match DB.language:
+			"portuguese":
+				$Screen_Saves/Button_Save_1.text = "VAZIO"
+			"english":
+				$Screen_Saves/Button_Save_1.text = "EMPTY"
+			"spanish":
+				$Screen_Saves/Button_Save_1.text = "VACÍO"
 	else:
 		$Screen_Saves/Button_Save_1.text = "SAVE 1"
 	
 	if DB._load_game("game_2") == false:
-		$Screen_Saves/Button_Save_2.text = "VAZIO"
+		match DB.language:
+			"portuguese":
+				$Screen_Saves/Button_Save_2.text = "VAZIO"
+			"english":
+				$Screen_Saves/Button_Save_2.text = "EMPTY"
+			"spanish":
+				$Screen_Saves/Button_Save_2.text = "VACÍO"
 	else:
 		$Screen_Saves/Button_Save_2.text = "SAVE 2"
 	
 	if DB._load_game("game_3") == false:
-		$Screen_Saves/Button_Save_3.text = "VAZIO"
+		match DB.language:
+			"portuguese":
+				$Screen_Saves/Button_Save_3.text = "VAZIO"
+			"english":
+				$Screen_Saves/Button_Save_3.text = "EMPTY"
+			"spanish":
+				$Screen_Saves/Button_Save_3.text = "VACÍO"
 	else:
 		$Screen_Saves/Button_Save_3.text = "SAVE 3"
 	
@@ -232,6 +310,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			get_tree().change_scene("res://assets/scenes/"+ Global.fase +".tscn")
 	if action == "credits":
 		get_tree().change_scene("res://assets/interfaces/credits.tscn")
+	if action == "language":
+		get_tree().change_scene("res://assets/interfaces/language_select.tscn")
 
 
 
@@ -352,3 +432,19 @@ func _on_Button_Delete_2_mouse_entered():
 
 func _on_Button_Delete_3_mouse_entered():
 	$Screen_Saves/Button_Delete_3.grab_focus()
+
+
+func _on_Button_Language_pressed():
+	$audio_btn.play()
+	action = "language"
+	DB.language_selected = false
+	DB._save_DB()
+	_loading_out()
+
+
+func _on_Button_Language_mouse_entered():
+	$Screen_Menu/Button_Language.grab_focus()
+
+
+func _on_Button_Language_focus_entered():
+	$audio_select.play()

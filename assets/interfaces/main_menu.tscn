@@ -470,6 +470,18 @@ grow_vertical = 0
 theme = ExtResource( 3 )
 text = "Sair"
 
+[node name="Button_Language" type="Button" parent="Screen_Menu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -108.0
+margin_top = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource( 3 )
+text = "IDIOMA"
+
 [node name="Screen_Saves" type="Control" parent="."]
 visible = false
 margin_left = 230.0
@@ -698,11 +710,12 @@ margin_left = -128.0
 margin_top = -160.0
 margin_right = 838.0
 margin_bottom = 227.0
+grow_horizontal = 2
 rect_scale = Vector2( 0.5, 0.5 )
 theme = ExtResource( 4 )
 text = "Novo contrato selecionado
 Tipo de contrato: Assassinato
-Contratante: Anonimo
+Contratante: Anônimo
 Dificuldade: Médio
 Recompença: R$500.000,00
 
@@ -710,6 +723,7 @@ Alvo principal: Hades
 Nome real: Frederico Hard
 Ocupação: Comandante da máfia de São Paulo
 Situação atual: Fazendo negócios na cidade"
+valign = 1
 __meta__ = {
 "_edit_group_": true
 }
@@ -799,6 +813,9 @@ stream = ExtResource( 17 )
 [connection signal="focus_entered" from="Screen_Menu/Button_Quit" to="." method="_on_Button_Quit_focus_entered"]
 [connection signal="mouse_entered" from="Screen_Menu/Button_Quit" to="." method="_on_Button_Quit_mouse_entered"]
 [connection signal="pressed" from="Screen_Menu/Button_Quit" to="." method="_on_Button_Quit_pressed"]
+[connection signal="focus_entered" from="Screen_Menu/Button_Language" to="." method="_on_Button_Language_focus_entered"]
+[connection signal="mouse_entered" from="Screen_Menu/Button_Language" to="." method="_on_Button_Language_mouse_entered"]
+[connection signal="pressed" from="Screen_Menu/Button_Language" to="." method="_on_Button_Language_pressed"]
 [connection signal="focus_entered" from="Screen_Saves/Button_Save_1" to="." method="_on_Button_Save_1_focus_entered"]
 [connection signal="mouse_entered" from="Screen_Saves/Button_Save_1" to="." method="_on_Button_Save_1_mouse_entered"]
 [connection signal="pressed" from="Screen_Saves/Button_Save_1" to="." method="_on_Button_Save_1_pressed"]

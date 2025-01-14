@@ -1,12 +1,8 @@
 extends CanvasLayer
 
 onready var fase = get_parent().name
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = true
 	visible = true
@@ -23,6 +19,107 @@ func _ready():
 	$Button_change_controller.visible = true
 	$Button_change_keyboard.visible = false
 	$Button_back.visible = false
+	DB._load_DB()
+	match DB.language:
+		"portuguese":
+			$Idle_control/keyboard/move/OR.text = "OU"
+			$Idle_control/keyboard/move/Label.text = "ANDAR"
+			$Idle_control/keyboard/medkit.text = "USAR CURA"
+			$Idle_control/keyboard/jump.text = "PULAR"
+			$Idle_control/keyboard/pause.text = "PAUSAR"
+			$Idle_control/keyboard/attack.text = "ATACAR"
+			
+			$Idle_control/controller/move.text = "ANDAR"
+			$Idle_control/controller/medkit.text = "USAR CURA"
+			$Idle_control/controller/jump.text = "PULAR"
+			$Idle_control/controller/pause.text = "PAUSAR"
+			$Idle_control/controller/attack.text = "ATACAR"
+			
+			$Katana_control/keyboard/block.text = "BLOQUEAR"
+			$Katana_control/keyboard/equip.text = "EQUIPAR"
+			$Katana_control/controller/block.text = "BLOQUEAR"
+			$Katana_control/controller/equip.text = "EQUIPAR"
+			
+			$Hammer_control/name.text = "Martelo"
+			$Hammer_control/keyboard/equip.text = "EQUIPAR"
+			$Hammer_control/keyboard/stagger.text = "DERRUBAR"
+			$Hammer_control/controller/equip.text = "EQUIPAR"
+			$Hammer_control/controller/stagger.text = "DERRUBAR"
+			
+			$Katar_control/keyboard/equip.text = "EQUIPAR"
+			$Katar_control/keyboard/dodge.text = "ESQUIVAR"
+			$Katar_control/controller/equip.text = "EQUIPAR"
+			$Katar_control/controller/dodge.text = "ESQUIVAR"
+			
+			$Button_next.text = "PRÓXIMO"
+			$Button_back.text = "VOLTAR"
+			$Button_quit.text = "FECHAR"
+		"english":
+			$Idle_control/keyboard/move/OR.text = "OR"
+			$Idle_control/keyboard/move/Label.text = "MOVE"
+			$Idle_control/keyboard/medkit.text = "USE MEDKIT"
+			$Idle_control/keyboard/jump.text = "JUMP"
+			$Idle_control/keyboard/pause.text = "PAUSE"
+			$Idle_control/keyboard/attack.text = "ATTACK"
+			
+			$Idle_control/controller/move.text = "MOVE"
+			$Idle_control/controller/medkit.text = "USE MEDKIT"
+			$Idle_control/controller/jump.text = "JUMP"
+			$Idle_control/controller/pause.text = "PAUSE"
+			$Idle_control/controller/attack.text = "ATTACK"
+			
+			$Katana_control/keyboard/block.text = "BLOCK"
+			$Katana_control/keyboard/equip.text = "EQUIP"
+			$Katana_control/controller/block.text = "BLOCK"
+			$Katana_control/controller/equip.text = "EQUIP"
+			
+			$Hammer_control/name.text = "Hammer"
+			$Hammer_control/keyboard/equip.text = "EQUIP"
+			$Hammer_control/keyboard/stagger.text = "STAGGER"
+			$Hammer_control/controller/equip.text = "EQUIP"
+			$Hammer_control/controller/stagger.text = "STAGGER"
+			
+			$Katar_control/keyboard/equip.text = "EQUIP"
+			$Katar_control/keyboard/dodge.text = "DODGE"
+			$Katar_control/controller/equip.text = "EQUIP"
+			$Katar_control/controller/dodge.text = "DODGE"
+			
+			$Button_next.text = "NEXT"
+			$Button_back.text = "BACK"
+			$Button_quit.text = "CLOSE"
+		"spanish":
+			$Idle_control/keyboard/move/OR.text = "O"
+			$Idle_control/keyboard/move/Label.text = "CAMINAR"
+			$Idle_control/keyboard/medkit.text = "UTILIZAR CURA"
+			$Idle_control/keyboard/jump.text = "SALTAR"
+			$Idle_control/keyboard/pause.text = "PAUSAR"
+			$Idle_control/keyboard/attack.text = "ATACAR"
+			
+			$Idle_control/controller/move.text = "CAMINAR"
+			$Idle_control/controller/medkit.text = "UTILIZAR CURA"
+			$Idle_control/controller/jump.text = "SALTAR"
+			$Idle_control/controller/pause.text = "PAUSAR"
+			$Idle_control/controller/attack.text = "ATACAR"
+			
+			$Katana_control/keyboard/block.text = "BLOQUEAR"
+			$Katana_control/keyboard/equip.text = "EQUIPAR"
+			$Katana_control/controller/block.text = "BLOQUEAR"
+			$Katana_control/controller/equip.text = "EQUIPAR"
+			
+			$Hammer_control/name.text = "Martillo"
+			$Hammer_control/keyboard/equip.text = "EQUIPAR"
+			$Hammer_control/keyboard/stagger.text = "DERRIBAR"
+			$Hammer_control/controller/equip.text = "EQUIPAR"
+			$Hammer_control/controller/stagger.text = "DERRIBAR"
+			
+			$Katar_control/keyboard/equip.text = "EQUIPAR"
+			$Katar_control/keyboard/dodge.text = "ESQUIVAR"
+			$Katar_control/controller/equip.text = "EQUIPAR"
+			$Katar_control/controller/dodge.text = "ESQUIVAR"
+			
+			$Button_next.text = "PRÓXIMO"
+			$Button_back.text = "VOLVER"
+			$Button_quit.text = "CERRAR"
 	
 	
 	if fase == "Fase_1":

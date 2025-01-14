@@ -15,11 +15,23 @@ func _ready():
 	$Menu/Button_Restart.grab_focus()
 	$Menu/Button_Restart.disabled = false
 	$Menu/Button_Quit.disabled = false
+	DB._load_DB()
+	match DB.language:
+		"portuguese":
+			$Menu/Label.text = "FALHOU NA MISSÃO"
+			$Menu/Button_Restart.text = "RECOMEÇAR"
+			$Menu/Button_Quit.text = "SAIR"
+		"english":
+			$Menu/Label.text = "MISSION FAILED"
+			$Menu/Button_Restart.text = "RESTART"
+			$Menu/Button_Quit.text = "QUIT"
+		"spanish":
+			$Menu/Label.text = "FALLÓ LA MISIÓN"
+			$Menu/Button_Restart.text = "RECOMENZAR"
+			$Menu/Button_Quit.text = "SALIR"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
 func _loading_out():
 	$Menu/Button_Restart.disabled = true
 	$Menu/Button_Quit.disabled = true

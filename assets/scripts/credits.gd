@@ -13,6 +13,23 @@ func _ready():
 	original_position2 = back2.position.x
 	$Menu/Skip_button.visible = false
 	$Menu/Skip_button.value = 0.1
+	DB._load_DB()
+	match DB.language:
+		"portuguese":
+			$Menu/Label.text = """Feito por:
+			Pedro Brown
+			e
+			Samuel Maia"""
+		"english":
+			$Menu/Label.text = """Made by:
+			Pedro Brown
+			and
+			Samuel Maia"""
+		"spanish":
+			$Menu/Label.text = """Hecho por:
+			Pedro Brown
+			y
+			Samuel Maia"""
 	
 	
 func _physics_process(delta):

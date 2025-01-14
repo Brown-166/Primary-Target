@@ -9,6 +9,17 @@ func _ready():
 	$ColorRect.visible = false
 	$Menu/Resume.disabled = false
 	$Menu/Quit.disabled = false
+	DB._load_DB()
+	match DB.language:
+		"portuguese":
+			$Menu/Resume.text = "VOLTAR"
+			$Menu/Quit.text = "SAIR"
+		"english":
+			$Menu/Resume.text = "RESUME"
+			$Menu/Quit.text = "QUIT"
+		"spanish":
+			$Menu/Resume.text = "VOLVER"
+			$Menu/Quit.text = "SALIR"
 
 
 
