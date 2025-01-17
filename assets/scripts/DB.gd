@@ -8,13 +8,16 @@ var language_selected : bool = false
 
 var con_string : String = "user://"
 
+var android_controller : bool = true
+
 
 
 func _save_DB():
 	var dic_save = {
 		"current_save":current_save,
 		"language":language,
-		"language_selected":language_selected
+		"language_selected":language_selected,
+		"android_controller":android_controller
 	}
 	var DB_file = File.new()
 	DB_file.open_encrypted_with_pass(con_string + "DB.save", File.WRITE, "summer")
@@ -33,6 +36,7 @@ func _load_DB():
 		current_save = save_line["current_save"]
 		language = save_line["language"]
 		language_selected = save_line["language_selected"]
+		android_controller = save_line["android_controller"]
 		DB_file.close()
 
 

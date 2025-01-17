@@ -13,7 +13,7 @@ func _ready():
 	Global.life = 100
 	Global.stamina = 100
 	$Menu/Button_Restart.grab_focus()
-	$Menu/Button_Continue.disabled = true
+	$Menu/Button_Continue.disabled = false
 	$Menu/Button_Restart.disabled = false
 	$Menu/Button_Quit.disabled = false
 	DB._load_DB()
@@ -49,7 +49,12 @@ func _loading_out():
 func _on_Button_Restart_pressed():
 	$audio_btn.play()
 	DB._load_game(DB.current_save)
-	Global.fase = "Fase_1"
+	Global.life = 100
+	Global.stamina = 100
+	Global.medKit = 1
+	Global.weapon = "katana"
+	Global.fase = "cutscene_1"
+	Global.arsenal = ["katana", "", ""]
 	action = "restart"
 	_loading_out()
 
@@ -70,7 +75,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if action == "restart":
 		Global.trys = 3
 		DB._save_new_game(DB.current_save)
-		get_tree().change_scene("res://assets/scenes/Fase_1.tscn")
+		get_tree().change_scene("res://assets/cutscenes/cutscene_1.tscn")
 	if action == "quit":
 		get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
 

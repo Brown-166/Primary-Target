@@ -6004,9 +6004,6 @@ script = ExtResource( 22 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 21 )]
-visible = false
-
 [node name="Skip_button" type="TextureProgress" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -6021,6 +6018,9 @@ texture_under = ExtResource( 24 )
 texture_progress = ExtResource( 23 )
 fill_mode = 4
 nine_patch_stretch = true
+
+[node name="pause_menu" parent="." instance=ExtResource( 21 )]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"
@@ -6631,7 +6631,7 @@ __meta__ = {
 position = Vector2( -11, 0 )
 frames = SubResource( 38 )
 animation = "on_off"
-frame = 5
+frame = 9
 playing = true
 
 [node name="trash_can" type="Sprite" parent="background4/poles/pole/pole2"]

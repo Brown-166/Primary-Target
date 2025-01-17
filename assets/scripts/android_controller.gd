@@ -2,8 +2,10 @@ extends CanvasLayer
 
 
 
-
 func _ready():
+	DB._load_DB()
+	if DB.android_controller == true:
+		self.visible = true
 	$Control/Button_Katana.visible = false
 	$Control/Button_Hammer.visible = false
 	$Control/Button_Katar.visible = false
@@ -22,6 +24,10 @@ func _ready():
 
 
 func _physics_process(delta):
+	if DB.android_controller == true:
+		self.visible = true
+	else:
+		self.visible = false
 	if Global.fase in ["Fase_1", "Fase_3", "Fase_4", "Fase_6"]:
 		$"Control/Virtual joystick".visible = true
 		$Control/Button_Right.visible = false

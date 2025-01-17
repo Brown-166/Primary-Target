@@ -1500,6 +1500,7 @@ show_behind_parent = true
 scale = Vector2( 6, 6 )
 frames = SubResource( 23 )
 animation = "sonar"
+frame = 2
 playing = true
 
 [node name="Area2D_sonar" type="Area2D" parent="CanvasLayer/minimap/player"]

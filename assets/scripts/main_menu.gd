@@ -242,6 +242,7 @@ func _on_Button_Save_1_pressed():
 		Global.fase = "cutscene_1"
 		Global.weapon = "katana"
 		Global.arsenal = ["katana", "", ""]
+		Global.trys = 3
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -261,6 +262,7 @@ func _on_Button_Save_2_pressed():
 		Global.fase = "cutscene_1"
 		Global.weapon = "katana"
 		Global.arsenal = ["katana", "", ""]
+		Global.trys = 3
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":
@@ -280,6 +282,7 @@ func _on_Button_Save_3_pressed():
 		Global.fase = "cutscene_1"
 		Global.weapon = "katana"
 		Global.arsenal = ["katana", "", ""]
+		Global.trys = 3
 		DB._save_new_game(DB.current_save)
 		_loading_out()
 	if action == "load game":

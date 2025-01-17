@@ -185,7 +185,8 @@ func _physics_process(delta):
 		
 		if $CanvasLayer/Skip_button.value == 100:
 			skip = true
-			$AnimationPlayer.play("loading_out")
+	else:
+		$AnimationPlayer.play("loading_out")
 
 
 

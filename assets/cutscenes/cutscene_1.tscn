@@ -6458,9 +6458,6 @@ boss_red_flip = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 194 )]
-visible = false
-
 [node name="Skip_button" type="TextureProgress" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -6475,6 +6472,9 @@ texture_under = ExtResource( 195 )
 texture_progress = ExtResource( 196 )
 fill_mode = 4
 nine_patch_stretch = true
+
+[node name="pause_menu" parent="." instance=ExtResource( 194 )]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"
