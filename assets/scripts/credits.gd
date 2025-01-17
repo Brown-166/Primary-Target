@@ -11,8 +11,7 @@ var skip = false
 func _ready():
 	original_position1 = back1.position.x
 	original_position2 = back2.position.x
-	$Menu/Skip_button.visible = false
-	$Menu/Skip_button.value = 0.1
+	$Menu/Button_Menu.grab_focus()
 	DB._load_DB()
 	match DB.language:
 		"portuguese":
@@ -20,16 +19,19 @@ func _ready():
 			Pedro Brown
 			e
 			Samuel Maia"""
+			$Menu/Button_Menu.text = "MENU"
 		"english":
 			$Menu/Label.text = """Made by:
 			Pedro Brown
 			and
 			Samuel Maia"""
+			$Menu/Button_Menu.text = "MENU"
 		"spanish":
 			$Menu/Label.text = """Hecho por:
 			Pedro Brown
 			y
 			Samuel Maia"""
+			$Menu/Button_Menu.text = "MENÚ"
 	
 	
 func _physics_process(delta):
@@ -39,28 +41,23 @@ func _physics_process(delta):
 		back1.position.x = original_position1
 	if back2.position.x <= original_position1:
 		back2.position.x = original_position2
-	
-	if skip == false:
-		if Input.is_action_pressed("space"):
-			$Menu/Skip_button.value *= 1.1
-		else:
-			if $Menu/Skip_button.value > 0.1:
-				$Menu/Skip_button.value /= 1.1
-		
-		if $Menu/Skip_button.value < 0.1:
-			$Menu/Skip_button.value = 0.1
-		
-		if $Menu/Skip_button.value == 0.1:
-			$Menu/Skip_button.visible = false
-		else:
-			$Menu/Skip_button.visible = true
-		
-		if $Menu/Skip_button.value == 100:
-			skip = true
-			$AnimationPlayer.play("load_out")
 
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if skip == true:
 		get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+
+
+func _on_Button_Menu_pressed():
+	$audio_btn.play()
+	skip = true
+	$AnimationPlayer.play("load_out")
+
+
+func _on_Button_Menu_focus_entered():
+	$audio_select.play()
+
+
+func _on_Button_Menu_mouse_entered():
+	$Menu/Button_Menu.grab_focus()

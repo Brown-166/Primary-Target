@@ -46,7 +46,8 @@ func _save():
 		"medKit":Global.medKit,
 		"weapon":Global.weapon,
 		"fase":Global.fase,
-		"arsenal":Global.arsenal
+		"arsenal":Global.arsenal,
+		"trys":Global.trys
 	}
 	return dic_save
 
@@ -73,4 +74,5 @@ func _load_game(save):
 		Global.weapon = save_line["weapon"]
 		Global.fase = save_line["fase"]
 		Global.arsenal = save_line["arsenal"]
+		Global.trys = save_line["trys"]
 		game_file.close()

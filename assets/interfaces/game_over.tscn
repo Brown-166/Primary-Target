@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/themes/pause_menu_btn.tres" type="Theme" id=1]
 [ext_resource path="res://assets/scripts/game_over.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/themes/label.tres" type="Theme" id=5]
 [ext_resource path="res://assets/audios/menu_select.MP3" type="AudioStream" id=6]
 [ext_resource path="res://assets/audios/pause_btn.MP3" type="AudioStream" id=7]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=8]
+[ext_resource path="res://assets/images/UI/android_controller/ad_icon.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=2]
 resource_name = "loading_in"
@@ -86,15 +88,32 @@ text = "FALHOU NA MISSÃO"
 align = 1
 valign = 1
 
+[node name="Button_Continue" type="Button" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.5
+margin_top = 64.5
+margin_right = 93.5
+margin_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 1 )
+text = "CONTINUAR"
+icon = ExtResource( 9 )
+icon_align = 2
+expand_icon = true
+
 [node name="Button_Restart" type="Button" parent="Menu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -75.0
-margin_top = 55.0
-margin_right = 75.0
-margin_bottom = 85.0
+margin_left = -83.0
+margin_top = 134.0
+margin_right = 83.0
+margin_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource( 1 )
@@ -106,12 +125,25 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -75.0
-margin_top = 115.0
+margin_top = 195.0
 margin_right = 75.0
-margin_bottom = 145.0
+margin_bottom = 226.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource( 1 )
 text = "SAIR"
+
+[node name="Label_trys" type="Label" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 128.5
+margin_top = 62.0
+margin_right = 197.5
+margin_bottom = 98.0
+theme = ExtResource( 5 )
+text = "3/3"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"
@@ -124,8 +156,14 @@ stream = ExtResource( 6 )
 [node name="audio_btn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 8 )
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+
+[connection signal="pressed" from="Menu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
 [connection signal="focus_entered" from="Menu/Button_Restart" to="." method="_on_Button_Restart_focus_entered"]
 [connection signal="pressed" from="Menu/Button_Restart" to="." method="_on_Button_Restart_pressed"]
 [connection signal="focus_entered" from="Menu/Button_Quit" to="." method="_on_Button_Quit_focus_entered"]
 [connection signal="pressed" from="Menu/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]

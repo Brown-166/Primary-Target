@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/images/Fase_4/yellow_lane.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/Fase_4/ground.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_off.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_on.png" type="Texture" id=12]
+[ext_resource path="res://assets/interfaces/android_controller.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=6]
 resource_name = "game_over"
@@ -102,6 +103,8 @@ texture_progress = ExtResource( 12 )
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 wait_time = 5.0
+
+[node name="android_controller" parent="." instance=ExtResource( 13 )]
 
 [node name="pause_menu" parent="." instance=ExtResource( 10 )]
 visible = false

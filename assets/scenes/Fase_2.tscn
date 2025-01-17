@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/images/Fase_3/rail_road.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_3/grass-dirt.png" type="Texture" id=14]
 [ext_resource path="res://assets/audios/bullet_train_outside.MP3" type="AudioStream" id=15]
-[ext_resource path="res://assets/interfaces/weapon_control.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/interfaces/android_controller.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Animation" id=19]
 resource_name = "game_over"
@@ -85,10 +85,9 @@ bullet_hole_texture = ExtResource( 11 )
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 5 )]
 
-[node name="pause_menu" parent="." instance=ExtResource( 3 )]
-visible = false
+[node name="android_controller" parent="." instance=ExtResource( 17 )]
 
-[node name="weapon_control" parent="." instance=ExtResource( 16 )]
+[node name="pause_menu" parent="." instance=ExtResource( 3 )]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

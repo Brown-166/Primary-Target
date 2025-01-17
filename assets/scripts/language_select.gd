@@ -9,6 +9,13 @@ func _ready():
 		get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
 	else:
 		$portuguese.grab_focus()
+		match DB.language:
+			"portuguese":
+				$Label.text = "SELECIONAR IDIOMA:"
+			"english":
+				$Label.text = "SELECT LANGUAGE:"
+			"spanish":
+				$Label.text = "SELECCIONE IDIOMA:"
 
 
 

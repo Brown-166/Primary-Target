@@ -48,8 +48,6 @@ var city_original_positon : Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
 
 
 
-
-
 func _enemy_ar_flip():
 	if enemy_ar_flip == false:
 		enemy_ar_flip = true
@@ -136,6 +134,14 @@ func _ready():
 		for i in city.size():
 			city_original_positon[i] = city[i].position.x
 	
+	if Global.fase == "cutscene_7":
+		match DB.language:
+			"portuguese":
+				$CanvasLayer/Label.text = "MISSÃO CUMPRIDA"
+			"english":
+				$CanvasLayer/Label.text = "MISSION ACCOMPLISHED"
+			"spanish":
+				$CanvasLayer/Label.text = "MISIÓN CUMPLIDA"
 	
 	$CanvasLayer/Skip_button.visible = false
 	$CanvasLayer/Skip_button.value = 0.1

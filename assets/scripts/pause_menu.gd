@@ -5,7 +5,9 @@ var action
 
 
 func _ready():
-	visible = false
+	visible = true
+	$Touch_Button.visible = true
+	$Menu.visible = false
 	$ColorRect.visible = false
 	$Menu/Resume.disabled = false
 	$Menu/Quit.disabled = false
@@ -28,7 +30,7 @@ func _unhandled_input(event):
 	if get_tree().paused == false:
 		if event.is_action_pressed("ui_cancel") || event.is_action_pressed("ui_pause"):
 			$Menu/Resume.grab_focus()
-			visible = true
+			$Menu.visible = true
 			$audio_btn.play()
 			get_tree().paused = true
 
@@ -42,7 +44,7 @@ func _loading_out():
 func _on_Resume_pressed():
 	$audio_btn.play()
 	action = "resume"
-	visible = false
+	$Menu.visible = false
 	get_tree().paused = false
 
 
@@ -58,7 +60,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Resume_focus_entered():
-	if visible == true:
+	if $Menu.visible == true:
 		$audio_select.play()
 
 

@@ -33,6 +33,9 @@ var arsenal = ["katana", "", ""]
 var motorcycle_speed
 
 
+var trys : int = 3
+
+
 func _ready():
 	pass
 func _physics_process(delta):

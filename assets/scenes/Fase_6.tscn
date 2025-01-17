@@ -14,9 +14,9 @@
 [ext_resource path="res://assets/images/Fase_6/wall_1.png" type="Texture" id=12]
 [ext_resource path="res://assets/images/Fase_6/cabin.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/Fase_6/wall_3.png" type="Texture" id=14]
+[ext_resource path="res://assets/interfaces/android_controller.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/characters/Enemy_Short_Range.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/characters/Enemy_Long_Range.tscn" type="PackedScene" id=17]
-[ext_resource path="res://assets/interfaces/weapon_control.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=26]
 resource_name = "game_over"
@@ -172,10 +172,9 @@ anims/loading_out = SubResource( 28 )
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource( 11 )]
 
-[node name="pause_menu" parent="." instance=ExtResource( 7 )]
-visible = false
+[node name="android_controller" parent="." instance=ExtResource( 15 )]
 
-[node name="weapon_control" parent="." instance=ExtResource( 18 )]
+[node name="pause_menu" parent="." instance=ExtResource( 7 )]
 visible = false
 
 [node name="background_dark" type="Node2D" parent="."]
