@@ -1,0 +1,294 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/images/Fase_4/yellow_lane.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/Fase_4/ground.png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scripts/Fase_4.gd" type="Script" id=4]
+[ext_resource path="res://assets/characters/Boss_Blue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/images/Fase_2/bullet_train_center.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Fase_1/brick_wall_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Fase_2/city_1_F2.png" type="Texture" id=8]
+[ext_resource path="res://assets/interfaces/hud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/interfaces/pause_menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_off.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Characters/Boss_Blue/life_bar_on.png" type="Texture" id=12]
+[ext_resource path="res://assets/interfaces/android_controller.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Animation" id=6]
+resource_name = "game_over"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "loading_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "loading_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 25 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 640, 25 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 640, 25 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5, 360 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 640, 5 )
+
+[node name="Fase_4" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="hud" parent="CanvasLayer" instance=ExtResource( 9 )]
+
+[node name="ProgressBar" type="TextureProgress" parent="CanvasLayer"]
+anchor_left = 0.253
+anchor_top = 0.975
+anchor_right = 1.242
+anchor_bottom = 1.025
+margin_left = -316.84
+margin_top = -26.0
+margin_right = -949.76
+margin_bottom = -44.0001
+rect_scale = Vector2( 2, 2 )
+max_value = 250.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 5.0
+
+[node name="android_controller" parent="." instance=ExtResource( 13 )]
+
+[node name="pause_menu" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loading_in"
+anims/game_over = SubResource( 6 )
+anims/loading_in = SubResource( 7 )
+anims/loading_out = SubResource( 8 )
+
+[node name="back" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -10
+
+[node name="city" type="Sprite" parent="back"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="brick_wall" type="Sprite" parent="back"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="back"]
+position = Vector2( 0, 81 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ground" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -10
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="ground0" type="Sprite" parent="ground"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ground1" type="Sprite" parent="ground"]
+position = Vector2( 25, -25 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ground" type="Sprite" parent="ground/ground1"]
+show_behind_parent = true
+position = Vector2( -40, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ground2" type="Sprite" parent="ground"]
+position = Vector2( 10, -50 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ground" type="Sprite" parent="ground/ground2"]
+show_behind_parent = true
+position = Vector2( -40, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ground3" type="Sprite" parent="ground"]
+position = Vector2( -63.5, 243 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 98.5, -318 )
+
+[node name="ground" type="Sprite" parent="ground/ground3"]
+show_behind_parent = true
+position = Vector2( 58.5, -318 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ground4" type="Sprite" parent="ground"]
+position = Vector2( 20, -100 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ground4" type="Sprite" parent="ground/ground4"]
+show_behind_parent = true
+position = Vector2( -40, 0 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Layers" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Layer_4" type="Area2D" parent="Layers"]
+position = Vector2( 0, 470 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_4"]
+position = Vector2( 640, 25 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_3" type="Area2D" parent="Layers"]
+position = Vector2( 0, 520 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_3"]
+position = Vector2( 640, 25 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_2" type="Area2D" parent="Layers"]
+position = Vector2( 0, 570 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_2"]
+position = Vector2( 640, 25 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_1" type="Area2D" parent="Layers"]
+position = Vector2( 0, 620 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_1"]
+position = Vector2( 640, 25 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_0" type="Area2D" parent="Layers"]
+position = Vector2( 0, 670 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layers/Layer_0"]
+position = Vector2( 640, 25 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_mask = 6
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -5, 360 )
+shape = SubResource( 4 )
+
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1285, 360 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 640, 725 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 640, 445 )
+shape = SubResource( 5 )
+
+[node name="Camera_Fase_4" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Boss_Blue" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1120, 525 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 630, 525 )
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

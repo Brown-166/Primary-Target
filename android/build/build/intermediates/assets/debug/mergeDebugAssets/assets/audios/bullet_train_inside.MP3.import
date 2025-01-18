@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bullet_train_inside.MP3-e2baee28da0602358e1e98f1f646a9df.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/bullet_train_inside.MP3"
+dest_files=[ "res://.import/bullet_train_inside.MP3-e2baee28da0602358e1e98f1f646a9df.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

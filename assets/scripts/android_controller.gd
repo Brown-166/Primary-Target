@@ -30,12 +30,14 @@ func _physics_process(delta):
 		self.visible = false
 	if Global.fase in ["Fase_1", "Fase_3", "Fase_4", "Fase_6"]:
 		$"Control/Virtual joystick".visible = true
+		$"Control/Virtual joystick".rect_position = Vector2(50, 470)
 		$Control/Button_Right.visible = false
 		$Control/Button_Left.visible = false
 		$Control/Button_Jump.visible = false
 		$Control/Button_Attack.visible = true
 	elif Global.fase == "Fase_2":
 		$"Control/Virtual joystick".visible = false
+		$"Control/Virtual joystick".rect_position = Vector2(0, 0)
 		$Control/Button_Right.visible = true
 		$Control/Button_Right.position = Vector2(280, 510)
 		$Control/Button_Left.visible = true
@@ -44,6 +46,7 @@ func _physics_process(delta):
 		$Control/Button_Attack.visible = true
 	elif Global.fase == "Fase_5":
 		$"Control/Virtual joystick".visible = false
+		$"Control/Virtual joystick".rect_position = Vector2(0, 0)
 		$Control/Button_Right.visible = true
 		$Control/Button_Right.position = Vector2(850, 545)
 		$Control/Button_Left.visible = true

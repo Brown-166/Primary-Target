@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dodge.MP3-c6809768fecfcb6ae879df2dcd83594e.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/dodge.MP3"
+dest_files=[ "res://.import/dodge.MP3-c6809768fecfcb6ae879df2dcd83594e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

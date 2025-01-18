@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Boss_Red_death.MP3-6e5a003de8a08e7ce09405e99f1c3e5a.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/Boss_Red_death.MP3"
+dest_files=[ "res://.import/Boss_Red_death.MP3-6e5a003de8a08e7ce09405e99f1c3e5a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

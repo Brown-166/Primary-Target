@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/scripts/language_select.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/label.tres" type="Theme" id=2]
+[ext_resource path="res://assets/images/UI/language_select/USA.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/UI/language_select/Spanish.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/UI/language_select/Brasil.png" type="Texture" id=5]
+[ext_resource path="res://assets/audios/menu_select.MP3" type="AudioStream" id=6]
+[ext_resource path="res://assets/audios/menu_btn.MP3" type="AudioStream" id=7]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.933333, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.933333, 1, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.105882, 0.109804, 0, 1 )
+
+[sub_resource type="Theme" id=1]
+Button/styles/focus = SubResource( 5 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+
+[node name="language_select" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.027451, 0.027451, 0.027451, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -184.0
+margin_top = 72.0
+margin_right = 184.0
+margin_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 2 )
+text = "SELECIONAR IDIOMA:"
+align = 1
+valign = 1
+
+[node name="portuguese" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.5
+margin_top = -216.5
+margin_right = 108.5
+margin_bottom = -105.5
+theme = SubResource( 1 )
+icon = ExtResource( 5 )
+icon_align = 1
+
+[node name="english" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.5
+margin_top = -55.5
+margin_right = 108.5
+margin_bottom = 55.5
+theme = SubResource( 1 )
+icon = ExtResource( 3 )
+icon_align = 1
+
+[node name="spanish" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.5
+margin_top = 105.5
+margin_right = 108.5
+margin_bottom = 216.5
+theme = SubResource( 1 )
+icon = ExtResource( 4 )
+icon_align = 1
+
+[node name="audio_select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="audio_btn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[connection signal="focus_entered" from="portuguese" to="." method="_on_portuguese_focus_entered"]
+[connection signal="mouse_entered" from="portuguese" to="." method="_on_portuguese_mouse_entered"]
+[connection signal="pressed" from="portuguese" to="." method="_on_portuguese_pressed"]
+[connection signal="focus_entered" from="english" to="." method="_on_english_focus_entered"]
+[connection signal="mouse_entered" from="english" to="." method="_on_english_mouse_entered"]
+[connection signal="pressed" from="english" to="." method="_on_english_pressed"]
+[connection signal="focus_entered" from="spanish" to="." method="_on_spanish_focus_entered"]
+[connection signal="mouse_entered" from="spanish" to="." method="_on_spanish_mouse_entered"]
+[connection signal="pressed" from="spanish" to="." method="_on_spanish_pressed"]

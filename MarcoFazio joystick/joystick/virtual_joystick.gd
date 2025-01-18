@@ -118,7 +118,6 @@ func _update_joystick(touch_position: Vector2) -> void:
 	if vector.length_squared() > deadzone_size * deadzone_size:
 		_pressed = true
 		_output = (vector - (vector.normalized() * deadzone_size)) / (clampzone_size - deadzone_size)
-		print(_output)
 	else:
 		_pressed = false
 		_output = Vector2.ZERO
