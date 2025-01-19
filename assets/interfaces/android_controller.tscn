@@ -22,7 +22,6 @@
 [ext_resource path="res://MarcoFazio joystick/joystick/virtual_joystick.tscn" type="PackedScene" id=20]
 
 [node name="android_controller" type="CanvasLayer"]
-visible = false
 script = ExtResource( 19 )
 
 [node name="Control" type="Control" parent="."]
@@ -38,7 +37,7 @@ joystick_mode = 1
 visibility_mode = 1
 
 [node name="Button_Right" type="TouchScreenButton" parent="Control"]
-position = Vector2( 850, 545 )
+position = Vector2( 950, 545 )
 scale = Vector2( 4, 4 )
 normal = ExtResource( 16 )
 pressed = ExtResource( 12 )
@@ -46,7 +45,7 @@ action = "ui_right"
 visibility_mode = 1
 
 [node name="Button_Left" type="TouchScreenButton" parent="Control"]
-position = Vector2( 430, 689 )
+position = Vector2( 330, 689 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
 normal = ExtResource( 16 )
@@ -61,39 +60,6 @@ scale = Vector2( 4, 4 )
 normal = ExtResource( 16 )
 pressed = ExtResource( 12 )
 action = "space"
-visibility_mode = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Button_Katana" type="TouchScreenButton" parent="Control"]
-position = Vector2( 938, 38 )
-scale = Vector2( 4, 4 )
-normal = ExtResource( 14 )
-pressed = ExtResource( 13 )
-action = "katana"
-visibility_mode = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Button_Hammer" type="TouchScreenButton" parent="Control"]
-position = Vector2( 1052, 38 )
-scale = Vector2( 4, 4 )
-normal = ExtResource( 11 )
-pressed = ExtResource( 18 )
-action = "hammer"
-visibility_mode = 1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Button_Katar" type="TouchScreenButton" parent="Control"]
-position = Vector2( 1166, 38 )
-scale = Vector2( 4, 4 )
-normal = ExtResource( 10 )
-pressed = ExtResource( 1 )
-action = "katar"
 visibility_mode = 1
 __meta__ = {
 "_edit_lock_": true
@@ -149,6 +115,43 @@ scale = Vector2( 3, 3 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 3 )
 action = "dodge"
+visibility_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="weapon_select" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button_Katana" type="TouchScreenButton" parent="Control/weapon_select"]
+position = Vector2( 938, 38 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 13 )
+action = "katana"
+visibility_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button_Hammer" type="TouchScreenButton" parent="Control/weapon_select"]
+position = Vector2( 1052, 38 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 18 )
+action = "hammer"
+visibility_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button_Katar" type="TouchScreenButton" parent="Control/weapon_select"]
+position = Vector2( 1166, 38 )
+scale = Vector2( 4, 4 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 1 )
+action = "katar"
 visibility_mode = 1
 __meta__ = {
 "_edit_lock_": true
