@@ -10,6 +10,7 @@ var arsenal
 var trys
 
 var video_opened = false
+var rewarded = false
 
 func _ready():
 	get_tree().paused = false
@@ -114,11 +115,12 @@ func _on_AdMob_rewarded_video_loaded():
 
 
 func _on_AdMob_rewarded_video_opened():
+	$Menu/Button_Continue.text = "Open"
 	video_opened = true
 
 
 func _on_AdMob_rewarded_video_closed():
-	if video_opened == true:
+	if video_opened == true && rewarded == true:
 		Global.medKit = medkit
 		Global.fase = fase
 		Global.arsenal = arsenal
@@ -126,3 +128,8 @@ func _on_AdMob_rewarded_video_closed():
 		DB._save_new_game(DB.current_save)
 		action = "continue"
 		_loading_out()
+
+
+func _on_AdMob_rewarded(currency, amount):
+	$Menu/Button_Restart.text = "reward"
+	rewarded = true

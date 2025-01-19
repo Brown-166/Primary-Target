@@ -173,7 +173,7 @@ stream = ExtResource( 7 )
 
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 8 )
-rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+rewarded_id = "ca-app-pub-7251668932872768/3464886721"
 
 [connection signal="pressed" from="Menu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
 [connection signal="focus_entered" from="Menu/Button_Restart" to="." method="_on_Button_Restart_focus_entered"]
@@ -181,6 +181,7 @@ rewarded_id = "ca-app-pub-3940256099942544/5224354917"
 [connection signal="focus_entered" from="Menu/Button_Quit" to="." method="_on_Button_Quit_focus_entered"]
 [connection signal="pressed" from="Menu/Button_Quit" to="." method="_on_Button_Quit_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
 [connection signal="rewarded_video_closed" from="AdMob" to="." method="_on_AdMob_rewarded_video_closed"]
 [connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
 [connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
