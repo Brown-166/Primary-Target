@@ -335,6 +335,7 @@ func _physics_process(delta):
 			if dead_var == false:
 				$Body/Animation_Full.play(ANI_dead)
 			Global.dead = true
+			DB._save_new_game(DB.current_save)
 
 
 

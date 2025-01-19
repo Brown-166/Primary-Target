@@ -113,6 +113,7 @@ func _physics_process(delta):
 		$motorcycle/tire_back.playing = false
 		$motorcycle/tire_front.playing = false
 		$Audio_Running.stop()
+		DB._save_new_game(DB.current_save)
 
 func _on_Area2D_Player_motorcycle_area_entered(area):
 	if area.name == "Area2D_car":

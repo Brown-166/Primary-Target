@@ -79,6 +79,7 @@ func _on_Resume_pressed():
 func _on_Quit_pressed():
 	$audio_btn.play()
 	action = "quit"
+	DB._save_new_game(DB.current_save)
 	_loading_out()
 
 

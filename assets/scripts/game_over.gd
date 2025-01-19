@@ -14,6 +14,7 @@ var rewarded = false
 
 func _ready():
 	get_tree().paused = false
+	DB._load_game(DB.current_save)
 	
 	medkit = Global.medKit
 	fase = Global.fase
@@ -106,30 +107,28 @@ func _on_Button_Continue_pressed():
 
 func _on_AdMob_rewarded_video_failed_to_load(error_code):
 	$Menu/Label_error_video.visible = true
-	$Menu/Label_error_video.text = error_code
+	$Menu/Label_error_video.text = "The AD could not be loaded. " + String(error_code)
 
 
 func _on_AdMob_rewarded_video_loaded():
-	$Menu/Label.text = "Load"
 	admob.show_rewarded_video()
 
 
 func _on_AdMob_rewarded_video_opened():
-	$Menu/Button_Continue.text = "Open"
 	video_opened = true
 
 
 func _on_AdMob_rewarded_video_closed():
 	if video_opened == true && rewarded == true:
+		trys -= 1
 		Global.medKit = medkit
 		Global.fase = fase
 		Global.arsenal = arsenal
-		Global.trys = trys - 1
+		Global.trys = trys
 		DB._save_new_game(DB.current_save)
 		action = "continue"
 		_loading_out()
 
 
 func _on_AdMob_rewarded(currency, amount):
-	$Menu/Button_Restart.text = "reward"
 	rewarded = true
