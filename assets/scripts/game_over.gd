@@ -31,7 +31,7 @@ func _ready():
 	Global.trys = 3
 	DB._save_new_game(DB.current_save)
 	
-	$Menu/Button_Restart.grab_focus()
+	$Menu/Button_Continue.grab_focus()
 	$Menu/Button_Continue.disabled = false
 	$Menu/Button_Restart.disabled = false
 	$Menu/Button_Quit.disabled = false
@@ -55,7 +55,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	$Menu/Label_trys.text = String(Global.trys) + "/3"
+	$Menu/Label_trys.text = String(trys) + "/3"
 
 
 func _loading_out():
