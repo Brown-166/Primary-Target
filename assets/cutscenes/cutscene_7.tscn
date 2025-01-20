@@ -7416,8 +7416,12 @@ margin_left = -172.5
 margin_top = -18.0
 margin_right = 172.5
 margin_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource( 125 )
 text = "MISSÃO CUMPRIDA"
+align = 1
+valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "loading_in"

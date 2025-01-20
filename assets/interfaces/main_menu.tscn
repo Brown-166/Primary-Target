@@ -95,7 +95,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "new_game"
-length = 10.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Screen_Menu:visible")
 tracks/0/interp = 1
@@ -181,31 +181,31 @@ tracks/6/keys = {
 "values": [ true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Screen_new_game/loading_text:text")
+tracks/7/path = NodePath("Screen_new_game/target_picture:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ...", "Carregando .", "Carregando ..", "Carregando ..." ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Screen_new_game/target_picture:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Screen_new_game/target_picture:rect_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 19, 19 ), Vector2( 220, 330 ) ]
+}
 tracks/9/type = "value"
-tracks/9/path = NodePath("Screen_new_game/target_picture:rect_size")
+tracks/9/path = NodePath("Screen_new_game/target_picture:rect_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -214,34 +214,34 @@ tracks/9/keys = {
 "times": PoolRealArray( 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 19, 19 ), Vector2( 220, 330 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Screen_new_game/target_picture:rect_scale")
+tracks/10/path = NodePath("Screen_new_game/target_description:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 3, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("Screen_new_game/target_description:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath("Screen_new_game/target_description:text")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
 tracks/12/type = "value"
-tracks/12/path = NodePath("Screen_new_game/target_description:text")
+tracks/12/path = NodePath("Screen_new_game/target_description:rect_scale")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -249,20 +249,11 @@ tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ "", "Novo contrato selecionado
-Tipo de contrato: Assassinato
-Contratante: Anonimo
-Dificuldade: Médio
-Recompença: R$500.000,00
-
-Alvo principal: Hades
-Nome real: Frederico Hard
-Ocupação: Comandante da máfia de São Paulo
-Situação atual: Fazendo negócios na cidade" ]
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Screen_new_game/target_description:rect_scale")
+tracks/13/path = NodePath("Screen_new_game/target_description:rect_size")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -271,79 +262,105 @@ tracks/13/keys = {
 "times": PoolRealArray( 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ) ]
+"values": [ Vector2( 36, 36 ), Vector2( 966, 387 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Screen_new_game/target_description:rect_size")
+tracks/14/path = NodePath("Screen_new_game/target_picture/target:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 3, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 36, 36 ), Vector2( 966, 387 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Screen_new_game/target_picture/target:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
 "times": PoolRealArray( 0, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, false, true ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath("Screen_new_game/Label_good_hunt:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 tracks/16/type = "value"
-tracks/16/path = NodePath("Screen_new_game/Label_good_hunt:visible")
+tracks/16/path = NodePath(".:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0, 5.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0, 14.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath(".:modulate")
+tracks/17/path = NodePath("audio_load_bar:playing")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 9.5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("audio_load_bar:playing")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("audio_select:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 3, 3.2, 12, 12.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
 tracks/19/type = "value"
-tracks/19/path = NodePath("audio_select:playing")
+tracks/19/path = NodePath("Screen_new_game/loanging_:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 3, 3.2, 5.5, 5.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false, true, false ]
+"values": [ true, false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Screen_new_game/loanging_:text")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "...", ".", "..", "...", ".", "..", "...", ".", "..", "...", ".", "..", "...", ".", "..", "..." ]
+}
+tracks/21/type = "method"
+tracks/21/path = NodePath(".")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 3.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_target_description"
+} ]
 }
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -588,6 +605,10 @@ anims/new_game = SubResource( 5 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="loading_bar" type="TextureProgress" parent="Screen_new_game"]
 anchor_left = 0.5
@@ -608,14 +629,30 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -161.0
 margin_top = 27.0
-margin_right = 161.0
+margin_right = 69.0
 margin_bottom = 63.0
+grow_horizontal = 0
 grow_vertical = 2
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 161, 0 )
 theme = ExtResource( 4 )
-text = "Carregando ..."
-align = 1
+text = "CARREGANDO"
+align = 2
+valign = 1
+
+[node name="loanging_" type="Label" parent="Screen_new_game"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 46.0
+margin_top = 27.0
+margin_right = 115.0
+margin_bottom = 63.0
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 4 )
+text = "..."
 valign = 1
 
 [node name="target_picture" type="Panel" parent="Screen_new_game"]
@@ -704,25 +741,15 @@ texture = ExtResource( 8 )
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.638
 anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -160.0
-margin_right = 838.0
-margin_bottom = 227.0
+margin_left = -109.0
+margin_top = -157.0
+margin_right = 680.36
+margin_bottom = 230.0
 grow_horizontal = 2
 rect_scale = Vector2( 0.5, 0.5 )
 theme = ExtResource( 4 )
-text = "Novo contrato selecionado
-Tipo de contrato: Assassinato
-Contratante: Anônimo
-Dificuldade: Médio
-Recompença: R$500.000,00
-
-Alvo principal: Hades
-Nome real: Frederico Hard
-Ocupação: Comandante da máfia de São Paulo
-Situação atual: Fazendo negócios na cidade"
 valign = 1
 __meta__ = {
 "_edit_group_": true

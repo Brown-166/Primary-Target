@@ -5,7 +5,6 @@ var game_file = File.new()
 var skip = false
 
 
-
 func _ready():
 	get_tree().paused = false
 	DB._load_DB()
@@ -50,6 +49,34 @@ func _ready():
 			$Screen_Menu/Button_Quit.text = "SAIR"
 			$Screen_Menu/Button_Language.text = "IDIOMA"
 			$Screen_Saves/Button_Back.text = "VOLTAR"
+			$Screen_new_game/loading_text.text = "CARREGANDO"
+			$Screen_new_game/Label_good_hunt.text = "Tenha uma boa caçada"
+		"english":
+			$Screen_Menu/Button_Continue.text = "CONTINUE"
+			$Screen_Menu/Button_New_Game.text = "NEW GAME"
+			$Screen_Menu/Button_Load_Game.text = "LOAD GAME"
+			$Screen_Menu/Button_Credits.text = "CREDITS"
+			$Screen_Menu/Button_Quit.text = "QUIT"
+			$Screen_Menu/Button_Language.text = "LANGUAGE"
+			$Screen_Saves/Button_Back.text = "BACK"
+			$Screen_new_game/loading_text.text = "LOADING"
+			$Screen_new_game/Label_good_hunt.text = "Have a good hunt"
+		"spanish":
+			$Screen_Menu/Button_Continue.text = "CONTINUAR"
+			$Screen_Menu/Button_New_Game.text = "NUEVO JUEGO"
+			$Screen_Menu/Button_Load_Game.text = "CARGAR JUEGO"
+			$Screen_Menu/Button_Credits.text = "CRÉDITOS"
+			$Screen_Menu/Button_Quit.text = "SALIR"
+			$Screen_Menu/Button_Language.text = "IDIOMA"
+			$Screen_Saves/Button_Back.text = "VOLVER"
+			$Screen_new_game/loading_text.text = "CARGANDO"
+			$Screen_new_game/Label_good_hunt.text = "Que tengas una buena cacería"
+
+
+
+func _target_description():
+	match DB.language:
+		"portuguese":
 			$Screen_new_game/target_description.text = """Novo contrato selecionado
 			Tipo de contrato: Assassinato
 			Contratante: Anônimo
@@ -60,15 +87,7 @@ func _ready():
 			Nome real: Frederico Hard
 			Ocupação: Comandante da máfia de São Paulo
 			Situação atual: Fazendo negócios na cidade"""
-			$Screen_new_game/Label_good_hunt.text = "Tenha uma boa caçada"
 		"english":
-			$Screen_Menu/Button_Continue.text = "CONTINUE"
-			$Screen_Menu/Button_New_Game.text = "NEW GAME"
-			$Screen_Menu/Button_Load_Game.text = "LOAD GAME"
-			$Screen_Menu/Button_Credits.text = "CREDITS"
-			$Screen_Menu/Button_Quit.text = "QUIT"
-			$Screen_Menu/Button_Language.text = "LANGUAGE"
-			$Screen_Saves/Button_Back.text = "BACK"
 			$Screen_new_game/target_description.text = """New contract selected
 			Type of contract: Assassination
 			Contractor: Anonymous
@@ -79,15 +98,7 @@ func _ready():
 			Real name: Frederico Hard
 			Ocupation: Commander of the Sao Paulo mafia
 			Current status: Doing business in the city"""
-			$Screen_new_game/Label_good_hunt.text = "Have a good hunt"
 		"spanish":
-			$Screen_Menu/Button_Continue.text = "CONTINUAR"
-			$Screen_Menu/Button_New_Game.text = "NUEVO JUEGO"
-			$Screen_Menu/Button_Load_Game.text = "CARGAR JUEGO"
-			$Screen_Menu/Button_Credits.text = "CRÉDITOS"
-			$Screen_Menu/Button_Quit.text = "SALIR"
-			$Screen_Menu/Button_Language.text = "IDIOMA"
-			$Screen_Saves/Button_Back.text = "VOLVER"
 			$Screen_new_game/target_description.text = """Nuevo contrato seleccionado
 			Tipo de contrato: Asesinato
 			Contratista: Anónimo
@@ -98,8 +109,6 @@ func _ready():
 			Nombre real: Federico Hard
 			Ocupación: Comandante de la mafia de Sao Paulo
 			Situación actual: Hacer negocios en la ciudad"""
-			$Screen_new_game/Label_good_hunt.text = "Que tengas una buena cacería"
-
 
 
 
@@ -157,7 +166,8 @@ func _physics_process(delta):
 			
 			if $Screen_new_game/Skip_button.value == 100:
 				skip = true
-				$AnimationPlayer.play("loading_out")
+		else:
+			$AnimationPlayer.play("loading_out")
 	
 	
 	if $Screen_Saves.visible == true:
