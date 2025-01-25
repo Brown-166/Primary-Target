@@ -173,6 +173,7 @@ stream = ExtResource( 7 )
 
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 8 )
+is_real = true
 rewarded_id = "ca-app-pub-7251668932872768/3464886721"
 
 [connection signal="pressed" from="Menu/Button_Continue" to="." method="_on_Button_Continue_pressed"]
