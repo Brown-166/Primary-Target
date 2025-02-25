@@ -8,6 +8,15 @@ var language_selected : bool = false
 
 var con_string : String = "user://"
 
+var label_theme = "res://assets/themes/label.tres"
+var main_theme = "res://assets/themes/main_menu_btn.tres"
+var pause_theme = "res://assets/themes/pause_menu_btn.tres"
+var font = "res://assets/fonts/VCR_OSD_MONO_1.001.ttf"
+
+
+#func _physics_process(delta):
+#	if language in ["portuguese", "english", "spanish"]:
+#		label_theme.
 
 
 func _save_DB():

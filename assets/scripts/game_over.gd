@@ -29,6 +29,10 @@ func _ready():
 			$Menu/Label.text = "FALLÓ LA MISIÓN"
 			$Menu/Button_Restart.text = "RECOMENZAR"
 			$Menu/Button_Quit.text = "SALIR"
+		"chinese":
+			$Menu/Label.text = "任務失敗"
+			$Menu/Button_Restart.text = "重新開始"
+			$Menu/Button_Quit.text = "辭職"
 
 
 

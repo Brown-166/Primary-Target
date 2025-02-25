@@ -71,6 +71,26 @@ func _ready():
 			$Screen_Saves/Button_Back.text = "VOLVER"
 			$Screen_new_game/loading_text.text = "CARGANDO"
 			$Screen_new_game/Label_good_hunt.text = "Que tengas una buena cacería"
+		"chinese":
+			$Screen_Menu/Button_Continue.theme.clear_font("main_menu_btn.tres", "Button")
+			$Screen_Menu/Button_New_Game.text = "新遊戲"
+			$Screen_Menu/Button_Load_Game.text = "載入遊戲"
+			$Screen_Menu/Button_Credits.text = "致謝"
+			$Screen_Menu/Button_Quit.text = "辭職"
+			$Screen_Menu/Button_Language.text = "語言"
+			$Screen_Saves/Button_Back.text = "後退"
+			$Screen_new_game/loading_text.text = "載入中"
+			$Screen_new_game/Label_good_hunt.text = "祝你狩獵愉快"
+			
+			$Screen_Menu/Button_Continue.text = "繼續"
+			$Screen_Menu/Button_New_Game.text = "新遊戲"
+			$Screen_Menu/Button_Load_Game.text = "載入遊戲"
+			$Screen_Menu/Button_Credits.text = "致謝"
+			$Screen_Menu/Button_Quit.text = "辭職"
+			$Screen_Menu/Button_Language.text = "語言"
+			$Screen_Saves/Button_Back.text = "後退"
+			$Screen_new_game/loading_text.text = "載入中"
+			$Screen_new_game/Label_good_hunt.text = "祝你狩獵愉快"
 
 
 
@@ -109,6 +129,17 @@ func _target_description():
 			Nombre real: Federico Hard
 			Ocupación: Comandante de la mafia de Sao Paulo
 			Situación actual: Hacer negocios en la ciudad"""
+		"chinese":
+			$Screen_new_game/target_description.text = """選擇新合約
+			合約類型：暗殺
+			承包商：匿名
+			難度：中等
+			獎勵：¥ 630.000,0000
+			
+			主要目標：哈迪斯
+			真實姓名：弗雷德里科哈德 (Frederico Hard)
+			職業：聖保羅黑手黨頭目
+			現況：在城裡做生意"""
 
 
 
@@ -121,6 +152,8 @@ func _physics_process(delta):
 				$Screen_Saves/Button_Save_1.text = "EMPTY"
 			"spanish":
 				$Screen_Saves/Button_Save_1.text = "VACÍO"
+			"chinese":
+				$Screen_Saves/Button_Save_1.text = "空的"
 	else:
 		$Screen_Saves/Button_Save_1.text = "SAVE 1"
 	
@@ -132,6 +165,8 @@ func _physics_process(delta):
 				$Screen_Saves/Button_Save_2.text = "EMPTY"
 			"spanish":
 				$Screen_Saves/Button_Save_2.text = "VACÍO"
+			"chinese":
+				$Screen_Saves/Button_Save_1.text = "空的"
 	else:
 		$Screen_Saves/Button_Save_2.text = "SAVE 2"
 	
@@ -143,6 +178,8 @@ func _physics_process(delta):
 				$Screen_Saves/Button_Save_3.text = "EMPTY"
 			"spanish":
 				$Screen_Saves/Button_Save_3.text = "VACÍO"
+			"chinese":
+				$Screen_Saves/Button_Save_1.text = "空的"
 	else:
 		$Screen_Saves/Button_Save_3.text = "SAVE 3"
 	

@@ -120,6 +120,39 @@ func _ready():
 			$Button_next.text = "PRÓXIMO"
 			$Button_back.text = "VOLVER"
 			$Button_quit.text = "CERRAR"
+		"chinese":
+			$Idle_control/keyboard/move/OR.text = "或者"
+			$Idle_control/keyboard/move/Label.text = "移動"
+			$Idle_control/keyboard/medkit.text = "使用醫療包"
+			$Idle_control/keyboard/jump.text = "跳"
+			$Idle_control/keyboard/pause.text = "暫停"
+			$Idle_control/keyboard/attack.text = "攻擊"
+			
+			$Idle_control/controller/move.text = "移動"
+			$Idle_control/controller/medkit.text = "使用醫療包"
+			$Idle_control/controller/jump.text = "跳"
+			$Idle_control/controller/pause.text = "暫停"
+			$Idle_control/controller/attack.text = "攻擊"
+			
+			$Katana_control/keyboard/block.text = "堵塞"
+			$Katana_control/keyboard/equip.text = "裝備"
+			$Katana_control/controller/block.text = "堵塞"
+			$Katana_control/controller/equip.text = "裝備"
+			
+			$Hammer_control/name.text = "Hammer"
+			$Hammer_control/keyboard/equip.text = "裝備"
+			$Hammer_control/keyboard/stagger.text = "錯開"
+			$Hammer_control/controller/equip.text = "裝備"
+			$Hammer_control/controller/stagger.text = "錯開"
+			
+			$Katar_control/keyboard/equip.text = "裝備"
+			$Katar_control/keyboard/dodge.text = "閃避"
+			$Katar_control/controller/equip.text = "裝備"
+			$Katar_control/controller/dodge.text = "閃避"
+			
+			$Button_next.text = "下一個"
+			$Button_back.text = "後退"
+			$Button_quit.text = "關閉"
 	
 	
 	if fase == "Fase_1":

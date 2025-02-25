@@ -20,6 +20,9 @@ func _ready():
 		"spanish":
 			$Menu/Resume.text = "VOLVER"
 			$Menu/Quit.text = "SALIR"
+		"chinese":
+			$Menu/Resume.text = "恢復"
+			$Menu/Quit.text = "辭職"
 
 
 

@@ -57,3 +57,19 @@ func _on_spanish_mouse_entered():
 
 func _on_spanish_focus_entered():
 	$audio_select.play()
+
+
+func _on_chinese_pressed():
+	$audio_btn.play()
+	DB.language = "chinese"
+	DB.language_selected = true
+	DB._save_DB()
+	get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+
+
+func _on_chinese_focus_entered():
+	$audio_select.play()
+
+
+func _on_chinese_mouse_entered():
+	$chinese.grab_focus()

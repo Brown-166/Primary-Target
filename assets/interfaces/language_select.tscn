@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/scripts/language_select.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/label.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/images/UI/language_select/Brasil.png" type="Texture" id=5]
 [ext_resource path="res://assets/audios/menu_select.MP3" type="AudioStream" id=6]
 [ext_resource path="res://assets/audios/menu_btn.MP3" type="AudioStream" id=7]
+[ext_resource path="res://assets/images/UI/language_select/China.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.933333, 1, 0, 1 )
@@ -24,6 +25,23 @@ Button/styles/focus = SubResource( 5 )
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.933333, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.933333, 1, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.105882, 0.109804, 0, 1 )
+
+[sub_resource type="Theme" id=10]
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = SubResource( 8 )
+Button/styles/pressed = SubResource( 9 )
 
 [node name="language_select" type="Control"]
 anchor_right = 1.0
@@ -54,10 +72,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -108.5
-margin_top = -216.5
-margin_right = 108.5
-margin_bottom = -105.5
+margin_left = -600.0
+margin_top = -60.0
+margin_right = -383.0
+margin_bottom = 51.0
 theme = SubResource( 1 )
 icon = ExtResource( 5 )
 icon_align = 1
@@ -67,10 +85,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -108.5
-margin_top = -55.5
-margin_right = 108.5
-margin_bottom = 55.5
+margin_left = -275.0
+margin_top = -60.0
+margin_right = -58.0
+margin_bottom = 51.0
 theme = SubResource( 1 )
 icon = ExtResource( 3 )
 icon_align = 1
@@ -80,12 +98,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -108.5
-margin_top = 105.5
-margin_right = 108.5
-margin_bottom = 216.5
+margin_left = 50.0
+margin_top = -60.0
+margin_right = 267.0
+margin_bottom = 51.0
 theme = SubResource( 1 )
 icon = ExtResource( 4 )
+icon_align = 1
+
+[node name="chinese" type="Button" parent="."]
+margin_left = 1015.0
+margin_top = 300.0
+margin_right = 1232.0
+margin_bottom = 411.0
+theme = SubResource( 10 )
+icon = ExtResource( 8 )
 icon_align = 1
 
 [node name="audio_select" type="AudioStreamPlayer" parent="."]
@@ -103,3 +130,6 @@ stream = ExtResource( 7 )
 [connection signal="focus_entered" from="spanish" to="." method="_on_spanish_focus_entered"]
 [connection signal="mouse_entered" from="spanish" to="." method="_on_spanish_mouse_entered"]
 [connection signal="pressed" from="spanish" to="." method="_on_spanish_pressed"]
+[connection signal="focus_entered" from="chinese" to="." method="_on_chinese_focus_entered"]
+[connection signal="mouse_entered" from="chinese" to="." method="_on_chinese_mouse_entered"]
+[connection signal="pressed" from="chinese" to="." method="_on_chinese_pressed"]

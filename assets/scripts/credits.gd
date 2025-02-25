@@ -30,6 +30,11 @@ func _ready():
 			Pedro Brown
 			y
 			Samuel Maia"""
+		"chinese":
+			$Menu/Label.text = """製作者：
+			Pedro Brown
+			和
+			Samuel Maia"""
 	
 	
 func _physics_process(delta):
