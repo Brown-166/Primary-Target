@@ -33,10 +33,38 @@ var arsenal = ["katana", "", ""]
 var motorcycle_speed
 
 
+
+
+
+var menu_theme : Theme = load("res://assets/themes/main_menu_btn.tres")
+var pause_theme : Theme = load("res://assets/themes/pause_menu_btn.tres")
+var label_theme : Theme = load("res://assets/themes/label.tres")
+
+var chineseFontLabel : DynamicFont = DynamicFont.new()
+var chineseFontButton : DynamicFont = DynamicFont.new()
+
+var defaulFontLabel : DynamicFont = DynamicFont.new()
+var defaulFontButton : DynamicFont = DynamicFont.new()
+
+
 func _ready():
-	pass
-func _physics_process(delta):
+	chineseFontLabel.font_data = load("res://assets/fonts/chinese/static/NotoSansTC-Regular.ttf")
+	chineseFontLabel.size = 30
 	
+	chineseFontButton.font_data = load("res://assets/fonts/chinese/static/NotoSansTC-Regular.ttf")
+	chineseFontButton.size = 30
+	
+	defaulFontLabel.font_data = load("res://assets/fonts/VCR_OSD_MONO_1.001.ttf")
+	defaulFontLabel.size = 40
+	defaulFontLabel.outline_size = 1
+	
+	defaulFontButton.font_data = load("res://assets/fonts/VCR_OSD_MONO_1.001.ttf")
+	defaulFontButton.size = 30
+	defaulFontButton.outline_size = 1
+	defaulFontButton.outline_color = "#1b1c00"
+
+
+func _physics_process(delta):
 	if life < 0:
 		life = 0
 	if life > 100:
@@ -46,6 +74,15 @@ func _physics_process(delta):
 		stamina = 0
 	if stamina > 100:
 		stamina = 100
+	
+	if DB.language == "chinese":
+		menu_theme.set_font("font", "Button", chineseFontButton)
+		pause_theme.set_font("font", "Button", chineseFontButton)
+		label_theme.set_font("font", "Label", chineseFontLabel)
+	else:
+		menu_theme.set_font("font", "Button", defaulFontButton)
+		pause_theme.set_font("font", "Button", defaulFontButton)
+		label_theme.set_font("font", "Label", defaulFontLabel)
 
 
 func _hit(life, area):

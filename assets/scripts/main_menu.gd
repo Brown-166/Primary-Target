@@ -5,9 +5,11 @@ var game_file = File.new()
 var skip = false
 
 
+
 func _ready():
 	get_tree().paused = false
 	DB._load_DB()
+	
 	action = ""
 	$audio_menu.play()
 	$Screen_Menu/Button_Continue.disabled = false
@@ -72,7 +74,6 @@ func _ready():
 			$Screen_new_game/loading_text.text = "CARGANDO"
 			$Screen_new_game/Label_good_hunt.text = "Que tengas una buena cacería"
 		"chinese":
-			$Screen_Menu/Button_Continue.theme.clear_font("main_menu_btn.tres", "Button")
 			$Screen_Menu/Button_New_Game.text = "新遊戲"
 			$Screen_Menu/Button_Load_Game.text = "載入遊戲"
 			$Screen_Menu/Button_Credits.text = "致謝"
@@ -166,7 +167,7 @@ func _physics_process(delta):
 			"spanish":
 				$Screen_Saves/Button_Save_2.text = "VACÍO"
 			"chinese":
-				$Screen_Saves/Button_Save_1.text = "空的"
+				$Screen_Saves/Button_Save_2.text = "空的"
 	else:
 		$Screen_Saves/Button_Save_2.text = "SAVE 2"
 	
@@ -179,7 +180,7 @@ func _physics_process(delta):
 			"spanish":
 				$Screen_Saves/Button_Save_3.text = "VACÍO"
 			"chinese":
-				$Screen_Saves/Button_Save_1.text = "空的"
+				$Screen_Saves/Button_Save_3.text = "空的"
 	else:
 		$Screen_Saves/Button_Save_3.text = "SAVE 3"
 	

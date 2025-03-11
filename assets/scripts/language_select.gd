@@ -11,13 +11,17 @@ func _ready():
 		$portuguese.grab_focus()
 
 
+func _loading_out():
+	DB.language_selected = true
+	DB._save_DB()
+	get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+
+
 
 func _on_portuguese_pressed():
 	$audio_btn.play()
 	DB.language = "portuguese"
-	DB.language_selected = true
-	DB._save_DB()
-	get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+	_loading_out()
 
 
 func _on_portuguese_mouse_entered():
@@ -31,9 +35,7 @@ func _on_portuguese_focus_entered():
 func _on_english_pressed():
 	$audio_btn.play()
 	DB.language = "english"
-	DB.language_selected = true
-	DB._save_DB()
-	get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+	_loading_out()
 
 
 func _on_english_mouse_entered():
@@ -47,9 +49,7 @@ func _on_english_focus_entered():
 func _on_spanish_pressed():
 	$audio_btn.play()
 	DB.language = "spanish"
-	DB.language_selected = true
-	DB._save_DB()
-	get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+	_loading_out()
 
 func _on_spanish_mouse_entered():
 	$spanish.grab_focus()
@@ -62,9 +62,7 @@ func _on_spanish_focus_entered():
 func _on_chinese_pressed():
 	$audio_btn.play()
 	DB.language = "chinese"
-	DB.language_selected = true
-	DB._save_DB()
-	get_tree().change_scene("res://assets/interfaces/main_menu.tscn")
+	_loading_out()
 
 
 func _on_chinese_focus_entered():
